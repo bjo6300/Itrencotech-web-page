@@ -1,6 +1,12 @@
 # Itrencotech-web-page
 Itrencotech web page using django
 
+# 사용도구
+python
+django
+MySQL
+pycharm
+
 ## License
 
 Distributed under the APACHE 2.0 License. See `LICENSE` for more information.
