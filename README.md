@@ -2,10 +2,10 @@
 Itrencotech web page using django
 
 # 사용도구
-python
-django
-MySQL
-pycharm
+python  
+django  
+MySQL  
+pycharm  
 
 ## License
 
