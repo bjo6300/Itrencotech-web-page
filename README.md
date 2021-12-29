@@ -1,12 +1,19 @@
+![Python: Version](https://img.shields.io/badge/python-3.8.5-blue)
+![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)
+
 # Itrencotech-web-page
 Itrencotech web page using django
 
-# 사용도구
-![Python: Version](https://img.shields.io/badge/python-3.8.5-blue)  
-![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)  
-MySQL    
-jira  
-heroku or AWS EC2  
+# Built With
+<details> <summary> <b> 사용도구 </b></summary>
+</br>
+
+* ![Python](https://img.shields.io/badge/-Python-000000?style=flat&logo=python)
+* ![Django](https://img.shields.io/badge/-Django-000000?style=flat&logo=django)
+* ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat&logo=mysql)
+
+</details>
+</br>
 
 ## License
 
