@@ -5,15 +5,19 @@
 Itrencotech web page using django
 
 # Built With
-<details> <summary> <b> 사용도구 </b></summary>
+<details> <summary> <b>    </b></summary>
 </br>
 
 * ![Python](https://img.shields.io/badge/-Python-000000?style=flat&logo=python)
 * ![Django](https://img.shields.io/badge/-Django-000000?style=flat&logo=django)
-* ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat&logo=mysql)
+* ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat&logo=mysql)  
+* ![Jira](https://img.shields.io/badge/-Jira-000000?style=flat&logo=jira)  
+* ![Anaconda](https://img.shields.io/badge/-Anaconda-000000?style=flat&logo=anaconda)  
+heroku or EC2
 
 </details>
 </br>
+
 
 ## License
 
