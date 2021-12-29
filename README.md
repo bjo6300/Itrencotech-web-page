@@ -6,6 +6,8 @@ python
 django  
 MySQL  
 pycharm  
+jira  
+heroku or AWS EC2  
 
 ## License
 
