@@ -2,10 +2,9 @@
 Itrencotech web page using django
 
 # 사용도구
-python  
-django  
-MySQL  
-pycharm  
+![Python: Version](https://img.shields.io/badge/python-3.8.5-blue)  
+![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)  
+MySQL    
 jira  
 heroku or AWS EC2  
 
