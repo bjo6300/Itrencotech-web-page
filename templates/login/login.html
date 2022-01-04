@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>LOGIN PAGE</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>login page</h1>
     <a href="{% url 'itrencotech:findIdPasswd' %}">아이디/비밀번호 찾기</a>
     <a href="{% url 'itrencotech:signUp' %}">회원가입</a>
-</body>
-</html>
+{% endblock %}
