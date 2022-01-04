@@ -41,3 +41,4 @@ def body_production_cnc(request):
 
 def body_production_press(request):
     return render(request, 'body/production/press.html')
+
