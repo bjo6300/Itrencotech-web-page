@@ -19,12 +19,12 @@ urlpatterns = [
     path('prototyping/CNC/', views.body_prototyping_CNC, name='CNC'), # CNC 가공
     path('prototyping/sheeting_bending/', views.body_prototyping_sheeting_bending, name='sheeting_bending'), # 판금 절곡
     
-
     path('about/ceo/', views.navbar_about_ceo, name='navbar_about_ceo'),
     path('about/history/', views.navbar_about_history, name='navbar_about_history'),
     path('about/ideology/', views.navbar_about_ideology, name='navbar_about_ideology'),
     path('about/route/', views.navbar_about_route, name='navbar_about_route'),
-    path('production/', views.body_production_home, name='body_production_home'),
+
+    path('production/home', views.body_production_home, name='body_production_home'),
     path('production/mold/', views.body_production_mold, name='body_production_mold'),
     path('production/cnc/', views.body_production_cnc, name='body_production_cnc'),
     path('production/press/', views.body_production_press, name='body_production_press'),
