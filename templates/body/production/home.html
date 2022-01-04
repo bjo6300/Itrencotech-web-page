@@ -3,8 +3,8 @@
 {% block content %}
     <h1>양산</h1>
     <div>
-        <a href="/body/production/mold">금형</a>
-        <a href="/body/production/cnc">CNC 부품가공</a>
-        <a href="/body/production/press">프레스 판금</a>
+        <a href="{% url 'itrencotech:body_production_mold' %}">금형</a>
+        <a href="{% url 'itrencotech:body_production_cnc' %}">CNC 부품가공</a>
+        <a href="{% url 'itrencotech:body_production_press' %}>프레스 판금</a>
     </div>
 {% endblock %}
