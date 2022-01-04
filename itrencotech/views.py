@@ -23,3 +23,19 @@ def body_onlyIdea_onlyIdea_product_mechanism_design(request):
 def body_onlyIdea_onlyIdea_production_design(request):
     # 제품 디자인
     return render(request, 'body/onlyIdea/onlyIdea_production_design.html')
+
+def body_prototyping_3Dprinting(request):
+    # 3D 프린팅
+    return render(request, 'body/prototyping/3DPrinting.html')
+
+def body_prototyping_mockUp(request):
+    # 목업
+    return render(request, 'body/prototyping/mockUp.html')
+
+def body_prototyping_CNC(request):
+    # CNC 가공
+    return render(request, 'body/prototyping/CNC.html')
+
+def body_prototyping_sheeting_bending(request):
+    # 판금 절곡
+    return render(request, 'body/prototyping/sheeting_bending.html')
