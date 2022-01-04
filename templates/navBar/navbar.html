@@ -14,15 +14,15 @@
                 </ul>
             </li>
             <li>
-                <a href="#">포트폴리오</a>
+                <a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a>
                 <ul>
-                    <a href="#">3D 프린팅</a>
-                    <a href="#">목업</a>
-                    <a href="#">CNC</a>
-                    <a href="#">사출/금형</a>
+                    <a href="{% url 'itrencotech:portfolio_3d' %}">3D 프린팅</a>
+                    <a href="{% url 'itrencotech:portfolio_mockup' %}">목업</a>
+                    <a href="{% url 'itrencotech:portfolio_cnc' %}">CNC</a>
+                    <a href="{% url 'itrencotech:portfolio_mold' %}">사출/금형</a>
                 </ul>
             </li>
-            <li><a href="#">후기</a></li>
+            <li><a href="{% url 'itrencotech:review' %}">후기</a></li>
             <li><a href="#">로그인</a></li>
         </ul>
     </div>

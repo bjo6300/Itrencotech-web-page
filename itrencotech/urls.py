@@ -12,7 +12,7 @@ urlpatterns = [
     path('portfolio/cnc', views.portfolioCnc, name='portfolio_cnc'),
     path('portfolio/mockup', views.portfolioMockup, name='portfolio_mockup'),
     path('portfolio/mold', views.portfolioMold, name='portfolio_mold'),
-    path('review/', views.review, name='portfolio_review'),
+    path('review/', views.review, name='review'),
 
     path('onlyIdea/onlyIdea_home/', views.body_onlyIdea_onlyIdea, name='onlyIdea'),
     path('prototyping/prototyping_home/', views.body_prototyping_prototyping_home, name='prototyping'),
