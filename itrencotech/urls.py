@@ -7,9 +7,9 @@ app_name = 'itrencotech'
 urlpatterns = [
     path('', views.index, name='index'),
     path('login/', views.login, name='login'),
-    path('signUp/', views.signUp, name='signUp'),
-    path('findIdPasswd/', views.findIdPasswd, name='findIdPasswd'),
-    path('findId/', views.findId, name='findId'),
+    path('login/signUp/', views.signUp, name='signUp'),
+    path('login/findIdPasswd/', views.findIdPasswd, name='findIdPasswd'),
+    path('login/findId/', views.findId, name='findId'),
 
     path('portfolio/', views.portfolio, name='portfolio'),
     path('portfolio/3d', views.portfolio3d, name='portfolio_3d'),
