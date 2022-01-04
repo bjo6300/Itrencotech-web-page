@@ -6,6 +6,10 @@ app_name = 'itrencotech'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    path('login/signUp/', views.signUp, name='signUp'),
+    path('login/findIdPasswd/', views.findIdPasswd, name='findIdPasswd'),
+    path('login/findId/', views.findId, name='findId'),
 
     path('portfolio/', views.portfolio, name='portfolio'),
     path('portfolio/3d', views.portfolio3d, name='portfolio_3d'),
@@ -39,5 +43,6 @@ urlpatterns = [
     path('production/mold/', views.body_production_mold, name='body_production_mold'),
     path('production/cnc/', views.body_production_cnc, name='body_production_cnc'),
     path('production/press/', views.body_production_press, name='body_production_press'),
+
 
 ]

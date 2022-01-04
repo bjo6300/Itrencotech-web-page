@@ -6,6 +6,18 @@ def index(request):
     return render(request, 'body/main.html')
 
 
+def login(request):
+    return render(request, 'login/login.html')
+
+def signUp(request):
+    return render(request, 'login/signUp.html')
+
+def findIdPasswd(request):
+    return render(request, 'login/findIdPasswd.html')
+
+def findId(request):
+    return render(request, 'login/findId.html')
+
 def portfolio(request):
     """ 포트폴리오 페이지 """
     return render(request, 'navBar/portfolio/portfolio.html')
