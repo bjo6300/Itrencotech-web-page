@@ -156,5 +156,8 @@ ENV/
 
 # privacy infomation
 settings.py
+.idea/
+*.iml
+*.xml
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq
