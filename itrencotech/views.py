@@ -5,6 +5,36 @@ from django.utils import timezone
 def index(request):
     return render(request, 'base.html')
 
+def portfolio(request):
+    """ 포트폴리오 페이지 """
+    return render(request, 'navBar/portfolio/portfolio.html')
+
+
+def portfolio3d(request):
+    """ 포트폴리오 - 3D 프린팅 페이지 """
+    return render(request, 'navBar/portfolio/3d.html')
+
+
+def portfolioCnc(request):
+    """ 포트폴리오 - CNC 페이지 """
+    return render(request, 'navBar/portfolio/cnc.html')
+
+
+def portfolioMockup(request):
+    """ 포트폴리오 - 목업 페이지 """
+    return render(request, 'navBar/portfolio/mockup.html')
+
+
+def portfolioMold(request):
+    """ 포트폴리오 - 사출 금형 페이지 """
+    return render(request, 'navBar/portfolio/mold.html')
+
+
+def review(request):
+    """ 후기 페이지 """
+    return render(request, 'navBar/review/review.html')
+
+
 def body_onlyIdea_onlyIdea(request):
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
@@ -71,5 +101,4 @@ def body_production_cnc(request):
 
 def body_production_press(request):
     return render(request, 'body/production/press.html')
-
 
