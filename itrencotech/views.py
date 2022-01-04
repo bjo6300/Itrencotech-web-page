@@ -8,7 +8,7 @@ def index(request):
     """
     홈페이지 출력
     """
-    return render(request, 'body/home.html')
+    return render(request, 'body/main.html')
 
 
 def navbar_about_ceo(request):
