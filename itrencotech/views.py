@@ -29,3 +29,15 @@ def navbar_about_route(request):
 
 def body_production_home(request):
     return render(request, 'body/production/home.html')
+
+
+def body_production_mold(request):
+    return render(request, 'body/production/mold.html')
+
+
+def body_production_cnc(request):
+    return render(request, 'body/production/cnc.html')
+
+
+def body_production_press(request):
+    return render(request, 'body/production/press.html')
