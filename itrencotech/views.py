@@ -107,6 +107,9 @@ def navbar_about_ideology(request):
 def navbar_about_route(request):
     return render(request, 'navBar/about/route.html')
 
+def navbar_about_test(request):
+    return render(request, 'navBar/about/test.html')
+
 
 def body_production_home(request):
     return render(request, 'body/production/home.html')
