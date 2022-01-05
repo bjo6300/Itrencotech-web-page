@@ -41,6 +41,7 @@ urlpatterns = [
     path('about/history/', views.navbar_about_history, name='navbar_about_history'),
     path('about/ideology/', views.navbar_about_ideology, name='navbar_about_ideology'),
     path('about/route/', views.navbar_about_route, name='navbar_about_route'),
+    path('about/test/', views.navbar_about_test, name='navbar_about_test'),
 
     path('production/home', views.body_production_home, name='body_production_home'),
     path('production/mold/', views.body_production_mold, name='body_production_mold'),

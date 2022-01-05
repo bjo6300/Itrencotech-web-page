@@ -1,7 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container my-3">
-        <h1>CEO 인사말</h1>
+<div id="div-title-container">
+    <h1 id="h1-title"> 회사 소개 </h1>
+</div>
+<div align="left">
+    <div style="margin-top: 20px; width: 80%; height:1000px; position: absolute;">
+        <div style="float:left; outline: 1px solid #9F9F9F; top:0px;
+                width: 200px; height:100%; text-align:right; line-height: 60px;">
+            <!-- 사이드바 -->
+            {% include 'navBar/about/sidebar.html' %}
+            <!-- body -->
+            <div style="top: 0px; left: 250px; width: 80%; height: 100%;
+                        position: absolute; background-color: #e9e9e9;">
+                <!-- 타이틀 -->
+                <div style="margin-top:50px; text-align:left; background-color:#8FBC8F">
+                    <h2>인사말</h2>
+                </div>
+                <hr>
+                <div style="margin-top:50px; line-height:30px; background-color:#8FBC8F">
+                    <!-- 이미지 삽입 -->
+                    <div align="left">
+                        <div style="width:80%; height:100px; margin-top:50px; background-color:#008080">
+                            <h5 style="text-align:center;">이미지 삽입</h5>
+                        </div>
+                    </div>
+                    <!-- 키워드 문장 -->
+                    <div>
+                        <h3 style="text-align:left;">
+                            <strong>" 아이디어를 공존의 기술력으로 현실화 시키는 기업 "</strong>
+                        </h3>
+                    </div>
+                    <!-- 인사말 -->
+                    <div>
+                        <p style="font-size:0.7em; text-align:left">이트렌코텍 홈페이지를 방문하여 주신 여러분들에게 감사 드립니다.<br>
+                            이트렌코텍은 "Idea to real with coexist technology"의 의미를 지니고 있는
+                            제품개발 토탈 솔루션을 제공하는 기업입니다.<br>
+                            이트렌코텍은 설립 이래 한결같이 고객 만족을 최우선으로 생각하고,
+                            고객 감동을 실현하기 위해 아이디어 현실화, 기술개발 시스템을 구축해 나가고 있습니다.<br>
+                            고객이 원하는 정확한 아이디어와 제작을 위해 앞서가는 시굴력으로 "고객이 가장 신뢰하는 기업"으로써
+                            거듭나기 위해 노력하고 있습니다.<br>
+                            아울러 이트렌코텍은 우리나라의 산업기술 발선에 기여하기 위해 늘 상생의 가치를 되새기며
+                            능동적인 기업, 발전하는 기업으로 고객 여러분께 찾아가겠습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}
+

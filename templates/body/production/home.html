@@ -1,10 +1,88 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>양산</h1>
     <div>
-        <a href="{% url 'itrencotech:body_production_mold' %}">금형</a>
-        <a href="{% url 'itrencotech:body_production_cnc' %}">CNC 부품가공</a>
-        <a href="{% url 'itrencotech:body_production_press' %}">프레스 판금</a>
+        <h1 style="position: relative; margin-left: auto; TEXT-ALIGN: center; margin-right: auto; margin-bottom: 50px; font-weight: 400;
+        width: 300px;font-size:30px; color: black;"> 양산 </h1>
+
+        <div>
+            <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center; position: relative; "vertical-align="middle">
+                <!--돋보기-->
+                <div>
+                    <a href="#" style="position: relative; margin-bottom: 10px;" >
+                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                    </a>
+                </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+                    <a href="{% url 'itrencotech:body_production_mold' %}">
+                        <img style="position: relative; border-radius: 50px;" src="/static/images/machine_design.png" width="200px" height="200px"  />
+                    </a>
+                    <!--글자-->
+                    <h3 style="TEXT-ALIGN: center ">금형</h3>
+                </div>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" >
+                        <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center">
+                <!--돋보기-->
+                <div>
+                    <a href="#" style="position: relative; margin-bottom: 10px;" >
+                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                    </a>
+                </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+                    <a href="{% url 'itrencotech:body_production_cnc' %}">
+                        <img style="position: relative;border-radius: 50px;" src="/static/images/product_design.png" width="200px" height="200px"  />
+                    </a>
+                </div>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center">CNC 부품가공</h3>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" >
+                        <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                    </a>
+                </div>
+            </div>
+
+            <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center; position: relative;">
+                <!--돋보기-->
+                <div>
+                    <a href="#" style="position: relative; margin-bottom: 10px;" >
+                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                    </a>
+                </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+                    <a href="{% url 'itrencotech:body_production_press' %}">
+                        <img style="position: relative;border-radius: 50px;" src="/static/images/product_equipment_design.png" width="200px" height="200px"  />
+                    </a>
+                </div>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center">프레스 판금</h3>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" >
+                        <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<!-- =======
+    <h1>시제품</h1>
+    <div>
+        <a href="{% url 'itrencotech:3Dprinting' %}">3D 프린팅</a>
+        <a href="{% url 'itrencotech:mockUp' %}">목업</a>
+        <a href="{% url 'itrencotech:CNC' %}">CNC 가공</a>
+        <a href="{% url 'itrencotech:sheeting_bending' %}">판금 절곡</a>-->
     </div>
 {% endblock %}

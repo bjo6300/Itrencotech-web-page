@@ -1,7 +1,75 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container my-3">
-        <h1>찾아오시는길</h1>
+<div id="div-title-container">
+    <h1 id="h1-title"> 회사 소개 </h1>
+</div>
+<div align="left">
+    <div style="margin-top: 20px; width: 80%; height:1000px; position: absolute;">
+        <div style="float:left; outline: 1px solid #9F9F9F; top:0px;
+                width: 200px; height:100%; text-align:right; line-height: 60px;">
+            <!-- 사이드바 -->
+            {% include 'navBar/about/sidebar.html' %}
+            <!-- body -->
+            <div style="top: 0px; left: 250px; width: 80%; height: 100%;
+                        position: absolute; background-color: #e9e9e9;">
+                <!-- 타이틀 -->
+                <div style="margin-top:50px; text-align:left; background-color:#8FBC8F">
+                    <h2>찾아오시는 길</h2>
+                </div>
+                <hr>
+                <div style="width:100%; height:90%; text-align:center; background-color: #F0FFF0">
+                    <!-- 주소 -->
+                    <div style="background-color:#FFEBCD">
+                        <strong style="width:100px; float:left; font-weight:bold; text-align:left;
+                                background-color:#A9A9A9;">주소</strong>
+                        <p style="text-align:left;">경기 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207호</p>
+                    </div>
+                    <!-- 전화 -->
+                    <div style="background-color:#FFEBCD">
+                        <strong style="width:100px; float:left; font-weight:bold; text-align:left;
+                                background-color:#A9A9A9;">전화</strong>
+                        <p style="text-align:left;">031-431-0635</p>
+                    </div>
+                    <!-- 지도 -->
+                    <div style="background-color:#FFEBCD">
+                        <h2>이미지 삽입</h2>
+                    </div>
+                    <!-- 주변 정류장 -->
+                    <div style="height:300px; background-color:#FFEBCD">
+                        <strong style="width:100px; height:100%; float:left; font-weight:bold; text-align:left;
+                                background-color:#A9A9A9;">주변 정류장</strong>
+                        <div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                            <div style="float:left; text-align:left; width:250px;">
+                                <p>1. 한국공학대학교정문</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 주변 버스 -->
+                    <div style="background-color:#FFEBCD">
+                        <strong style="width:100px; float:left; font-weight:bold; text-align:left;
+                                background-color:#A9A9A9;">주변 버스</strong>
+                        <p style="text-align:left;">031-431-0635</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}
+

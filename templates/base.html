@@ -2,19 +2,22 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-wdth, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">-->
     <title>make it</title>
 </head>
 <body>
     <!-- 내비게이션바 -->
     {% include 'navBar/navbar.html' %}
+    <!-- Load CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
     <!-- 기본 템플릿 안에 삽입될 내용 -->
-    <div>
-        <a href="/onlyIdea/onlyIdea_home">ONLY IDEA</a>
-        <a href="/prototyping/prototyping_home">시제품 제작</a>
-        <a href="/production/home">양산</a>
-    </div>
+    {% include 'body/main.html' %}
+
     {% block content %}
     {% endblock %}
 
