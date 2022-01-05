@@ -1,0 +1,68 @@
+/* 포트폴리오 - 사출 금형 */
+
+
+/* 폰트 - KoPub돋움 */
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 바디 전체 */
+body {
+    -webkit-text-stroke: 0.4px;
+    font-family: 'KoPubDotumMedium';
+}
+
+/* 제목 컨테이너 */
+#div-title-container {
+    box-shadow: 3px 3px 5px lightgray;
+    border-bottom-right-radius: 10% 80px;
+    padding: 30px;
+    margin: 20px 0 40px 0;
+}
+
+/* 제목 */
+#h1-title {
+    text-align: center;
+	color: #131E3E;
+    font-size: 1.4em;
+	letter-spacing: 0.15em;
+	margin: 0 0 50px 0;
+}
+
+/* 부제목 */
+#div-subtitle {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #AAAAAA;
+    text-align: center;
+    margin: 35px 0 50px 0;
+}
+
+/* 모든 링크 색 변경 */
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* 이미지 컨테이너 */
+#div-container {
+    margin: 0 0 50px 0;
+}
+
+/* 이미지 컨테이너 테이블 */
+#table-container {
+    text-align: center;
+    margin: auto;
+    padding: 0 0 15px 0;
+}
+
+/* 이미지 박스 */
+.div-images {
+    background-color: #C6C6C6;
+    margin: 8px;
+    height: 170px;
+    width: 170px;
+}
