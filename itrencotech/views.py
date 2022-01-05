@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'body/main.html')
+    return render(request, 'base.html')
 
 
 def login(request):
@@ -49,6 +49,7 @@ def review(request):
 
 
 def body_onlyIdea_onlyIdea(request):
+    # onlyIdea 메인
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
 

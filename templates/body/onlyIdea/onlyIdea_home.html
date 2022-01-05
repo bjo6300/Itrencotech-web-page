@@ -2,8 +2,88 @@
 
 {% block content %}
     <div>
-        <a href="{% url 'itrencotech:mechanical_design' %}">기계 설계</a>
+
+        <h1 style="position: relative; margin-left: auto; TEXT-ALIGN: center; margin-right: auto; margin-bottom: 50px; font-weight: 400;
+        width: 300px;font-size:30px; color: black;"> ONLY IDEA </h1>
+
+        
+        <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center; position: relative; "vertical-align="middle">
+            <!--돋보기-->
+            <div>
+                <a href="#" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                </a>
+            </div>
+            <!--이미지-->
+            <div style="margin-top: 40px;">
+                <a href="{% url 'itrencotech:mechanical_design' %}">
+                    <img style="position: relative; border-radius: 50px;" src="/static/images/machine_design.png" width="200px" height="200px"  />    
+                </a>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center ">기계 설계</h3>
+            </div>
+            <!--포트폴리오-->
+            <div style="margin-top: 10px;">
+                <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                </a>
+            </div>
+            
+        </div>
+
+        <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center">
+            <!--돋보기-->
+            <div>
+                <a href="#" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                </a>
+            </div>
+            <!--이미지-->
+            <div style="margin-top: 40px;">
+                <a href="{% url 'itrencotech:production_design' %}">
+                    <img style="position: relative;border-radius: 50px;" src="/static/images/product_design.png" width="200px" height="200px"  /> 
+                </a>
+            </div>
+            <!--글자-->
+            <h3 style="TEXT-ALIGN: center">제품 디자인</h3>
+            <!--포트폴리오-->
+            <div style="margin-top: 10px;">
+                <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                </a>
+            </div>
+        </div>
+
+        <div style="border: 1px solid white; float: left; width: 33%; TEXT-ALIGN: center; position: relative;">
+            <!--돋보기-->
+            <div>
+                <a href="#" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG" width="40px" height="40px"  />
+                </a>
+            </div>
+            <!--이미지-->
+            <div style="margin-top: 40px;">
+                <a href="{% url 'itrencotech:product_mechanism_design' %}">
+                    <img style="position: relative;border-radius: 50px;" src="/static/images/product_equipment_design.png" width="200px" height="200px"  /> 
+                </a>
+            </div>
+            <!--글자-->
+            <h3 style="TEXT-ALIGN: center">제품 기구 설계</h3>
+            <!--포트폴리오-->
+            <div style="margin-top: 10px;">
+                <a href="{% url 'itrencotech:portfolio' %}" style="position: relative; margin-bottom: 10px;" > 
+                    <img style="text-align: center;" src="/static/images/portfolio.PNG" width="100px" height="40px"  />
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
+        <!-- <a href="{% url 'itrencotech:mechanical_design' %}">기계 설계</a>
         <a href="{% url 'itrencotech:production_design' %}">제품 디자인</a>
         <a href="{% url 'itrencotech:product_mechanism_design' %}">제품 기구설계</a>
-    </div>
+    </div> -->
 {% endblock %}
+
