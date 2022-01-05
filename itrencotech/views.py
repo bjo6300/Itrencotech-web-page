@@ -48,6 +48,7 @@ def review(request):
 
 
 def body_onlyIdea_onlyIdea(request):
+    # onlyIdea 메인
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
 def body_prototyping_prototyping_home(request):
