@@ -3,20 +3,24 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'body/main.html')
+    return render(request, 'base.html')
 
 
 def login(request):
     return render(request, 'login/login.html')
 
+
 def signUp(request):
     return render(request, 'login/signUp.html')
+
 
 def findIdPasswd(request):
     return render(request, 'login/findIdPasswd.html')
 
+
 def findId(request):
     return render(request, 'login/findId.html')
+
 
 def portfolio(request):
     """ 포트폴리오 페이지 """
@@ -43,12 +47,28 @@ def portfolioMold(request):
     return render(request, 'navBar/portfolio/mold.html')
 
 
-def review(request):
-    """ 후기 페이지 """
-    return render(request, 'navBar/review/review.html')
+def reviewBest(request):
+    """ 후기 - 베스트후기 페이지 """
+    return render(request, 'navBar/review/review_best.html')
+
+
+def reviewRecent(request):
+    """ 후기 - 최신순 페이지 """
+    return render(request, 'navBar/review/review_recent.html')
+
+
+def reviewHighRating(request):
+    """ 후기 - 높은평점순 페이지 """
+    return render(request, 'navBar/review/review_high_rating.html')
+
+
+def reviewLowRating(request):
+    """ 후기 - 낮은평점순 페이지 """
+    return render(request, 'navBar/review/review_low_rating.html')
 
 
 def body_onlyIdea_onlyIdea(request):
+    # onlyIdea 메인
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
 

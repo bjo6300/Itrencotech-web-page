@@ -1,0 +1,66 @@
+/* 포트폴리오 */
+
+
+/* 폰트 - KoPub돋움 */
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 바디 전체 */
+body {
+    -webkit-text-stroke: 0.4px;
+    font-family: 'KoPubDotumMedium';
+}
+
+/* 제목 컨테이너 */
+#div-title-container {
+    box-shadow: 3px 3px 5px lightgray;
+    border-bottom-right-radius: 10% 80px;
+    padding: 30px;
+    margin: 20px 0 90px 0;
+}
+
+/* 제목 */
+#h1-title {
+    text-align: center;
+	color: #131E3E;
+    font-size: 1.4em;
+	letter-spacing: 0.15em;
+	margin: 0 0 50px 0;
+}
+
+/* 이미지 버튼 컨테이너 */
+#div-container {
+    text-align: center;
+}
+
+/* 버튼 간격 조정 */
+#a-btn-01, #a-btn-02, #a-btn-03, #a-btn-04 {
+    margin: 25px;
+}
+
+/* 버튼 옆 공백 제거 */
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+/* 버튼을 비롯한 모든 링크 색 변경 */
+a:visited, a:active {
+    color: black;
+}
+
+/* 버튼 그림자 */
+img {
+    width: 7%;
+    height: 7%;
+}
+
+/* 버튼 활성 효과 */
+img:hover {
+    -webkit-filter: brightness(150%);
+    -webkit-transition: all .2s ease-in-out;
+}
