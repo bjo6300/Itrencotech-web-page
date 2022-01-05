@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'body/main.html')
+    return render(request, 'base.html')
 
 
 def login(request):
