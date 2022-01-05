@@ -1,0 +1,115 @@
+/* 고객 후기  */
+
+
+/* 폰트 - KoPub돋움 */
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 바디 전체 */
+body {
+    -webkit-text-stroke: 0.4px;
+    font-family: 'KoPubDotumMedium';
+}
+
+/* 제목 컨테이너 */
+#div-title-container {
+    box-shadow: 3px 3px 5px lightgray;
+    border-bottom-right-radius: 10% 80px;
+    padding: 30px;
+    margin: 20px 0 40px 0;
+}
+
+/* 제목 */
+#h1-title {
+    text-align: center;
+	color: #131E3E;
+    font-size: 1.4em;
+	letter-spacing: 0.15em;
+	margin: 0 0 50px 0;
+}
+
+/* 모든 링크 색 변경 */
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* 버튼 및 리뷰 컨테이너 */
+#div-container {
+    margin: 0 0 50px 0;
+}
+
+/* 버튼 컨테이너 테이블 */
+#table-container-01 {
+    text-align: center;
+    margin: auto;
+    padding: 0 0 15px 0;
+}
+
+/* 리뷰 컨테이너 테이블 */
+#table-container-02 {
+    text-align: center;
+    margin: auto;
+}
+
+/* 버튼 */
+button {
+    -webkit-text-stroke: 0.4px;
+	text-align: center;
+    font-family: 'KoPubDotumMedium';
+    font-size: 0.6em;
+	letter-spacing: 0.4em;
+	background: white;
+	color: #131E3E;
+	margin: 10px;
+	padding: 0.5em 1em 0.5em 1em;
+	border: 1.4px solid #131E3E;
+	border-radius: 30px;
+	height: 30px;
+	width: 105px;
+	cursor: pointer;
+}
+
+/* 현재 탭 버튼 */
+#btn-selected-now {
+    -webkit-text-stroke: 0.2px;
+	text-align: center;
+    font-family: 'KoPubDotumMedium';
+    font-size: 0.6em;
+	letter-spacing: 0.3em;
+	background: #131E3E;
+	color: white;
+	margin: 10px;
+	padding: 0.5em 1em 0.5em 1em;
+	border: 1.4px solid #131E3E;
+	border-radius: 30px;
+	height: 30px;
+	width: 105px;
+	cursor: pointer;
+}
+
+/* 이미지 박스 */
+.div-images {
+    background-color: #C6C6C6;
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+}
+
+/* 리뷰 별점 */
+.p-star-rating {
+    color: #74B9D8;
+	letter-spacing: 0.25em;
+    margin: 0 0 10px 0;
+}
+
+/* 리뷰 날짜 */
+.p-date {
+    font-size: 0.2em;
+	letter-spacing: 0.25em;
+    margin: 0 0 20px 0;
+}

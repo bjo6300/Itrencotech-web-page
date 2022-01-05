@@ -1,10 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/mold.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/portfolio_detail.css' %}">
 
 <body>
-    <a href="{% url 'itrencotech:portfolio' %}"> <h1 id="div-title"> 포트폴리오 </h1> </a>
-    <h2 id="div-subtitle"> 사출 금형 </h2>
+	<div id="div-title-container">
+		<h1 id="h1-title"> 포트폴리오 </h1>
+	</div>
+
+    <div id="div-container">
+        <div id="div-subtitle"> 사출 금형 </div>
+
+        <table id="table-container">
+			<tr>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+			</tr>
+			<tr>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+				<td> <div class="div-images"> </div> </td>
+			</tr>
+		</table>
+
+    </div>
 </body>
 {% endblock %}
