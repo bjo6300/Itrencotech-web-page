@@ -10,17 +10,18 @@
 
     <title>make it</title>
 </head>
-<body class="Site">
-    <div class="wrapper">
-        <!-- 내비게이션바 -->
-        {% include 'navBar/navbar.html' %}
-        <!-- 기본 템플릿 안에 삽입될 내용 -->
-        {% include 'body/main.html' %}
+<body>
 
-        {% block content %}
-        {% endblock %}
+    <!-- 내비게이션바 -->
+    {% include 'navBar/navbar.html' %}
+    <!-- 기본 템플릿 안에 삽입될 내용 -->
+    {% include 'body/main.html' %}
 
-        {% include 'body/footer.html' %}
-    </div>
+    {% block content %}
+    {% endblock %}
+
 </body>
+
+{% include 'body/footer.html' %}
 </html>
+
