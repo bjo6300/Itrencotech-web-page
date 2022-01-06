@@ -11,7 +11,7 @@
 
 /* 바디 전체 */
 body {
-    -webkit-text-stroke: 0.4px;
+    -webkit-transform: rotate(-0.15deg);
     font-family: 'KoPubDotumMedium';
 }
 
