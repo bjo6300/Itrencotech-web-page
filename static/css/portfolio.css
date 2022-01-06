@@ -11,7 +11,7 @@
 
 /* 바디 전체 */
 body {
-    -webkit-text-stroke: 0.4px;
+    -webkit-transform: rotate(-0.15deg);
     font-family: 'KoPubDotumMedium';
 }
 
@@ -68,6 +68,6 @@ img {
 
 /* 버튼 활성 효과 */
 img:hover {
-    -webkit-filter: brightness(150%);
+    -webkit-filter: brightness(120%);
     -webkit-transition: all .2s ease-in-out;
 }

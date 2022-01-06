@@ -11,7 +11,7 @@
 
 /* 바디 전체 */
 body {
-    -webkit-text-stroke: 0.4px;
+    -webkit-transform: rotate(-0.15deg);
     font-family: 'KoPubDotumMedium';
 }
 
@@ -34,13 +34,19 @@ body {
 
 /* 부제목 */
 #div-subtitle {
-    text-decoration: underline;
-    text-underline-position: under;
-    text-decoration-color: #AAAAAA;
+    letter-spacing: 0.15em;
     text-align: center;
     margin: 35px 0 50px 0;
 }
 
+#div-subtitle:after {
+    text-align: center;
+        content: "";
+        display: block;
+        width: 100px;
+        border-bottom: 1.5px solid #AAAAAA;
+        margin: 10px auto;
+}
 /* 모든 링크 색 변경 */
 a:link, a:visited, a:active {
     text-decoration: none;
