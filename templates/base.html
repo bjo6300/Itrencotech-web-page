@@ -12,27 +12,14 @@
 </head>
 <body>
 
-        <!-- 내비게이션바 -->
-        {% include 'navBar/navbar.html' %}
-        <!-- 기본 템플릿 안에 삽입될 내용 -->
-        {% include 'body/main.html' %}
+    <!-- 내비게이션바 -->
+    {% include 'navBar/navbar.html' %}
+    <!-- 기본 템플릿 안에 삽입될 내용 -->
+    {% include 'body/main.html' %}
 
-        {% block content %}
-        {% endblock %}
+    {% block content %}
+    {% endblock %}
         
-    </div>
-    <footer class='footer'>
-        <div class="container" >
-            <ul>			
-                <li><strong>(주) 이트렌코텍 Itrencotech co.Ltd.</strong></li>
-                <li>사업자등록번호: 361-86-01951</li>
-                <li>Tel. 031)431-0635 / Fax. 031)431-0636</li>			
-                <li>E-mail: mkc@itrencotech.com</li>			
-                <li>주소 : 경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207</li>			
-                <li>COPYRIGHT© 2019 ITRENCOTECH. All rights reserved.</li>			
-            </ul>
-        </div>
-    </footer>
 </body>
 
 {% include 'body/footer.html' %}
