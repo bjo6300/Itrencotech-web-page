@@ -1,5 +1,7 @@
 /* 고객 후기  */
-
+html{
+    height: 100%;
+}
 
 /* 폰트 - KoPub돋움 */
 @font-face {
@@ -11,6 +13,7 @@
 
 /* 바디 전체 */
 body {
+    height: 100%;
     -webkit-text-stroke: 0.4px;
     font-family: 'KoPubDotumMedium';
 }
@@ -112,4 +115,30 @@ button {
     font-size: 0.2em;
 	letter-spacing: 0.25em;
     margin: 0 0 20px 0;
+}
+
+
+#wrapper{
+    min-height: 100%;
+    padding-bottom: 150px;
+    position: relative;
+} 
+
+.footer {
+    position: relative;
+
+    bottom: 0;
+
+    height: 150px;
+
+    width: 100%;
+
+	text-align: center;
+
+    padding: 15px 0;
+
+	color: rgb(156, 154, 154);
+
+	background: rgb(0, 0, 0);
+
 }
