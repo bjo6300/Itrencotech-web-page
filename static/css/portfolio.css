@@ -33,12 +33,18 @@ body {
 }
 
 /* 이미지 버튼 컨테이너 */
-#div-container {
+#div-container-01 {
+    text-align: center;
+}
+
+#div-container-02 {
     text-align: center;
 }
 
 /* 버튼 간격 조정 */
-#a-btn-01, #a-btn-02, #a-btn-03, #a-btn-04 {
+#a-btn-01, #a-btn-02, #a-btn-03, #a-btn-04,
+#a-btn-05, #a-btn-06, #a-btn-07,
+{
     margin: 25px;
 }
 
