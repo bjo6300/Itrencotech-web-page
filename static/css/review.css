@@ -130,6 +130,7 @@ button {
     height: 150px;
     width: 100%;
     text-align: center;
-    color: white;
-    background: rgb(0, 0, 0);
+    color: rgb(126, 125, 125);
+    background: #131E3E;
+    font-family: 'KoPubDotumMedium';
 }
