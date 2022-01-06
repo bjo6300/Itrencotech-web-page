@@ -119,18 +119,23 @@ button {
 
 #wrapper{
     min-height: 100%;
-    padding-bottom: 150px;
+    padding-bottom: 250px;
     position: relative;
 
 }
 
 .footer {
+    background-image: url("/static/images/footer.png");
+    
     position: relative;
+
     bottom: 0;
-    height: 150px;
+
+    height: 250px;
+
     width: 100%;
     text-align: center;
-    color: rgb(126, 125, 125);
-    background: #131E3E;
-    font-family: 'KoPubDotumMedium';
+
+    color: white;
+
 }
