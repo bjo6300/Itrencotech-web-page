@@ -27,9 +27,24 @@ def portfolio(request):
     return render(request, 'navBar/portfolio/portfolio.html')
 
 
+def portfolioMachineDesign(request):
+    """ 포트폴리오 - 기계 설계 페이지 """
+    return render(request, 'navBar/portfolio/machine_design.html')
+
+
+def portfolioDesign(request):
+    """ 포트폴리오 - 제품 디자인 페이지 """
+    return render(request, 'navBar/portfolio/design.html')
+
+
 def portfolio3d(request):
     """ 포트폴리오 - 3D 프린팅 페이지 """
     return render(request, 'navBar/portfolio/3d.html')
+
+
+def portfolioMockup(request):
+    """ 포트폴리오 - 목업 페이지 """
+    return render(request, 'navBar/portfolio/mockup.html')
 
 
 def portfolioCnc(request):
@@ -37,9 +52,9 @@ def portfolioCnc(request):
     return render(request, 'navBar/portfolio/cnc.html')
 
 
-def portfolioMockup(request):
-    """ 포트폴리오 - 목업 페이지 """
-    return render(request, 'navBar/portfolio/mockup.html')
+def portfolioEquipmentDesign(request):
+    """ 포트폴리오 - 판금 절곡 페이지 """
+    return render(request, 'navBar/portfolio/equipment_design.html')
 
 
 def portfolioMold(request):

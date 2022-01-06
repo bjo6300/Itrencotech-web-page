@@ -6,18 +6,30 @@
     <h1 id="h1-title"> 포트폴리오 </h1>
 </div>
 
-<div id="div-container">
-    <a href="{% url 'itrencotech:portfolio_3d' %}" id="a-btn-01">
-        <img alt="3D Printing" src="{% static 'images/portfolio_3d.png' %}">
+<div id="div-container-01">
+    <a href="{% url 'itrencotech:portfolio_machine_design' %}" id="a-btn-01">
+        <img alt="기계 설계" src="{% static 'images/portfolio_machine_design.png' %}">
     </a>
-    <a href="{% url 'itrencotech:portfolio_cnc' %}" id="a-btn-02">
-        <img alt="CNC Machining" src="{% static 'images/portfolio_cnc.png' %}">
+    <a href="{% url 'itrencotech:portfolio_design' %}" id="a-btn-02">
+        <img alt="제품 디자인" src="{% static 'images/portfolio_design.png' %}">
     </a>
+    <a href="{% url 'itrencotech:portfolio_3d' %}" id="a-btn-04">
+        <img alt="3D 프린팅" src="{% static 'images/portfolio_3d.png' %}">
+    </a>
+</div>
+
+<div id="div-container-02">
     <a href="{% url 'itrencotech:portfolio_mockup' %}" id="a-btn-03">
-        <img alt="Mock Up" src="{% static 'images/portfolio_mockup.png' %}">
+        <img alt="목업" src="{% static 'images/portfolio_mockup.png' %}">
     </a>
-    <a href="mold" id="a-btn-04">
-        <img alt="{% url 'itrencotech:portfolio_mold' %}" src="{% static 'images/portfolio_mold.png' %}">
+    <a href="{% url 'itrencotech:portfolio_cnc' %}" id="a-btn-05">
+        <img alt="CNC 가공" src="{% static 'images/portfolio_cnc.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_equipment_design' %}" id="a-btn-06">
+        <img alt="판금 절곡" src="{% static 'images/portfolio_equipment_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_mold' %}" id="a-btn-07">
+        <img alt="사출 금형" src="{% static 'images/portfolio_mold.png' %}">
     </a>
 </div>
 {% endblock %}
