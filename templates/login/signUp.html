@@ -1,10 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>signUp page</title>
+    <style>
+        .login {
+            width: 500px;
+            margin: 150px auto auto auto;
+            text-align: center;
+        }
+        .name {
+            color: black;
+                width: 500px;
+                height: 30px;
+                border-radius: 10px;
+                text-align: center;
+        }
+        .subname {
+            color: black;
+            width:500px;
+            height:50px;
+            text-align:center;
+            letter-spacing:1px;
+           }
+         .test1 {margin:10px 100px 10px 0px;}
+
+
+    </style>
 </head>
 <body>
-    <h1>signUp page</h1>
+    <div class="login">
+        <h1 class="name">로 그 인</h1>
+        <h5 class="subname">>회원가입</h5>
+
+        <p><input class="test1" type="a" placeholder="이름" > <input type="b" placeholder="회사명" ></p>
+
+        <p><input class="test1" type="c" placeholder="아이디" > <input type="d" placeholder="회사주소" ></p>
+
+        <p><input class="test1" type="e" placeholder="비밀번호" > <input type="f" placeholder="회사전화" ></p>
+        <p><input class="test1" type="g" placeholder="휴대전화" > <input type="h" placeholder="이메일" ></p>
+
+
+        <a href="/login/signUp" >
+        <img src="/static/images/signUp.png" width="140px" height="30px"></a> <br><br>
 </body>
 </html>
+{% endblock %}

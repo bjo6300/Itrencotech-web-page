@@ -1,12 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>findId PAGE</title>
+
+    <style>
+        .login {
+            width: 500px;
+            margin: 150px auto auto auto;
+            text-align: center;
+        }
+        .name {
+            color: black;
+                width: 500px;
+                height: 30px;
+                border-radius: 10px;
+                text-align: center;
+        }
+        .subname {
+            color: black;
+            width:500px;
+            height:60px;
+            text-align:center;
+            letter-spacing:1px;
+           }
+
+
+    </style>
 </head>
 <body>
-    <h1>휴대폰 번호로 찾기<br>
-    이메일로 찾기</h1>
+    <div class="login">
+        <h1 class="name">로 그 인</h1>
+        <h5 class="subname">>아이디/비밀번호 찾기</h5>
 
+        <img src="/static/images/findingId.png" height="60px" width="290px" alt="image"/>
+
+        <a href="/login/findId" >
+	    <img src="/static/images/usePhone.png" height="120px" width="320px" alt="image"/></a>
+
+
+        <a href="/login/findId" >
+	    <img src="/static/images/useEmail.png" height="120px" width="320px" alt="image"/></a>
+
+
+
+
+    </div>
 </body>
 </html>
+{% endblock %}

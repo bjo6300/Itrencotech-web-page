@@ -1,11 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>findIdPasswd PAGE</title>
+    <style>
+        .login {
+            width: 500px;
+            margin: 150px auto auto auto;
+            text-align: center;
+        }
+        .name {
+            color: black;
+                width: 500px;
+                height: 30px;
+                border-radius: 10px;
+                text-align: center;
+        }
+        .subname {
+            color: black;
+            width:500px;
+            height:50px;
+            text-align:center;
+            letter-spacing:1px;
+           }
+
+
+    </style>
 </head>
 <body>
-    <a href="/login/findId">아이디 찾기</a>
+    <div class="login">
+        <h1 class="name">로 그 인</h1>
+        <h5 class="subname">>아이디/비밀번호 찾기</h5>
 
+
+        <a style="margin:0px 80px 0px 0px;" href="/login/findId" >
+	    <img src="/static/images/findIdIcon.png" height="141px" width="139px" alt="image"/></a>
+
+        <a href="/login/findId" >
+	    <img src="/static/images/findPasswdIcon.png" height="141px" width="139px" alt="image"/></a>
+        <p>비밀번호 찾기 페이지는 아직 없음</p>
+
+
+
+
+
+    </div>
 </body>
 </html>
+{% endblock %}
