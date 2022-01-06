@@ -129,6 +129,8 @@ button {
 .footer {
     position: relative;
 
+    padding: 15px 0;
+
     bottom: 0;
 
     height: 150px;
@@ -140,5 +142,7 @@ button {
     color: white;
 
     background: rgb(0, 0, 0);
+
+    font-family: 'KoPubDotumMedium';
 
 }
