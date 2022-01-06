@@ -1,16 +1,35 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<body>
-    <br>
-    <h1> 포트폴리오 페이지 </h1>
-    <hr>
+<link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
+<div id="div-title-container">
+    <h1 id="h1-title"> 포트폴리오 </h1>
+</div>
 
-    <div>
-        <a href="3d">3D 프린팅</a>
-        <a href="cnc">CNC 가공</a>
-        <a href="mockup">목업</a>
-        <a href="mold">사출 금형</a>
-    </div>
-</body>
+<div id="div-container-01">
+    <a href="{% url 'itrencotech:portfolio_machine_design' %}" id="a-btn-01">
+        <img alt="기계 설계" src="{% static 'images/portfolio_machine_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_design' %}" id="a-btn-02">
+        <img alt="제품 디자인" src="{% static 'images/portfolio_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_3d' %}" id="a-btn-04">
+        <img alt="3D 프린팅" src="{% static 'images/portfolio_3d1.png' %}">
+    </a>
+</div>
+
+<div id="div-container-02">
+    <a href="{% url 'itrencotech:portfolio_mockup' %}" id="a-btn-03">
+        <img alt="목업" src="{% static 'images/portfolio_mockup1.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_cnc' %}" id="a-btn-05">
+        <img alt="CNC 가공" src="{% static 'images/portfolio_cnc1.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_equipment_design' %}" id="a-btn-06">
+        <img alt="판금 절곡" src="{% static 'images/portfolio_equipment_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_mold' %}" id="a-btn-07">
+        <img alt="사출 금형" src="{% static 'images/portfolio_mold1.png' %}">
+    </a>
+</div>
 {% endblock %}

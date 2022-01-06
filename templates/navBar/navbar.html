@@ -1,3 +1,4 @@
+
 <!-- 내비게이션 바 -->
 
 <style type="text/css">
@@ -51,6 +52,37 @@
                 <li><a href="{% url 'itrencotech:login' %}">로그인</a></li>
             </ul>
         </nav>
+
+
+<nav>
+    <a href="{% url 'itrencotech:index' %}">make it</a>
+
+    <div id="navbarNav">
+        <ul>
+            <li>
+                <a href="{% url 'itrencotech:navbar_about_ceo' %}">회사소개</a>
+                <ul>
+                    <a href="{% url 'itrencotech:navbar_about_ceo' %}">CEO 인사말</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:navbar_about_ideology' %}">기업이념</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:navbar_about_history' %}">회사 연혁</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:navbar_about_route' %}">찾아오시는 길</a>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a>
+                <ul>
+                    <a href="{% url 'itrencotech:portfolio_machine_design' %}">기계 설계</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_design' %}">제품 디자인</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_3d' %}">3D 프린팅</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_mockup' %}">목업</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_cnc' %}">CNC 가공</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_equipment_design' %}">판금 절곡</a>&nbsp;&nbsp;
+                    <a href="{% url 'itrencotech:portfolio_mold' %}">사출 금형</a>
+                </ul>
+            </li>
+            <li><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
+            <li><a href="{% url 'itrencotech:login' %}">로그인</a></li>
+        </ul>
 
     </div>
 </div>
