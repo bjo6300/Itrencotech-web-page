@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+<div id="wrapper">
     <h1>login page</h1>
     <a href="{% url 'itrencotech:findIdPasswd' %}">아이디/비밀번호 찾기</a>
     <a href="{% url 'itrencotech:signUp' %}">회원가입</a>
+</div>
 {% endblock %}
