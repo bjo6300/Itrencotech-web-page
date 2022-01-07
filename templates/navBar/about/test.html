@@ -1,25 +1,277 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <img src="/static/images/order_form_banner.PNG" align="center"/>
-</div>
-<div style="width:100%; height:1000px;">
-    <div style="width:80%; position:absolute; left:10%;">
-        <div style="float:left; width: 200px; height:100%; text-align:right; line-height: 60px;">
-            <!-- body -->
-            <div style="left: 250px; width: 1000px; height: 100%; position: absolute;">
-                <!-- 타이틀 -->
-                <div style="margin-top:-35px; width:90%; height: 700px;
-                            box-shadow: 3px 3px 5px lightgray;
-                            border-bottom-left-radius: 50% 100px;
-                            border-bottom-right-radius: 50% 100px;">
-                    <h2>테스트 화면</h2>
-                </div>
 
+<style>
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.button-wrap {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  margin-top: -2.5em;
+}
+
+button {
+  width: 20%;
+  height: 30%;
+  display: inline-block;
+  margin: 50px;
+  cursor: pointer;
+  color: white;
+  border-radius: 0.25em;
+  background: #131D3D;
+  transition: 0.3s;
+  font-size: 15pt;
+  letter-spacing: 2px;
+  border-radius:17px;
+}
+
+.button-label {
+  display: inline-block;
+  padding: 0.7em;
+  margin: 0 1em;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.25em;
+  background: white;
+  transition: 0.3s;
+  letter-spacing: 2px;
+  border-radius:17px;
+}
+
+.button-label:hover {
+    background: #e9e9e9;
+}
+
+.button-label:hover:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
+}
+
+#button1:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+#button2:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+#button3:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.input_batch {
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+
+input[type=text], input[type=email], input[type=tel] {
+  width: 80%;
+  border: 2px solid #d9d9d9;
+  border-radius: 17px;
+  margin-left: -7px;
+  padding: 10px 0 10px 10px;
+  font-size: 105%;
+  letter-spacing: 1px;
+}
+
+input[type=text]:hover {
+  background: #fafafa;
+}
+
+#input-file {
+  display: none;
+}
+
+.input-file-button {
+  padding: 6px 25px;
+  background-color:#FF6600;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+</style>
+
+<!-- 주문서 main -->
+<div style="width:1920px; height:1419px; position:relative;">
+    <!-- 이미지 영역 -->
+    <div style="position:relative; z-index: -1;">
+        <img src="/static/images/order_form_banner.PNG" align="center" width="100%"/>
+    </div>
+    <!-- 내용 영역 -->
+    <div align="center" style="margin-top:-15px; left:20%; width: 60%; height: 1200px; position: absolute;">
+        <!-- 주문서 양식 -->
+        <div style="width:100%; height: 1200px;
+                    box-shadow: 3px 3px 5px lightgray;
+                    border-bottom-left-radius: 10% 10%;
+                    border-bottom-right-radius: 10% 10%;">
+            <!-- 주문서 제목 -->
+            <div style="padding-top:70px;">
+                 <font size="8" color="#0b57a5" style="letter-spacing: 5px; font-weight: bold;">
+                     < 양산 주문서 >
+                 </font>
+            </div>
+            <!-- 주문서 별 교체 내용 -->
+            <div style="padding:70px 0 50px 0;">
+                <!-- 주문서 메뉴 버튼 -->
+                <div class="container" style="width:50%;">
+                    <div class="button-wrap">
+                        <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
+                        <label class="button-label" for="button1">금형</label>
+                        <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
+                        <label class="button-label" for="button2">프레스 판금/절곡</label>
+                        <input class="hidden radio-label" id="button3" type="radio" name="accept-offers"/>
+                        <label class="button-label" for="button3">CNC 부품 가공</label>
+                    </div>
+                </div>
+            </div>
+            <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
+            <div align="center" style="width:100%; height:300px;">
+                <!-- 주문서: 회사명, 사업자등록번호 -->
+                <div style="float:left; width:50%; height:100%;">
+                    <div align="left" style="padding-left:60px;">
+                        <!-- 회사명 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">회사명</font>
+                        <div class="input_batch">
+                            <input type="text" name="company_name" placeholder="회사명">
+                        </div>
+                        <!-- 사업자등록번호 -->
+                        <font size="4" style="letter-spacing: 5px; font-weight: bold;">사업자 등록번호</font>
+                        <div class="input_batch">
+                            <input type="text" name="business_reg_num" placeholder="사업자 등록번호">
+                        </div>
+                    </div>
+                </div>
+                <!-- 주문서: 담당자, 이메일, 연락처 -->
+                <div style="float:right; width:50%; height:100%;">
+                    <div align="left" style="padding-left:60px;">
+                        <!-- 담당자 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">담당자</font>
+                        <div class="input_batch">
+                            <input type="text" name="person" placeholder="담당자">
+                        </div>
+                        <!-- 이메일 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">이메일</font>
+                        <div class="input_batch">
+                            <input type="email" name="email" placeholder="이메일">
+                        </div>
+                        <!-- 연락처 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">연락처</font>
+                        <div class="input_batch">
+                            <input type="tel" name="tel" placeholder="연락처">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 주문서 작성 내용: 제품 제목, 제품 설명 -->
+            <div align="center" style="width:100%; height:200px;">
+                <div align="left" style="padding-left:60px;">
+                    <!-- 제품 제목 -->
+                    <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 제목</font>
+                        <div style="width:113%; margin: 15px 0 15px 0;">
+                            <input type="text" name="product_title" placeholder="제품 제목">
+                        </div>
+                    <!-- 제품 설명 -->
+                    <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 설명</font>
+                        <div style="width:113%; margin: 15px 0 15px 0;">
+                            <input type="text" name="product_description" placeholder="제품 설명">
+<!--                            <textarea name="product_description" placeholder="제품 설명"-->
+<!--                                    style="width:91%; margin-left: -7px;">-->
+<!--                            </textarea>-->
+                        </div>
+                </div>
+            </div>
+            <!-- 주문서 작성 내용: 소재, 제품 수량, 크기, 파일, 기타 -->
+            <div align="center" style="width:100%; height:300px;">
+                <!-- 주문서: 소재, 제품 수량, 크기 -->
+                <div style="float:left; width:50%; height:100%;">
+                    <div align="left" style="padding-left:60px;">
+                        <!-- 소재 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">소재</font>
+                        <div class="input_batch">
+                            <input type="text" name="material" placeholder="소재">
+                        </div>
+                        <!-- 제품 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">제품</font>
+                        <div class="input_batch">
+                            <input type="text" name="product" placeholder="제품">
+                        </div>
+                        <!-- 크기 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">크기(가로/세로/높이)</font>
+                        <div class="input_batch">
+                            <input type="text" name="size" placeholder="크기 (가로/세로/높이)">
+                        </div>
+                    </div>
+                </div>
+                <!-- 주문서: 파일, 기타 -->
+                <div style="float:right; width:50%; height:100%;">
+                    <div align="left" style="padding-left:60px;">
+                        <!-- 파일 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold; background-color:#ffff00;">
+                            파일
+                        </font>
+                        <div class="input_batch">
+                            <label class="input-file-button" for="input-file">업로드</label>
+                            <input type="file" id="input-file">
+                        </div>
+                        <!-- 기타 -->
+                        <font size="4" style="letter-spacing: 10px; font-weight: bold;">기타</font>
+                        <div class="input_batch">
+                            <input type="text" name="etc" placeholder="기타">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 주문하기 버튼 영역 -->
+            <div align="center" style="margin-top:-15px; left:20%; width: 60%; height: 150px; ">
+                <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
-
