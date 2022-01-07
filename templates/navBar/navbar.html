@@ -16,7 +16,8 @@
     .header_wrap{ width:1200px; margin:0 auto;  position:absolute;}
     .gnb>li{float:left; padding:0px 50px; }
     .gnb>li ul {display:none;}
-    .gnb>li:hover ul {background-color:white; display:block;}
+
+    .gnb>li:hover ul {background-color:white; display:block; text-align:center;}
 
     .gnb>li a{ line-height:40px;}
 
@@ -32,7 +33,9 @@
             <ul class="gnb">
                 <li>
                     <a href="{% url 'itrencotech:navbar_about_ceo' %}">　　회사소개　　</a>
-                    <ul style="text-align: center;">
+
+                    <ul>
+
                         <li><a href="{% url 'itrencotech:navbar_about_ceo' %}">CEO 인사말</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_ideology' %}">기업이념</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_history' %}">회사 연혁</a></li>
@@ -40,17 +43,21 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{% url 'itrencotech:portfolio' %}">　포트폴리오　</a>
-                    <ul style="text-align: center;">
+
+                    <a href="{% url 'itrencotech:portfolio' %}">　　포트폴리오　　</a>
+                    <ul>
+
                         <li><a href="{% url 'itrencotech:portfolio_3d' %}">3D 프린팅</a></li>
                         <li><a href="{% url 'itrencotech:portfolio_mockup' %}">목업</a></li>
                         <li><a href="{% url 'itrencotech:portfolio_cnc' %}">CNC</a></li>
                         <li><a href="{% url 'itrencotech:portfolio_mold' %}">사출/금형</a></li>
                     </ul>
                 </li>
+
                 <li><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
                 <li><a href="{% url 'itrencotech:order_confirmation' %}">주문하기</a></li>
                 <li><a href="{% url 'itrencotech:login' %}">로그인</a></li>
+
             </ul>
         </nav>
     </div>
