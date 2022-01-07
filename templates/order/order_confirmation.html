@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        .image {
+            position:relative;
+        }
+
+        .image .title {
+            position:absolute;
+            top:40px;
+            left: 44%;
+            font-size: 20px;
+        }
+
+        .image .text {
+            position: absolute;
+            top: 150px;
+            left: 30%;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+<body style="font-family: 'KoPubDotumMedium'">
+    <!-- 주문확인 배너-->
+    <!-- <img src="/static/images/order_confirmation_banner.png" width="100%" height="100%"> -->
+
+    <div id="div-title-container">
+		<h1 id="h1-title"> 주 문 서 </h1>
+	</div>
+
+    <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+        <h1>주  문  확  인</h1>
+    </div>
+
+    <div class="image" style="text-align: center;">
+        <!--주문확인 배경-->
+        <img src="/static/images/order_confirmation_background.png" width="50%" height="50%">
+
+        <!--주문서 제목-->
+        <div class="title"  >
+            <h2>
+                < 양산 주문서 >
+            </h2>
+        </div>
+
+        <!--첫번째 : question, 두번째 : text data 넣어야함-->
+        <!--{$ } -> 데이터 들어갈 곳 -->
+        <div class="text">
+            <table>
+                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 40%; top: 0%;" height="30%">
+                <tr>
+                    <td align="right"> <div>회사명</div> </td>
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 이트렌코텍} </div> </td>
+                </tr>
+
+                
+
+                <tr> 
+                    <td align="right"> <div>사업자 등록번호
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 123456789} </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                
+                
+                <tr>
+                    <td align="right"> <div> 담당자  </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 홍길동} </div> </td>
+                </tr>
+                <tr> 
+                    <td align="right"> <div> 이메일  </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ mkc@itrencotech.com} </div> </td>
+                </tr>
+                <tr>
+                    <td align="right"> <div> 연락처  </div> </td>
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 010-0000-0000} </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+
+                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 40%; top: 39%;";  height="48%">
+
+                <tr> 
+                    <td align="right"> <div> 유 형  </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 금형} </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+
+                <tr> 
+                    <td align="right"> <div> 제품 제목  </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 텀블러} </div> </td>
+                </tr>
+                <tr> 
+                    <td align="right"> <div> 제품 설명   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 친환경 텀블러입니다.} </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                
+                <tr> 
+                    <td align="right"> <div> 소 재   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 친환경 플라스틱} </div> </td>
+                </tr>
+                <tr> 
+                    <td align="right"> <div> 제품수량   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 400} </div> </td>
+                </tr>
+                <tr> 
+                    <td align="right"> <div> 크 기   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 100*100*600} </div> </td>
+                </tr>
+                <tr> 
+                    <td align="right"> <div> {$ 판금/절곡} 파일    </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ tumbler.stp} </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                <tr>
+                    <td> <div>&nbsp; </div> </td>
+                    <td> <div>&nbsp; </div> </td>
+                </tr>
+                
+                <tr> 
+                    <td align="right"> <div> 기 타   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 가볍다.} </div> </td>
+                </tr>
+                
+            </table> 
+
+        </div>
+
+        
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px; " >
+        <a href="#">
+            <img src="/static/images/order_update.png" width="201px" height="38px" style="margin-left: 10px;">
+        </a>
+
+        <a href="#">
+            <img src="/static/images/order_complete.png" width="201px" height="38px" style="margin-right: 10px; margin-left: 10%;">
+        </a>
+    </div>
+
+
+
+</body>
+{% endblock %}
