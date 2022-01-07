@@ -1,51 +1,13 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="/static/css/footer.css">
-    <meta charset="UTF-8">
-    <title>LOGIN PAGE</title>
-    <style>
-        .back {
-            position: relative;
-            text-align:center;
-            margin:-200px 0 0 0 ;
-            z-index:-1;
-        }
-        .back .login {
-            width: 500px;
-            margin: auto auto auto auto;
-            text-align: center;
-            position: absolute;
-            top:240px;
-            left:500px;
-            z-index:1;
-        }
-
-
-    </style>
-</head>
-<body>
-<img src="/static/images/loginBanner.png" width="100%" height="100%">
-<div class="back" id="wrapper">
-    <img src="/static/images/loginBackground.png" >
-        <div class="login">
-
-
-            <p><input type="id" placeholder="아이디" ></p>
-            <p><input type="password" placeholder="비밀번호"></p>
-
-            <a href="/login/" >
-                <img src="/static/images/loginButton.png" width="140px" height="30px"></a> <br><br>
-
-            <a href="/login/findIdPasswd">아이디/비밀번호 찾기</a>
-            <a href="/login/signUp">회원가입</a>
-        </div>
+<div id="div-title-container" >
+    <h1 id="h1-title"> 로그인 </h1>
 </div>
-</body>
-</html>
+
+<!-- 로그인 창 -->
+{% include 'login/loginWindow.html' %}
 
 {% endblock %}

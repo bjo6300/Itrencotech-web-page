@@ -47,8 +47,6 @@ body {
 #a-btn-01, #a-btn-02, #a-btn-03, #a-btn-04,
 #a-btn-05, #a-btn-06, #a-btn-07 {
     margin: 25px;
-    width: 7%;
-    height: 7%;
 }
 
 /* 버튼 옆 공백 제거 */
@@ -62,9 +60,10 @@ a:visited, a:active {
     color: black;
 }
 
-/* 버튼 그림자 */
-img {
-
+/* 버튼 크기 */
+.img-btn {
+    width: 9%;
+    height: 9%;
 }
 
 /* 버튼 활성 효과 */
