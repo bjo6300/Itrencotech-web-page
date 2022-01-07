@@ -17,19 +17,37 @@ body {
 
 /* 제목 컨테이너 */
 #div-title-container {
+    text-align: center;
     box-shadow: 3px 3px 5px lightgray;
-    border-bottom-right-radius: 10% 80px;
+    -webkit-transform: rotate(0.15deg);
     padding: 30px;
-    margin: 20px 0 90px 0;
+    margin: 50px 0 90px 0;
 }
 
 /* 제목 */
 #h1-title {
     text-align: center;
-	color: #131E3E;
     font-size: 1.4em;
 	letter-spacing: 0.15em;
+	color: #131E3E;
+    text-shadow: 3px 2px 2px lightgray;
+    position: relative;
+    display: inline-block;
 	margin: 0 0 50px 0;
+	z-index: -1;
+}
+
+/* 제목 오른쪽 위 귀여운 동그라미 */
+#h1-title:before {
+    content: "";
+    position: absolute;
+    top: -3.5px;
+    right: -3.5px;
+    transform: translate(50%,-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #75B9DA;
 }
 
 /* 이미지 버튼 컨테이너 */

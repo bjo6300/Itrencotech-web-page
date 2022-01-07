@@ -17,10 +17,10 @@ body {
 
 /* 제목 컨테이너 */
 #div-title-container {
+    text-align: center;
     box-shadow: 3px 3px 5px lightgray;
-    border-bottom-right-radius: 10% 80px;
     padding: 30px;
-    margin: 20px 0 40px 0;
+    margin: 50px 0 90px 0;
 }
 
 /* 제목 */
