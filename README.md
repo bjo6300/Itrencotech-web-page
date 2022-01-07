@@ -20,7 +20,9 @@ Itrencotech web page using django
 
 
 ## Basic Layout
-![image](https://user-images.githubusercontent.com/70627982/147803732-41ea3a8c-c93c-4832-a33c-f4fca5f8637d.png)
+![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
+
+
 
 
 ## License
