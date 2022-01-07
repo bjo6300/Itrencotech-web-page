@@ -8,10 +8,10 @@ urlpatterns = [
     path('', views.index, name='index'),
     
     # 로그인
-    path('login/', views.login, name='login'),
-    path('login/signUp/', views.signUp, name='signUp'),
-    path('login/findIdPasswd/', views.findIdPasswd, name='findIdPasswd'),
-    path('login/findId/', views.findId, name='findId'),
+    path('login/', views.login, name='login'),   # 로그인 페이지
+    path('login/signUp/', views.signUp, name='signUp'), # 회원가입 페이지
+    path('login/findIdPasswd/', views.findIdPasswd, name='findIdPasswd'),  # ID찾기/비밀번호 찾기 선택
+    path('login/findId/', views.findId, name='findId'),  # ID찾기
     
     # 포트폴리오
     path('portfolio/', views.portfolio, name='portfolio'),
@@ -57,5 +57,9 @@ urlpatterns = [
     path('about/ideology/', views.navbar_about_ideology, name='navbar_about_ideology'),
     path('about/route/', views.navbar_about_route, name='navbar_about_route'),
     path('about/test/', views.navbar_about_test, name='navbar_about_test'),
+
+    # 주문
+    path('order/order_confirmation/', views.order_confirmation, name='order_confirmation'),
+
 
 ]

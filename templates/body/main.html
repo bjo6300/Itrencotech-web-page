@@ -1,5 +1,29 @@
-<!--<div>-->
-<!--    <a href="{% url 'itrencotech:onlyIdea' %}">ONLY IDEA</a>&nbsp;&nbsp;-->
-<!--    <a href="{% url 'itrencotech:prototyping' %}">시제품 제작</a>&nbsp;&nbsp;-->
-<!--    <a href="{% url 'itrencotech:body_production_home' %}">양산</a>-->
-<!--</div>-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- 홈 배너 -->
+<img src="/static/images/homeBanner.png" width="100%" height="100%">
+<div>
+    <table>
+        <tr>
+            <td>
+                <a style="margin:0px 0px 0px 200px; " href="{% url 'itrencotech:onlyIdea' %}" >
+                <img src="/static/images/onlyIdeaIcon.png" height="240px" width="240px" alt="image"/></a>
+                <p style="margin: 0 0 0 265px; font-weight:bold; font-size:22px; color:#0B173B;">ONLY IDEA</p>
+            </td>
+            <td>
+                <a href="{% url 'itrencotech:prototyping' %}" >
+                <img src="/static/images/prototypingIcon.png" height="240px" width="240px" alt="image"/></a>
+                <p style="margin: 0 0 0 70px; font-weight:bold; font-size:22px; color:#0B173B;">시제품 제작</p>
+            </td>
+            <td>
+                <a href="{% url 'itrencotech:body_production_home' %}" >
+                <img src="/static/images/productionIcon.png" height="240px" width="240px" alt="image"/></a>
+                <p style="margin:0 0 0 98px; font-weight:bold; font-size:22px; color:#0B173B;">양 산</p>
+            </td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

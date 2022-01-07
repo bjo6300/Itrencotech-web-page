@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'body/main.html')
 
 
 def login(request):
@@ -154,3 +154,5 @@ def body_production_cnc(request):
 def body_production_press(request):
     return render(request, 'body/production/press.html')
 
+def order_confirmation(request):
+    return render(request, 'order/order_confirmation.html')
