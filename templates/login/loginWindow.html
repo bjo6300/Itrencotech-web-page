@@ -1,0 +1,18 @@
+<div id="div-wrapper">
+        <div id="div-login">
+            <div>
+                <p class="p-login-txt"> 아이디 </p>
+                <input type="id" placeholder="아이디" >
+            </div>
+            <div>
+                <p class="p-login-txt"> 비밀번호 </p>
+                <input type="password" placeholder="비밀번호">
+            </div>
+
+            <button type="button" id="btn-login" onclick="location.href='{% url 'itrencotech:login' %}'"> 로그인 </button>
+            <br> <br>
+
+            <a id="a-find-btn" href="/login/findIdPasswd"> 아이디/비밀번호 찾기 </a>
+            <a id="a-register-btn" href="/login/signUp"> 회원가입 </a>
+        </div>
+</div>
