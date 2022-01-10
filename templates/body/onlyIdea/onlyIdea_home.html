@@ -3,6 +3,8 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+<link rel="stylesheet" type="text/css" href="/static/css/mouseover.css">
+
     <div id="wrapper">
 
         <h1 style="position: relative; margin-left: auto; TEXT-ALIGN: center; margin-right: auto; margin-bottom: 50px; font-weight: 400;
@@ -33,7 +35,7 @@
             
         </div>
 
-        <div style="border: 1px solid white; float: left; width: 49%; TEXT-ALIGN: center">
+        <div style="border: 1px solid white; float: left; width: 49%; text-align: center">
             <!--돋보기-->
             <div>
                 <a href="#" style="position: relative; margin-bottom: 10px;" > 
@@ -42,9 +44,26 @@
             </div>
             <!--이미지-->
             <div style="margin-top: 40px;">
-                <a href="{% url 'itrencotech:production_design' %}">
-                    <img style="position: relative;border-radius: 50px;" src="/static/images/product_design1.png" width="251px" height="251px"  /> 
-                </a>
+                <!-- <a href="{% url 'itrencotech:production_design' %}"> -->
+                    <!-- <img style="position: relative;border-radius: 50px;" src="/static/images/product_design1.png" width="251px" height="251px"  />  -->
+                    <!-- 마우스오버 효과 -->
+                <figure class="snip1141" > <img style="position: relative;border-radius: 50px;" src="/static/images/product_design1.png" width="251px" height="251px" />
+                    <figcaption>
+                    <!-- 상단 동그라미 부분 -->
+                    <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                    <h2>제품 디자인</h2>
+                    
+                    </figcaption>
+
+                    <!-- body 부분 -->
+                    <h3 style="top: 35%;">
+                        제품을 디자인만으로 제작
+                    </h3>
+                    
+                    <a href="{% url 'itrencotech:production_design' %}"></a>
+                </figure>
+                
             </div>
             <!--글자-->
             <h3 style="TEXT-ALIGN: center">제품 디자인</h3>
@@ -57,8 +76,32 @@
         </div>
         
     </div>
+    <!-- 마우스오버 js 적용 -->
+    <script type="text/javascript" src="/static/js/mouseover.js"></script>
 </body>
 </html>
     
 {% endblock %}
+
+<!-- <figure class="snip1141"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample27.jpg" alt="sq-sample27" />
+    <figcaption>
+      <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+      <h2>Paris York</h2>
+    </figcaption>
+    <a href="#"></a>
+  </figure>
+  <figure class="snip1141 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14" />
+    <figcaption>
+      <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+      <h2>Kimber Lankford  </h2>
+    </figcaption>
+    <a href="#"></a>
+  </figure>
+  <figure class="snip1141"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17" />
+    <figcaption>
+      <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+      <h2>Janeth Zeller</h2>
+    </figcaption>
+    <a href="#"></a>
+  </figure> -->
 
