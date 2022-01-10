@@ -21,7 +21,9 @@ body {
     box-shadow: 3px 3px 5px lightgray;
     -webkit-transform: rotate(0.15deg);
     padding: 30px;
-    margin: 50px 0 90px 0;
+    margin: 40px 0 40px 0;
+    position: relative;
+    z-index: -1;
 }
 
 /* 제목 */
@@ -34,7 +36,6 @@ body {
     position: relative;
     display: inline-block;
 	margin: 0 0 50px 0;
-	z-index: -1;
 }
 
 /* 제목 오른쪽 위 귀여운 동그라미 */
@@ -48,6 +49,7 @@ body {
     height: 6px;
     border-radius: 50%;
     background: #75B9DA;
+	z-index: -1;
 }
 
 /* 이미지 버튼 컨테이너 */

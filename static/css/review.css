@@ -24,7 +24,9 @@ body {
     box-shadow: 3px 3px 5px lightgray;
     -webkit-transform: rotate(0.15deg);
     padding: 30px;
-    margin: 50px 0 90px 0;
+    margin: 40px 0 40px 0;
+    position: relative;
+    z-index: -1;
 }
 
 /* 제목 */
@@ -137,7 +139,7 @@ a:link, a:visited, a:active {
 
 #wrapper{
     min-height: 100%;
-    
+
     position: relative;
 }
 
