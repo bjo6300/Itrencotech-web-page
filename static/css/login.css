@@ -1,6 +1,20 @@
 /* 로그인 */
 
 
+/* 제목 오른쪽 위 귀여운 동그라미 */
+/* 로그인 탭에서만 찌그러져 따로 작성 */
+#h1-title:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -3.5px;
+    transform: translate(50%,-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #75B9DA;
+}
+
 /* 로그인 요소 컨테이너 */
 #div-wrapper {
     margin-top: -40px;
