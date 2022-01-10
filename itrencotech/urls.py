@@ -67,7 +67,11 @@ urlpatterns = [
     path('about/test/', views.navbar_about_test, name='navbar_about_test'),
 
     # 주문
+    path('order/order_home/', views.order_home, name='order_home'),
     path('order/order_confirmation/', views.order_confirmation, name='order_confirmation'),
+    path('order/order_form_onlyIdea/', views.order_form_onlyIdea, name='order_form_onlyIdea'),
+    path('order/order_form_prototyping/', views.order_form_prototyping, name='order_form_prototyping'),
+    path('order/order_form_production/', views.order_form_production, name='order_form_production'),
 
 
 ]

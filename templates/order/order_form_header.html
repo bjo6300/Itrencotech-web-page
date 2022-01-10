@@ -1,0 +1,211 @@
+<style>
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.button-wrap {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  margin-top: -2.5em;
+}
+
+button {
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+  margin: 50px;
+  cursor: pointer;
+  color: white;
+  border-radius: 0.25em;
+  background: #131D3D;
+  transition: 0.3s;
+  font-size: 15pt;
+  letter-spacing: 2px;
+  border-radius:17px;
+}
+
+.button-label {
+  display: inline-block;
+  padding: 0.7em;
+  margin: 0 1em;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.25em;
+  background: white;
+  transition: 0.3s;
+  letter-spacing: 2px;
+  border-radius:17px;
+}
+
+.button-label:hover {
+    background: #e9e9e9;
+}
+
+.button-label:hover:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
+}
+
+#button1:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+#button2:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+#button3:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+#button4:checked + .button-label {
+  background: #131D3D;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.input_batch {
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+
+textarea {
+  width: 80%;
+  border: 2px solid #d9d9d9;
+  border-radius: 17px;
+  margin-left: -7px;
+  padding: 10px 0 10px 10px;
+  font-size: 105%;
+  letter-spacing: 1px;
+  resize: vertical;
+  font-size:16.5px;
+  font-family:맑은고딕;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=number] {
+  width: 80%;
+  border: 2px solid #d9d9d9;
+  border-radius: 17px;
+  margin-left: -7px;
+  padding: 10px 0 10px 10px;
+  font-size: 105%;
+  letter-spacing: 1px;
+}
+
+input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[type=number]:hover, textarea:hover {
+  background: #fafafa;
+}
+
+#input-file {
+  display: none;
+}
+
+.input-file-button {
+  padding: 6px 25px;
+  background-color:#FF6600;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top:-10px;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 130px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 2px solid #d9d9d9;
+    color: #757575;
+    font-size: 105%;
+    letter-spacing: 1px;
+    border-radius: 17px;
+    width: 77%;
+    margin: 10px 0 15px -7px;
+}
+
+.upload-box {
+  width: 80%;
+  box-sizing: border-box;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.upload-box .drag-file {
+  width: 100%;
+  height: 130px;
+  margin-top:10px;
+  margin-bottom:15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 17px;
+  border: 3px dashed #d9d9d9;
+}
+.upload-box .drag-file.highlight {
+  border: 3px dashed red;
+}
+.upload-box .drag-file .image {
+  width: 40px;
+}
+.upload-box .drag-file .message {
+  margin-bottom: 0;
+}
+
+</style>
+
+<!-- 주문서 main -->
+<!--<div style="width:100%; height:1519px; position:relative;">-->
+    <!-- 이미지 영역 -->
+<!--    <div style="position:relative; z-index: -1;">-->
+<!--        <img src="/static/images/order_form_banner.png" align="center" width="100%"/>-->
+<!--    </div>-->
+    <div id="div-title-container" align="center">
+        <div>
+            <h1 id="h1-title"> 주문서 </h1>
+        </div>
+    </div>
+    <!-- 내용 영역 -->
+    <div align="center" style="left:20%; width: 60%; height: 1519px; position: relative; margin-top:-40px;">
+        <!-- 주문서 양식 -->
+        <div style="width:100%; height: 1300px;
+                    box-shadow: 3px 3px 5px lightgray;
+                    border-bottom-left-radius: 20% 15%;
+                    border-bottom-right-radius: 20% 15%;">

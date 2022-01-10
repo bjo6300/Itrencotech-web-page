@@ -4,26 +4,44 @@
 {% block content %}
 
 <!-- 홈 배너 -->
-<img src="/static/images/homeBanner.png" width="100%" height="100%">
+<img style="position: relative; z-index: -1;" src="/static/images/homeBanner.png" width="100%" height="100%">
 <div>
-    <table>
+    <table style="position: relative; z-index: 1; margin: -220px 0 0 200px; text-align: center; border-spacing: 0px;">
+        <tr>
+            <td colspan="3">
+                <p style="margin: 1.5em 0 0.5em 0; font-weight:bold; font-size:20px; color:#0B173B;">원하는 공정을 선택하세요</p>
+            </td>
+        </tr>
         <tr>
             <td>
-                <a style="margin:0px 0px 0px 200px; " href="{% url 'itrencotech:onlyIdea' %}" >
-                <img src="/static/images/onlyIdeaIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="margin: 0 0 0 265px; font-weight:bold; font-size:22px; color:#0B173B;">ONLY IDEA</p>
+                <a href="{% url 'itrencotech:onlyIdea' %}">
+                <img src="/static/images/onlyIdeaIcon.png" height="200px" width="200px" alt="image"/></a>
             </td>
             <td>
-                <a href="{% url 'itrencotech:prototyping' %}" >
-                <img src="/static/images/prototypingIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="margin: 0 0 0 70px; font-weight:bold; font-size:22px; color:#0B173B;">시제품 제작</p>
+                <a href="{% url 'itrencotech:prototyping' %}">
+                <img src="/static/images/prototypingIcon.png" height="200px" width="200px" alt="image"/></a>
             </td>
             <td>
                 <a href="{% url 'itrencotech:body_production_home' %}" >
-                <img src="/static/images/productionIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="margin:0 0 0 98px; font-weight:bold; font-size:22px; color:#0B173B;">양 산</p>
+                <img src="/static/images/productionIcon.png" height="200px" width="200px" alt="image"/></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">ONLY IDEA</p>
+            </td>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">시제품 제작</p>
+            </td>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">양 산</p>
             </td>
         </tr>
     </table>
 </div>
+<!-- 챗봇 아이콘 -->
+<div id="contents" align="right" style="margin-right: 100px;">
+    <img src="/static/images/chat-bot-icon1.png" width="100px" alt="image"/>
+</div>
+
 {% endblock %}
