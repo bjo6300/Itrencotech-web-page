@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'order/order_form_header.html' %}
+            <!-- 주문서 제목 -->
+            <div style="padding-top:70px;">
+                 <font size="8" color="#0b57a5" style="letter-spacing: 5px; font-weight: bold;">
+                     < 양산 주문서 >
+                 </font>
+            </div>
+            <!-- 주문서 별 교체 내용 -->
+            <div style="padding:70px 0 50px 0;">
+                <!-- 주문서 메뉴 버튼 -->
+                <div class="container" style="width:50%;">
+                    <div class="button-wrap">
+                        <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
+                        <label class="button-label" for="button1">금형</label>
+                        <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
+                        <label class="button-label" for="button2">프레스 판금/절곡</label>
+                        <input class="hidden radio-label" id="button3" type="radio" name="accept-offers"/>
+                        <label class="button-label" for="button3">CNC 부품 가공</label>
+                    </div>
+                </div>
+            </div>
+{% include 'order/order_form_footer.html' %}
+
+{% endblock %}

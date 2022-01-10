@@ -157,3 +157,8 @@ a:link, a:visited, a:active {
     background-color: rgb(237,239,244);
     padding-top: 15px;
 }
+
+#chat-bot {
+    position: sticky;
+    bottom: 0;
+}
