@@ -1,3 +1,4 @@
+<!-- 양산-home -->
 {% extends 'base.html' %}
 
 {% block content %}
@@ -21,7 +22,7 @@
                         <img style="position: relative; border-radius: 50px;" src="/static/images/mold.png" width="251px" height="251px"  />
                     </a>
                     <!--글자-->
-                    <h3 style="TEXT-ALIGN: center ">사출/금형</h3>
+                    <h3 style="TEXT-ALIGN: center ">금형 제작</h3>
                 </div>
                 <!--포트폴리오-->
                 <div style="margin-top: 10px;">
@@ -46,10 +47,10 @@
                     </a>
                 </div>
                 <!--글자-->
-                <h3 style="TEXT-ALIGN: center">CNC 부품가공</h3>
+                <h3 style="TEXT-ALIGN: center">사출 성형</h3>
                 <!--포트폴리오-->
                 <div style="margin-top: 10px;">
-                    <a href="{% url 'itrencotech:portfolio_cnc' %}" style="position: relative; margin-bottom: 10px;" >
+                    <a href="{% url 'itrencotech:portfolio_injection_molding' %}" style="position: relative; margin-bottom: 10px;" >
                         <img style="text-align: center;" src="/static/images/portfolio_move.png" width="144px" height="71px"  />
                     </a>
                 </div>
@@ -77,14 +78,8 @@
                     </a>
                 </div>
             </div>
-        </div>
 
-<!-- =======
-    <h1>시제품</h1>
-    <div>
-        <a href="{% url 'itrencotech:3Dprinting' %}">3D 프린팅</a>
-        <a href="{% url 'itrencotech:mockUp' %}">목업</a>
-        <a href="{% url 'itrencotech:CNC' %}">CNC 가공</a>
-        <a href="{% url 'itrencotech:sheeting_bending' %}">판금 절곡</a>-->
+            </div>
+        </div>
     </div>
 {% endblock %}

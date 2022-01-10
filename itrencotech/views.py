@@ -26,15 +26,19 @@ def portfolio(request):
     """ 포트폴리오 페이지 """
     return render(request, 'navBar/portfolio/portfolio.html')
 
-
-def portfolioMachineDesign(request):
-    """ 포트폴리오 - 기계 설계 페이지 """
-    return render(request, 'navBar/portfolio/machine_design.html')
-
-
 def portfolioDesign(request):
     """ 포트폴리오 - 제품 디자인 페이지 """
     return render(request, 'navBar/portfolio/design.html')
+
+
+def portfolioMachineDesign(request):
+    """ 포트폴리오 - 기계시스템 설계 페이지 """
+    return render(request, 'navBar/portfolio/machine_design.html')
+
+
+def portfolioHWmachine(request):
+    """ 포트폴리오 - H/W 기구설계 페이지 """
+    return render(request, 'navBar/portfolio/HW_machine.html')
 
 
 def portfolio3d(request):
@@ -43,23 +47,32 @@ def portfolio3d(request):
 
 
 def portfolioMockup(request):
-    """ 포트폴리오 - 목업 페이지 """
+    """ 포트폴리오 - 목업 CNC 가공 페이지 """
     return render(request, 'navBar/portfolio/mockup.html')
 
 
 def portfolioCnc(request):
-    """ 포트폴리오 - CNC 페이지 """
+    """ 포트폴리오 - 부품 CNC 가공 페이지 """
     return render(request, 'navBar/portfolio/cnc.html')
 
+def portfolioSdm(request):
+    """ 포트폴리오 - Smart Digital Mold 페이지 """
+    return render(request, 'navBar/portfolio/sdm.html')
+
+def portfolioMold(request):
+    """ 포트폴리오 - 금형 제작 페이지 """
+    return render(request, 'navBar/portfolio/mold.html')
+
+def portfolioInjectionMolding(request):
+    """ 포트폴리오 - 사출 성형 페이지 """
+    return render(request, 'navBar/portfolio/injection_molding.html')
 
 def portfolioEquipmentDesign(request):
     """ 포트폴리오 - 판금 절곡 페이지 """
     return render(request, 'navBar/portfolio/equipment_design.html')
 
 
-def portfolioMold(request):
-    """ 포트폴리오 - 사출 금형 페이지 """
-    return render(request, 'navBar/portfolio/mold.html')
+
 
 
 def reviewBest(request):
@@ -87,17 +100,24 @@ def body_onlyIdea_onlyIdea(request):
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
 
-def body_prototyping_prototyping_home(request):
-    # 시제품 제작 메인
-    return render(request, 'body/prototyping/prototyping_home.html')
-
-
-def body_onlyIdea_onlyIdea_mechanical_design(request): 
-    # 기계설계
-    return render(request, 'body/onlyIdea/onlyIdea_mechanical_design.html')
 def body_onlyIdea_onlyIdea_production_design(request):
     # 제품 디자인
     return render(request, 'body/onlyIdea/onlyIdea_production_design.html')
+
+
+def body_onlyIdea_onlyIdea_mechanical_design(request):
+    # 기계시스템 설계
+    return render(request, 'body/onlyIdea/onlyIdea_mechanical_design.html')
+
+
+def body_onlyIdea_onlyIdea_HW_mechanical_design(request):
+    # HW 기구설계
+    return render(request, 'body/onlyIdea/onlyIdea_HW_mechanical_design.html')
+
+
+def body_prototyping_prototyping_home(request):
+    # 시제품 제작 메인
+    return render(request, 'body/prototyping/prototyping_home.html')
 
 
 def body_prototyping_3Dprinting(request):
@@ -115,9 +135,9 @@ def body_prototyping_CNC(request):
     return render(request, 'body/prototyping/CNC.html')
 
 
-def body_prototyping_sheeting_bending(request):
+def body_prototyping_SDM(request):
     # 판금 절곡
-    return render(request, 'body/prototyping/sheeting_bending.html')
+    return render(request, 'body/prototyping/SDM.html')
 
 
 def navbar_about_ceo(request):

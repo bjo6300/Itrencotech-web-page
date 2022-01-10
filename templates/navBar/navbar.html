@@ -20,7 +20,7 @@
     .gnb>li:hover ul {background-color:white; display:block; text-align:center;}
 
     .gnb>li a{ line-height:40px;}
-
+    .right {float:right; padding-left:50px;}
 </style>
 
 
@@ -56,7 +56,7 @@
 
                 <li><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
                 <li><a href="{% url 'itrencotech:order_confirmation' %}">주문하기</a></li>
-                <li><a href="{% url 'itrencotech:login' %}">로그인</a></li>
+                <li class="right"><a href="{% url 'itrencotech:login' %}">로그인</a></li>
 
             </ul>
         </nav>
