@@ -15,11 +15,12 @@ body {
 }
 
 .footer {
-    background-image: url("/static/images/footer.png");
+    /* background-image: url("/static/images/footer.png"); */
     position: relative;
     bottom: 0;
     height: 250px;
     width: 100%;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    background-color: rgb(237,239,244);
 }
