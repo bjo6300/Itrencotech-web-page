@@ -127,7 +127,7 @@ button {
 
 .footer {
     /* background-image: url("/static/images/footer.png"); */
-    
+
     position: relative;
 
     bottom: 0;
@@ -142,6 +142,9 @@ button {
 
     padding-top: 15px;
 
-    
+}
 
+#chat-bot {
+    position: sticky;
+    bottom: 0;
 }

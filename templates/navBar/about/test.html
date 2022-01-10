@@ -111,17 +111,14 @@ input[type=text]:hover {
 }
 
 .filebox label {
-  display: inline-block;
-  padding: .5em .75em;
-  color: #999;
-  font-size: inherit;
-  line-height: normal;
-  vertical-align: middle;
-  background-color: #fdfdfd;
-  cursor: pointer;
-  border: 1px solid #ebebeb;
-  border-bottom-color: #e2e2e2;
-  border-radius: .25em;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
 }
 
 .filebox input[type="file"] {
@@ -133,6 +130,18 @@ input[type=text]:hover {
   overflow: hidden;
   clip:rect(0,0,0,0);
   border: 0;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 130px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+      width: 70%;
+  margin: 15px 0 15px 0;
 }
 
 </style>
@@ -255,12 +264,17 @@ input[type=text]:hover {
                 <div style="float:right; width:50%; height:100%;">
                     <div align="left" style="padding-left:60px;">
                         <!-- 파일 -->
-                        <font size="4" style="letter-spacing: 10px; font-weight: bold; background-color:#ffff00;">
-                            파일
-                        </font>
-                        <div class="input_batch">
-                            <label class="input-file-button" for="input-file">업로드</label>
-                            <input type="file" id="input-file">
+                        <font size="4" style="float:left; letter-spacing: 10px; font-weight: bold;">파일</font>
+<!--                        <div class="input_batch">-->
+<!--                            <label class="input-file-button" for="input-file">업로드</label>-->
+<!--                            <input type="file" id="input-file">-->
+<!--                        </div>-->
+                        <div class="filebox">
+                            <label for="file">파일찾기</label>
+                            <input type="file" id="file">
+                        </div>
+                        <div class="filebox">
+                            <input class="upload-name" value="첨부파일" placeholder="첨부파일">
                         </div>
                         <!-- 기타 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">기타</font>
