@@ -1,20 +1,6 @@
 /* 포트폴리오 - 사출 금형 */
 
 
-/* 폰트 - KoPub돋움 */
-@font-face {
-    font-family: 'KoPubDotumMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* 바디 전체 */
-body {
-    -webkit-transform: rotate(-0.15deg);
-    font-family: 'KoPubDotumMedium';
-}
-
 /* 제목 컨테이너 */
 #div-title-container {
     text-align: center;
@@ -26,16 +12,15 @@ body {
     z-index: -1;
 }
 
-/* 제목 */
-#h1-title {
+/* 제목 컨테이너 */
+#div-title-container {
     text-align: center;
-    font-size: 1.4em;
-	letter-spacing: 0.15em;
-	color: #131E3E;
-    text-shadow: 3px 2px 2px lightgray;
+    box-shadow: 3px 3px 5px lightgray;
+    -webkit-transform: rotate(0.15deg);
+    padding: 35px;
+    margin: 40px 0 40px 0;
     position: relative;
-    display: inline-block;
-	margin: 0 0 50px 0;
+    z-index: -1;
 }
 
 /* 제목 오른쪽 위 귀여운 동그라미 */
@@ -67,6 +52,7 @@ body {
         border-bottom: 1.5px solid #AAAAAA;
         margin: 10px auto;
 }
+
 /* 모든 링크 색 변경 */
 a:link, a:visited, a:active {
     text-decoration: none;
