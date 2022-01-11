@@ -1,7 +1,5 @@
 /* 고객 후기  */
-html{
-    height: 100%;
-}
+
 
 /* 폰트 - KoPub돋움 */
 @font-face {
@@ -11,11 +9,25 @@ html{
     font-style: normal;
 }
 
+/* 폰트 - 스포카한산스네오Light */
+/* 굵기 문제로 교체 */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 설정 */
+html {
+    height: 100%;
+}
+
 /* 바디 전체 */
 body {
     height: 100%;
-    -webkit-transform: rotate(-0.15deg);
-    font-family: 'KoPubDotumMedium';
+    font-family: 'SpoqaHanSansNeo-Light';
+    -webkit-text-stroke: 0.4px;
 }
 
 /* 제목 컨테이너 */
@@ -23,10 +35,32 @@ body {
     text-align: center;
     box-shadow: 3px 3px 5px lightgray;
     -webkit-transform: rotate(0.15deg);
-    padding: 30px;
+    padding: 35px;
     margin: 40px 0 40px 0;
     position: relative;
     z-index: -1;
+}
+
+/* 제목 컨테이너 아래 로고  */
+#div-logo {
+    background-image: url("/static/images/make_it_logo_2.png");
+    background-size: cover;
+    position: absolute;
+    top: 57px;
+    left: 180px;
+    width: 120px;
+    height: 115px;
+    z-index: 1;
+}
+
+/* 제목 컨테이너의 그림자를 잘라 줄 상자 */
+#div-logo-container {
+    position: absolute;
+    background-color: white;
+    top: 70px;
+    left: -10px;
+    width: 320px;
+    height: 200px;
 }
 
 /* 제목 */
@@ -69,8 +103,7 @@ a:link, a:visited, a:active {
 /* 버튼 컨테이너 테이블 */
 #table-container-01 {
     text-align: center;
-    margin: auto;
-    padding: 0 0 15px 0;
+    padding: 10px 0 10px 320px;
 }
 
 /* 리뷰 컨테이너 테이블 */
@@ -93,44 +126,70 @@ a:link, a:visited, a:active {
 .btn-btns {
     -webkit-text-stroke: 0.35px;
     text-align: center;
-    font-family: 'KoPubDotumMedium';
-    font-size: 0.6em;
+    font-size: 0.7em;
     letter-spacing: 0.4em;
     background: white;
-    color: #131E3E;
+    color: gray;
     margin: 10px;
     padding: 0.5em 1em 0.5em 1em;
-    border: 1.4px solid #131E3E;
-    border-radius: 30px;
+    border: none;
     height: 30px;
-    width: 105px;
+    width: 115px;
     cursor: pointer;
+    position: relative;
+}
+
+.btn-btns::before {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: gray;
+    border-radius: 30px;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+}
+
+.btn-btns:hover::before {
+    width: 70%;
+    background-color: #74BAD8;
 }
 
 /* 현재 탭 버튼 */
 #btn-selected-now {
-    -webkit-text-stroke: 0.05px;
+    -webkit-text-stroke: 0.35px;
     text-align: center;
-    font-family: 'KoPubDotumMedium';
-    font-size: 0.6em;
-    letter-spacing: 0.3em;
-    background: #131E3E;
-    color: white;
+    font-size: 0.7em;
+    letter-spacing: 0.4em;
+    color: #131E3E;
     margin: 10px;
     padding: 0.5em 1em 0.5em 1em;
-    border: 1.4px solid #131E3E;
-    border-radius: 30px;
+    border: none;
     height: 30px;
-    width: 105px;
+    width: 115px;
     cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+#btn-selected-now::before {
+    content: "";
+    height: 2px;
+    width: 70%;
+    background-color: #131E3E;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
 }
 
 /* 이미지 박스 */
 .div-images {
     background-color: #C6C6C6;
     margin: 10px;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 
 /* 리뷰 별점 */
@@ -147,12 +206,13 @@ a:link, a:visited, a:active {
     margin: 0 0 20px 0;
 }
 
-#wrapper{
+#wrapper {
     min-height: 100%;
     padding-bottom: 150px;
     position: relative;
 }
 
+/* footer */
 .footer {
     /* background-image: url("/static/images/footer.png"); */
     position: relative;
@@ -168,7 +228,10 @@ a:link, a:visited, a:active {
     padding-top: 15px;
 }
 
+/* 챗봇 */
 #chat-bot {
-    position: sticky;
-    bottom: 0;
+    position: fixed;
+    right: -30px;
+    bottom: 50px;
+    z-index: 1;
 }

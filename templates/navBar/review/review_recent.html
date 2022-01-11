@@ -1,73 +1,77 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-   <div id="div-title-container">
-		<h1 id="h1-title"> 고객 후기 </h1>
-	</div>
+<div id="div-title-container">
+	<h1 id="h1-title"> 고객 후기 </h1>
+</div>
 
-    <div id="div-container">
-		<table id="table-container-01">
-			<tr>
-				<td>
-					<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_best' %}'"> 베스트후기 </button>
-				</td>
-				<td>
-					<button type="button" id="btn-selected-now"> 최신순 </button>
-				</td>
-				<td>
-					<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_high_rating' %}'"> 높은평점순 </button>
-				</td>
-				<td>
-					<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_low_rating' %}'"> 낮은평점순 </button>
-				</td>
-			</tr>
-		</table>
-        <table id="table-container-02">
-			<tr>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-				<td>
-					<div class="div-images"> </div>
-					<p class="p-star-rating"> ★★★★★ </p>
-					<p class="p-date"> 2021.01.03 </p>
-				</td>
-			</tr>
-		</table>
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
 
-    </div>
+<div id="div-container">
+	<table id="table-container-01">
+		<tr>
+			<td>
+				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_best' %}'"> 베스트후기 </button>
+			</td>
+			<td>
+				<button type="button" id="btn-selected-now"> 최신순 </button>
+			</td>
+			<td>
+				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_high_rating' %}'"> 높은평점순 </button>
+			</td>
+			<td>
+				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_low_rating' %}'"> 낮은평점순 </button>
+			</td>
+		</tr>
+	</table>
+	<table id="table-container-02">
+		<tr>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+			<td>
+				<div class="div-images"> </div>
+				<p class="p-star-rating"> ★★★★★ </p>
+				<p class="p-date"> 2021.01.03 </p>
+			</td>
+		</tr>
+	</table>
+
+</div>
 {% endblock %}

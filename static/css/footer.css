@@ -4,8 +4,6 @@ html{
 
 body {
     height: 100%;
-    -webkit-transform: rotate(-0.15deg);
-    font-family: 'KoPubDotumMedium';
 }
 
 #wrapper{
