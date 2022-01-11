@@ -1,28 +1,28 @@
-
 <!-- 내비게이션 바 -->
 
 <style type="text/css">
-
-    #header a{text-decoration:none; color:black;}
+    #header a{text-decoration:none; color:black; transition : .2s ease-in-out;}
     #header a:hover{color:#ff0000;}
-    #logo:hover a{color:black;}
+    #header{background:white; height:55px; border-bottom:1px solid gray;}
+    .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
+    #logo{float:left; margin:0; padding:15px 0 0 150px;}
 
-    #logo{float:left; margin:0; padding:10px 0 0 150px;}
-    #nav{float:right;}
-    #header{background:white; height:60px; }
+    nav ul{width:100%; list-style-type:none; padding:0;}
 
-    nav ul{width:100%; list-style-type:none; margin:30; padding:0px;}
-    .gnb li{line-height:30px;}
-    .header_wrap{ width:1200px; margin:0 auto;  position:absolute;}
-    .gnb>li{float:left; padding:0px 50px; }
-    .gnb>li ul {display:none;}
 
-    .gnb>li:hover ul {background-color:white; display:block; text-align:center;}
+    .gnb>li{padding:0px 30px 0px 30px ; }
+    .left {float:left; margin-left:30px; }
+    .right {float:right; margin-right:150px;}
 
-    .gnb>li a{ line-height:40px;}
-    .right {float:right; padding-left:50px;}
+
+    .gnb>li ul {text-align:center; visibility: hidden; opacity: 0; transition : .2s ease-in-out;}
+    .gnb>li:hover ul {background-color:white; visibility: visible; opacity:1; }
+
+
+    .gnb>li a{ line-height:40px; }
+
+    #order a {color:#F6F6F6; background-color:#000054; border-radius: 8px; padding: 5px 15px 5px 15px;}
 </style>
-
 
 <div id="header" >
     <div class="header_wrap" >
@@ -31,40 +31,27 @@
         </a></h1>
         <nav id="nav">
             <ul class="gnb">
-                <li>
+                <li class="left">
                     <a href="{% url 'itrencotech:navbar_about_ceo' %}">　　회사소개　　</a>
-
-                    <ul>
-
+                    <ul class="submenu">
                         <li><a href="{% url 'itrencotech:navbar_about_ceo' %}">CEO 인사말</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_ideology' %}">기업이념</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_history' %}">회사 연혁</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_route' %}">찾아오시는 길</a></li>
                     </ul>
                 </li>
-                <li>
 
-                    <a href="{% url 'itrencotech:portfolio' %}">　　포트폴리오　　</a>
-                    <ul>
+                <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
 
-                        <li><a href="{% url 'itrencotech:portfolio_3d' %}">3D 프린팅</a></li>
-                        <li><a href="{% url 'itrencotech:portfolio_mockup' %}">목업</a></li>
-                        <li><a href="{% url 'itrencotech:portfolio_cnc' %}">CNC</a></li>
-                        <li><a href="{% url 'itrencotech:portfolio_mold' %}">사출/금형</a></li>
-                    </ul>
-                </li>
+                <li class="left"><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
 
-                <li><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
+                <li class="left" id="order"><a href="{% url 'itrencotech:order_confirmation' %}">주문하기</a></li>
 
-                <li><a href="{% url 'itrencotech:order_confirmation' %}">주문하기</a></li>
-                <li class="right"><a href="{% url 'itrencotech:login' %}">로그인</a></li>
-
+                <li class="right"><a href="#">
+                <img src="/static/images/myIcon.png" width="21px" height="19px">
+                </a><a href="{% url 'itrencotech:login' %}">로그인</a></li>
 
             </ul>
         </nav>
     </div>
 </div>
-
-
-
-
