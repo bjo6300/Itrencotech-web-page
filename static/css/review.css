@@ -79,6 +79,16 @@ a:link, a:visited, a:active {
     margin: auto;
 }
 
+#table_menu3 {
+    border-spacing: 150px 0;
+    border-collapse: separate;
+}
+
+#table_menu4 {
+    border-spacing: 75px 0;
+    border-collapse: separate;
+}
+
 /* 버튼 */
 .btn-btns {
     -webkit-text-stroke: 0.35px;
@@ -139,7 +149,7 @@ a:link, a:visited, a:active {
 
 #wrapper{
     min-height: 100%;
-    padding-bottom: 250px;
+    padding-bottom: 150px;
     position: relative;
 }
 
