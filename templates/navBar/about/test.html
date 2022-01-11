@@ -1,48 +1,28 @@
-
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
 
-<style type="text/css">
-
-table{
-
-height: 100px;
-margin: auto;
-text-align: center;
-}
-
-</style>
-
-<!-- 홈 배너 -->
+{% include 'order/order_form_header.html' %}
 
 
-<div>
-    <div id="div-title-container" align="center" style="margin-bottom:100px;">
-        <div>
-            <h1 id="h1-title"> 주문하기 </h1>
+<form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+    <div id="dropZone" style="width: 40%; height: 130px; border: 3px dashed #d9d9d9; border-radius: 17px;">
+        <div id="drop-file" class="drag-file">
+            <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+            <p class="message">파일 업로드</p>
         </div>
-    </div>
-    <table>
-        <tr>
-            <td>
-                <a href="{% url 'itrencotech:onlyIdea' %}" >
-                <img src="/static/images/onlyIdeaIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="font-weight:bold; font-size:22px; color:#0B173B;">ONLY IDEA</p>
-            </td>
-            <td>
-                <a href="{% url 'itrencotech:prototyping' %}" >
-                <img src="/static/images/prototypingIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="font-weight:bold; font-size:22px; color:#0B173B;">시제품 제작</p>
-            </td>
-            <td>
-                <a href="{% url 'itrencotech:body_production_home' %}" >
-                <img src="/static/images/productionIcon.png" height="240px" width="240px" alt="image"/></a>
-                <p style="font-weight:bold; font-size:22px; color:#0B173B;">양 산</p>
-            </td>
-        </tr>
-    </table>
-</div>
+        <div id="fileDragDesc"> 파일을 드래그 해주세요. </div>
 
+        <table id="fileListTable" width="100%" border="0px">
+            <tbody id="fileTableTbody">
+
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+<input type="button" onclick="uploadFile(); return false;" class="btn bg_01" value="파일 업로드">
+{% include 'order/order_form_footer.html' %}
 
 {% endblock %}
