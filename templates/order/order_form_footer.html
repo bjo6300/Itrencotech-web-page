@@ -47,7 +47,6 @@
                     <!-- 제품 설명 -->
                     <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 설명</font>
                         <div style="width:113%; margin: 15px 0 15px 0;">
-<!--                            <input type="text" name="product_description" placeholder="제품 설명">-->
                             <textarea name="product_description" placeholder="제품 설명" rows="4"></textarea>
                         </div>
                 </div>
@@ -79,10 +78,9 @@
                     <div align="left" style="padding-left:60px;">
                         <!-- 파일 -->
                         <font size="4" style="float:left; letter-spacing: 10px; font-weight: bold;">파일</font>
-
                         <div class="upload-btn-wrapper">
                             <input type="file" name="file" id="input_file" multiple/>
-                            <label for="input_file" class="upload-btn">파일찾기</label>
+                            <label for="input_file" class="upload-btn">파일 찾기</label>
                         </div>
                         <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
                             <div id="dropZone" class="drag-file">
@@ -91,7 +89,7 @@
                                     <p class="message">드래그하여 파일 업로드</p>
                                 </div>
 
-                                <table id="fileListTable" width="100%" border="0px">
+                                <table id="fileListTable" width="95%" border="0px" align="center">
                                     <tbody id="fileTableTbody">
 
                                     </tbody>
