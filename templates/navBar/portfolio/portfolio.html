@@ -8,29 +8,42 @@
 </div>
 
 <div id="div-container-01">
-    <a href="{% url 'itrencotech:portfolio_machine_design' %}" id="a-btn-01">
-        <img class="img-btn" alt="기계 설계" src="{% static 'images/portfolio_machine_design.png' %}">
-    </a>
-    <a href="{% url 'itrencotech:portfolio_design' %}" id="a-btn-02">
+    <!-- onlyIdea -->
+    <a href="{% url 'itrencotech:portfolio_design' %}" id="a-btn-01">
         <img class="img-btn" alt="제품 디자인" src="{% static 'images/portfolio_design.png' %}">
     </a>
+    <a href="{% url 'itrencotech:portfolio_machine_design' %}"  id="a-btn-02">
+        <img class="img-btn" alt="기계 설계" src="{% static 'images/portfolio_machine_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_HW_machine' %}"  id="a-btn-03">
+        <img class="img-btn" alt="H/W 설계" src="{% static 'images/portfolio_3d1.png' %}">
+    </a>
+    <!-- 시제품 제작 -->
     <a href="{% url 'itrencotech:portfolio_3d' %}" id="a-btn-04">
-        <img class="img-btn" alt="3D 프린팅" src="{% static 'images/portfolio_3d1.png' %}">
+        <img class="img-btn" alt="3D 프린트 출력" src="{% static 'images/portfolio_3d1.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_mockup' %}" id="a-btn-05">
+        <img class="img-btn" alt="목업 CNC 가공" src="{% static 'images/portfolio_mockup1.png' %}">
     </a>
 </div>
 
 <div id="div-container-02">
-    <a href="{% url 'itrencotech:portfolio_mockup' %}" id="a-btn-03">
-        <img class="img-btn" alt="목업" src="{% static 'images/portfolio_mockup1.png' %}">
+    <a href="{% url 'itrencotech:portfolio_cnc' %}"id="a-btn-06">
+        <img class="img-btn" alt="부품 CNC 가공" src="{% static 'images/portfolio_mockup1.png' %}">
     </a>
-    <a href="{% url 'itrencotech:portfolio_cnc' %}" id="a-btn-05">
-        <img class="img-btn" alt="CNC 가공" src="{% static 'images/portfolio_cnc1.png' %}">
+    <a href="{% url 'itrencotech:portfolio_sdm' %}" id="a-btn-07">
+        <img class="img-btn" alt="SmartDigitalMold" src="{% static 'images/portfolio_cnc1.png' %}">
     </a>
-    <a href="{% url 'itrencotech:portfolio_equipment_design' %}" id="a-btn-06">
+    <!-- 양산 -->
+    <a href="{% url 'itrencotech:portfolio_mold' %}" id="a-btn-08">
+        <img class="img-btn" alt="금형 제작" src="{% static 'images/portfolio_equipment_design.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_injection_molding' %}"id="a-btn-09">
+        <img class="img-btn" alt="사출 성형" src="{% static 'images/portfolio_mold1.png' %}">
+    </a>
+    <a href="{% url 'itrencotech:portfolio_equipment_design' %}"id="a-btn-10">
         <img class="img-btn" alt="판금 절곡" src="{% static 'images/portfolio_equipment_design.png' %}">
     </a>
-    <a href="{% url 'itrencotech:portfolio_mold' %}" id="a-btn-07">
-        <img class="img-btn" alt="사출 금형" src="{% static 'images/portfolio_mold1.png' %}">
-    </a>
 </div>
+
 {% endblock %}
