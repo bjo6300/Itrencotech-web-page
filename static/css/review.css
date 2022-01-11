@@ -91,8 +91,7 @@ a:link, a:visited, a:active {
 /* 버튼 컨테이너 테이블 */
 #table-container-01 {
     text-align: center;
-    margin: auto;
-    padding: 0 0 15px 0;
+    padding: 10px 0 10px 320px;
 }
 
 /* 리뷰 컨테이너 테이블 */
@@ -106,43 +105,71 @@ a:link, a:visited, a:active {
     -webkit-text-stroke: 0.35px;
     text-align: center;
     font-family: 'KoPubDotumMedium';
-    font-size: 0.6em;
+    font-size: 0.7em;
     letter-spacing: 0.4em;
     background: white;
-    color: #131E3E;
+    color: gray;
     margin: 10px;
     padding: 0.5em 1em 0.5em 1em;
-    border: 1.4px solid #131E3E;
-    border-radius: 30px;
+    border: none;
     height: 30px;
-    width: 105px;
+    width: 115px;
     cursor: pointer;
+    position: relative;
+}
+
+.btn-btns::before {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: gray;
+    border-radius: 30px;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+}
+
+.btn-btns:hover::before {
+    width: 70%;
+    background-color: #74BAD8;
 }
 
 /* 현재 탭 버튼 */
 #btn-selected-now {
-    -webkit-text-stroke: 0.05px;
+    -webkit-text-stroke: 0.35px;
     text-align: center;
     font-family: 'KoPubDotumMedium';
-    font-size: 0.6em;
-    letter-spacing: 0.3em;
-    background: #131E3E;
-    color: white;
+    font-size: 0.7em;
+    letter-spacing: 0.4em;
+    color: #131E3E;
     margin: 10px;
     padding: 0.5em 1em 0.5em 1em;
-    border: 1.4px solid #131E3E;
-    border-radius: 30px;
+    border: none;
     height: 30px;
-    width: 105px;
+    width: 115px;
     cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+#btn-selected-now::before {
+    content: "";
+    height: 2px;
+    width: 70%;
+    background-color: #131E3E;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
 }
 
 /* 이미지 박스 */
 .div-images {
     background-color: #C6C6C6;
     margin: 10px;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 
 /* 리뷰 별점 */
@@ -159,12 +186,13 @@ a:link, a:visited, a:active {
     margin: 0 0 20px 0;
 }
 
-#wrapper{
+#wrapper {
     min-height: 100%;
     padding-bottom: 250px;
     position: relative;
 }
 
+/* footer */
 .footer {
     /* background-image: url("/static/images/footer.png"); */
     position: relative;
@@ -180,6 +208,7 @@ a:link, a:visited, a:active {
     padding-top: 15px;
 }
 
+/* 챗봇 */
 #chat-bot {
     position: sticky;
     bottom: 0;
