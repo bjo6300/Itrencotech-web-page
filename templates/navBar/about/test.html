@@ -4,25 +4,7 @@
 
 {% include 'order/order_form_header.html' %}
 
-
-<form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
-    <div id="dropZone" style="width: 40%; height: 130px; border: 3px dashed #d9d9d9; border-radius: 17px;">
-        <div id="drop-file" class="drag-file">
-            <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-            <p class="message">파일 업로드</p>
-        </div>
-        <div id="fileDragDesc"> 파일을 드래그 해주세요. </div>
-
-        <table id="fileListTable" width="100%" border="0px">
-            <tbody id="fileTableTbody">
-
-            </tbody>
-        </table>
-    </div>
-</form>
-
-
-<input type="button" onclick="uploadFile(); return false;" class="btn bg_01" value="파일 업로드">
+<!-- <input type="button" onclick="uploadFile(); return false;" class="btn bg_01" value="파일 업로드"> -->
 {% include 'order/order_form_footer.html' %}
 
 {% endblock %}

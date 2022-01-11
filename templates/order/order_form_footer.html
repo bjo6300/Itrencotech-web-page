@@ -79,20 +79,25 @@
                     <div align="left" style="padding-left:60px;">
                         <!-- 파일 -->
                         <font size="4" style="float:left; letter-spacing: 10px; font-weight: bold;">파일</font>
-                        <!-- <div class="filebox"> -->
-                        <!--     <label for="file" id="1">파일찾기</label> -->
-                        <!--     <input type="file" id="file" multiple> -->
-                        <!-- </div> -->
+
                         <div class="upload-btn-wrapper">
-                            <input type="file" id="input_file" multiple="multiple"/>
-                            <button class="upload-btn">파일찾기</button>
+                            <input type="file" name="file" id="input_file" />
+                            <label for="input_file" class="upload-btn">파일찾기</label>
                         </div>
-                        <div class="upload-box">
-                          <div id="drop-file" class="drag-file">
-                            <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-                            <p class="message">파일 업로드</p>
-                          </div>
-                        </div>
+                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+                            <div id="dropZone" class="drag-file">
+                                <div id="fileDragDesc">
+                                    <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+                                    <p class="message">드래그하여 파일 업로드</p>
+                                </div>
+
+                                <table id="fileListTable" width="100%" border="0px">
+                                    <tbody id="fileTableTbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
                         <!-- 기타 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">기타</font>
                         <div class="input_batch">

@@ -108,7 +108,8 @@ input[type=text], input[type=email], input[type=tel], input[type=number] {
   letter-spacing: 1px;
 }
 
-input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[type=number]:hover, textarea:hover {
+input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover,
+input[type=number]:hover, textarea:hover {
   background: #fafafa;
 }
 
@@ -167,50 +168,40 @@ input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[ty
   justify-content: center;
   align-items: center;
 }
-.upload-box .drag-file {
-  width: 100%;
+.drag-file {
+  width: 80%;
   height: 130px;
+  flex-direction: column;
   margin-top:10px;
   margin-bottom:15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 17px;
   border: 3px dashed #d9d9d9;
+  border-radius: 17px;
 }
-.upload-box .drag-file.highlight {
+.drag-file.highlight {
   border: 3px dashed red;
 }
-.drag-file .image {
+.image {
   width: 40px;
+  margin-top: 20px;
 }
-.upload-box .drag-file .message {
+.drag-file .message {
   margin-bottom: 0;
 }
 
 .upload-btn-wrapper {
     position: relative;
-    left: 10px;
-    bottom: 3px;
+    margin-bottom: 15px;
 }
 
 .upload-btn {
     width: 100px;
-    margin: 0;
+    margin-bottom: 0;
     border: 2px solid gray;
     color: gray;
     background-color: white;
     border-radius:17px;
     font-size: 15px;
     font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
 }
 
 #fileDragDesc {
@@ -220,6 +211,40 @@ input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[ty
     text-align: center;
 }
 
+#input_file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#input_file + label {
+    margin-left: 10px;
+    font-size:14px;
+    font-family:맑은고딕;
+    text-align:center;
+    background-color: #131D3D;
+    color: white;
+    display: inline-block;
+}
+
+#input_file:focus + label, #input_file + label:hover {
+    background: #e9e9e9;
+    color: black;
+}
+
+#input_file + label:hover:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
+}
+
+#input_file + label {
+	cursor: pointer;
+}
+
+
 </style>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -227,8 +252,6 @@ input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[ty
             $(document).ready(function() {
                 $("#input_file").bind('change', function() {
                     selectFile(this.files);
-                    //this.files[0].size gets the size of your file.
-                    //alert(this.files[0].size);
                 });
             });
 

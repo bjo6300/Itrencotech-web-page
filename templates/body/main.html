@@ -1,54 +1,131 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
-<!-- 홈 배너 -->
-<img style="position: relative; z-index: -1;" src="/static/images/homeBanner.png" width="100%" height="100%">
-<div>
-    <table style="position: relative; z-index: 1; margin: -220px 0 0 200px; text-align: center; border-spacing: 0px;">
-        <tr>
-            <td colspan="3">
-                <p style="margin: 1.5em 0 0.5em 0; font-weight:bold; font-size:20px; color:#0B173B;">원하는 공정을 선택하세요</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="{% url 'itrencotech:onlyIdea' %}">
-                <img src="/static/images/onlyIdeaIcon.png" height="200px" width="200px" alt="image"/></a>
-            </td>
-            <td>
-                <a href="{% url 'itrencotech:prototyping' %}">
-                <img src="/static/images/prototypingIcon.png" height="200px" width="200px" alt="image"/></a>
-            </td>
-            <td>
-                <a href="{% url 'itrencotech:body_production_home' %}" >
-                <img src="/static/images/productionIcon.png" height="200px" width="200px" alt="image"/></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">ONLY IDEA</p>
-            </td>
-            <td>
-                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">시제품 제작</p>
-            </td>
-            <td>
-                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">양 산</p>
-            </td>
-        </tr>
-    </table>
-</div>
-<!-- 챗봇 아이콘 -->
-<!--<div id="contents" align="right" style="margin-right: 100px;">-->
-<!--    <a href="#">-->
-<!--        <img src="/static/images/chat-bot-icon2.png" width="100px" alt="image"/>-->
-<!--    </a>-->
-<!--</div>-->
-<div style="position: fixed; right: 20px; bottom:20px;">
+<link rel="stylesheet" type="text/css" href="/static/css/mouseover.css">
+
+<body>
+    <!-- 홈 배너 -->
+    <img style="position: relative; z-index: -1;" src="/static/images/homeBanner.png" width="100%" height="100%">
+    <div>
+        <table
+            style="position: relative; z-index: 1; margin: -220px 0 0 200px; text-align: center; border-spacing: 0px;">
+            <tr>
+                <td colspan="3">
+                    <p style="margin: 1.5em 0 0.5em 0; font-weight:bold; font-size:20px; color:#0B173B;">원하는 공정을 선택하세요
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    <!-- 마우스오버 효과 -->
+                    <figure class="snip1141"> <img style="position: relative; "
+                            src="/static/images/onlyIdeaIcon.png" width="200px" height="200px"  />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2>Only Idea</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+                        <h3 style="top: 35%;">
+                            - 제품디자인 <br>
+                        </h3>
+                        <h3 style="top: 45%;">   
+                            - 기계시스템 설계 <br>
+                        </h3>
+                        <h3 style="top: 55%;">
+                            - H/W 기구설계 <br>
+                        </h3>
+
+                        <a href="{% url 'itrencotech:onlyIdea' %}"></a>
+                    </figure>
+                </td>
+                <td>
+                    
+                    <!-- 마우스오버 효과 -->
+                    <figure class="snip1141"> <img style="position: relative; border-radius: 50px;"
+                            src="/static/images/prototypingIcon.png" width="200px" height="200px"  />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2>시제품 제작</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+                        <h3 style="top: 35%;">
+                            - 3D 프린팅 <br>
+                        </h3>
+                        <h3 style="top: 45%;">
+                            - 목업 CNC 가공 <br>
+                        </h3>
+                        <h3 style="top: 55%;">   
+                            - 부품 CNC 가공 <br>
+                        </h3>
+                        <h3 style="top: 65%;">
+                            - Smart Digital <br>
+                        </h3>
+                        <h3 style="top: 75%;">
+                        &nbsp;&nbsp;&nbsp;Mold  <br>
+                        </h3>
+
+                        <a href="{% url 'itrencotech:prototyping' %}"></a>
+                    </figure>
+                </td>
+                <td>
+                    
+                    <figure class="snip1141"> <img style="position: relative; "
+                            src="/static/images/prototypingIcon.png" width="200px" height="200px" />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2>양 산</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+                        <h3 style="top: 35%;">
+                            - 금형 제작 <br>
+                        </h3>
+                        <h3 style="top: 45%;">
+                            - 사출 성형 <br>
+                        </h3>
+                        <h3 style="top: 55%;">   
+                            - 판금 절곡 <br>
+                        </h3>
+                        
+
+                        <a href="{% url 'itrencotech:body_production_home' %}"></a>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">ONLY IDEA</p>
+                </td>
+                <td>
+                    <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">시제품 제작</p>
+                </td>
+                <td>
+                    <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">양 산</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 챗봇 아이콘 -->
+<div id="contents" align="right" style="margin-right: 100px;">
     <a href="#">
         <img src="/static/images/chat-bot-icon2.png" width="100px" alt="image"/>
     </a>
 </div>
+    <!-- 마우스오버 js 적용 -->
+    <script type="text/javascript" src="/static/js/mouseover.js"></script>
+</body>
 
 {% endblock %}
