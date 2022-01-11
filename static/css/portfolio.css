@@ -60,12 +60,14 @@ body {
 
 #div-container-02 {
     text-align: center;
-    margin: 0 0 100px 0;
+    margin: 0 0 50px 0;
 }
+
 
 /* 버튼 간격 조정 */
 #a-btn-01, #a-btn-02, #a-btn-03, #a-btn-04,
-#a-btn-05, #a-btn-06, #a-btn-07 {
+#a-btn-05, #a-btn-06, #a-btn-07, #a-btn-08,
+#a-btn-09, #a-btn-10 {
     margin: 25px;
 }
 
