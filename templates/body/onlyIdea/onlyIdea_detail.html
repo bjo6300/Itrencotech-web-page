@@ -2,5 +2,19 @@
 
 {% block content %}
 {% include 'body/detail.html' %}
-<h1>ONLY IDEA - 상세설명 페이지(임시)</h1>
+<!--<h1 id="h1-title"> ONLY IDEA - 상세설명 페이지(임시) </h1>-->
+
+<table align="center" style="text-align: center;">
+    <tr>
+        <td>
+            <button type="button" id="btn-selected-now" class="btn-btns" onclick="location.href='{% url 'itrencotech:onlyIdea_detail' %}'" style="width:150px;"> ONLY IDEA </button>
+        </td>
+        <td>
+            <button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:prototyping_detail' %}'"> 시제품 제작 </button>
+        </td>
+        <td>
+            <button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:production_detail' %}'"> 양산 </button>
+        </td>
+    </tr>
+</table>
 {% endblock %}
