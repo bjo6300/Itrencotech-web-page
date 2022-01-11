@@ -23,10 +23,32 @@ body {
     text-align: center;
     box-shadow: 3px 3px 5px lightgray;
     -webkit-transform: rotate(0.15deg);
-    padding: 30px;
+    padding: 35px;
     margin: 40px 0 40px 0;
     position: relative;
     z-index: -1;
+}
+
+/* 제목 컨테이너 아래 로고  */
+#div-logo {
+    background-image: url("/static/images/make_it_logo_2.png");
+    background-size: cover;
+    position: absolute;
+    top: 57px;
+    left: 180px;
+    width: 120px;
+    height: 115px;
+    z-index: 1;
+}
+
+/* 제목 컨테이너의 그림자를 잘라 줄 상자 */
+#div-logo-container {
+    position: absolute;
+    background-color: white;
+    top: 70px;
+    left: -10px;
+    width: 320px;
+    height: 200px;
 }
 
 /* 제목 */

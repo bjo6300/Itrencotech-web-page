@@ -20,7 +20,7 @@ body {
     text-align: center;
     box-shadow: 3px 3px 5px lightgray;
     -webkit-transform: rotate(0.15deg);
-    padding: 30px;
+    padding: 35px;
     margin: 40px 0 40px 0;
     position: relative;
     z-index: -1;
