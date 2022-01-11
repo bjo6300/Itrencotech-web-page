@@ -1,22 +1,16 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
 <style type="text/css">
-
-table{
-
-height: 100px;
-margin: auto;
-text-align: center;
-}
-
+    table {
+        height: 100px;
+        margin: auto;
+        text-align: center;
+    }
 </style>
 
 <!-- 홈 배너 -->
-
-
 <div>
     <div id="div-title-container" align="center" style="margin-bottom:100px;">
         <div>
@@ -28,7 +22,7 @@ text-align: center;
         <div id="div-logo"></div>
     </div>
 
-    <table>
+    <table id="table_menu3">
         <tr>
             <td>
                 <a href="{% url 'itrencotech:order_form_onlyIdea' %}" >
@@ -48,6 +42,4 @@ text-align: center;
         </tr>
     </table>
 </div>
-
-
 {% endblock %}

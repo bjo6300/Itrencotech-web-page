@@ -20,7 +20,7 @@
     .gnb>li:hover ul {background-color:white; display:block; text-align:center;}
 
     .gnb>li a{ line-height:40px;}
-    .right {float:right; padding-left:50px;}
+    .right {padding-left:50px;}
 </style>
 
 
@@ -45,6 +45,8 @@
                 <li>
 
                     <a href="{% url 'itrencotech:portfolio' %}">　　포트폴리오　　</a>
+                    <!-- 포트폴리오 드롭다운 제거 -->
+                    <!--
                     <ul>
 
                         <li><a href="{% url 'itrencotech:portfolio_3d' %}">3D 프린팅</a></li>
@@ -52,6 +54,7 @@
                         <li><a href="{% url 'itrencotech:portfolio_cnc' %}">CNC</a></li>
                         <li><a href="{% url 'itrencotech:portfolio_mold' %}">사출/금형</a></li>
                     </ul>
+                    -->
                 </li>
 
                 <li><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
