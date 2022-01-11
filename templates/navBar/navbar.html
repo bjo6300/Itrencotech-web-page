@@ -15,6 +15,7 @@
     .right {float:right; margin-right:150px;}
 
 
+
     .gnb>li ul {text-align:center; visibility: hidden; opacity: 0; transition : .2s ease-in-out;}
     .gnb>li:hover ul {background-color:white; visibility: visible; opacity:1; }
 
@@ -22,6 +23,7 @@
     .gnb>li a{ line-height:40px; }
 
     #order a {color:#F6F6F6; background-color:#000054; border-radius: 8px; padding: 5px 15px 5px 15px;}
+
 </style>
 
 <div id="header" >
@@ -41,11 +43,13 @@
                     </ul>
                 </li>
 
+
                 <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
 
                 <li class="left"><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
 
                 <li class="left" id="order"><a href="{% url 'itrencotech:order_confirmation' %}">주문하기</a></li>
+
 
                 <li class="right"><a href="#">
                 <img src="/static/images/myIcon.png" width="21px" height="19px">
