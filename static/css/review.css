@@ -126,7 +126,6 @@ a:link, a:visited, a:active {
 .btn-btns {
     -webkit-text-stroke: 0.35px;
     text-align: center;
-    font-family: 'KoPubDotumMedium';
     font-size: 0.7em;
     letter-spacing: 0.4em;
     background: white;
@@ -161,7 +160,6 @@ a:link, a:visited, a:active {
 #btn-selected-now {
     -webkit-text-stroke: 0.35px;
     text-align: center;
-    font-family: 'KoPubDotumMedium';
     font-size: 0.7em;
     letter-spacing: 0.4em;
     color: #131E3E;
