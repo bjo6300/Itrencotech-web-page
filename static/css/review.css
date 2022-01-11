@@ -1,7 +1,5 @@
 /* 고객 후기  */
-html{
-    height: 100%;
-}
+
 
 /* 폰트 - KoPub돋움 */
 @font-face {
@@ -11,11 +9,25 @@ html{
     font-style: normal;
 }
 
+/* 폰트 - 스포카한산스네오Light */
+/* 굵기 문제로 교체 */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 설정 */
+html {
+    height: 100%;
+}
+
 /* 바디 전체 */
 body {
     height: 100%;
-    -webkit-transform: rotate(-0.15deg);
-    font-family: 'KoPubDotumMedium';
+    font-family: 'SpoqaHanSansNeo-Light';
+    -webkit-text-stroke: 0.4px;
 }
 
 /* 제목 컨테이너 */
@@ -210,6 +222,8 @@ a:link, a:visited, a:active {
 
 /* 챗봇 */
 #chat-bot {
-    position: sticky;
-    bottom: 0;
+    position: fixed;
+    right: -30px;
+    bottom: 50px;
+    z-index: 1;
 }

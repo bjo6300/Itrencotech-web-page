@@ -1,20 +1,6 @@
 /* 포트폴리오 - 사출 금형 */
 
 
-/* 폰트 - KoPub돋움 */
-@font-face {
-    font-family: 'KoPubDotumMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* 바디 전체 */
-body {
-    -webkit-transform: rotate(-0.15deg);
-    font-family: 'KoPubDotumMedium';
-}
-
 /* 제목 컨테이너 */
 #div-title-container {
     text-align: center;
