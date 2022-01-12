@@ -73,5 +73,7 @@ urlpatterns = [
     path('order/order_form_prototyping/', views.order_form_prototyping, name='order_form_prototyping'),
     path('order/order_form_production/', views.order_form_production, name='order_form_production'),
 
+    # 마이페이지
+    path('myPage/myPage_home/', views.navbar_myPage_home, name='navbar_myPage_home'),
 
 ]
