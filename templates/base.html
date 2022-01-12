@@ -1,21 +1,29 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-wdth, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
+    <!-- 타이틀 -->
+    <title>make it</title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 내비게이션바 -->
+        {% include 'navBar/navbar.html' %}
 
-<!-- header -->
-{% include 'base_head.html' %}
+        <!-- 기본 템플릿 안에 삽입될 내용 -->
 
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
-<!-- 타이틀 -->
-<title>make it</title>
-
-{% include 'base_mid.html' %}
-
-<!-- 내비게이션바 -->
-{% include 'navBar/navbar.html' %}
-
-<!-- 기본 템플릿 안에 삽입될 내용 -->
-{% block content %}
-{% endblock %}
-
-<!-- footer -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
 {% include 'body/footer.html' %}
+
+</html>
+
+
+

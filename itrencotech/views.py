@@ -95,21 +95,6 @@ def body_onlyIdea_onlyIdea(request):
     # onlyIdea 메인
     return render(request, 'body/onlyIdea/onlyIdea_home.html')
 
-
-def body_onlyIdea_onlyIdea_production_design(request):
-    # 제품 디자인
-    return render(request, 'body/onlyIdea/onlyIdea_production_design.html')
-
-
-def body_onlyIdea_onlyIdea_mechanical_design(request):
-    # 기계시스템 설계
-    return render(request, 'body/onlyIdea/onlyIdea_mechanical_design.html')
-
-
-def body_onlyIdea_onlyIdea_HW_mechanical_design(request):
-    # HW 기구설계
-    return render(request, 'body/onlyIdea/onlyIdea_HW_mechanical_design.html')
-
 def onlyIdea_detail(request):
     # onlyIdea 상세설명
     return render(request, 'body/onlyIdea/onlyIdea_detail.html')
@@ -118,26 +103,6 @@ def onlyIdea_detail(request):
 def body_prototyping_prototyping_home(request):
     # 시제품 제작 메인
     return render(request, 'body/prototyping/prototyping_home.html')
-
-
-def body_prototyping_3Dprinting(request):
-    # 3D 프린팅
-    return render(request, 'body/prototyping/3DPrinting.html')
-
-
-def body_prototyping_mockUp(request):
-    # 목업
-    return render(request, 'body/prototyping/mockUp.html')
-
-
-def body_prototyping_CNC(request):
-    # CNC 가공
-    return render(request, 'body/prototyping/CNC.html')
-
-
-def body_prototyping_SDM(request):
-    # 판금 절곡
-    return render(request, 'body/prototyping/SDM.html')
 
 def prototyping_detail(request):
     # 시제품 상세설명
@@ -163,22 +128,11 @@ def navbar_about_test(request):
 
 
 def body_production_home(request):
-    return render(request, 'body/production/home.html')
-
-
-def body_production_mold(request):
-    return render(request, 'body/production/mold.html')
-
-
-def body_production_cnc(request):
-    return render(request, 'body/production/cnc.html')
-
-
-def body_production_press(request):
-    return render(request, 'body/production/press.html')
+    # 양산 홈
+    return render(request, 'body/production/production_home.html')
 
 def production_detail(request):
-    # 시제품 상세설명
+    # 양산 상세설명
     return render(request, 'body/production/production_detail.html')
 
 def order_home(request):
