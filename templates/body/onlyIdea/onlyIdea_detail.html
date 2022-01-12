@@ -1,9 +1,19 @@
-{% extends 'base.html' %}
-
 {% load static %}
-{% block content %}
+<!-- header -->
+{% include 'body/header.html' %}
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
 
+<!-- 타이틀 -->
+<title>make it</title>
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+<!-- 내비게이션바 -->
+{% include 'navBar/navbar.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 {% include 'body/detail.html' %}
 <!--<h1 id="h1-title"> ONLY IDEA - 상세설명 페이지(임시) </h1>-->
 
@@ -142,4 +152,7 @@
     </div>
 </div>
 
-{% endblock %}
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+
+<!-- footer -->
+{% include 'body/footer.html' %}
