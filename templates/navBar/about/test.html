@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/myPage.css' %}">
 
 <!-- 타이틀 -->
-<title>make it</title>
+<title>마이페이지 테스트 중...</title>
 <!-- middle(header에서 닫지 못한 태그 등) -->
 {% include 'body/middle.html' %}
 <!-- 내비게이션바 -->
@@ -15,9 +15,49 @@
 
 <!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 
-<!-- 마이페이지 header -->
-{% include 'navBar/myPage/myPage_header.html' %}
+<div>
+    <div>
+        <!-- 마이페이지(주문 내역, 배송 중, 주문 완료) 넣을 공간 -->
 
+
+        <!-- 버튼 두 개(나의 주문 내역, 내 정보) 넣을 공간 -->
+
+
+        <!-- 나의 주문 내역 목록 구현 -->
+        <div align="center" class="detail-box">
+            <div class="mypage-box-top">
+                <!-- '작품 제목 넣기' -->
+                <div class="mypage-mini-box">
+                    <!-- 작품 제목 -->
+                    <div class="mypage-mini-box-top">
+                        <div>
+                            <h1>작품</h1>
+                        </div>
+                    </div>
+                    <!-- 주문서 보기 버튼 -->
+                    <div class="mypage-mini-box-top">
+                        <div>
+                            <h1>작품</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- '2022.01.17 주문' -->
+                <div class="mypage-mini-box">
+                    <h1>테스트</h1>
+                </div>
+                <!-- 배송 진행 중 -->
+                <div class="mypage-mini-box">
+                    <h1>테스트</h1>
+                </div>
+                <!-- 버튼 3개(배송 조회, 교환/반품, 후기) -->
+                <div class="mypage-mini-box">
+                    <h1>테스트</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 <!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
