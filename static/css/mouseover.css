@@ -82,6 +82,7 @@ figure.snip1141 h2 {
   margin: 0;
   text-transform: uppercase;
   font-weight: 300;
+  font-size: 20px; /*폰트 사이즈*/
   letter-spacing: -1px;
   line-height: 55px;
   top: 0%;
