@@ -1,22 +1,23 @@
-<!-- 내비게이션 바 -->
+<!-- 로그인 한 경우 표시되는 내비게이션 바에 사용할 코드 -->
 
 <style type="text/css">
-    #header a{text-decoration:none; color:black; transition :color .25s ease-in-out;}
+    #header a{text-decoration:none; color:black; transition : .2s ease-in-out;}
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
     .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
     #logo{float:left; margin:0; padding:15px 0 0 150px;}
 
-    nav ul{width:100%; list-style-type:none; padding:0; }
-    nav {margin-right:50px;}
+    nav ul{width:100%; list-style-type:none; padding:0;}
 
 
+    .gnb>li{ }
     .left {float:left; margin-left:30px; padding:0px 20px 0px 20px; }
-    .right {float:right;}
+    .right {float:right; margin-right:30px;}
 
 
-    .submenu li {text-align:center; visibility:hidden; height:0px; transition:height 0.35s ease;}
-    .gnb>li:hover .submenu li {background-color:white; visibility:visible; height:40px;}
+
+    .gnb>li ul {text-align:center; visibility: hidden; opacity: 0; transition : .2s ease-in-out;}
+    .gnb>li:hover ul {background-color:white; visibility: visible; opacity:1; }
 
 
     .gnb>li a{ line-height:40px; }
@@ -32,7 +33,7 @@
         </a></h1>
         <nav id="nav">
             <ul class="gnb">
-                <li class="left" id="drop">
+                <li class="left">
                     <a href="{% url 'itrencotech:navbar_about_ceo' %}">　　회사소개　　</a>
                     <ul class="submenu">
                         <li><a href="{% url 'itrencotech:navbar_about_ceo' %}">CEO 인사말</a></li>
@@ -42,6 +43,7 @@
                     </ul>
                 </li>
 
+
                 <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
 
                 <li class="left"><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
@@ -50,11 +52,15 @@
 
 
                 <li class="right"><a href="#">
+                    <img src="/static/images/mypageIcon.png" width="18px" height="15px"></a>
+                    <a style="margin-right:100px;" href="{% url 'itrencotech:login' %}">마이페이지</a></li>
+
+                <li class="right"><a href="#">
                     <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
-                    <a href="{% url 'itrencotech:login' %}">로그인</a></li>
+                    <a href="{% url 'itrencotech:login' %}">{name}님</a></li>
 
 
-           </ul>
+            </ul>
         </nav>
     </div>
 </div>
