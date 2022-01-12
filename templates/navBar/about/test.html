@@ -4,59 +4,13 @@
 {% block content %}
 
 {% include 'navBar/myPage/mypage_header.html' %}
-<style>
-.container {
-  height: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-}
-.button-wrap {
-  position: relative;
-  text-align: center;
-  top: 50%;
-  right: 25%;
-  margin-top: -2.5em;
-}
-.button-label {
-  display: inline-block;
-  padding: 0.7em;
-  margin: 0 1em;
-  cursor: pointer;
-  color: black;
-  border-radius: 0.25em;
-  background: white;
-  transition: 0.3s;
-  letter-spacing: 2px;
-  border-radius:17px;
-}
-.hidden {
-  display: none;
-}
-#button1:checked + .button-label {
-  text-decoration: underline;
-  font-weight: bold;
-}
 
-#button2:checked + .button-label {
-  text-decoration: underline;
-  font-weight: bold;
-}
 
-</style>
+
 <body>
-<!-- 나의 주문 내역 / 내 정보 -->
-<div style="padding:70px 0 50px 0;">
-    <!-- 메뉴 버튼 -->
-    <!-- 이미지에서 텍스트로 변경해야함 -->
-    <div class="container" style="width:80%;">
-        <div class="button-wrap">
-            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
-            <label class="button-label" for="button1">나의 주문 내역</label>
-            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
-            <label class="button-label" for="button2">내 정보</label>
-            
-        </div>
-    </div>
-</div>
+  <!-- 나의 주문 내역 -->
+  {% include 'navBar/myPage/myPage_myorder.html' %}
+
+  <!-- 내 정보 -->
 </body>
 {% endblock %}
