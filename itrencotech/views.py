@@ -195,3 +195,6 @@ def order_form_prototyping(request):
 
 def order_form_production(request):
     return render(request, 'order/order_form_production.html')
+
+def navbar_myPage_home(request):
+    return render(request, 'navBar/myPage/myPage_home.html')
