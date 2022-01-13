@@ -41,6 +41,8 @@
         font-weight: bold;
         font-size: 17px;
     }
+    
+    
 </style>
 
 <link rel="stylesheet" type="text/css" href="/static/css/myPage_body.css">
@@ -49,6 +51,20 @@
 
 <script type="text/javascript">
 
+    // function changeDiv1() {
+    //     // 나의 주문내역
+    //     var con1 = document.getElementById("content1");
+    //     // 내정보
+    //     var con2 = document.getElementById("content2");
+
+    //     if (con1.style.display == 'none' && con2.style.display =='block') {
+    //         con1.style.display = 'block';
+    //         con2.style.display = 'none';
+    //     } else {
+    //         con1.style.display = 'none';
+    //         con2.style.display = 'block';
+    //     }
+    // };
 
     function changeDiv() {
         // main
@@ -66,22 +82,22 @@
         // 나의주문내역 체크된 경우
         if (checked1 && !checked2) {
             con1.style.display = 'none'; // 숨기기
-            con2.style.display = 'none';
+            con2.style.display = 'none'; 
             con3.style.display = 'block'; // 보여주기
-        }
+        } 
         // 내정보 체크된 경우
         else if (checked2 && !checked1){
             con1.style.display = 'none';
             con2.style.display = 'block';
-            con3.style.display = 'none'; //
+            con3.style.display = 'none'; 
         }
         // main 아무것도 클릭 안했을 때
         else if(!checked1 && !checked2){
             con1.style.display = 'none';
             con2.style.display = 'none';
-            con3.style.display = 'block';
+            con3.style.display = 'block'; 
         }
-
+        
     };
 </script>
 
@@ -102,7 +118,7 @@
 
     <!-- 아무것도 클릭 안했을 때 -->
     <div align="center" id="content1" >
-        <div
+        <div 
             style="width:850px; height: 200px; margin-top: 10px; border: 1px solid rgb(187, 186, 186);border-radius: 50px; ">
             <div>
                 <div style="padding-right: 70%; padding-top: 70px; font-weight: bold; font-size: 20px; width: 150px;" >
@@ -112,7 +128,7 @@
                     <img src="/static/images/view_order.png" style="width: auto;" />
                 </div>
             </div>
-
+            
             <div align="center" style="position: relative; bottom: 70px; right: 12.5%;"
             >
                 <div style="font-weight: bold; font-size: 22px;">
@@ -121,31 +137,32 @@
 
             </div>
 
-            <div align="center" style="position: relative; bottom: 110px; left: 12.5%; width: 150px;"
+            <div align="center" style="position: relative; bottom: 110px; left: 12.5%; width: 150px;" 
             >
                 <div style="font-weight: bold; font-size: 30px;">
                     배송 진행중
                 </div>
-
+                
 
             </div>
 
-            <div align="center" style="position: relative; bottom: 180px; left: 35%; width: 150px;"
+            <div align="center" style="position: relative; bottom: 180px; left: 35%; width: 150px;" 
             >
                 <div style="font-weight: bold; font-size: 30px;">
                     <img src="/static/images/delivery_tracking.png" style="width: auto;" />
                     <img src="/static/images/exchange_return.png" style="width: auto;" />
                     <img src="/static/images/review.png" style="width: auto;" />
                 </div>
-
+                
 
             </div>
 
         </div>
     </div>
 
+    <!-- 나의 주문내역 -->
     <div align="center" id="content3" style="display: none;" >
-        <div
+        <div 
             style="width:850px; height: 200px; margin-top: 10px; border: 1px solid rgb(187, 186, 186);border-radius: 50px; ">
             <div>
                 <div style="padding-right: 70%; padding-top: 70px; font-weight: bold; font-size: 20px; width: 150px;" >
@@ -155,7 +172,7 @@
                     <img src="/static/images/view_order.png" style="width: auto;" />
                 </div>
             </div>
-
+            
             <div align="center" style="position: relative; bottom: 70px; right: 12.5%;"
             >
                 <div style="font-weight: bold; font-size: 22px;">
@@ -164,73 +181,148 @@
 
             </div>
 
-            <div align="center" style="position: relative; bottom: 110px; left: 12.5%; width: 150px;"
+            <div align="center" style="position: relative; bottom: 110px; left: 12.5%; width: 150px;" 
             >
                 <div style="font-weight: bold; font-size: 30px;">
                     배송 진행중
                 </div>
-
+                
 
             </div>
 
-            <div align="center" style="position: relative; bottom: 180px; left: 35%; width: 150px;"
+            <div align="center" style="position: relative; bottom: 180px; left: 35%; width: 150px;" 
             >
                 <div style="font-weight: bold; font-size: 30px;">
                     <img src="/static/images/delivery_tracking.png" style="width: auto;" />
                     <img src="/static/images/exchange_return.png" style="width: auto;" />
                     <img src="/static/images/review.png" style="width: auto;" />
                 </div>
-
+                
 
             </div>
 
         </div>
     </div>
-
+    
 
     <!-- 내 정보 -->
-    <div align="center" id="content2" style="display: none;">
-        <div
-            style="width:850px; height: 200px; margin-top: 10px; border: 1px solid rgb(187, 186, 186);border-radius: 50px; ">
-            <div>
-                <div style="padding-right: 70%; padding-top: 70px; font-weight: bold; font-size: 20px; width: 150px;" >
-                    내 정보 내 정보
-                </div>
-                <div style="padding-right: 70%; padding-top: 20px;font-weight: bold;width: 129px;">
-                    <img src="/static/images/view_order.png" style="width: auto;" />
-                </div>
-            </div>
+    <div align="center" id="content2" style="display: none; position:relative; right: 21.5%; margin-top: 3%;">
+        <!-- 내 정보 수정 이미지 -->
+        <div>
+            <a href="{% url 'itrencotech:navbar_myPage_updateInfo' %}">
+                <img src="/static/images/edif_my_information.png" style="width: auto;" />
+            </a>
+        </div>
 
-            <div align="center" style="position: relative; bottom: 70px; right: 12.5%;"
-            >
-                <div style="font-weight: bold; font-size: 22px;">
-                    내 정보 내 정보
-                </div>
+        <!-- 개인정보 -->
+        <div>
+            <table align="center" style="position: relative; left: 22.5%; margin-top: 3%; border-spacing : 0; border-collapse: collapse;">
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        이름
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%; width: 700px;">
+                        민경찬
+                    </td>
+                </tr>
 
-            </div>
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        휴대전화
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        010-1234-5678
+                    </td>
+                </tr>
 
-            <div align="center" style="position: relative; bottom: 110px; left: 12.5%; width: 150px;"
-            >
-                <div style="font-weight: bold; font-size: 30px;">
-                    배송 진행중
-                </div>
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        이메일
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        mkc@itrencotech.com
+                    </td>
+                </tr>
 
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        아이디
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        mkc0000
+                    </td>
+                </tr>
 
-            </div>
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        회사명
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        (주)make it
+                    </td>
+                </tr>
 
-            <div align="center" style="position: relative; bottom: 180px; left: 35%; width: 150px;"
-            >
-                <div style="font-weight: bold; font-size: 30px;">
-                    <img src="/static/images/delivery_tracking.png" style="width: auto;" />
-                    <img src="/static/images/exchange_return.png" style="width: auto;" />
-                    <img src="/static/images/review.png" style="width: auto;" />
-                </div>
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                    background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        회사주소
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                    border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207
+                    </td>
+                </tr>
 
+                <tr>
+                    <td style="background-color: rgb(245, 245, 245); 
+                    height: 70px; 
+                    width: 120px; 
+                    text-align: left; padding-left: 3%;">
+                        전화
+                    </td>
+                    <td style="border-left: 2px solid rgb(180, 179, 179);
+                    background-color: white; padding-left: 3%;">
+                        031)431-0635
+                    </td>
+                </tr>
+            </table>
 
-            </div>
 
         </div>
     </div>
-
-
+    
 </div>
