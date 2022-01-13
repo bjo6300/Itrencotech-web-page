@@ -204,12 +204,12 @@
     border-left: none;
 }
 
-table thead tr {
+#shipping-info thead tr {
   height: 60px;
   background: #ECEDF1;
 }
 
-table tbody tr {
+#shipping-info tbody tr {
   height: 45px;
 }
 /*
