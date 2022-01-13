@@ -1,0 +1,51 @@
+<div id="div-wrapper">
+    <div id="div-signup">
+        <table>
+            <tr> 
+                <td>
+                    <p class="p-signup-txt"> 이름 </p>
+                    <input placeholder="이름">
+                </td>
+                <td>
+                    <p class="p-signup-txt"> 회사명 </p>
+                    <input placeholder="회사명">
+                </td>
+            </tr>
+
+            <tr> 
+                <td>
+                    <p class="p-signup-txt"> 아이디 </p>
+                    <input placeholder="아이디">
+                </td>
+                <td>
+                    <p class="p-signup-txt"> 회사 주소 </p>
+                    <input placeholder="회사 주소">
+                </td>
+            </tr>
+            
+            <tr> 
+                <td>
+                    <p class="p-signup-txt"> 비밀번호 </p>
+                    <input placeholder="비밀번호">
+                </td>
+                <td>
+                    <p class="p-signup-txt"> 회사 전화 </p>
+                    <input placeholder="회사 전화">
+                </td>
+            </tr>
+
+            <tr> 
+                <td>
+                    <p class="p-signup-txt"> 휴대전화 </p>
+                    <input placeholder="휴대전화">
+                </td>
+                <td>
+                    <p class="p-signup-txt"> 이메일 </p>
+                    <input placeholder="이메일">
+                </td>
+            </tr>
+        </table>
+
+        <button type="button" id="btn-signup" onclick="location.href='{% url 'itrencotech:signUp_completed' %}'"> 가입하기 </button>
+    </div>
+</div>
