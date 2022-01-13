@@ -16,6 +16,11 @@ def signUp(request):
     return render(request, 'login/signUp.html')
 
 
+def signUpCompleted(request):
+    """ 회원가입 완료 페이지 """
+    return render(request, 'login/signUp_completed.html')
+
+
 def findIdPasswd(request):
     """ 아이디 / 비밀번호 찾기 페이지 """
     return render(request, 'login/find_id_passwd.html')

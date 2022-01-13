@@ -10,7 +10,8 @@ urlpatterns = [
     # 로그인
     path('login/', views.login, name='login'),   # 로그인 페이지
     path('signUp/', views.signUp, name='signUp'), # 회원가입 페이지
-    
+    path('signUp/completed', views.signUpCompleted, name='signUp_completed'),  # 회원가입 완료 페이지
+
 
     # 찾기
     path('find_id_passwd/', views.findIdPasswd, name='find_id_passwd'),  # 아이디/비밀번호 찾기 선택
