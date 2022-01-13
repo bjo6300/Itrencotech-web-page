@@ -1,8 +1,19 @@
-{% extends 'base.html' %}
-
 {% load static %}
-{% block content %}
+<!-- header -->
+{% include 'body/header.html' %}
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+
+<!-- 타이틀 -->
+<title>make it</title>
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+<!-- 내비게이션바 -->
+{% include 'navBar/navbar.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 
 {% include 'body/detail.html' %}
 <!--<h1 id="h1-title"> 시제품 제작 - 상세설명 페이지(임시) </h1>  -->
@@ -37,7 +48,7 @@
         <div class="detail-box-in-box">
             <!-- 이미지 -->
             <div class="detail-img">
-                <img src="/static/images/service_description_test.png">
+                <img src="/static/images/3DPrinting.png">
             </div>
             <div class="detail-other">
                 <div class="detail-other-top">
@@ -74,13 +85,13 @@
         <div class="detail-box-in-box">
             <!-- 이미지 -->
             <div class="detail-img">
-                <img src="/static/images/service_description_test.png">
+                <img src="/static/images/mockUp.png">
             </div>
             <div class="detail-other">
                 <div class="detail-other-top">
                     <!-- 설명 title -->
                     <div class="detail-title">
-                        <font size="6">목업 CNC 가공</font>
+                        <font size="6">목업 (CNC 가공)</font>
                     </div>
                     <!-- 포트폴리오 버튼 -->
                     <button class="detail-portfolio-btn" type="button"
@@ -111,13 +122,13 @@
         <div class="detail-box-in-box">
             <!-- 이미지 -->
             <div class="detail-img">
-                <img src="/static/images/service_description_test.png">
+                <img src="/static/images/cnc.png">
             </div>
             <div class="detail-other">
                 <div class="detail-other-top">
                     <!-- 설명 title -->
                     <div class="detail-title">
-                        <font size="6">부품 CNC 가공</font>
+                        <font size="6">부품 (CNC 가공)</font>
                     </div>
                     <!-- 포트폴리오 버튼 -->
                     <button class="detail-portfolio-btn" type="button"
@@ -148,7 +159,7 @@
         <div class="detail-box-in-box">
             <!-- 이미지 -->
             <div class="detail-img">
-                <img src="/static/images/service_description_test.png">
+                <img src="/static/images/sdm.png">
             </div>
             <div class="detail-other">
                 <div class="detail-other-top">
@@ -178,4 +189,7 @@
     </div>
 </div>
 
-{% endblock %}
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+
+<!-- footer -->
+{% include 'body/footer.html' %}

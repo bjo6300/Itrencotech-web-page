@@ -1,9 +1,19 @@
-{% extends 'base.html' %}
+{% load static %}
+<!-- header -->
+{% include 'body/header.html' %}
 
-{% block content %}
-
-
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
 <link rel="stylesheet" type="text/css" href="/static/css/mouseover.css">
+
+<!-- 타이틀 -->
+<title>make it</title>
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+<!-- 내비게이션바 -->
+{% include 'navBar/navbar.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 
 <div>
     <div id="wrapper">
@@ -28,9 +38,9 @@
                     <div style="margin-top: 40px;">
 
                         <!-- 마우스오버 효과 -->
-                <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
-                    src="/static/images/mold.png" width="251px" height="251px" />
-                <figcaption>
+                        <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/mold.png" width="251px" height="251px" />
+                        <figcaption>
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
@@ -44,7 +54,7 @@
                     주문하기
 
 
-                <a href="{% url 'itrencotech:body_production_mold' %}"></a>
+                <a href="{% url 'itrencotech:order_form_production' %}"></a>
             </figure>
 
                     </div>
@@ -71,13 +81,10 @@
                     </div>
                     <!--이미지-->
                     <div style="margin-top: 40px;">
-                        <!-- <a href="{% url 'itrencotech:body_production_cnc' %}">
-                            <img style="position: relative;border-radius: 50px;" src="/static/images/cnc.png" width="251px" height="251px"  />
-                        </a> -->
                         <!-- 마우스오버 효과 -->
-                <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
-                    src="/static/images/injection_mold.png" width="251px" height="251px" />
-                <figcaption>
+                        <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/injection_mold.png" width="251px" height="251px" />
+                        <figcaption>
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
@@ -90,7 +97,7 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:body_production_cnc' %}"></a>
+                <a href="{% url 'itrencotech:order_form_production' %}"></a>
             </figure>
                     </div>
                     <!--글자-->
@@ -116,13 +123,10 @@
                     </div>
                     <!--이미지-->
                     <div style="margin-top: 40px;">
-                        <!-- <a href="{% url 'itrencotech:body_production_press' %}">
-                            <img style="position: relative;border-radius: 50px;" src="/static/images/product_equipment_design.png" width="251px" height="251px"  />
-                        </a> -->
-                                <!-- 마우스오버 효과 -->
-                <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
-                    src="/static/images/sheet_metal.png" width="251px" height="251px" />
-                <figcaption>
+                        <!-- 마우스오버 효과 -->
+                        <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/sheet_metal.png" width="251px" height="251px" />
+                        <figcaption>
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
@@ -135,7 +139,7 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:body_production_press' %}"></a>
+                <a href="{% url 'itrencotech:order_form_production' %}"></a>
             </figure>
                     </div>
                     <!--글자-->
@@ -153,9 +157,8 @@
 </div>
 <!-- 마우스오버 js 적용 -->
 <script type="text/javascript" src="/static/js/mouseover.js"></script>
-</div>
-</body>
 
-</html>
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
 
-{% endblock %}
+<!-- footer -->
+{% include 'body/footer.html' %}
