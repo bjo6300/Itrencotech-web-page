@@ -1,89 +1,56 @@
-{% extends 'base.html' %}
+{% extends 'navBar/mypage/mypage_base.html' %}
 {% load static %}
-
 {% block content %}
 
-{% include 'navBar/myPage/mypage_header.html' %}
+{% include 'navBar/mypage/mypage_header.html' %}
 
-<style>
-    .container {
-        height: 100%;
-        min-height: 100%;
-        margin: 0 auto;
-    }
 
-    .button-wrap {
-        position: relative;
-        text-align: center;
-        top: 50%;
-        right: 25%;
-        margin-top: -2.5em;
-    }
+<div align="center">
+    <div style="width: 1010px; height: 30px;">
+        <!-- 서비스 설명 메뉴 -->
+        <table align="left" style="text-align: center;">
+            <tr>
+                <!-- 나의 주문 내역 -->
+                <td>
+                    <button type="button" class="btn-menu"
+                            onclick="location.href='{% url 'itrencotech:mypage_order_history' %}'"
+                            style="width:100%"> 나의 주문 내역 </button>
+                </td>
+                <!-- 내 정보 -->
+                <td>
+                    <button type="button" id="btn-now"
+                            onclick="location.href='#"
+                            style="width:100%"> 내 정보 </button>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-    .button-label {
-        display: inline-block;
-        padding: 0.7em;
-        margin: 0 1em;
-        cursor: pointer;
-        color: black;
-        border-radius: 0.25em;
-        background: white;
-        transition: 0.3s;
-        letter-spacing: 2px;
-        border-radius: 17px;
-    }
 
-    .hidden {
-        display: none;
-    }
+</div>
 
-    #button1:checked+.button-label {
-        text-decoration: underline;
-        font-weight: bold;
-        font-size: 17px;
-    }
+<div align="center">
+    <div style="width: 1010px; height: 800px;">
+        <div style="padding:50px 0 0 30px;">
+             <!-- 내 정보 -->
+            <div align="left" id="content2" style="position:relative;">
+                <div style="margin-top: -19px;">
+                    <h1>내 정보 수정</h1>
+                </div>
 
-    #button2:checked+.button-label {
-        text-decoration: underline;
-        font-weight: bold;
-        font-size: 17px;
-    }
-</style>
-
-<link rel="stylesheet" type="text/css" href="/static/css/myPage_body.css">
-
-<body>
-    <div style="padding:70px 0 50px 0;">
-        <!-- 메뉴 버튼 / 이미지에서 텍스트로 변경해야함-->
-        <div class="container" style="width:500px; padding-right: 20%;">
-            <div class="button-wrap">
-                <input class="hidden radio-label" id="button1" onclick="changeDiv()" type="radio"
-                    name="accept-offers" />
-                <label class="button-label" for="button1">나의 주문 내역</label>
-                <input class="hidden radio-label" id="button2" onclick="changeDiv()" type="radio" name="accept-offers"
-                    checked />
-                <label class="button-label" for="button2">내 정보</label>
-
-            </div>
-        </div>
-
-        <div align="center" style=" position:relative; right: 21.5%; margin-top: 3%;">
-            <div style="position: relative; left: 0.5%; margin-top: 3%;">
-                <h1>내 정보 수정</h1>
-            </div>
-
-            <div>
-                <table align="center"
-                    style="position: relative; left: 23%; margin-top: 3%; border-spacing : 0; border-collapse: collapse;">
+                <!-- 개인정보 -->
+                <div>
+                    <table style="position: relative; margin-top: 3%; border-spacing: 0;
+                            border-collapse: collapse; width: 100%;">
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             이름
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; width: 700px;">
                             민경찬
@@ -92,13 +59,13 @@
 
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%; ">
                             휴대전화
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; ">
                             <div style=" width: auto;  display: inline-block; vertical-align: middle;">
@@ -109,18 +76,18 @@
                         </div>
                         <div style="clear: both;"></div>
                         </td>
-                        
+
                     </tr>
 
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             이메일
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; ">
                 <div style=" width: auto;  display: inline-block; vertical-align: middle;">
@@ -132,13 +99,13 @@
 
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             아이디
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
                 <div style=" width: auto;  display: inline-block; vertical-align: middle;">
@@ -151,13 +118,13 @@
 
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             회사명
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
                 <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
@@ -169,13 +136,13 @@
 
                     <tr>
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             회사주소
                         </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236); 
+                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
                 <div style=" width: auto; display: inline-block; width: auto;  vertical-align: middle;">
@@ -185,9 +152,9 @@
                     </tr>
 
                     <tr>
-                        <td style="background-color: rgb(245, 245, 245); 
-                height: 70px; 
-                width: 120px; 
+                        <td style="background-color: rgb(245, 245, 245);
+                height: 70px;
+                width: 120px;
                 text-align: left; padding-left: 3%;">
                             전화
                         </td>
@@ -200,10 +167,9 @@
                     </tr>
                 </table>
             </div>
+            </div>
         </div>
-
-
     </div>
+</div>
 
-</body>
 {% endblock %}
