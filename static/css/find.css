@@ -316,7 +316,7 @@ select {
 /* ───────────────────────── find_passwd_email ───────────────────────── */
 
 
-/* ───────────────────────── find_passwd_phone ───────────────────────── */
+/* ───────────────────────── find_passwd_reset ───────────────────────── */
 /* 새 비밀번호 입력창 */
 .input-passwd {
     text-align: left;
@@ -339,7 +339,7 @@ select {
     margin: 15px 0;
     border-radius: 15px;
     height: 30px;
-    width: 205px;
+    width: 150px;
     cursor: pointer;
     transition: .4s;
 }
@@ -351,7 +351,7 @@ select {
 }
 
 
-/* ───────────────────────── find_passwd_phone ───────────────────────── */
+/* ───────────────────────── find_passwd_reset ───────────────────────── */
 /* 로그인 창으로 이동 버튼 */
 #btn-login {
     text-align: center;
@@ -374,3 +374,25 @@ select {
     background: none;
 }
 
+
+/* ───────────────────────── find-passwd-email ───────────────────────── */
+/* 인증번호 컨테이너 */
+#table-certf-num {
+    text-align: center;
+    margin: auto;
+}
+
+/* 인증번호 입력창 */
+#input-certf-num {
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 24px;
+    width: 230px;
+}
+
+/* 인증번호 텍스트 */
+#p-small-txt {
+    font-size: 0.85em;
+}
