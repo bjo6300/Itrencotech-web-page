@@ -70,5 +70,6 @@ urlpatterns = [
 
     # path('myPage/myPage_home/', views.navbar_myPage_home, name='navbar_myPage_home'),
     path('myPage/myPage_updateInfo/', views.navbar_myPage_updateInfo, name='navbar_myPage_updateInfo'),
+    path('myPage/myPage_update_info/', views.myPage_update_info, name='myPage_update_info'),
 
 ]

@@ -200,7 +200,7 @@
     border-bottom: 1px solid #e9e9e9;
 }
 
-#shipping-infoth:first-child, #shipping-info td:first-child {
+#shipping-info th:first-child, #shipping-info td:first-child {
     border-left: none;
 }
 

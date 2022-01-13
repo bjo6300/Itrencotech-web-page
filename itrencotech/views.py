@@ -161,8 +161,11 @@ def mypage_home(request):
 def mypage_order_history(request):
     return render(request, 'navBar/myPage/myPage_order_history.html')
 
-def mypage_info(request):
-    return render(request, 'navBar/myPage/myPage_info.html')
+def myPage_update_info(request):
+    return render(request, 'navBar/myPage/myPage_update_info.html')
 
 def navbar_myPage_updateInfo(request):
     return render(request, 'navBar/myPage/myPage_updateInfo.html') # 마이페이지 내정보수정
+
+def mypage_info(request):
+    return render(request, 'navBar/myPage/myPage_info.html')

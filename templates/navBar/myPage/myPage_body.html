@@ -1,51 +1,5 @@
-<style>
-    .container {
-        height: 100%;
-        min-height: 100%;
-        margin: 0 auto;
-    }
 
-    .button-wrap {
-        position: relative;
-        text-align: center;
-        top: 50%;
-        right: 25%;
-        margin-top: -2.5em;
-    }
-
-    .button-label {
-        display: inline-block;
-        padding: 0.7em;
-        margin: 0 1em;
-        cursor: pointer;
-        color: black;
-        border-radius: 0.25em;
-        background: white;
-        transition: 0.3s;
-        letter-spacing: 2px;
-        border-radius: 17px;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    #button1:checked+.button-label {
-        text-decoration: underline;
-        font-weight: bold;
-        font-size: 17px;
-    }
-
-    #button2:checked+.button-label {
-        text-decoration: underline;
-        font-weight: bold;
-        font-size: 17px;
-    }
-    
-    
-</style>
-
-<link rel="stylesheet" type="text/css" href="/static/css/myPage_body.css">
+<link rel="stylesheet" type="text/css" href="/static/css/myPage.css">
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -82,22 +36,22 @@
         // 나의주문내역 체크된 경우
         if (checked1 && !checked2) {
             con1.style.display = 'none'; // 숨기기
-            con2.style.display = 'none'; 
+            con2.style.display = 'none';
             con3.style.display = 'block'; // 보여주기
-        } 
+        }
         // 내정보 체크된 경우
         else if (checked2 && !checked1){
             con1.style.display = 'none';
             con2.style.display = 'block';
-            con3.style.display = 'none'; 
+            con3.style.display = 'none';
         }
         // main 아무것도 클릭 안했을 때
         else if(!checked1 && !checked2){
             con1.style.display = 'none';
             con2.style.display = 'none';
-            con3.style.display = 'block'; 
+            con3.style.display = 'block';
         }
-        
+
     };
 </script>
 
