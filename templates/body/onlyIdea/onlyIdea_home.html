@@ -1,9 +1,19 @@
-{% extends 'base.html' %}
+{% load static %}
+<!-- header -->
+{% include 'body/header.html' %}
 
-{% block content %}
-
-
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
 <link rel="stylesheet" type="text/css" href="/static/css/mouseover.css">
+
+<!-- 타이틀 -->
+<title>make it</title>
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+<!-- 내비게이션바 -->
+{% include 'navBar/navbar.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 <div>
     <div id="wrapper">
         <h1 style="position: relative; margin-left: auto; TEXT-ALIGN: center; margin-right: auto; font-weight: 400;
@@ -147,10 +157,7 @@
 </div>
 <!-- 마우스오버 js 적용 -->
 <script type="text/javascript" src="/static/js/mouseover.js"></script>
-</div>
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
 
-</body>
-
-</html>
-
-{% endblock %}
+<!-- footer -->
+{% include 'body/footer.html' %}

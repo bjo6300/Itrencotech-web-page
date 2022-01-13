@@ -1,0 +1,171 @@
+{% extends 'navBar/mypage/mypage_base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'navBar/mypage/mypage_header.html' %}
+
+
+<div align="center">
+    <div style="width: 1010px; height: 30px;">
+        <!-- 서비스 설명 메뉴 -->
+        <table align="left" style="text-align: center;">
+            <tr>
+                <!-- 나의 주문 내역 -->
+                <td>
+                    <button type="button" class="btn-menu"
+                            onclick="location.href='{% url 'itrencotech:mypage_order_history' %}'"
+                            style="width:100%"> 나의 주문 내역 </button>
+                </td>
+                <!-- 내 정보 -->
+                <td>
+                    <button type="button" id="btn-now"
+                            onclick="location.href='#"
+                            style="width:100%"> 내 정보 </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<div align="center">
+    <div style="width: 1010px; height: 800px;">
+        <div style="padding:50px 0 0 0;">
+                <!-- 메뉴 버튼 / 이미지에서 텍스트로 변경해야함-->
+        <!--        <div class="container" style="width:500px; padding-right: 20%;">-->
+        <!--            <div class="button-wrap">-->
+        <!--                <input class="hidden radio-label" id="button1" onclick="changeDiv()" type="radio"-->
+        <!--                    name="accept-offers" />-->
+        <!--                <label class="button-label" for="button1">나의 주문 내역</label>-->
+        <!--                <input class="hidden radio-label" id="button2" onclick="changeDiv()" type="radio" name="accept-offers"-->
+        <!--                    checked />-->
+        <!--                <label class="button-label" for="button2">내 정보</label>-->
+
+        <!--            </div>-->
+        <!--        </div>-->
+
+             <!-- 내 정보 -->
+            <div align="center" id="content2" style="position:relative; right: 21.5%; margin-top: 3%;">
+                <!-- 내 정보 수정 이미지 -->
+                <div>
+                    <a href="{% url 'itrencotech:navbar_myPage_updateInfo' %}">
+                        <img src="/static/images/edif_my_information.png" style="width: auto;" />
+                    </a>
+                </div>
+
+                <!-- 개인정보 -->
+                <div>
+                    <table align="center" style="position: relative; left: 22.5%; margin-top: 3%; border-spacing : 0; border-collapse: collapse;">
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                이름
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%; width: 700px;">
+                                민경찬
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                휴대전화
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                010-1234-5678
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                이메일
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                mkc@itrencotech.com
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                아이디
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                mkc0000
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                회사명
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                (주)make it
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                회사주소
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                전화
+                            </td>
+                            <td style="border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                031)431-0635
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
