@@ -1,0 +1,75 @@
+/* 가입 요소 컨테이너 */
+#div-wrapper {
+    margin-top: -40px;
+}
+
+/* 가입 요소 */
+#div-signup {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding-top: 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+}
+
+/* 입력 테이블 */
+table {
+    margin: auto;
+    text-align: center;
+}
+
+td, tr {
+    width: 280px;
+    height: 80px;
+}
+
+/* 텍스트 */
+.p-signup-txt {
+    text-align: left;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin: 0 0 5px 40px;
+}
+
+/* 입력창 */
+input {
+    text-align: left;
+    font-size: 0.8em;
+    color: black;
+    margin-bottom: 20px;
+    padding-left: 7px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 25px;
+    width: 200px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 가입하기 버튼 */
+#btn-signup {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.77em;
+    letter-spacing: 0.05em;
+    background: #131E3E;
+    color: white;
+    margin: 30px 0 70px 0;
+    padding: 0.5em 1em 0.5em 1em;
+    border: 1.4px solid #131E3E;
+    border-radius: 15px;
+    height: 33px;
+    width: 170px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-signup:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}

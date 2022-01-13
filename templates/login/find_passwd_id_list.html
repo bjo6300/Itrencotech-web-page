@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+
+<div id="div-title-container" >
+    <h1 id="h1-title"> 비밀번호 찾기 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div id="div-container">
+    <img id="img-route" src="{% static 'images/login/findingPasswd01.png' %}" 
+    height="31px" width="500px" alt="현재 과정: 아이디 입력"/>
+    <br>
+
+    <div id="div-wrapper">
+        <div>
+            <p class="p-txt"> 회원님의 가입 정보는 다음과 같습니다. </p>
+        </div>
+
+        <table id="table-id-list-01">
+            <tr>
+                <td>
+                    <img id="img-ico-01" src="{% static 'images/login/phone.png' %}" width="25px" height="29px">
+                </td>
+                <td>
+                    <p class="p-id-list-txt"> 010-5***-8*** </p>
+                </td>
+                <td>
+                    <button type="button" class="btn-id-list-btns" onclick="location.href='{% url 'itrencotech:find_passwd_phone' %}'"> 휴대폰 인증 </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="img-ico-02" src="{% static 'images/login/email.png' %}" width="25px" height="18px">
+                </td>
+                <td>
+                    <p class="p-id-list-txt"> i***@itrencotech.com </p>
+                </td>
+                <td>
+                    <button type="button" class="btn-id-list-btns" onclick="location.href='{% url 'itrencotech:find_passwd_email' %}'"> 확인 </button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}
