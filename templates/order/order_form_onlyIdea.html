@@ -1,18 +1,6 @@
-{% load static %}
-<!-- header -->
-{% include 'body/header.html' %}
+{% extends 'base.html' %}
 
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
-
-<!-- 타이틀 -->
-<title>make it</title>
-<!-- middle(header에서 닫지 못한 태그 등) -->
-{% include 'body/middle.html' %}
-<!-- 내비게이션바 -->
-{% include 'navBar/navbar.html' %}
-
-<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+{% block content %}
 
 {% include 'order/order_form_header.html' %}
             <!-- 주문서 제목 -->
@@ -37,7 +25,4 @@
             </div>
 {% include 'order/order_form_footer.html' %}
 
-<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
-
-<!-- footer -->
-{% include 'body/footer.html' %}
+{% endblock %}
