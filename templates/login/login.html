@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
 <div id="div-title-container">
@@ -12,6 +13,6 @@
 </div>
 
 <!-- 로그인 창 -->
-{% include 'login/loginWindow.html' %}
+{% include 'login/login_window.html' %}
 
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+
+<div id="div-title-container" >
+    <h1 id="h1-title"> 비밀번호 찾기 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div id="div-container">
+    <img id="img-route" src="{% static 'images/login/findingPasswd03.png' %}" 
+    height="31px" width="500px" alt="현재 과정: 비밀번호 재설정"/>
+    <br>
+
+    <div id="div-wrapper">
+        <div>
+            <p class="p-txt"> 새 비밀번호를 입력해 주세요. </p>
+            <input type="password" class="input-passwd" placeholder="새 비밀번호">
+            <input type="password" class="input-passwd" placeholder="비밀번호 확인">
+        </div>
+
+        <button type="button" id="btn-confirm-02" onclick="location.href='{% url 'itrencotech:find_passwd_completed' %}'"> 확 인 </button>
+    </div>
+</div>
+
+{% endblock %}
