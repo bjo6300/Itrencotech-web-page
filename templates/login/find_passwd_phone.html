@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="{% static 'js/selectDate.js' %}"></script>
+
+<div id="div-title-container" >
+    <h1 id="h1-title"> 비밀번호 찾기 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div id="div-container">
+    <img id="img-route" src="{% static 'images/login/findingPasswd02.png' %}" 
+    height="31px" width="500px" alt="현재 과정: 본인확인"/>
+    <br>
+
+    <div id="div-wrapper">
+        <div>
+            <p class="p-txt" id="p-txt-phone-large"> 휴대폰 인증 </p>
+        </div>
+
+        
+        <table id="table-phone">
+            <tr>
+                <td>
+                    <p class="p-txt-phone"> 이름 </p>
+                </td>
+                <td class="td-input" colspan="3">
+                    <input class="input-phone">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <select name="내국인">
+                        <option value="domestic"> 내국인 </option>
+                        <option value="foreign"> 외국인 </option>
+                    </select>
+                </td>
+                <td colspan="3">
+                    <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
+                    <label class="button-label" for="button1">남자</label>
+                    <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
+                    <label class="button-label" for="button2">여자</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p class="p-txt-phone"> 생일 </p>
+                </td>
+                <td>
+                    <select name="yy" id="year"></select>
+                </td>
+                <td>
+                    <select name="mm" id="month"></select>
+                </td>
+                <td>
+                    <select name="dd" id="day"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <select name="통신사">
+                        <option value="skt"> SKT </option>
+                        <option value="kt"> KT </option>
+                        <option value="lg"> LG U+ </option>
+                        <option value="cheap"> 알뜰폰 </option>
+                    </select>
+                </td>
+                <td class="td-input" colspan="2">
+                    <input class="input-phone" id="input-phone-number">
+                </td>
+                <td>
+                    <button type="button" id="btn-certification" onclick="location.href='#'"> 인증 </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p class="p-txt-phone"> 인증번호 </p>
+                </td>
+                <td class="td-input" colspan="3">
+                    <input class="input-phone">
+                </td>
+            </tr>
+        </table>
+        
+        <div id="input-check-box">
+            <input type="checkbox" id="checkBox">
+            <label for="checkBox">개인 정보 이용 약관에 동의합니다.</label>
+        </div>
+        
+        <button type="button" id="btn-next" onclick="location.href='{% url 'itrencotech:find_passwd_reset' %}'"> 다 음 </button>
+    </div>
+</div>
+
+{% endblock %}

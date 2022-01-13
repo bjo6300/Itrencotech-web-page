@@ -7,24 +7,73 @@ def index(request):
 
 
 def login(request):
+    """ 로그인 페이지 """
     return render(request, 'login/login.html')
 
 
 def signUp(request):
+    """ 회원가입 페이지 """
     return render(request, 'login/signUp.html')
 
 
 def findIdPasswd(request):
-    return render(request, 'login/findIdPasswd.html')
+    """ 아이디 / 비밀번호 찾기 페이지 """
+    return render(request, 'login/find_id_passwd.html')
 
 
+""" ───────────────────────── 아이디 찾기 ───────────────────────── """
 def findId(request):
-    return render(request, 'login/findId.html')
+    """ 아이디 찾기 페이지 """
+    return render(request, 'login/find_id.html')
+
+def findIdPhone(request):
+    """ 아이디 찾기 - 휴대폰 번호로 찾기 """
+    return render(request, 'login/find_id_phone.html')
+
+
+def findIdEmail(request):
+    """ 아이디 찾기 - 이메일로 찾기 """
+    return render(request, 'login/find_id_email.html')
+
+
+""" ───────────────────────── 비밀번호 찾기 ───────────────────────── """
+def findPasswd(request):
+    """ 비밀번호 찾기 페이지 """
+    return render(request, 'login/find_passwd.html')
+
+
+def findPasswdIdList(request):
+    """ 비밀번호 찾기 - 아이디 목록 페이지 """
+    return render(request, 'login/find_passwd_id_list.html')
+
+
+def findPasswdPhone(request):
+    """ 비밀번호 찾기 - 휴대폰 번호로 찾기 """
+    return render(request, 'login/find_passwd_phone.html')
+
+
+def findPasswdEmail(request):
+    """ 비밀번호 찾기 - 이메일로 찾기 """
+    return render(request, 'login/find_passwd_email.html')
+
+
+def findPasswdReset(request):
+    """ 비밀번호 찾기 - 비밀번호 재설정 """
+    return render(request, 'login/find_passwd_reset.html')
+
+
+def findPasswdCompleted(request):
+    """ 비밀번호 찾기 - 비밀번호 재설정 완료 """
+    return render(request, 'login/find_passwd_completed.html')
+
+
+
 
 
 def portfolio(request):
     """ 포트폴리오 페이지 """
     return render(request, 'navBar/portfolio/portfolio.html')
+
 
 def portfolioDesign(request):
     """ 포트폴리오 - 제품 디자인 페이지 """
@@ -55,17 +104,21 @@ def portfolioCnc(request):
     """ 포트폴리오 - 부품 CNC 가공 페이지 """
     return render(request, 'navBar/portfolio/cnc.html')
 
+
 def portfolioSdm(request):
     """ 포트폴리오 - Smart Digital Mold 페이지 """
     return render(request, 'navBar/portfolio/sdm.html')
+
 
 def portfolioMold(request):
     """ 포트폴리오 - 금형 제작 페이지 """
     return render(request, 'navBar/portfolio/mold.html')
 
+
 def portfolioInjectionMolding(request):
     """ 포트폴리오 - 사출 성형 페이지 """
     return render(request, 'navBar/portfolio/injection_molding.html')
+
 
 def portfolioEquipmentDesign(request):
     """ 포트폴리오 - 판금 절곡 페이지 """
@@ -93,6 +146,9 @@ def reviewHighRating(request):
 def reviewLowRating(request):
     """ 후기 - 낮은평점순 페이지 """
     return render(request, 'navBar/review/review_low_rating.html')
+
+
+
 
 
 def body_onlyIdea_onlyIdea(request):
@@ -140,6 +196,9 @@ def body_prototyping_SDM(request):
     return render(request, 'body/prototyping/SDM.html')
 
 
+
+
+
 def navbar_about_ceo(request):
     return render(request, 'navBar/about/ceo.html')
 
@@ -159,6 +218,9 @@ def navbar_about_test(request):
     return render(request, 'navBar/about/test.html')
 
 
+
+
+
 def body_production_home(request):
     return render(request, 'body/production/home.html')
 
@@ -174,17 +236,25 @@ def body_production_cnc(request):
 def body_production_press(request):
     return render(request, 'body/production/press.html')
 
+
+
+
+
 def order_home(request):
     return render(request, 'order/order_home.html')
+
 
 def order_confirmation(request):
     return render(request, 'order/order_confirmation.html')
 
+
 def order_form_onlyIdea(request):
     return render(request, 'order/order_form_onlyIdea.html')
 
+
 def order_form_prototyping(request):
     return render(request, 'order/order_form_prototyping.html')
+
 
 def order_form_production(request):
     return render(request, 'order/order_form_production.html')
