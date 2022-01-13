@@ -53,6 +53,10 @@ input {
     width: 200px;
 }
 
+input:focus {
+    outline: none;
+}
+
 /* 로그인 버튼 */
 #btn-login {
     text-align: center;

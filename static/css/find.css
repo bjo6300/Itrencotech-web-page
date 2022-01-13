@@ -3,6 +3,10 @@ input {
     color: black;
 }
 
+input:focus {
+    outline: none;
+}
+
 /* ───────────────────────── find_id_passwd ───────────────────────── */
 /* 버튼 컨테이너 */
 #table-btns-container {
@@ -44,6 +48,137 @@ input {
 
 .img-btns:hover {
     transform:scale(1.1);
+}
+
+
+/* ───────────────────────── find_id_email ───────────────────────── */
+/* 그림자 가진 컨테이너 - 리사이징 목적으로 재작성 */
+#div-wrapper-email {
+    text-align: center;
+    width: 35%;
+    margin: auto;
+    padding: 25px 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 20px;
+}
+
+/* 부제목 텍스트 밑 언더라인*/
+#p-txt-email-large:after {
+    text-align: center;
+    content: "";
+    display: block;
+    width: 100px;
+    border-bottom: 1.7px solid #AAAAAA;
+    margin: 5px auto;
+}
+
+/* 휴대폰 인증 테이블 */
+#table-email {
+    text-align: left;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+#table-email tr, #table-email td:not(#td-email) {
+    padding: 0;
+}
+
+#table-email td {
+    width: 80px;
+}
+
+#table-email td[colspan="3"] {
+    width: 300px;
+}
+
+/* 이메일 셀 */
+#td-email {
+    border: 1px solid gray;
+    border-radius: 13px;
+    padding: 5px;
+}
+
+/* 이메일 입력창 아이디 */
+#input-email-01 {
+    text-align: left;
+    padding-left: 7px;
+    border: none;
+    height: 27px;
+    width: 80px;
+}
+
+/* 이메일 입력창 도메인 */
+#input-email-02 {
+    text-align: left;
+    padding-left: 7px;
+    border: none;
+    height: 27px;
+    width: 100px;
+}
+
+/* 이메일 입력창 도메인 - 읽기 전용 */
+#input-email-02:read-only {
+    color: gray;
+}
+
+/* 인증번호 입력창 */
+#input-email-03 {
+    text-align: left;
+    padding-left: 15px;
+    border: 1px solid gray;
+    border-radius: 13px;
+    height: 35px;
+    width: 92%;
+}
+
+
+/* ───────────────────────── find_id_list ───────────────────────── */
+/* 아이디 목록 테이블 */
+#table-id-list-02 {
+    text-align: left;
+    margin: auto; 
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+tr, td {
+    padding: 10px;
+}
+
+/* 번호 텍스트 */
+.p-id-list-txt-01 {
+    letter-spacing: 0.3em;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #4B84BC;
+    margin: 0 5px;
+}
+
+/* 아이디 텍스트 */
+.p-id-list-txt-02 {
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    margin: 0 5px;
+}
+
+/* 가입일 텍스트 */
+.p-id-list-txt-03 {
+    letter-spacing: 0.1em;
+    font-size: 0.5em;
+    color: gray;
+    margin: 0 5px;
+}
+
+/* 비밀번호 찾기 버튼 */
+#a-find-btn {
+    text-align: center;
+    font-size: 0.7em;
+    margin-bottom: 100px;
+    transition: .2s;
+}
+
+#a-find-btn:hover {
+    color: #74BAD8;
 }
 
 
@@ -104,14 +239,10 @@ input {
 
 /* ───────────────────────── find_passwd_id_list ───────────────────────── */
 /* 아이디 목록 테이블 */
-#table-id-list {
+#table-id-list-01 {
     text-align: center;
     margin: auto; 
     margin-top: -10px;
-}
-
-tr, td {
-    padding: 10px;
 }
 
 /* 전화번호, 이메일 텍스트 */
@@ -142,7 +273,7 @@ tr, td {
 }
 
 
-/* ───────────────────────── find_passwd_phone ───────────────────────── */
+/* ───────────────────────── find_passwd_phone, find_email_phone ───────────────────────── */
 /* 그림자 가진 컨테이너 - 리사이징 목적으로 재작성 */
 #div-wrapper-phone {
     text-align: center;
@@ -312,8 +443,50 @@ select {
     transform: scale(1);
 }
 
+/* 확인 버튼 */
+#btn-confirm-01 {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.3em;
+    border: none;
+    background: #131E3E;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    height: 30px;
+    width: 205px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-confirm-01:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}
 
 /* ───────────────────────── find_passwd_email ───────────────────────── */
+/* 인증번호 컨테이너 */
+#table-certf-num {
+    text-align: center;
+    margin: auto;
+}
+
+/* 인증번호 입력창 */
+#input-certf-num {
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 24px;
+    width: 230px;
+}
+
+/* 인증번호 텍스트 - find_id_email과 공유함 */
+.p-small-txt {
+    font-size: 0.85em;
+    -webkit-text-stroke: 0.06em;
+}
 
 
 /* ───────────────────────── find_passwd_reset ───────────────────────── */
@@ -329,7 +502,7 @@ select {
 }
 
 /* 확인 버튼 */
-#btn-confirm {
+#btn-confirm-02 {
     text-align: center;
     font-size: 0.77em;
     letter-spacing: 0.3em;
@@ -344,14 +517,14 @@ select {
     transition: .4s;
 }
 
-#btn-confirm:hover {
+#btn-confirm-02:hover {
     color: #131E3E;
     border: 1px solid #131E3E;
     background: none;
 }
 
 
-/* ───────────────────────── find_passwd_reset ───────────────────────── */
+/* ───────────────────────── find_passwd_completed ───────────────────────── */
 /* 로그인 창으로 이동 버튼 */
 #btn-login {
     text-align: center;
@@ -372,27 +545,4 @@ select {
     color: #131E3E;
     border: 1px solid #131E3E;
     background: none;
-}
-
-
-/* ───────────────────────── find-passwd-email ───────────────────────── */
-/* 인증번호 컨테이너 */
-#table-certf-num {
-    text-align: center;
-    margin: auto;
-}
-
-/* 인증번호 입력창 */
-#input-certf-num {
-    text-align: left;
-    padding-left: 10px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    height: 24px;
-    width: 230px;
-}
-
-/* 인증번호 텍스트 */
-#p-small-txt {
-    font-size: 0.85em;
 }
