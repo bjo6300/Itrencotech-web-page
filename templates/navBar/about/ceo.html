@@ -1,16 +1,6 @@
+{% extends 'base2.html' %}
 {% load static %}
-<!-- header -->
-{% include 'body/header.html' %}
-
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
-
-<!-- 타이틀 -->
-<title>make it</title>
-<!-- middle(header에서 닫지 못한 태그 등) -->
-{% include 'body/middle.html' %}
-<!-- 내비게이션바 -->
-{% include 'navBar/navbar.html' %}
+{% block content %}
 
 <!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
 
@@ -67,6 +57,4 @@
 </div>
 
 <!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
-
-<!-- footer -->
-{% include 'body/footer.html' %}
+{% endblock %}
