@@ -77,5 +77,6 @@ urlpatterns = [
 
     # 마이페이지
     path('myPage/myPage_home/', views.navbar_myPage_home, name='navbar_myPage_home'),
+    path('myPage/myPage_updateInfo/', views.navbar_myPage_updateInfo, name='navbar_myPage_updateInfo'),
 
 ]

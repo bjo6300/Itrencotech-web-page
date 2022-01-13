@@ -197,4 +197,7 @@ def order_form_production(request):
     return render(request, 'order/order_form_production.html')
 
 def navbar_myPage_home(request):
-    return render(request, 'navBar/myPage/myPage_home.html')
+    return render(request, 'navBar/myPage/myPage_home.html') # 마이페이지 홈
+
+def navbar_myPage_updateInfo(request):
+    return render(request, 'navBar/myPage/myPage_updateInfo.html') # 마이페이지 내정보수정
