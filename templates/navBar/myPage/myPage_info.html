@@ -31,158 +31,141 @@
 
 <div align="center">
     <div style="width: 1010px; height: 800px;">
-<div style="padding:50px 0 0 0;">
-        <!-- 메뉴 버튼 / 이미지에서 텍스트로 변경해야함-->
-<!--        <div class="container" style="width:500px; padding-right: 20%;">-->
-<!--            <div class="button-wrap">-->
-<!--                <input class="hidden radio-label" id="button1" onclick="changeDiv()" type="radio"-->
-<!--                    name="accept-offers" />-->
-<!--                <label class="button-label" for="button1">나의 주문 내역</label>-->
-<!--                <input class="hidden radio-label" id="button2" onclick="changeDiv()" type="radio" name="accept-offers"-->
-<!--                    checked />-->
-<!--                <label class="button-label" for="button2">내 정보</label>-->
+        <div style="padding:50px 0 0 0;">
+                <!-- 메뉴 버튼 / 이미지에서 텍스트로 변경해야함-->
+        <!--        <div class="container" style="width:500px; padding-right: 20%;">-->
+        <!--            <div class="button-wrap">-->
+        <!--                <input class="hidden radio-label" id="button1" onclick="changeDiv()" type="radio"-->
+        <!--                    name="accept-offers" />-->
+        <!--                <label class="button-label" for="button1">나의 주문 내역</label>-->
+        <!--                <input class="hidden radio-label" id="button2" onclick="changeDiv()" type="radio" name="accept-offers"-->
+        <!--                    checked />-->
+        <!--                <label class="button-label" for="button2">내 정보</label>-->
 
-<!--            </div>-->
-<!--        </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
-        <div align="left" style=" position:relative;">
-            <div style="position: relative; left: 30px; ">
-                <h1>내 정보 수정</h1>
-            </div>
+             <!-- 내 정보 -->
+            <div align="center" id="content2" style="position:relative; right: 21.5%; margin-top: 3%;">
+                <!-- 내 정보 수정 이미지 -->
+                <div>
+                    <a href="{% url 'itrencotech:navbar_myPage_updateInfo' %}">
+                        <img src="/static/images/edif_my_information.png" style="width: auto;" />
+                    </a>
+                </div>
 
-            <div>
-                <table align="left"
-                    style="position: relative; left: 30px; margin-top: 3%; border-spacing : 0; border-collapse: collapse;">
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            이름
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%; width: 700px;">
-                            민경찬
-                        </td>
-                    </tr>
+                <!-- 개인정보 -->
+                <div>
+                    <table align="center" style="position: relative; left: 22.5%; margin-top: 3%; border-spacing : 0; border-collapse: collapse;">
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                이름
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%; width: 700px;">
+                                민경찬
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%; ">
-                            휴대전화
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%; ">
-                            <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            010-1234-5678
-                        </div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                            <img src="/static/images/change_phoneNum.png" style=" width: auto; margin-left: 5%;" />
-                        </div>
-                        <div style="clear: both;"></div>
-                        </td>
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                휴대전화
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                010-1234-5678
+                            </td>
+                        </tr>
 
-                    </tr>
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                이메일
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                mkc@itrencotech.com
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            이메일
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%; ">
-                <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            mkc@itrencotech.com</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                            <img src="/static/images/change_email.png" style=" width: auto; margin-left: 5%; " /></div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                아이디
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                mkc0000
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            아이디
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%;">
-                <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            mkc0000</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                                <img src="/static/images/change_id.png" style=" width: auto; margin-left: 5%;" />
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                회사명
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                (주)make it
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            회사명
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
-                            (주)make it</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                            <img src="/static/images/change_companyName.png" style=" width: auto; margin-left: 5%;" /></div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                회사주소
+                            </td>
+                            <td style="border-bottom: 1px solid rgb(236, 236, 236);
+                            border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            회사주소
-                        </td>
-                        <td style="border-bottom: 1px solid rgb(236, 236, 236);
-                border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;  vertical-align: middle;">
-                            경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;"><img src="/static/images/change_companyAddress.png" style=" width: auto; margin-left: 5%;" /></div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td style="background-color: rgb(245, 245, 245);
+                            height: 70px;
+                            width: 120px;
+                            text-align: left; padding-left: 3%;">
+                                전화
+                            </td>
+                            <td style="border-left: 2px solid rgb(180, 179, 179);
+                            background-color: white; padding-left: 3%;">
+                                031)431-0635
+                            </td>
+                        </tr>
+                    </table>
 
-                    <tr>
-                        <td style="background-color: rgb(245, 245, 245);
-                height: 70px;
-                width: 120px;
-                text-align: left; padding-left: 3%;">
-                            전화
-                        </td>
-                        <td style="border-left: 2px solid rgb(180, 179, 179);
-                background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
-                            031)431-0635</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;"><img src="/static/images/change_companyNum.png" style=" width: auto; margin-left: 5%;" /></div>
-                        </td>
-                    </tr>
-                </table>
+
+                </div>
             </div>
         </div>
-
-
     </div>
-</div>
 </div>
 
 {% endblock %}
