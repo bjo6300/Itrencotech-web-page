@@ -15,12 +15,13 @@
             <!-- ##### 3D 프린트 출력 ##### -->
             <td>
                 <div style="border: 1px solid white; float: left; text-align: center">
-                    <!--돋보기-->
-                    <div>
-                        <a href="#" style="position: relative; margin-bottom: 10px;">
-                            <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG"
-                                width="34px" height="34px" />
-                        </a>
+                    <!-- 상세설명 문구 및 돋보기 -->
+                    <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
                     </div>
                     <!--이미지-->
                     <div style="margin-top: 40px;">
@@ -37,8 +38,8 @@
                             </figcaption>
 
                             <!-- body 부분 -->
-                            <h3 style="top: 35%;">
-                                3D 프린팅으로 출력
+                            <h3 style="top: 55%; text-align: center;">
+                                주문하기
                             </h3>
 
                             <a href="{% url 'itrencotech:3Dprinting' %}"></a>
@@ -59,13 +60,14 @@
             <!-- ##### 목업 CNC 가공 ##### -->
             <td>
                 <div style="border: 1px solid white; float: left;TEXT-ALIGN: center">
-                <!--돋보기-->
-                <div>
-                    <a href="#" style="position: relative; margin-bottom: 10px;">
-                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG"
-                            width="34px" height="34px" />
-                    </a>
-                </div>
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
                 <!--이미지-->
                 <div style="margin-top: 40px;">
 
@@ -76,20 +78,21 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2>목업 CNC 가공</h2>
+                            <h2>목업 (CNC)</h2>
 
                         </figcaption>
 
                         <!-- body 부분 -->
-                        <h3 style="top: 35%;">
-                            목업으로 CNC 가공
-                        </h3>
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+
+                        
 
                         <a href="{% url 'itrencotech:mockUp' %}"></a>
                     </figure>
                 </div>
                 <!--글자-->
-                <h3 style="TEXT-ALIGN: center">목업 CNC 가공</h3>
+                <h3 style="TEXT-ALIGN: center">목업 (CNC 가공)</h3>
                 <!--포트폴리오-->
                 <div style="margin-top: 10px;">
                     <a href="{% url 'itrencotech:portfolio_mockup' %}" style="position: relative; margin-bottom: 10px;">
@@ -102,13 +105,14 @@
             <!-- ##### 부품 CNC 가공 ##### -->
             <td>
                 <div style="border: 1px solid white; TEXT-ALIGN: center; position: relative;">
-                <!--돋보기-->
-                <div>
-                    <a href="#" style="position: relative; margin-bottom: 10px;">
-                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG"
-                            width="34px" height="34px" />
-                    </a>
-                </div>
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
                 <!--이미지-->
                 <div style="margin-top: 40px;">
 
@@ -119,20 +123,21 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2>부품 CNC 가공</h2>
+                            <h2>부품 (CNC)</h2>
 
                         </figcaption>
 
                         <!-- body 부분 -->
-                        <h3 style="top: 35%;">
-                            부품으로 CNC 가공
-                        </h3>
+
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+
 
                         <a href="{% url 'itrencotech:CNC' %}"></a>
                     </figure>
                 </div>
                 <!--글자-->
-                <h3 style="TEXT-ALIGN: center">부품 CNC 가공</h3>
+                <h3 style="TEXT-ALIGN: center">부품 (CNC 가공)</h3>
                 <!--포트폴리오-->
                 <div style="margin-top: 10px;">
                     <a href="{% url 'itrencotech:portfolio_cnc' %}" style="position: relative; margin-bottom: 10px;">
@@ -145,19 +150,20 @@
             <!-- ##### Smart Digital Mold ##### -->
             <td>
                 <div style="border: 1px solid white; TEXT-ALIGN: center; position: relative;">
-                <!--돋보기-->
-                <div>
-                    <a href="#" style="position: relative; margin-bottom: 10px;">
-                        <img style="position: absolute; left: 60px;" src="/static/images/magnifying_glass.PNG"
-                            width="34px" height="34px" />
-                    </a>
-                </div>
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
                 <!--이미지-->
                 <div style="margin-top: 40px;">
 
                     <!-- 마우스오버 효과 -->
                     <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
-                            src="/static/images/cnc.png" width="251px" height="251px" />
+                            src="/static/images/sdm.png" width="251px" height="251px" />
                         <figcaption>
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
@@ -167,9 +173,16 @@
                         </figcaption>
 
                         <!-- body 부분 -->
-                        <h3 style="top: 35%;">
-                            Smart Digital Mold
+                        <h3 style="top: 35%; text-align: center;">
+                            Smart Digital 
                         </h3>
+                        <h3 style="top: 45%; text-align: center;">
+                            Mold
+                        </h3>
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+                        </h3>
+                        
 
                         <a href="{% url 'itrencotech:SDM' %}"></a>
                     </figure>

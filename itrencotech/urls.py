@@ -57,6 +57,7 @@ urlpatterns = [
             views.body_onlyIdea_onlyIdea_mechanical_design, name='mechanical_design'), # 기계시스템 설계
     path('onlyIdea/onlyIdea_HW_mechanical_design/',
             views.body_onlyIdea_onlyIdea_HW_mechanical_design, name='HW_mechanical_design'), # H/W 기구설계
+    path('onlyIdea/onlyIdea_detail/', views.onlyIdea_detail, name='onlyIdea_detail'), # 상세설명
 
 
     # 시제품 제작
@@ -64,15 +65,16 @@ urlpatterns = [
     path('prototyping/3DPrinting/', views.body_prototyping_3Dprinting, name='3Dprinting'), # 3D 프린팅
     path('prototyping/mockUp/', views.body_prototyping_mockUp, name='mockUp'), # 목업
     path('prototyping/CNC/', views.body_prototyping_CNC, name='CNC'), # CNC 가공
-    path('prototyping/SDM/',
-            views.body_prototyping_SDM, name='SDM'),  # Smart Digital Mold
+    path('prototyping/SDM/', views.body_prototyping_SDM, name='SDM'),  # Smart Digital Mold
+    path('prototyping/prototyping_detail/', views.prototyping_detail, name='prototyping_detail'), # 상세설명
 
 
     # 양산
-    path('production/home', views.body_production_home, name='body_production_home'),
-    path('production/mold/', views.body_production_mold, name='body_production_mold'),
-    path('production/cnc/', views.body_production_cnc, name='body_production_cnc'),
-    path('production/press/', views.body_production_press, name='body_production_press'),
+    path('production/home', views.body_production_home, name='body_production_home'),  # 양산 홈
+    path('production/mold/', views.body_production_mold, name='body_production_mold'),  # 양산 금형
+    path('production/cnc/', views.body_production_cnc, name='body_production_cnc'),  # 양산 cnc
+    path('production/press/', views.body_production_press, name='body_production_press'),  # 양산 프레스
+    path('production/production_detail/', views.production_detail, name='production_detail'), # 상세설명
 
 
     # 회사 소개
@@ -90,5 +92,7 @@ urlpatterns = [
     path('order/order_form_prototyping/', views.order_form_prototyping, name='order_form_prototyping'),
     path('order/order_form_production/', views.order_form_production, name='order_form_production'),
 
+    # 마이페이지
+    path('myPage/myPage_home/', views.navbar_myPage_home, name='navbar_myPage_home'),
 
 ]
