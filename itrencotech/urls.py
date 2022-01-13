@@ -63,6 +63,8 @@ urlpatterns = [
     path('order/order_form_production/', views.order_form_production, name='order_form_production'),
 
     # 마이페이지
-    path('myPage/myPage_home/', views.navbar_myPage_home, name='navbar_myPage_home'),
+    path('navBar/mypage/mypage_home/', views.mypage_home, name='mypage_home'),
+    path('navBar/mypage/mypage_order_history/', views.mypage_order_history, name='mypage_order_history'),
+    path('navBar/mypage/mypage_info/', views.mypage_info, name='mypage_info'),
 
 ]

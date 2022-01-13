@@ -135,6 +135,7 @@ def production_detail(request):
     # 양산 상세설명
     return render(request, 'body/production/production_detail.html')
 
+# ##### 주문 페이지 #####
 def order_home(request):
     return render(request, 'order/order_home.html')
 
@@ -150,5 +151,12 @@ def order_form_prototyping(request):
 def order_form_production(request):
     return render(request, 'order/order_form_production.html')
 
-def navbar_myPage_home(request):
-    return render(request, 'navBar/myPage/myPage_home.html')
+# ##### 마이페이지 #####
+def mypage_home(request):
+    return render(request, 'navbar/myPage/myPage_home.html')
+
+def mypage_order_history(request):
+    return render(request, 'navBar/myPage/myPage_order_history.html')
+
+def mypage_info(request):
+    return render(request, 'navBar/myPage/myPage_info.html')
