@@ -83,7 +83,7 @@ input:focus {
     padding: 0;
 }
 
-#table-email td 
+#table-email td {
     width: 25%;
 }
 
