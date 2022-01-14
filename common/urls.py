@@ -1,11 +1,14 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from .views import *
 
 app_name = 'common'
 
 urlpatterns = [
 
-    path('', views.login, name='login'),  # 로그인 페이지
+    path('', auth_views.LoginView.as_view(template_name='login/login.html'), name='login'),  # 로그인
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # 로그아웃
+
     path('signUp/', views.signUp, name='signUp'),  # 회원가입 페이지
     path('signUp/completed', views.signUpCompleted, name='signUp_completed'),  # 회원가입 완료 페이지
 

@@ -1,0 +1,19 @@
+<!-- 폼 에러를 다루는 페이지 -->
+
+{% if form.errors %}
+    {% for field in form %}
+        <!-- 필드 오류 출력(입력 값 누락 또는 형식에 맞지 않을 때) -->
+        {% for error in field.errors %}
+            <div>
+                <strong>{{ field.label }}</strong>
+                {{ error }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <!-- 넌필드 오류 출력(입력 값과 관계 없는 오류) -->
+    {% for error in form.non_field_errors %}
+        <div>
+            <strong>{{ error }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
