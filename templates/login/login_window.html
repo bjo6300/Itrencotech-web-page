@@ -1,14 +1,24 @@
+{% load static %}
+<script src="{% static 'js/showPasswd.js' %}"></script>
+
 <div id="div-wrapper">
     <div id="div-login">
         <div>
             <p class="p-login-txt"> 아이디 </p>
             <input type="id" placeholder="아이디" >
         </div>
-        <div>
-            <p class="p-login-txt"> 비밀번호 </p>
-            <input type="password" placeholder="비밀번호">
-        </div>
 
+        <p class="p-login-txt"> 비밀번호 </p>
+        <div id="div-passwd-container">
+            <input id="input-showed" type="password" placeholder="비밀번호">
+            <div id="div-show-container">
+                <div id="div-show-passwd">
+                    <input id="input-show-passwd" type="checkbox" onclick="showPasswd();">
+                    <label for="input-show-passwd"></label>
+                </div>
+            </div>
+        </div>
+        
         <button type="button" id="btn-login" onclick="location.href='{% url 'itrencotech:login' %}'"> 로그인 </button>
         <br> <br>
 
