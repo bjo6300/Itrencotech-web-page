@@ -56,7 +56,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%; width: 700px;">
-                                민경찬
+                                {% if user.is_authenticated %}
+                                    민경찬
+                                {% else %}
+                                    OOO
+                                {% endif %}
                             </td>
                         </tr>
 
@@ -86,7 +90,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                mkc@itrencotech.com
+                                {% if user.is_authenticated %}
+                                    {{ user.email }}
+                                {% else %}
+                                    abc@itrencotech.com
+                                {% endif %}
                             </td>
                         </tr>
 
@@ -101,7 +109,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                mkc0000
+                                {% if user.is_authenticated %}
+                                    {{ user.username }}
+                                {% else %}
+                                    ...
+                                {% endif %}
                             </td>
                         </tr>
 

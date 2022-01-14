@@ -116,7 +116,13 @@
                             <font size="3">받는사람</font>
                         </div>
                         <div>
-                            <font size="3">민경찬</font>
+                            <font size="3">
+                                {% if user.is_authenticated %}
+                                    {{ user.username }}
+                                {% else %}
+                                    OOO
+                                {% endif %}
+                            </font>
                         </div>
                     </div>
                     <div class="reception-title">
