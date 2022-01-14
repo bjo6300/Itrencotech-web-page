@@ -83,12 +83,12 @@ input:focus {
     padding: 0;
 }
 
-#table-email td {
-    width: 80px;
+#table-email td 
+    width: 25%;
 }
 
 #table-email td[colspan="3"] {
-    width: 300px;
+    width: 80%;
 }
 
 /* 이메일 셀 */
@@ -273,7 +273,7 @@ tr, td {
 }
 
 
-/* ───────────────────────── find_passwd_phone, find_email_phone ───────────────────────── */
+/* ───────────────────────── find_passwd_phone, find_id_phone ───────────────────────── */
 /* 그림자 가진 컨테이너 - 리사이징 목적으로 재작성 */
 #div-wrapper-phone {
     text-align: center;
@@ -287,11 +287,11 @@ tr, td {
 /* 부제목 텍스트 밑 언더라인*/
 #p-txt-phone-large:after {
     text-align: center;
-        content: "";
-        display: block;
-        width: 100px;
-        border-bottom: 1.7px solid #AAAAAA;
-        margin: 5px auto;
+    content: "";
+    display: block;
+    width: 100px;
+    border-bottom: 1.7px solid #AAAAAA;
+    margin: 5px auto;
 }
 
 /* 휴대폰 인증 테이블 */
@@ -327,7 +327,7 @@ tr, td {
 
 /* 전화번호 입력 창 크기 조절 */
 #input-phone-number {
-    width: 185px;
+    width: 87%;
 }
 
 /* 선택 스피너 */
@@ -397,7 +397,6 @@ select {
     margin: 20px 0;
 }
 
-/* 체크박스 */
 #input-check-box input[type="checkbox"]{ 
     display: none;
 } 
@@ -441,6 +440,12 @@ select {
 [type="checkbox"]:checked + label:after {
     opacity: 1;
     transform: scale(1);
+}
+
+/* 일치 확인 텍스트 */  
+#span-confirm-message {
+    font-size: 0.8em;
+    margin-bottom: 20px;
 }
 
 /* 확인 버튼 */
@@ -523,6 +528,111 @@ select {
     background: none;
 }
 
+/* 비밀번호 컨테이너 */
+.div-passwd-container {
+    display: table;
+    margin: auto;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
+
+[type="checkbox"] + label:after { 
+    opacity: 0;
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container-02 {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd-02 {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd-02 input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd-02 input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd-02 input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd-02 input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
 
 /* ───────────────────────── find_passwd_completed ───────────────────────── */
 /* 로그인 창으로 이동 버튼 */
