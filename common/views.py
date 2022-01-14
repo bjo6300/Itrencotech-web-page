@@ -3,9 +3,24 @@ from . import views
 
 # Create your views here.
 
+# def login(request):
+#     """ 로그인 페이지 """
+#     return render(request, 'login/login.html')
+
+
+# 일반 로그인
 def login(request):
-    """ 로그인 페이지 """
-    return render(request, 'login/login.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is None:
+            return render(request, 'login/login.html', {'error': 'username 또는 password가 틀렸습니다.'})
+        else:
+            auth.login(request, user)
+            return redirect('/')
+    else:
+        return render(request, 'login/login.html')
 
 
 def signUp(request):
