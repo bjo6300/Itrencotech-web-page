@@ -50,9 +50,10 @@
 
 
                 <li class="right"><a href="{% url 'itrencotech:mypage_home' %}">
-                    <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
                     {% if user.is_authenticated %}
-                        <a href="{% url 'common:logout' %}">{{ user.username }}님 로그아웃</a>
+                        {{ user.username }}님
+                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
+                        <a href="{% url 'common:logout' %}" style="margin-left: 10px;">로그아웃</a>
                     {% else %}
                         <a href="{% url 'common:login' %}">로그인</a></li>
                     {% endif %}
