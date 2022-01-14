@@ -32,6 +32,12 @@
     border-bottom-right-radius: 150%;
 }
 
+/* 비밀번호 컨테이너 */
+#div-passwd-container {
+    display: table;
+    margin: auto;
+}
+
 /* 아이디, 비밀번호 텍스트 */
 .p-login-txt {
     text-align: left;
@@ -55,6 +61,60 @@ input {
 
 input:focus {
     outline: none;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
+
+[type="checkbox"] + label:after { 
+    opacity: 0;
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
 }
 
 /* 로그인 버튼 */
@@ -98,4 +158,4 @@ input:focus {
 
 #a-find-btn:hover, #a-register-btn:hover {
     color: #74BAD8;
-}
+} 

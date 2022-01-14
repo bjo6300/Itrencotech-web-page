@@ -3,6 +3,8 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+<script src="{% static 'js/showPasswd.js' %}"></script>
+<script src="{% static 'js/confirmPasswd.js' %}"></script>
 
 <div id="div-title-container" >
     <h1 id="h1-title"> 비밀번호 찾기 </h1>
@@ -18,13 +20,29 @@
     <br>
 
     <div id="div-wrapper">
-        <div>
-            <p class="p-txt"> 새 비밀번호를 입력해 주세요. </p>
-            <input type="password" class="input-passwd" placeholder="새 비밀번호">
-            <input type="password" class="input-passwd" placeholder="비밀번호 확인">
+        <p class="p-txt"> 새 비밀번호를 입력해 주세요. </p>
+        <div class="div-passwd-container">
+            <input class="input-passwd" id="input-showed-01" type="password" placeholder="새 비밀번호" onkeyup="check();">
+            <div id="div-show-container">
+                <div id="div-show-passwd">
+                    <input id="input-show-passwd-01" type="checkbox" onclick="showPasswd01();">
+                    <label for="input-show-passwd-01"></label>
+                </div>
+            </div>
         </div>
 
-        <button type="button" id="btn-confirm-02" onclick="location.href='{% url 'itrencotech:find_passwd_completed' %}'"> 확 인 </button>
+        <div class="div-passwd-container">
+            <input class="input-passwd" id="input-showed-02" type="password" placeholder="비밀번호 확인" onkeyup="check();">
+            <div id="div-show-container">
+                <div id="div-show-passwd">
+                    <input id="input-show-passwd-02" type="checkbox" onclick="showPasswd02();">
+                    <label for="input-show-passwd-02"></label>
+                </div>
+            </div>
+        </div>
+        <span id="span-confirm-message"></span> <br/>
+      
+        <button type="button" id="btn-confirm-02" onclick="location.href='{% url 'common:find_passwd_completed' %}'"> 확 인 </button>
     </div>
 </div>
 

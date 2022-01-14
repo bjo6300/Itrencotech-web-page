@@ -37,7 +37,7 @@
                 </div>
             </div>
             <!-- 주문서 작성 내용: 제품 제목, 제품 설명 -->
-            <div align="center" style="width:100%; height:300px;">
+            <div align="center" style="width:100%; height:280px;">
                 <div align="left" style="padding-left:60px;">
                     <!-- 제품 제목 -->
                     <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 제목</font>
@@ -47,7 +47,7 @@
                     <!-- 제품 설명 -->
                     <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 설명</font>
                         <div style="width:113%; margin: 15px 0 15px 0;">
-                            <textarea name="product_description" placeholder="제품 설명" rows="4"></textarea>
+                            <textarea name="product_description" placeholder="제품 설명" rows="4" style="resize: none;"></textarea>
                         </div>
                 </div>
             </div>
@@ -79,7 +79,12 @@
                         <!-- 파일 -->
                         <font size="4" style="float:left; letter-spacing: 10px; font-weight: bold;">파일</font>
                         <div class="upload-btn-wrapper">
-                            <input type="file" name="file" id="input_file" multiple/>
+                            <input type="file" name="file" id="input_file" multiple
+                                   accept="image/*,
+                                           application/vnd.ms-excel,
+                                           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                           text/plain,
+                                           .pdf"/>    <!-- 설계 파일의 확장자를 등록해 주면 업로드 가능함 -->
                             <label for="input_file" class="upload-btn">파일 업로드</label>
                         </div>
                         <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
