@@ -7,19 +7,23 @@
     <div style="border-collapse: separate;">
         <div align="center" style="margin: 50px 0 -50px 0;">
             <h1 id="h1-title">
-                <font size="6" color="#0b57a5" style="letter-spacing: 3px;">민경찬</font> 님의 마이페이지
+                <font size="6" color="#0b57a5" style="letter-spacing: 3px;">
+                    {% if user.is_authenticated %}
+                        {{ user.username }}
+                    {% else %}
+                        OOO
+                    {% endif %}
+                </font> 님의 마이페이지
             </h1>
         </div>
         <table align="center" style="margin-top:50px; margin-bottom:50px;border-spacing: 0; ">
             <tr>
                 <td>
-                    <div style="margin: 20px
-                ;">
-                        <div style="
-                    width: 130px; height: 130px; text-align: center;
-                    border-radius: 30px;
-                    box-shadow: 3px 3px 3px 1px lightgray;
-                    padding-top: 5%;">
+                    <div style="margin: 20px;">
+                        <div style="width: 130px; height: 130px; text-align: center;
+                                    border-radius: 30px;
+                                    box-shadow: 3px 3px 3px 1px lightgray;
+                                    padding-top: 5%;">
                             <h3>주문 내역 </h3>
                             <h1>3건</h1>
                         </div>
@@ -27,13 +31,11 @@
                     </div>
                 </td>
                 <td>
-                    <div style="margin: 20px
-                    ;">
-                        <div style="
-                    width: 130px; height: 130px; text-align: center;
-                    border-radius: 30px;
-                    box-shadow: 3px 3px 3px 1px lightgray;
-                    padding-top: 5%; ">
+                    <div style="margin: 20px;">
+                        <div style="width: 130px; height: 130px; text-align: center;
+                                    border-radius: 30px;
+                                    box-shadow: 3px 3px 3px 1px lightgray;
+                                    padding-top: 5%; ">
                             <h3>배송 중 </h3>
                             <h1>1건</h1>
                         </div>
@@ -41,13 +43,11 @@
                     </div>
                 </td>
                 <td>
-                    <div style="margin: 20px
-                    ;">
-                        <div style="
-                    width: 130px; height: 130px; text-align: center;
-                    border-radius: 30px;
-                    box-shadow: 3px 3px 3px 1px lightgray;
-                    padding-top: 5%; ">
+                    <div style="margin: 20px;">
+                        <div style="width: 130px; height: 130px; text-align: center;
+                                    border-radius: 30px;
+                                    box-shadow: 3px 3px 3px 1px lightgray;
+                                    padding-top: 5%; ">
                             <h3>주문 완료 </h3>
                             <h1>2건</h1>
                         </div>
