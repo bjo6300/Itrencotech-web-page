@@ -27,6 +27,19 @@ def signUp(request):
     """ 회원가입 페이지 """
     return render(request, 'login/signUp.html')
 
+    # 이하 수정 중...
+    # if request.method == 'POST':
+    #     user = User.objects.create_user(
+    #         username=request.POST['username'],  #
+    #         password=request.POST['password'],
+    #         email=request.POST['email'],
+    #         company_name=request.POST['company_name'],
+    #     )
+    #     auth.login(request, user)
+    #     return redirect('/')    # 메인 페이지(index)로 이동
+    # else:
+    #     return render(request, 'common/signup.html')
+
 
 def signUpCompleted(request):
     """ 회원가입 완료 페이지 """
