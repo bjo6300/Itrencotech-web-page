@@ -432,12 +432,12 @@ select {
     transition: .2s;
 }
 
-[type="checkbox"] + label:after { 
+#input-check-box [type="checkbox"] + label:after { 
     opacity: 0;
     transform: scale(0.5);
 }
 
-[type="checkbox"]:checked + label:after {
+#input-check-box [type="checkbox"]:checked + label:after {
     opacity: 1;
     transform: scale(1);
 }
