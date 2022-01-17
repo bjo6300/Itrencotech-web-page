@@ -1,10 +1,11 @@
 <!-- 내비게이션 바 -->
 
 <style type="text/css">
+    #header {width:width:1700px;}
     #header a{text-decoration:none; color:black; transition :color .25s ease-in-out;}
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
-    .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
+    .header_wrap{ width:1700px; margin:0 auto;  position:absolute;}
     #logo{float:left; margin:0; padding:15px 0 0 150px;}
 
     nav ul{width:100%; list-style-type:none; padding:0; }
@@ -25,8 +26,8 @@
 
 </style>
 
-<div id="header" >
-    <div class="header_wrap" >
+<div id="header">
+    <div class="header_wrap">
         <span id="logo"><a href="{% url 'itrencotech:index' %}">
             <img src="/static/images/make it.png" width="140px" height="30px">
         </a></span>

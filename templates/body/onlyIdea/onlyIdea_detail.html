@@ -96,15 +96,21 @@
                             onclick="location.href='{% url 'itrencotech:portfolio_machine_design' %}'">포트폴리오</button>
                     <!-- 주문하기 버튼 -->
                     <!-- 주문하기 버튼 클릭은 로그인 이후에 가능하도록 -->
-<!--                    {% if user.is_authenticated %}-->
+                    {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'itrencotech:onlyIdea_detail' %}">
+                        {% csrf_token %}
+                        {% include 'form_errors.html' %}
+                        <button name="btn-mecha-sys-design" id="btn-mecha-sys-design" class="detail-order-btn"
+                                type="button" onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">
+                            주문하기
+                        </button>
+                    </form>
+                    {% else %}
+                    <button class="detail-order-btn" type="button"
+                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>
+                    {% endif %}
 <!--                    <button class="detail-order-btn" type="button"-->
 <!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
-<!--                    {% else %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
-<!--                    {% endif %}-->
-                    <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
