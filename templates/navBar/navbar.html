@@ -5,7 +5,7 @@
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
     .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
-    #logo{float:left; margin:0; padding:15px 0 0 150px !important;}
+    #logo{float:left; margin:0; padding:15px 0 0 150px;}
 
     nav ul{width:100%; list-style-type:none; padding:0; }
     nav {margin-right:50px;}
@@ -48,7 +48,7 @@
 <!--                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
 <!--                    {% else %}-->
 <!--                    <a href="{% url 'common:login' %}">주문하기</a>-->
-                    {% endif %}
+<!--                    {% endif %}-->
                     <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
                 </li>
                 <li class="left"><a href="{% url 'itrencotech:onlyIdea_detail' %}">서비스 설명</a></li>
