@@ -22,6 +22,8 @@ Itrencotech web page using django
 ## Basic Layout
 ![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
 
+## DB table
+![image](https://user-images.githubusercontent.com/70627982/149728303-3b3df2ed-368c-44a2-befb-d88716161e89.png)
 
 
 

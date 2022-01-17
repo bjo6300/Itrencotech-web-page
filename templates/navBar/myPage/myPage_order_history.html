@@ -1,156 +1,140 @@
-{% extends 'navBar/mypage/myPage_base.html' %}
+{% extends 'navBar/mypage/mypage_base.html' %}
 {% load static %}
 {% block content %}
 
 {% include 'navBar/mypage/mypage_header.html' %}
 
-
 <div align="center">
-    <div style="width: 1010px; height: 30px;">
+    <div style="width: 1010px; height: 1080px;">
         <!-- 서비스 설명 메뉴 -->
-        <table align="left" style="text-align: center;">
+        <table align="left" style="text-align: left; ">
             <tr>
                 <!-- 나의 주문 내역 -->
                 <td>
-                    <button type="button" id="btn-now"
-                            onclick="location.href='#'"
-                            style="width:100%"> 나의 주문 내역 </button>
+                    <button type="button" class="btn-menu"
+                            onclick="location.href='{% url 'itrencotech:mypage_order_history' %}'"
+                            style="width:100%;"> 나의 주문 내역 </button>
                 </td>
                 <!-- 내 정보 -->
                 <td>
                     <button type="button" class="btn-menu"
                             onclick="location.href='{% url 'itrencotech:mypage_info' %}'"
-                            style="width:100%"> 내 정보 </button>
+                            style="width:100%;"> 내 정보 </button>
                 </td>
             </tr>
         </table>
-    </div>
-</div>
-
-<div>
-    <!-- 나의 주문 내역 목록 1 -->
-    <div align="center" class="detail-box">
-        <div class="mypage-box-top">
-            <!-- 작품 제목 및 주문서 -->
-            <div class="mypage-mini-box">
-                <!-- 작품 제목 -->
-                <div class="mypage-title">
-                    <!-- 작품 제목 -->
-                    <font size="4">작품 제목 넣기</font>
-                    <!-- 주문서 보기 버튼 -->
-                    <button type="button" class="order-btn">주문서 보기</button>
-                </div>
-            </div>
-            <!-- 주문 날짜 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="4">2022.01.07 주문</font>
-                </div>
-            </div>
-            <!-- 배송 정보 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="6">배송 진행 중</font>
-                </div>
-            </div>
-            <!-- 버튼 3개(배송 조회, 교환/반품, 후기) -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <!-- 배송 조회 버튼 -->
-                    <button type="button" class="btn-btn3">배송 조회</button>
-                    <!-- 교환/반품 신청 버튼 -->
-                    <button type="button" class="btn-btn3">교환/반품 신청</button>
-                    <!-- 후기 작성하기 버튼 -->
-                    <button type="button" class="btn-btn3">후기 작성하기</button>
-                </div>
-            </div>
+        <!-- 선1 -->
+        <div class="reception-boundary">
+            <img src="/static/images/service_detail_boundary.png" width="1010px">
         </div>
-    </div>
-
-    <!-- 나의 주문 내역 목록 2 -->
-    <div align="center" class="detail-box">
-        <div class="mypage-box">
-            <!-- 작품 제목 및 주문서 -->
-            <div class="mypage-mini-box">
-                <!-- 작품 제목 -->
-                <div class="mypage-title">
-                    <!-- 작품 제목 -->
-                    <font size="4">작품 제목 넣기</font>
-                    <!-- 주문서 보기 버튼 -->
-                    <button type="button" class="order-btn">주문서 보기</button>
-                </div>
+        <!-- 접수 상태 -->
+        <div class="reception-state-box" style="position: relative;">
+            <!-- 접수 완료 -->
+            <div class="reception-state-mini-box" align="center">
+                    <div style="display: table-cell; vertical-align: middle; height: 185px;">
+                            <font size="5" style="letter-spacing: 10px;">접수</font><br/>
+                            <font size="6" style="font-weight: 900; color: #131E3E; letter-spacing: 10px;">완료</font>
+                    </div>
             </div>
-            <!-- 주문 날짜 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="4">2022.01.02 주문</font>
-                    <div class="mypage-arrive-date">
-                        <font size="4">2022.01.03 도착</font>
+            <!-- 동그라미 -->
+<!--            <img src="/static/images/myPage_circle.png" width="185px" alt="image" style="position: absolute; right: 777px;"/>-->
+            <!-- ... -->
+            <div class="reception-state-dot-box">
+                <img src="/static/images/myPage_dot3.png" width="70px" alt="image" style="padding-top:86px;"/>
+            </div>
+            <!-- 제작 완료 -->
+            <div class="reception-state-mini-box">
+                <!-- 동그라미 -->
+<!--                <img src="/static/images/myPage_circle.png" width="185px" alt="image" style="position: absolute; right: 417px;"/>-->
+                <div style="width: 185px;">
+                    <div style="display: table-cell; vertical-align: middle; height: 185px;">
+                        <font size="5" style="letter-spacing: 10px;">제작</font><br/>
+                        <font size="6" style="font-weight: 900; color: #131E3E; letter-spacing: 10px;">완료</font>
                     </div>
                 </div>
             </div>
-            <!-- 배송 정보 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="6">배송 완료</font>
-                </div>
+            <!-- ... -->
+            <div class="reception-state-dot-box">
+                <img src="/static/images/myPage_dot3.png" width="70px" alt="image" style="padding-top:86px;"/>
             </div>
-            <!-- 버튼 3개(배송 조회, 교환/반품, 후기) -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <!-- 배송 조회 버튼 -->
-                    <button type="button" class="btn-btn3">배송 조회</button>
-                    <!-- 교환/반품 신청 버튼 -->
-                    <button type="button" class="btn-btn3">교환/반품 신청</button>
-                    <!-- 후기 작성하기 버튼 -->
-                    <button type="button" class="btn-btn3">후기 작성하기</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 나의 주문 내역 목록 3 -->
-    <div align="center" class="detail-box">
-        <div class="mypage-box">
-            <!-- 작품 제목 및 주문서 -->
-            <div class="mypage-mini-box">
-                <!-- 작품 제목 -->
-                <div class="mypage-title">
-                    <!-- 작품 제목 -->
-                    <font size="4">작품 제목 넣기</font>
-                    <!-- 주문서 보기 버튼 -->
-                    <button type="button" class="order-btn">주문서 보기</button>
-                </div>
-            </div>
-            <!-- 주문 날짜 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="4">2021.06.05 주문</font>
-                    <div class="mypage-arrive-date">
-                        <font size="4">2021.06.08 도착</font>
+            <!-- 배송 진행 중 -->
+            <div class="reception-state-mini-box">
+                <div style="width: 185px;">
+                    <div style="display: table-cell; vertical-align: middle; height: 185px;">
+                            <font size="5" style="letter-spacing: 10px;">배송</font><br/>
+                            <font size="6" style="font-weight: 900; color: #131E3E; letter-spacing: 10px;">진행중</font>
                     </div>
                 </div>
             </div>
-            <!-- 배송 정보 -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <font size="6">배송 완료</font>
+            <img src="/static/images/myPage_circle.png" width="185px" alt="image" style="position: absolute; right: 57px;"/>
+        </div>
+        <!-- 선2 -->
+        <div class="reception-boundary">
+            <img src="/static/images/service_detail_boundary.png" width="1010px">
+        </div>
+        <!-- 주문 현황 -->
+        <div align="center">
+            <div id="reception-box">
+                <!-- 작품 제목 및 주문서 -->
+                <div class="reception-mini-box">
+                    <!-- 작품 제목 -->
+                    <div class="reception-title">
+                        <!-- 작품 제목 -->
+                        <font size="4">작품 제목 넣기</font>
+                        <!-- 주문서 보기 버튼 -->
+                        <button type="button" class="order-btn">주문서 보기</button>
+                    </div>
                 </div>
-            </div>
-            <!-- 버튼 3개(배송 조회, 교환/반품, 후기) -->
-            <div class="mypage-mini-box">
-                <div class="mypage-title">
-                    <!-- 배송 조회 버튼 -->
-                    <button type="button" class="btn-btn3">배송 조회</button>
-                    <!-- 교환/반품 신청 버튼 -->
-                    <button type="button" class="btn-btn3">교환/반품 신청</button>
-                    <!-- 후기 작성하기 버튼 -->
-                    <button type="button" class="btn-btn3">후기 작성하기</button>
+                <!-- 주문 날짜 -->
+                <div class="reception-mini-box" align="left" style="padding-left: 30px; border-left: 1px solid #a9a9a9;">
+                    <div class="reception-title">
+                        <font size="3">2022.01.07 주문</font>
+                    </div>
+                    <div class="reception-title">
+                        <font size="3">2022.01.07 접수 완료</font>
+                    </div>
+                    <div class="reception-title">
+                        <font size="3">2022.01.08 제작 완료</font>
+                    </div>
+                </div>
+                <!-- 배송 정보 -->
+                <div id="reception-info" class="reception-mini-box"
+                            align="left" style="padding-left: 30px; border-left: 1px solid #a9a9a9;">
+                    <div id="reception-company">
+                        <strong style="font-size: 1.6em; color: #0B57A5;">kk 배송</strong>
+                    </div>
+                    <div class="reception-title">
+                        <div style="width:20%; float:left; margin-right: 10px;">
+                            <font size="3">송장번호</font>
+                        </div>
+                        <div>
+                            <font size="3">33222211110000</font>
+                        </div>
+                    </div>
+                    <div class="reception-title">
+                        <div style="width:20%; float:left; margin-right: 10px;">
+                            <font size="3">받는사람</font>
+                        </div>
+                        <div>
+                            <font size="3">
+                                민경찬
+                            </font>
+                        </div>
+                    </div>
+                    <div class="reception-title">
+                        <div style="width:20%; height: 100px; float:left; margin-right: 10px;">
+                            <font size="3">받는주소</font>
+                        </div>
+                        <div>
+                            <font size="3">경기 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207호</font>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- 배송 정보 테이블 -->
+        {% include 'navBar/mypage/mypage_shipping_list.html' %}
     </div>
 </div>
-
 
 {% endblock %}
