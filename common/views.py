@@ -1,15 +1,11 @@
-from django.shortcuts import render
-from . import views
+from django.contrib.auth import authenticate
+from django.shortcuts import render, redirect
+from django.contrib import auth
 
-# Create your views here.
-
-# def login(request):
-#     """ 로그인 페이지 """
-#     return render(request, 'login/login.html')
-
-
+""" ───────────────────────── 로그인/회원가입 ───────────────────────── """
 # 일반 로그인
 def login(request):
+    """ 로그인 페이지 """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
