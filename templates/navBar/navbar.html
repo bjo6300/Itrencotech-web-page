@@ -5,7 +5,7 @@
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
     .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
-    #logo{float:left; margin:0; padding:15px 0 0 150px;}
+    #logo{float:left; margin:0; padding:15px 0 0 150px !important;}
 
     nav ul{width:100%; list-style-type:none; padding:0; }
     nav {margin-right:50px;}
@@ -27,9 +27,9 @@
 
 <div id="header" >
     <div class="header_wrap" >
-        <h1 id="logo"><a href="{% url 'itrencotech:index' %}">
+        <span id="logo"><a href="{% url 'itrencotech:index' %}">
             <img src="/static/images/make it.png" width="140px" height="30px">
-        </a></h1>
+        </a></span>
         <nav id="nav">
             <ul class="gnb">
                 <li class="left" id="drop">
