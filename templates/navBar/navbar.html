@@ -11,11 +11,11 @@
     nav {margin-right:50px;}
 
 
-    .left {float:left; margin-left:30px; padding:0px 20px 0px 20px; }
+    .left {float:left; margin-left:20px; padding:0px 20px 0px 20px; }
     .right {float:right;}
 
 
-    .submenu li {text-align:center; visibility:hidden; height:0px; transition:height 0.35s ease;}
+    .submenu li {text-align:center; visibility:hidden; height:0px; transition:height 0.35s ease; margin-left: 16px;}
     .gnb>li:hover .submenu li {background-color:white; visibility:visible; height:40px;}
 
 
@@ -33,7 +33,7 @@
         <nav id="nav">
             <ul class="gnb">
                 <li class="left" id="drop">
-                    <a href="{% url 'itrencotech:navbar_about_ceo' %}">　　회사소개　　</a>
+                    <a href="{% url 'itrencotech:navbar_about_ceo' %}">　　회사소개</a>
                     <ul class="submenu">
                         <li><a href="{% url 'itrencotech:navbar_about_ceo' %}">CEO 인사말</a></li>
                         <li><a href="{% url 'itrencotech:navbar_about_ideology' %}">기업이념</a></li>
@@ -42,21 +42,37 @@
                     </ul>
                 </li>
 
+                <li class="left" id="order">
+<!--                    주문하기 페이지는 로그인 이후에 접속되도록-->
+<!--                    {% if user.is_authenticated %}-->
+<!--                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
+<!--                    {% else %}-->
+<!--                    <a href="{% url 'common:login' %}">주문하기</a>-->
+                    {% endif %}
+                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
+                </li>
+                <li class="left"><a href="{% url 'itrencotech:onlyIdea_detail' %}">서비스 설명</a></li>
                 <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
 
                 <li class="left"><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
 
-                <li class="left" id="order"><a href="{% url 'itrencotech:order_home' %}">주문하기</a></li>
 
 
-                <li class="right"><a href="{% url 'itrencotech:mypage_home' %}">
-                    {% if user.is_authenticated %}
-                        {{ user.username }}님
+                <li class="right">
+<!--                    마이페이지는 로그인 이후에 접속되도록-->
+<!--                    {% if user.is_authenticated %}-->
+<!--                    {{ user.username }} 님-->
+<!--                    <a href="{% url 'itrencotech:mypage_home' %}">-->
+<!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
+<!--                    <a href="{% url 'common:logout' %}" style="margin-left: 10px;">로그아웃</a>-->
+<!--                    {% else %}-->
+<!--                    <a href="{% url 'common:login' %}">-->
+<!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
+<!--                    {% endif %}-->
+                    <a href="{% url 'itrencotech:mypage_home' %}">
                         <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
-                        <a href="{% url 'common:logout' %}" style="margin-left: 10px;">로그아웃</a>
-                    {% else %}
-                        <a href="{% url 'common:login' %}">로그인</a></li>
-                    {% endif %}
+                    <a href="{% url 'common:login' %}" style="margin-left: 10px;">로그인</a>
+                </li>
 
            </ul>
         </nav>
