@@ -1,4 +1,6 @@
 {% load static %}
+<script src="{% static 'js/showPasswd.js' %}"></script>
+
 <div id="div-wrapper">
     <div id="div-signup">
         <form method="post" class="post-form">
@@ -35,7 +37,7 @@
                     <td>
                         <p class="p-signup-txt"> 비밀번호 </p>
                         <div id="div-passwd-container">
-                            <input id="password" type="password" name="password" placeholder="비밀번호"
+                            <input id="input-showed" type="password" name="password" placeholder="비밀번호"
                                     value="{{ form.username.value|default_if_none:'' }}">
                             <div id="div-show-container">
                                 <div id="div-show-passwd">
