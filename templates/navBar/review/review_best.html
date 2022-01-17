@@ -13,23 +13,27 @@
 </div>
 
 <div id="div-container">
-	<table id="table-container-01">
+	<table id="table-container-02">
 		<tr>
-			<td>
-				<button type="button" id="btn-selected-now"> 베스트후기 </button>
-			</td>
-			<td>
-				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_recent' %}'"> 최신순 </button>
-			</td>
-			<td>
-				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_high_rating' %}'"> 높은평점순 </button>
-			</td>
-			<td>
-				<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_low_rating' %}'"> 낮은평점순 </button>
+			<td id="td-btns" colspan="4">
+				<table id="table-container-01">
+					<tr>
+						<td>
+							<button type="button" id="btn-selected-now"> 베스트후기 </button>
+						</td>
+						<td>
+							<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_recent' %}'"> 최신순 </button>
+						</td>
+						<td>
+							<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_high_rating' %}'"> 높은평점순 </button>
+						</td>
+						<td>
+							<button type="button" class="btn-btns" onclick="location.href='{% url 'itrencotech:review_low_rating' %}'"> 낮은평점순 </button>
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
-	</table>
-	<table id="table-container-02">
 		<tr>
 			<td>
 				<div class="div-images"> </div>
