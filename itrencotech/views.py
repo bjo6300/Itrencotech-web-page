@@ -5,7 +5,6 @@ from django.utils import timezone
 def index(request):
     return render(request, 'body/main.html')
 
-
 def portfolio(request):
     """ 포트폴리오 페이지 """
     return render(request, 'navBar/portfolio/portfolio.html')

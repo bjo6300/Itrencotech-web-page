@@ -1,7 +1,7 @@
 <!-- 내비게이션 바 -->
 
 <style type="text/css">
-    #header {width:width:1700px;}
+    #header {width:1700px;}
     #header a{text-decoration:none; color:black; transition :color .25s ease-in-out;}
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
@@ -44,13 +44,13 @@
                 </li>
 
                 <li class="left" id="order">
-<!--                    주문하기 페이지는 로그인 이후에 접속되도록-->
-<!--                    {% if user.is_authenticated %}-->
-<!--                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
-<!--                    {% else %}-->
-<!--                    <a href="{% url 'common:login' %}">주문하기</a>-->
-<!--                    {% endif %}-->
+                    <!-- 주문하기 페이지는 로그인 이후에 접속되도록-->
+                    {% if user.is_authenticated %}
                     <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
+                    {% else %}
+                    <a href="{% url 'common:login' %}">주문하기</a>
+                    {% endif %}
+                <!-- <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
                 </li>
                 <li class="left"><a href="{% url 'itrencotech:onlyIdea_detail' %}">서비스 설명</a></li>
                 <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
@@ -60,21 +60,20 @@
 
 
                 <li class="right">
-<!--                    마이페이지는 로그인 이후에 접속되도록-->
-<!--                    {% if user.is_authenticated %}-->
-<!--                    {{ user.username }} 님-->
-<!--                    <a href="{% url 'itrencotech:mypage_home' %}">-->
-<!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
-<!--                    <a href="{% url 'common:logout' %}" style="margin-left: 10px;">로그아웃</a>-->
-<!--                    {% else %}-->
-<!--                    <a href="{% url 'common:login' %}">-->
-<!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
-<!--                    {% endif %}-->
+                    <!-- 마이페이지는 로그인 이후에 접속되도록-->
+                    {% if user.is_authenticated %}
+                    {{ user.username }} 님
                     <a href="{% url 'itrencotech:mypage_home' %}">
                         <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
+                    <a href="{% url 'common:logout' %}" style="margin-left: 10px;">로그아웃</a>
+                    {% else %}
+                    <a href="{% url 'common:login' %}">
+                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
+                    {% endif %}
+<!--                    <a href="{% url 'itrencotech:mypage_home' %}">-->
+<!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
                     <a href="{% url 'common:login' %}" style="margin-left: 10px;">로그인</a>
                 </li>
-
            </ul>
         </nav>
     </div>
