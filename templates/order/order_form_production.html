@@ -9,6 +9,7 @@
          < 양산 주문서 >
      </font>
 </div>
+
 <!-- 주문서 별 교체 내용 -->
 <div style="padding:70px 0 50px 0;">
     <!-- 주문서 메뉴 버튼 -->
@@ -23,6 +24,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    var checkBox = JSON.parse("{{ contextDict|escapejs }}")['method'];
+    document.getElementById(checkBox).checked = true;
+</script>
+
 {% include 'order/order_form_footer.html' %}
 
 {% endblock %}
