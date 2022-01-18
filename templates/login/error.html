@@ -14,7 +14,7 @@
     {% elif err ==2 %}      <!-- 로그인 오류 -->
         <h6>로그인에 오류가 발생하였습니다 5초후 로그인페이지로 돌아갑니다.</h6>
         <p> 아이디가 존재하지 않거나 비밀번호가 틀립니다. 다시 확인해주세요 </p>
-        <meta http-equiv="refresh" content="5; {% url 'login' %}">
+        <meta http-equiv="refresh" content="5; {% url 'common:login_main' %}">
     {% endif %}
 
 {% endblock %}
