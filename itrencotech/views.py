@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+import json
 
 
 def index(request):
@@ -145,14 +146,32 @@ def order_confirmation(request):
 
 
 def order_form_onlyIdea(request):
+    if request.method == "GET":
+        method = request.GET.get('method', False)
+        context = {'method': method}
+        contextDict = json.dumps(context)
+        return render(request, 'order/order_form_onlyIdea.html', {'contextDict': contextDict})
+
     return render(request, 'order/order_form_onlyIdea.html')
 
 
 def order_form_prototyping(request):
+    if request.method == "GET":
+        method = request.GET.get('method', False)
+        context = {'method': method}
+        contextDict = json.dumps(context)
+        return render(request, 'order/order_form_prototyping.html', {'contextDict': contextDict})
+
     return render(request, 'order/order_form_prototyping.html')
 
 
 def order_form_production(request):
+    if request.method == "GET":
+        method = request.GET.get('method', False)
+        context = {'method': method}
+        contextDict = json.dumps(context)
+        return render(request, 'order/order_form_production.html', {'contextDict': contextDict})
+
     return render(request, 'order/order_form_production.html')
 
 # ##### 마이페이지 #####
