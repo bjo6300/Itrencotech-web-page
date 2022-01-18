@@ -1,15 +1,15 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib import auth
 
-from common.models import Users
+from common.forms import UserForm
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 # 일반 로그인
-def login(request):
+def login_main(request):
     """ 로그인 페이지 """
     if request.method == 'POST':
-        username = request.POST.get('id', None)
+        username = request.POST.get('username', None)
         password = request.POST.get('password', None)
         user = authenticate(request, username=username, password=password)
         if user is None:
@@ -23,39 +23,19 @@ def login(request):
 
 def signUp(request):
     """ 회원가입 페이지 """
-    if request.method == 'GET':
-        return render(request, 'login/signUp.html')
-    elif request.method == 'POST':
-        user_name = request.POST.get('user_name', '')  # 이름
-        user_id = request.POST.get('user_id', '')  # 아이디
-        user_pw = request.POST.get('password', '')  # 비밀번호
-        # user_pw_confirm = request.POST.get('password-confirm', '')    # 비밀번호 확인(지금은 없으므로 주석 처리)
-        phone_num = request.POST.get('user_tel', '')  # 휴대전화
-        company_name = request.POST.get('company_name', '')  # 회사명
-        company_address = request.POST.get('company_address', '')  # 회사 주소
-        company_tel = request.POST.get('company_tel', '')  # 회사 전화
-        email = request.POST.get('email', '')  # 이메일
-
-        # 필수 항목 입력 누락 시
-        if (user_name or user_id or user_pw or phone_num
-                or company_name or company_address or company_tel or email) == '':
-            return redirect("/common/signUp/")
-        # elif user_pw != user_pw_confirm:
-        #     return redirect("{% url 'common:signUp' %}")
-        else:
-            user = Users(
-                id=user_id,
-                name=user_name,
-                password=user_pw,
-                phone_num=phone_num,
-                company_name=company_name,
-                company_address=company_address,
-                company_tel=company_tel,
-                email=email
-            )
-            user.save()
-
-        return redirect("/common/signUp_completed/")
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            userid = form.cleaned_data.get('userid')
+            password1 = form.cleaned_data.get('password1')
+            user = authenticate(username=userid, password=password1)
+            # 사용자 인증
+            login(request, user)  # 로그인
+            return redirect('/common/signUp/completed')
+    else:
+        form = UserForm()
+    return render(request, 'login/signUp.html', {'form': form})
 
 
 def signUpCompleted(request):
