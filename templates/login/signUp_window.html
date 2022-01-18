@@ -3,20 +3,20 @@
 
 <div id="div-wrapper">
     <div id="div-signup">
-        <form method="post" class="post-form">
+        <form method="post" class="post-form" action="">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <table>
                 <tr>
                     <td>
                         <p class="p-signup-txt"> 이름 </p>
-                        <input type="text" name="username" id="username" placeholder="이름"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                        <input type="text" name="user_name" id="user_name" placeholder="이름"
+                                value="{{ form.user_name.value|default_if_none:'' }}">
                     </td>
                     <td>
                         <p class="p-signup-txt"> 회사명 </p>
                         <input type="text" name="company_name" id="company_name" placeholder="회사명"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.company_name.value|default_if_none:'' }}">
                     </td>
                 </tr>
 
@@ -24,12 +24,12 @@
                     <td>
                         <p class="p-signup-txt"> 아이디 </p>
                         <input type="text" name="user_id" id="user_id" placeholder="아이디"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.user_id.value|default_if_none:'' }}">
                     </td>
                     <td>
                         <p class="p-signup-txt"> 회사 주소 </p>
                         <input type="text" name="company_address" id="company_address" placeholder="회사 주소"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.company_address.value|default_if_none:'' }}">
                     </td>
                 </tr>
 
@@ -38,7 +38,7 @@
                         <p class="p-signup-txt"> 비밀번호 </p>
                         <div id="div-passwd-container">
                             <input id="input-showed" type="password" name="password" placeholder="비밀번호"
-                                    value="{{ form.username.value|default_if_none:'' }}">
+                                    value="{{ form.password.value|default_if_none:'' }}">
                             <div id="div-show-container">
                                 <div id="div-show-passwd">
                                     <input id="input-show-passwd" type="checkbox" onclick="showPasswd();">
@@ -50,7 +50,7 @@
                     <td>
                         <p class="p-signup-txt"> 회사 전화 </p>
                         <input type="text" name="company_tel" id="company_tel" placeholder="회사 전화"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.company_tel.value|default_if_none:'' }}">
                     </td>
                 </tr>
 
@@ -58,16 +58,17 @@
                     <td>
                         <p class="p-signup-txt"> 휴대전화 </p>
                         <input type="text" name="user_tel" id="user_tel" placeholder="휴대전화"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.user_tel.value|default_if_none:'' }}">
                     </td>
                     <td>
                         <p class="p-signup-txt"> 이메일 </p>
                         <input type="email" name="email" id="email" placeholder="이메일"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                                value="{{ form.email.value|default_if_none:'' }}">
                     </td>
                 </tr>
             </table>
-        <button type="submit" value="signup" id="btn-signup" onclick="location.href='{% url 'common:signUp_completed' %}'"> 가입하기 </button>
+            <button type="submit" value="signup" id="btn-signup" name="signup-submit"
+                    onclick="location.href='{% url 'common:signUp_completed' %}'"> 가입하기 </button>
 
         </form>
     </div>

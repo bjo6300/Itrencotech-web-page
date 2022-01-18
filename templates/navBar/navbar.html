@@ -1,11 +1,10 @@
 <!-- 내비게이션 바 -->
 
 <style type="text/css">
-    #header {width:1700px;}
     #header a{text-decoration:none; color:black; transition :color .25s ease-in-out;}
     #header a:hover{color:#ff0000;}
     #header{background:white; height:55px; border-bottom:1px solid gray;}
-    .header_wrap{ width:1700px; margin:0 auto;  position:absolute;}
+    .header_wrap{ width:100%; margin:0 auto;  position:absolute;}
     #logo{float:left; margin:0; padding:15px 0 0 150px;}
 
     nav ul{width:100%; list-style-type:none; padding:0; }
@@ -69,10 +68,10 @@
                     {% else %}
                     <a href="{% url 'common:login' %}">
                         <img src="/static/images/myIcon.png" width="21px" height="19px"></a>
+                    <a href="{% url 'common:login' %}" style="margin-left: 10px;">로그인</a>
                     {% endif %}
 <!--                    <a href="{% url 'itrencotech:mypage_home' %}">-->
 <!--                        <img src="/static/images/myIcon.png" width="21px" height="19px"></a>-->
-                    <a href="{% url 'common:login' %}" style="margin-left: 10px;">로그인</a>
                 </li>
            </ul>
         </nav>
