@@ -1,16 +1,18 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import auth
 
 from common.forms import UserForm
+from django.urls import reverse
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 # 일반 로그인
 def login_main(request):
     """ 로그인 페이지 """
     if request.method == 'POST':
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
+        username = request.POST.get('username', None)  # 이름
+        password = request.POST.get('password1', None)  # 비밀번호
         user = authenticate(request, username=username, password=password)
         if user is None:
             return render(request, 'login/login.html', {'error': 'username 또는 password가 틀렸습니다.'})
@@ -26,13 +28,17 @@ def signUp(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
-            form.save()
-            userid = form.cleaned_data.get('userid')
-            password1 = form.cleaned_data.get('password1')
-            user = authenticate(username=userid, password=password1)
+            user = form.save()
+            # userid = form.cleaned_data.get('userid')
+            # password1 = form.cleaned_data.get('password1')
+            # user = authenticate(username=userid, password=password1)
             # 사용자 인증
-            login(request, user)  # 로그인
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')  # 로그인
+            logout(request)
             return redirect('/common/signUp/completed')
+            # url = reverse('location:get_location')
+            # print("location_url ", url)
+            # return HttpResponseRedirect(url)
     else:
         form = UserForm()
     return render(request, 'login/signUp.html', {'form': form})
