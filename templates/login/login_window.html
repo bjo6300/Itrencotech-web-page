@@ -8,11 +8,11 @@
             {% include 'form_errors.html' %}
             <div>
                 <p class="p-login-txt"> 아이디 </p>
-                <input type="text" name="username" id="username" placeholder="아이디">
+                <input type="text" name="user_id" id="user_id" placeholder="아이디">
             </div>
             <p class="p-login-txt"> 비밀번호 </p>
             <div id="div-passwd-container">
-                <input id="input-showed" type="password" name="password" placeholder="비밀번호">
+                <input id="input-showed" type="password" name="password1" placeholder="비밀번호">
                 <div id="div-show-container">
                     <div id="div-show-passwd">
                         <input id="input-show-passwd" type="checkbox" onclick="showPasswd();">
@@ -29,6 +29,6 @@
         <br>
 
         <a id="a-find-btn" href="{% url 'common:find_id_passwd' %}"> 아이디/비밀번호 찾기 </a>
-        <a id="a-register-btn" href="{% url 'common:signUp' %}"> 회원가입 </a>
+        <a id="a-register-btn" href="{% url 'common:signUp2' %}"> 회원가입 </a>
     </div>
 </div>

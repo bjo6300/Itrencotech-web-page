@@ -7,11 +7,14 @@ app_name = 'common'
 
 urlpatterns = [
 
-    # path('login/', login, name='login'),
-    path('login/', auth_views.LoginView.as_view(template_name='login/login.html'), name='login_main'),  # 로그인
+    path('login/', views.login_main, name='login_main'),
+    # path('login/', auth_views.LoginView.as_view(template_name='login/login.html'), name='login_main'),  # 로그인
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # 로그아웃
 
-    path('signUp/', views.signUp, name='signUp'),  # 회원가입 페이지
+    # path('logout/', views.logout_main, name='logout'),
+
+    # path('signUp/', views.signUp, name='signUp'),  # 회원가입 페이지
+    path('signUp/', views.signUp2, name='signUp2'),
     path('signUp/completed', views.signUpCompleted, name='signUp_completed'),  # 회원가입 완료 페이지
 
     # 찾기
