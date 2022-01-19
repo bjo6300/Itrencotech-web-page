@@ -1,33 +1,86 @@
 import json
+import traceback
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import auth
+from django.template.response import TemplateResponse
+from django.views import View
 
 from common.forms import UserForm
 from common.models import UserModel
 from django.urls import reverse
+from django.http import JsonResponse
 
 from django.contrib.auth.hashers import make_password, check_password  # 비밀번호 암호화 및 체크(DB와의 일치성 확인)
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
-
-
 # 일반 로그인
 def login_main(request):
-    """ 로그인 페이지 """
-    if request.method == 'POST':
-        username = request.POST.get('username', None)  # 이름
-        password = request.POST.get('password1', None)  # 비밀번호
-        user = authenticate(request, username=username, password=password)
-        if user is None:
-            return render(request, 'login/login.html', {'error': 'username 또는 password가 틀렸습니다.'})
-        else:
-            auth.login(request, user)
-            return redirect('/')
-    else:
-        return render(request, 'login/login.html')
+    response_data = {}
+
+    if request.method == "GET" :
+        return render(request, 'login.html')
+
+    elif request.method == "POST":
+        login_user_id = request.POST.get('user_id', None)
+        login_password = request.POST.get('password', None)
+
+        if not (login_user_id and login_password):
+            response_data['error']="아이디와 비밀번호를 모두 입력해주세요."
+        else :
+            myuser = UserModel.objects.get(user_id=login_user_id)
+            # db에서 꺼내는 명령. Post로 받아온 username으로 , db의 username을 꺼내온다.
+            if check_password(login_password, myuser.password):
+                request.session['user'] = myuser.id
+                # 세션도 딕셔너리 변수 사용과 똑같이 사용하면 된다.
+                # 세션 user라는 key에 방금 로그인한 id를 저장한것.
+                return redirect('/')
+            else:
+                response_data['error'] = "비밀번호를 틀렸습니다."
+
+        return render(request, 'login.html',response_data)
+
+
+class UserLoginView(View):
+    template_name = 'login/login.html'
+
+    def get(self, request):
+        # GET 요청은 로그인 페이지 로드
+        return TemplateResponse(request, self.template_name, {})
+
+    def post(self, request):
+        # POST 요청은 로그인 페이지 내의 API
+        user_id = request.POST.get('user_id')
+        password = request.POST.get('password1')
+        try:
+            user = authenticate(user_id, password)
+        except Exception as e:
+            # authenticate 함수 내에서 예외가 발생하는 경우 분기
+            if e.args[0] == 'USER IS LOCKED':
+                return JsonResponse({'result': 'error', 'error_msg': 'User is locked'})
+            elif e.args[0] == 'PASSWORD FAILED BY 5 TIMES':
+                return JsonResponse({'result': 'error', 'error_msg': 'Password failure count is over the limit.'})
+            return JsonResponse({'result': 'error', 'error_msg': traceback.format_exc()})
+
+        # 유저의 패스워드 변경 기한 확인하여 로그인 후 NEXT URL 리턴 값 변경
+        return redirect('/')
+
+
+# def login_main(request):
+#     """ 로그인 페이지 """
+#     if request.method == 'POST':
+#         user_id = request.POST.get('user_id', None)  # 이름
+#         password = request.POST.get('password1', None)  # 비밀번호
+#         user = authenticate(request, username=user_id, password=password)
+#         if user is None:
+#             return render(request, 'login/login.html', {'error': 'username 또는 password가 틀렸습니다.'})
+#         else:
+#             auth.login(request, user)
+#             return redirect('/')
+#     else:
+#         return render(request, 'login/login.html')
 
 
 # def login2_main(request):
