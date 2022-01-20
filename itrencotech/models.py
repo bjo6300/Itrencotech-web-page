@@ -3,7 +3,6 @@ from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from common.models import UserModel
 import datetime
 
-
 # 카테고리 모델  ----------------------------------------------
 
 class CategoryModel(models.Model):
