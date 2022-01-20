@@ -5,10 +5,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 # from common.forms import UserForm
-from common.models import UserModel
+from common.models import UserModel, User
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
+
+# 일반 로그인
+def login_main(request):
+    pass
 
 # 일반 로그인
 # def login_main(request):
@@ -63,8 +67,8 @@ from common.models import UserModel
 def signUp(request):
     """ 회원가입 페이지 """
     if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
+        form = User(request.POST)
+        if form.is_valid():  # 나중에 수정 필요 #######################################################
             user = form.save()
             # userid = form.cleaned_data.get('userid')
             # password1 = form.cleaned_data.get('password1')
@@ -77,7 +81,7 @@ def signUp(request):
             # print("location_url ", url)
             # return HttpResponseRedirect(url)
     else:
-        form = UserForm()
+        form = User()
     return render(request, 'login/signUp.html', {'form': form})
 
 

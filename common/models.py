@@ -1,3 +1,5 @@
+import hashlib
+
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 
@@ -86,6 +88,9 @@ class User(AbstractBaseUser):
     def __str__(self):
         return self.user_id
 
+    def set_password(self, password):
+        self.password = hashlib.sha256(password).hexdigest()
+
     # Custom User Model을 기본 User Model로 사용하기 위해 구현해야 하는 부분
     # True를 반환하여 권한이 있음을 알림. Object 반환 시 해당 Object로 사용 권한을 확인하는 절차가 필요함
     def has_perm(self, perm, obj=None):
@@ -100,3 +105,19 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.is_admin
 
+    # def is_valid(self):
+    #     pass
+
+
+# 카테고리 모델  ----------------------------------------------
+
+class CategoryModel(models.Model):
+    category_index = models.AutoField(verbose_name='카테고리 인덱스', primary_key=True)
+    category_main = models.CharField(max_length=50, verbose_name='메인 카테고리')
+    category_sub = models.CharField(max_length=50, verbose_name='서브 카테고리')
+
+    def __str__(self):
+        return self.category_index
+
+    class Meta:  # 메타 클래스를 이용하여 테이블명 지정
+        db_table = 'category'
