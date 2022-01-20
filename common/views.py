@@ -2,18 +2,10 @@ import json
 import traceback
 
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib import auth
-from django.template.response import TemplateResponse
-from django.views import View
 
-from common.forms import UserForm
+# from common.forms import UserForm
 from common.models import UserModel
-from django.urls import reverse
-from django.http import JsonResponse
-
-from django.contrib.auth.hashers import make_password, check_password  # 비밀번호 암호화 및 체크(DB와의 일치성 확인)
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
