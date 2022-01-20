@@ -38,8 +38,8 @@
                     <td>
                         <p class="p-signup-txt"> 비밀번호 </p>
                         <div id="div-passwd-container">
-                            <input id="input-showed" type="password" name="password1" placeholder="비밀번호"
-                                    value="{{ form.password1.value|default_if_none:'' }}">
+                            <input id="input-showed" type="password" name="password" placeholder="비밀번호"
+                                    value="{{ form.password.value|default_if_none:'' }}">
                             <div id="div-show-container">
                                 <div id="div-show-passwd">
                                     <input id="input-show-passwd" type="checkbox" onclick="showPasswd();">

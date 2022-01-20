@@ -33,7 +33,7 @@ class UserAdmin(BaseUserAdmin):
         (None, {
             'classes': ('wide',),
             'fields': ('user_id', 'user_name', 'phone_num', 'company_name',
-                       'company_address', 'company_tel', 'email', 'password1', 'password2')}
+                       'company_address', 'company_tel', 'email', 'password')}
          ),
     )
     search_fields = ('user_id',)

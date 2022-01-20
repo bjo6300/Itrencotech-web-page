@@ -47,3 +47,14 @@ class UserChangeForm(forms.ModelForm):
 
     def clean_password(self):
         return self.initial["password"]
+
+
+class SignupForm(UserCreationForm):
+    user_id = forms.CharField(max_length=50, help_text='Required. Add a velid user id.')
+
+    class Meta:
+        model = User
+        fields = ('user_id', 'user_name', 'password1', 'password2')
+
+
+

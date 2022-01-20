@@ -85,6 +85,9 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS = ['user_name', 'phone_num', 'company_name', 'company_address',
                        'company_tel', 'email']
 
+    class Meta:  # 메타 클래스를 이용하여 테이블명 지정
+        db_table = 'user2'
+
     def __str__(self):
         return self.user_id
 

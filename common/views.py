@@ -1,18 +1,48 @@
 import json
 import traceback
 
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 # from common.forms import UserForm
-from common.models import UserModel, User
+# from common.models import UserModel
+from common.models import User
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
 
 # 일반 로그인
 def login_main(request):
-    pass
+    # 로그인 된 상태로 URL 접근 시 오류 처리
+    if request.user.is_authenticated:
+        pass
+    # GET 방식 호출일 때
+    if request.method == 'GET':
+        # print('GET 방식')
+        return render(request, 'login/login.html')
+    # POSS 방식 호출일 때
+    elif request.method == 'POST':
+        # print('POST 방식')
+        user_id = request.POST.get('user_id', None)  # 아이디
+        password = request.POST.get('password', None)  # 비밀번호
+        try:
+            # print(user_id, password)
+            user = User.objects.get(user_id=user_id)
+        except:
+            messages.error(request, '회원정보를 찾을 수 없습니다.')
+
+        # auth_user가 아니라 커스텀 유저 모델에 접근하도록 수정하는 것이 관건!!!!
+        user = authenticate(user_id=user_id, password=password)
+
+        if user is not None:
+            # messages.error(request, '로그인 되었습니다.')
+            login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, '아이디 혹은 비밀번호가 틀렸습니다.')
+    return render(request, 'login/login.html')
+
 
 # 일반 로그인
 # def login_main(request):
@@ -70,24 +100,16 @@ def signUp(request):
         form = User(request.POST)
         if form.is_valid():  # 나중에 수정 필요 #######################################################
             user = form.save()
-            # userid = form.cleaned_data.get('userid')
-            # password1 = form.cleaned_data.get('password1')
-            # user = authenticate(username=userid, password=password1)
             # 사용자 인증
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')  # 로그인
             logout(request)
             return redirect('/common/signUp/completed')
-            # url = reverse('location:get_location')
-            # print("location_url ", url)
-            # return HttpResponseRedirect(url)
     else:
         form = User()
     return render(request, 'login/signUp.html', {'form': form})
 
 
 # 0119 로그인/회원가입 추가 함수 --------------------------------------------------------------------------------------
-
-
 
 # 회원가입 진행 시 auth_user가 아닌 user 테이블에 정보가 저장되므로 유의할 것
 # ※※※※※ 현재 회원가입 버튼을 누르면 signUp2() 함수에서 구현되도록 임시 조치 중임 ※※※※※
@@ -99,7 +121,7 @@ def signUp2(request):
     elif request.method == 'POST':
         user_name = request.POST.get('user_name', None)  # 이름
         user_id = request.POST.get('user_id', None)  # 아이디
-        password1 = request.POST.get('password1', None)  # 비밀번호
+        password = request.POST.get('password', None)  # 비밀번호
         phone_num = request.POST.get('phone_num', None)  # 휴대전화
         password2 = request.POST.get('password2', None)  # 비밀번호(확인)
         company_name = request.POST.get('company_name', None)  # 회사명
@@ -107,17 +129,19 @@ def signUp2(request):
         company_tel = request.POST.get('company_tel', None)  # 회사 전화
         email = request.POST.get('email', None)  # 이메일
         res_data = {}
-        if not (user_name and user_id and password1 and phone_num and password2
+        if not (user_name and user_id and password and phone_num and password2
                 and company_name and company_address and company_tel and email):
             res_data['error'] = "입력하지 않은 칸이 있습니다."
-        if password1 != password2:
+        if password != password2:
             res_data['error'] = '비밀번호가 일치하지 않습니다.'
         else:
-            user = UserModel(user_name=user_name, user_id=user_id,
-                             # password1=make_password(password1), password2=make_password(password2),
-                             password1=password1, password2=password2,  # 암호화 적용 함수를 만든 뒤에는 위의 문장으로 대체
-                             phone_num=phone_num, company_name=company_name,
-                             company_address=company_address, company_tel=company_tel, email=email)
+            user = User(user_name=user_name, user_id=user_id,
+                        # password1=make_password(password1), password2=make_password(password2),
+                        password=password,
+                        # password1=password
+                        # password2=password2,  # 암호화 적용 함수를 만든 뒤에는 위의 문장으로 대체
+                        phone_num=phone_num, company_name=company_name,
+                        company_address=company_address, company_tel=company_tel, email=email)
             user.save()
         return render(request, 'login/signUp_completed.html', res_data)
 
