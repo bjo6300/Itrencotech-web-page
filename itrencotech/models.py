@@ -3,7 +3,6 @@ from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from common.models import UserModel
 import datetime
 
-
 # 카테고리 모델  ----------------------------------------------
 
 class CategoryModel(models.Model):
@@ -81,3 +80,4 @@ class OrderModel(models.Model):
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'order'
+
