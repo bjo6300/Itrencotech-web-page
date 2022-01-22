@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from common.views import index, RegisterView, LoginView
-
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('itrencotech.urls')),  # main page
+    path('', RedirectView.as_view(url='/home/', permanent=True)),   # main page
+    path('home/', include('itrencotech.urls')),                     # main page
     path('common/', include('common.urls')),  # common(login) page
     # path('register/', RegisterView.as_view()),  # Register(login error)
 ]

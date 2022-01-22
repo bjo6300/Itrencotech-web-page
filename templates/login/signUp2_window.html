@@ -1,30 +1,18 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block content %}
+<script src="{% static 'js/showPasswd.js' %}"></script>
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/signUp.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-
-<div id="div-title-container">
-    <h1 id="h1-title"> 회원가입 </h1>
-</div>
-
-<div id="div-logo-container">
-    <div id="div-logo"></div>
-</div>
-
-<!-- 가입 창 -->
 <div id="div-wrapper">
     <div id="div-signup">
-        <form method="post" class="post-form" action="{% url 'common:signUp' %}">
+<!--        {{error}}-->
+        <form method="post" class="post-form" action="{% url 'common:signUp2' %}">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <table>
                 <tr>
                     <td>
                         <p class="p-signup-txt"> 이름 </p>
-                        <input type="text" name="username" id="username" placeholder="이름"
-                                value="{{ form.username.value|default_if_none:'' }}">
+                        <input type="text" name="user_name" id="user_name" placeholder="이름"
+                                value="{{ form.user_name.value|default_if_none:'' }}">
                     </td>
                     <td>
                         <p class="p-signup-txt"> 회사명 </p>
@@ -36,8 +24,8 @@
                 <tr>
                     <td>
                         <p class="p-signup-txt"> 아이디 </p>
-                        <input type="text" name="userid" id="userid" placeholder="아이디"
-                                value="{{ form.userid.value|default_if_none:'' }}">
+                        <input type="text" name="user_id" id="user_id" placeholder="아이디"
+                                value="{{ form.user_id.value|default_if_none:'' }}">
                     </td>
                     <td>
                         <p class="p-signup-txt"> 회사 주소 </p>
@@ -50,8 +38,8 @@
                     <td>
                         <p class="p-signup-txt"> 비밀번호 </p>
                         <div id="div-passwd-container">
-                            <input id="input-showed" type="password" name="password1" placeholder="비밀번호"
-                                    value="{{ form.password1.value|default_if_none:'' }}">
+                            <input id="input-showed" type="password" name="password" placeholder="비밀번호"
+                                    value="{{ form.password.value|default_if_none:'' }}">
                             <div id="div-show-container">
                                 <div id="div-show-passwd">
                                     <input id="input-show-passwd" type="checkbox" onclick="showPasswd();">
@@ -94,5 +82,3 @@
         </form>
     </div>
 </div>
-
-{% endblock %}
