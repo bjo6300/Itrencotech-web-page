@@ -1,5 +1,8 @@
+"""
+common/admin.py
+"""
+
 from django.contrib import admin
-from .models import UserModel
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
@@ -7,40 +10,32 @@ from .forms import UserChangeForm, UserCreationForm
 from .models import User
 
 
-# class UserAdmin(admin.ModelAdmin):
-#     list_display = ('user_name', 'user_id', 'password1', 'phone_num',
-#                     'company_name', 'company_address', 'company_tel', 'email')  # User 클래스의 변수 이름과 통일해야 함
-# admin.site.register(UserModel, UserAdmin)  # site에 등록
-
-
 class UserAdmin(BaseUserAdmin):
-    # 사용자 변경 및 추가 Form을 Custom한 거로 결정
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('user_id', 'user_name', 'phone_num', 'company_name',
+    list_display = ('userid', 'username', 'phone_num', 'company_name',
                     'company_address', 'company_tel', 'email', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
-        (None, {'fields': ('user_id', 'password')}),
-        ('Personal info', {'fields': ('user_name', 'phone_num',
-                                      'company_name', 'company_address',
-                                      'company_tel', 'email',)}),
+        (None, {'fields': ('userid', 'password')}),
+        ('Personal info', {'fields': ('username', 'phone_num', 'company_name',
+                                      'company_address', 'company_tel', 'email')}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
-
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('user_id', 'user_name', 'phone_num', 'company_name',
-                       'company_address', 'company_tel', 'email', 'password')}
+            'fields': ('userid', 'username', 'phone_num', 'company_name',
+                       'company_address', 'company_tel', 'email', 'password1', 'password2')}
          ),
     )
-    search_fields = ('user_id',)
-    ordering = ('user_id',)
+    search_fields = ('userid',)
+    ordering = ('userid',)
     filter_horizontal = ()
 
 
+# 생성한 Custom User Model과 관리자 Form을 사용하도록 등록
 admin.site.register(User, UserAdmin)
+# 기본적으로 제공되는 Django의 Group은 사용하지 않음
 admin.site.unregister(Group)
-

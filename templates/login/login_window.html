@@ -3,12 +3,12 @@
 
 <div id="div-wrapper">
     <div id="div-login">
-        <form method="post" action="{% url 'common:login_main' %}">
+        <form method="post" class="post-form" action="{% url 'common:login_main' %}">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <div>
                 <p class="p-login-txt"> 아이디 </p>
-                <input type="text" name="user_id" id="user_id" placeholder="아이디">
+                <input type="text" name="userid" id="userid" placeholder="아이디">
             </div>
             <p class="p-login-txt"> 비밀번호 </p>
             <div id="div-passwd-container">
