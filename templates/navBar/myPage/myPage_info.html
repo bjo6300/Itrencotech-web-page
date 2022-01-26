@@ -57,9 +57,9 @@
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%; width: 700px;">
                                 {% if user.is_authenticated %}
-                                    민경찬
+                                    {{ user.username }}
                                 {% else %}
-                                    민경찬
+                                    홍길동
                                 {% endif %}
                             </td>
                         </tr>
@@ -75,7 +75,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                010-1234-5678
+                                {% if user.is_authenticated %}
+                                    {{ user.phone_num }}
+                                {% else %}
+                                    010-00000000
+                                {% endif %}
                             </td>
                         </tr>
 
@@ -93,7 +97,7 @@
                                 {% if user.is_authenticated %}
                                     {{ user.email }}
                                 {% else %}
-                                    mkc@itrencotech.com
+                                    test@test.com
                                 {% endif %}
                             </td>
                         </tr>
@@ -110,9 +114,9 @@
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
                                 {% if user.is_authenticated %}
-                                    {{ user.username }}
+                                    {{ user.userid }}
                                 {% else %}
-                                    mkc0000
+                                    test1234
                                 {% endif %}
                             </td>
                         </tr>
@@ -128,7 +132,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                (주)make it
+                                {% if user.is_authenticated %}
+                                    {{ user.company_name }}
+                                {% else %}
+                                    테스트회사명
+                                {% endif %}
                             </td>
                         </tr>
 
@@ -143,7 +151,11 @@
                             <td style="border-bottom: 1px solid rgb(236, 236, 236);
                             border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207
+                                {% if user.is_authenticated %}
+                                    {{ user.company_address }}
+                                {% else %}
+                                    테스트시 테스트구 테스트동
+                                {% endif %}
                             </td>
                         </tr>
 
@@ -156,12 +168,14 @@
                             </td>
                             <td style="border-left: 2px solid rgb(180, 179, 179);
                             background-color: white; padding-left: 3%;">
-                                031)431-0635
+                                {% if user.is_authenticated %}
+                                    {{ user.company_tel }}
+                                {% else %}
+                                    031)000-0000
+                                {% endif %}
                             </td>
                         </tr>
                     </table>
-
-
                 </div>
             </div>
         </div>
