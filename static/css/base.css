@@ -197,6 +197,13 @@ a:link, a:visited, a:active {
     position: relative;
 }
 
+/* 리뷰 별점 */
+.p-star-rating {
+    color: #74B9D8;
+   letter-spacing: 0.25em;
+    margin: 0 0 10px 0;
+}
+
 /* footer */
 .footer {
     /* background-image: url("/static/images/footer.png"); */
@@ -208,7 +215,7 @@ a:link, a:visited, a:active {
     height: 150px;
     width: 100%;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: black;
     background-color: rgb(237,239,244);
     padding-top: 15px;
 }

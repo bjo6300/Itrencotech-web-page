@@ -55,10 +55,12 @@
 <!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
 <!--                    {% else %}-->
 <!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
+<!--                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>-->
 <!--                    {% endif %}-->
-                    <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_prototyping' %}'">주문하기</button>
+                    <form action="{% url 'itrencotech:order_form_prototyping' %}" method="get">
+                        <input type="hidden" name="method" value="button1">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
@@ -100,10 +102,12 @@
 <!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
 <!--                    {% else %}-->
 <!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
+<!--                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>-->
 <!--                    {% endif %}-->
-                    <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_prototyping' %}'">주문하기</button>
+                    <form action="{% url 'itrencotech:order_form_prototyping' %}" method="get">
+                        <input type="hidden" name="method" value="button2">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
@@ -145,10 +149,12 @@
 <!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
 <!--                    {% else %}-->
 <!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
+<!--                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>-->
 <!--                    {% endif %}-->
-                    <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_prototyping' %}'">주문하기</button>
+                    <form action="{% url 'itrencotech:order_form_prototyping' %}" method="get">
+                        <input type="hidden" name="method" value="button3">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
@@ -190,10 +196,12 @@
 <!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
 <!--                    {% else %}-->
 <!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
+<!--                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>-->
 <!--                    {% endif %}-->
-                    <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_prototyping' %}'">주문하기</button>
+                    <form action="{% url 'itrencotech:order_form_prototyping' %}" method="get">
+                        <input type="hidden" name="method" value="button4">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
