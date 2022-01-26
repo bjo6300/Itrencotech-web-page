@@ -3,12 +3,12 @@
 
 <div id="div-wrapper">
     <div id="div-login">
-        <form method="post" action="{% url 'common:login' %}">
+        <form method="post" class="post-form" action="{% url 'common:login_main' %}">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <div>
                 <p class="p-login-txt"> 아이디 </p>
-                <input type="text" name="username" id="username" placeholder="아이디">
+                <input type="text" name="userid" id="userid" placeholder="아이디">
             </div>
             <p class="p-login-txt"> 비밀번호 </p>
             <div id="div-passwd-container">
@@ -22,15 +22,13 @@
             </div>
 
             <!-- 로그인 기능을 위해서는 해당 주석 삭제 후 아래 '임시 버튼' 삭제 필요 -->
-            <button type="submit" id="btn-login" onclick="location.href='{% url 'common:login' %}'"> 로그인 </button>
+            <button type="submit" id="btn-login" onclick="location.href='{% url 'common:login_main' %}'"> 로그인 </button>
             <input type="hidden" name="path" value="{{request.path}}"/>
         </form>
 
-        <!-- 임시 버튼 -->
-<!--        <button type="button" id="btn-login"> 로그인 </button><br>-->
         <br>
 
         <a id="a-find-btn" href="{% url 'common:find_id_passwd' %}"> 아이디/비밀번호 찾기 </a>
-        <a id="a-register-btn" href="{% url 'common:signUp' %}"> 회원가입 </a>
+        <a id="a-register-btn" href="{% url 'common:signUp2' %}"> 회원가입 </a>
     </div>
 </div>
