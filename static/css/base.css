@@ -215,7 +215,7 @@ a:link, a:visited, a:active {
     height: 150px;
     width: 100%;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: black;
     background-color: rgb(237,239,244);
     padding-top: 15px;
 }

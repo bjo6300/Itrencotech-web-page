@@ -1,22 +1,10 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block content %}
+<script src="{% static 'js/showPasswd.js' %}"></script>
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/signUp.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-
-<div id="div-title-container">
-    <h1 id="h1-title"> 회원가입 </h1>
-</div>
-
-<div id="div-logo-container">
-    <div id="div-logo"></div>
-</div>
-
-<!-- 가입 창 -->
 <div id="div-wrapper">
     <div id="div-signup">
-        <form method="post" class="post-form" action="{% url 'common:signUp' %}">
+<!--        {{error}}-->
+        <form method="post" class="post-form" action="{% url 'common:signUp2' %}">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <table>
@@ -94,5 +82,3 @@
         </form>
     </div>
 </div>
-
-{% endblock %}

@@ -23,4 +23,4 @@ function showPasswd02() {
   } else {
     x.type = "password";
   }
-}                
+}
