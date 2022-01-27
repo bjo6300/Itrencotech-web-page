@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from .models import Portfolio
 import json
-
 
 def index(request):
     return render(request, 'body/main.html')
@@ -13,7 +13,9 @@ def portfolio(request):
 
 def portfolioDesign(request):
     """ 포트폴리오 - 제품 디자인 페이지 """
-    return render(request, 'navBar/portfolio/design.html')
+    portfolio_list = Portfolio.objects.filter(category_index=1).order_by('board_index')
+    context = {'portfolio_list': portfolio_list}
+    return render(request, 'navBar/portfolio/design.html', context)
 
 
 def portfolioMachineDesign(request):
