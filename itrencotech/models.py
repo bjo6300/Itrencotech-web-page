@@ -34,8 +34,7 @@ class Portfolio(models.Model):
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'portfolio'
-
-
+        
 # 고객 후기 모델  ----------------------------------------------
 
 class Review(models.Model):
@@ -50,7 +49,7 @@ class Review(models.Model):
     review_img = models.CharField(max_length=100, verbose_name='이미지 주소')
 
     def __str__(self):
-        return self.board_index
+        return str(self.board_index)
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'review'
@@ -79,8 +78,7 @@ class Order(models.Model):
     state = models.CharField(max_length=20, default='접수 완료', verbose_name='주문 상태')
 
     def __str__(self):
-        return self.order_num
+        return str(self.order_num)
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'order'
-

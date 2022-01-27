@@ -44,9 +44,10 @@ def main():
         #     pageSize=1000, fields="nextPageToken, files(id, name)").execute()
         # items = results.get('files', [])
 
-        # 폴더 찾기
-        # folder_name = 'machine_system_design'
-        folder_name = input("\n찾으실 디렉토리명을 입력해 주세요: ")
+         # 폴더 찾기
+        folder_name = 'machine_system_design'
+        # folder_name = input("\n찾으실 디렉토리명을 입력해 주세요: ")
+
         folder_result = service.files().list(q="mimeType='application/vnd.google-apps.folder' and name='" + folder_name + "'",
                                             spaces='drive', pageSize=1000,
                                             fields='nextPageToken, files(id, name)').execute()
@@ -86,6 +87,7 @@ def main():
 
     print("\n")
 
+    return rows
 
 if __name__ == '__main__':
     main()
