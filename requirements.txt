@@ -9,3 +9,4 @@ sqlparse==0.4.2
 toml==0.10.2
 wincertstore==0.2
 django-allauth==0.47.0
+six==1.16.0

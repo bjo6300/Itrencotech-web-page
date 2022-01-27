@@ -42,18 +42,21 @@
                     </ul>
                 </li>
 
+
+                <li class="left"><a href="#">견적 요청</a></li>
+                <li class="left"><a href="#">견적 확인</a></li>
+
                 <li class="left" id="order">
                     <!-- 주문하기 페이지는 로그인 이후에 접속되도록-->
                     {% if user.is_authenticated %}
-                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
+                        <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
                     {% else %}
-                    <a href="{% url 'common:login_main' %}">주문하기</a>
+                        <a href="{% url 'common:login_main' %}">주문하기</a>
                     {% endif %}
                 <!-- <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
                 </li>
                 <li class="left"><a href="{% url 'itrencotech:onlyIdea_detail' %}">서비스 설명</a></li>
                 <li class="left"><a href="{% url 'itrencotech:portfolio' %}">포트폴리오</a></li>
-
                 <li class="left"><a href="{% url 'itrencotech:review_best' %}">후기</a></li>
 
 

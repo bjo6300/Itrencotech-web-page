@@ -94,3 +94,14 @@ class User(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin
+
+
+# 휴대폰 인증 모델
+# class UserCertification(models.Model):
+#     # 필요한 것 3가지: 휴대폰번호, 인증번호(4자리), 인증유무
+#     phone_num = models.ForeignKey(User.phone_num, on_delete=models.CASCADE, verbose_name='전화번호')
+#     auth_num = models.IntegerField(max_length=4, verbose_name='인증번호')
+#     is_certify = models.BooleanField(default=False, verbose_name='인증유무')
+
+
+
