@@ -1,10 +1,14 @@
 from django.contrib import auth, messages
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
 from common.models import User
 
+from django.core.mail import EmailMessage  # 이메일 보내는 모듈
+from django.template.loader import render_to_string  # 템플릿을 렌더링하기 위한 기능.
+from .mail import email_auth_num
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
@@ -134,3 +138,35 @@ def findPasswdReset(request):
 def findPasswdCompleted(request):
     """ 비밀번호 찾기 - 비밀번호 재설정 완료 """
     return render(request, 'login/find_passwd_completed.html')
+
+
+def verification(request):
+    """ 이메일 인증 """
+    if request.method == 'POST':
+        email1 = request.POST['email1']
+        email2 = request.POST['email2']
+        input_email = email1+'@'+email2
+        a = email_auth_num()
+        msg = EmailMessage(subject=a,
+                           body=a+a+a+a+a,
+                           to=[input_email],
+                           )
+        msg.send()
+        return render(request, 'login/find_id_email.html')
+    elif request.method == 'GET':
+        return render(request, 'login/find_id_email.html')
+
+
+    # if request.method == "POST":
+    #     pass
+    # content = {'user' : request.user}
+    # msg_html = render_to_string('navbar/navbar.html', content)
+    # a= email_auth_num()
+    # msg = EmailMessage(subject=a,
+    #                    body=msg_html,
+    #                    to=[request.user.email],
+    #                    )
+    # msg.content_subtype = 'html'  # html 코드로 나타내기 위함.
+    # msg.send()
+    # # messages.info(request, '이메일을 발송하였습니다..')
+    # return redirect('/')

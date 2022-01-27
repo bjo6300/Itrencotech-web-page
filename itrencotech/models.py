@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
-from common.models import UserModel
+from common.models import User
 import datetime
 
 # 카테고리 모델  ----------------------------------------------
@@ -39,8 +39,8 @@ class ReviewModel(models.Model):
     board_index = models.AutoField(verbose_name='게시글 인덱스', primary_key=True)
     category_index = models.ForeignKey(CategoryModel, related_name="%(class)s_category_index", on_delete=models.CASCADE, 
                     db_column='category_index', verbose_name='카테고리 인덱스')
-    user_id = models.ForeignKey(UserModel, related_name="%(class)s_user_id", on_delete=models.CASCADE, 
-                    db_column='user_id', verbose_name='작성자 아이디')
+    userid = models.ForeignKey(User, related_name="%(class)s_userid", on_delete=models.CASCADE,
+                    db_column='userid', verbose_name='작성자 아이디')
     rating = models.FloatField(verbose_name='별점')
     date = models.DateField(default=datetime.date.today, verbose_name='작성일')
     content = models.CharField(max_length=500, verbose_name='내용')
@@ -59,8 +59,8 @@ class OrderModel(models.Model):
     order_num = models.AutoField(verbose_name='주문 번호', primary_key=True)
     category_index = models.ForeignKey(CategoryModel, related_name="%(class)s_category_index", on_delete=models.CASCADE, 
                     db_column='category_index', verbose_name='카테고리 인덱스')
-    user_id = models.ForeignKey(UserModel, related_name="%(class)s_user_id", on_delete=models.CASCADE, 
-                    db_column='user_id', verbose_name='주문자 아이디')
+    userid = models.ForeignKey(User, related_name="%(class)s_userid", on_delete=models.CASCADE,
+                    db_column='userid', verbose_name='주문자 아이디')
     business_num = models.CharField(max_length=255, verbose_name='사업자 등록 번호')
     name = models.CharField(max_length=50, verbose_name='담당자')
     email = models.CharField(max_length=100, verbose_name='이메일')
