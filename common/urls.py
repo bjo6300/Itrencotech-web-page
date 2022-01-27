@@ -14,8 +14,8 @@ urlpatterns = [
 
     # path('logout/', views.logout_main, name='logout'),
 
-    path('signUp/', views.signUp, name='signUp'),  # 회원가입 페이지
-    path('signUp2/', SignUpView.as_view(), name='signUp2'),
+    # path('signUp/', views.signUp, name='signUp'),  # 회원가입 페이지
+    path('signUp/', SignUpView.as_view(), name='signUp'),
     path('signUp/completed', views.signUpCompleted, name='signUp_completed'),  # 회원가입 완료 페이지
 
     # 찾기

@@ -42,44 +42,7 @@ def login_main(request):
         return render(request, 'login/login.html')
 
 
-def signUp(request):
-    if request.method == 'GET':
-        return render(request, 'login/signup.html')
-    elif request.method == 'POST':
-        username = request.POST.get('username', None)  # 이름
-        userid = request.POST.get('userid', None)  # 아이디
-        password1 = request.POST.get('password1', None)  # 비밀번호
-        phone_num = request.POST.get('phone_num', None)  # 휴대전화
-        password2 = request.POST.get('password2', None)  # 비밀번호(확인)
-        company_name = request.POST.get('company_name', None)  # 회사명
-        company_address = request.POST.get('company_address', None)  # 회사 주소
-        company_tel = request.POST.get('company_tel', None)  # 회사 전화
-        email = request.POST.get('email', None)  # 이메일
-
-        res_data = {}
-
-        # 빈 칸 확인
-        if not (username and userid and password1 and password2 and phone_num
-                and company_name and company_address and company_tel and email):
-            res_data['error'] = "입력하지 않은 칸이 있습니다."
-        # 아이디 중복 확인
-        if User.objects.filter(userid=userid).exists():  # 아이디 중복 체크
-            print('이미 존재하는 아이디입니다!')
-            messages.warning(request, '이미 존재하는 아이디입니다!')
-            return render(request, 'login/signup.html')
-        # 비밀번호 일치 여부 확인
-        if password1 != password2:
-            res_data['error'] = '비밀번호가 일치하지 않습니다.'
-        else:
-            user = User.objects.create_user(userid=userid, username=username,
-                                            phone_num=phone_num, company_name=company_name,
-                                            company_address=company_address, company_tel=company_tel,
-                                            email=email, password=password1)
-            user.save()
-        return render(request, 'login/signUp_completed.html', res_data)
-
-
-# 이메일 인증을 적용한 회원가입 클래스
+# 이메일 인증 적용 중인 회원가입 클래스
 class SignUpView(View):
     # POST 요청 시
     def post(self, request):
