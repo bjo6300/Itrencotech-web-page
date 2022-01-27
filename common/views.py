@@ -1,8 +1,6 @@
 from django.contrib import auth, messages
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-
-
 from common.models import User
 
 
