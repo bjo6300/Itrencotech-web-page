@@ -22,7 +22,7 @@ urlpatterns = [
     path('find_id_passwd/', views.findIdPasswd, name='find_id_passwd'),  # 아이디/비밀번호 찾기 선택
     path('find_id/', views.findId, name='find_id'),  # 아이디 찾기
     path('find_id/phone', views.findIdPhone, name='find_id_phone'),  # 아이디 찾기 - 휴대폰 번호로 찾기
-    path('find_id/email', views.findIdEmail, name='find_id_email'),  # 아이디 찾기 - 이메일로 찾기
+    path('find_id/email', views.verification, name='find_id_email'),  # 아이디 찾기 - 이메일로 찾기
     path('find_id/phone/id_list', views.findIdListbyPhone, name='find_id_list_by_phone'),  # 아이디 찾기 - 전화번호로 찾은 아이디 목록
     path('find_id/email/id_list', views.findIdListbyEmail, name='find_id_list_by_email'),  # 아이디 찾기 - 이메일로 찾은 아이디 목록
 

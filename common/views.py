@@ -8,6 +8,7 @@ from common.models import User
 import jwt
 import json
 
+from .mail import email_auth_num
 from .token import common_activation_token
 from .text import message
 from config.my_settings import SECRET_KEY, EMAIL
@@ -71,35 +72,35 @@ class SignUpView(View):
             print('비밀번호가 일치하지 않습니다.')
             res_data['error'] = '비밀번호가 일치하지 않습니다.'
         # 이메일 인증
-        try:
-            validate_email(email)
-            if User.objects.filter(email=email).exists():
-                messages.warning(request, '이미 회원가입이 되어 있는 이메일입니다!')
-                return JsonResponse({"message": "EXISTS_EMAIL"}, status=400)
-            user = User.objects.create_user(userid=userid, username=username,
-                                            phone_num=phone_num, company_name=company_name,
-                                            company_address=company_address, company_tel=company_tel,
-                                            email=email, password=password1)
-            user.save()
-
-            current_site = get_current_site(request)
-            domain = current_site.domain
-            uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
-            token = common_activation_token.make_token(user)
-            message_data = message(domain, uidb64, token)
-
-            mail_title = "이메일 인증을 완료해주세요."
-            mail_to = email
-            send_email = EmailMessage(mail_title, message_data, to=[mail_to])
-            send_email.send()
+        # try:
+        #     validate_email(email)
+        #     if User.objects.filter(email=email).exists():
+        #         messages.warning(request, '이미 회원가입이 되어 있는 이메일입니다!')
+        #         return JsonResponse({"message": "EXISTS_EMAIL"}, status=400)
+        #     user = User.objects.create_user(userid=userid, username=username,
+        #                                     phone_num=phone_num, company_name=company_name,
+        #                                     company_address=company_address, company_tel=company_tel,
+        #                                     email=email, password=password1)
+        #     user.save()
+        #
+        #     current_site = get_current_site(request)
+        #     domain = current_site.domain
+        #     uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
+        #     token = common_activation_token.make_token(user)
+        #     message_data = message(domain, uidb64, token)
+        #
+        #     mail_title = "이메일 인증을 완료해주세요."
+        #     mail_to = email
+        #     send_email = EmailMessage(mail_title, message_data, to=[mail_to])
+        #     send_email.send()
             return render(request, 'login/signUp_completed.html', res_data)
-
-        except KeyError:
-            return JsonResponse({"message": "INVALID_KEY"}, status=400)
-        except TypeError:
-            return JsonResponse({"message": "INVALID_TYPE"}, status=400)
-        except ValidationError:
-            return JsonResponse({"message": "VALIDATION_ERROR"}, status=400)
+        #
+        # except KeyError:
+        #     return JsonResponse({"message": "INVALID_KEY"}, status=400)
+        # except TypeError:
+        #     return JsonResponse({"message": "INVALID_TYPE"}, status=400)
+        # except ValidationError:
+        #     return JsonResponse({"message": "VALIDATION_ERROR"}, status=400)
 
     # GET 요청 시(회원가입 버튼 클릭 등)
     def get(self, request):
@@ -197,3 +198,35 @@ def findPasswdReset(request):
 def findPasswdCompleted(request):
     """ 비밀번호 찾기 - 비밀번호 재설정 완료 """
     return render(request, 'login/find_passwd_completed.html')
+
+
+def verification(request):
+    """ 이메일 인증 """
+    if request.method == 'POST':
+        email1 = request.POST['email1']
+        email2 = request.POST['email2']
+        input_email = email1+'@'+email2
+        a = email_auth_num()
+        msg = EmailMessage(subject=a,
+                           body=a+a+a+a+a,
+                           to=[input_email],
+                           )
+        msg.send()
+        return render(request, 'login/find_id_email.html')
+    elif request.method == 'GET':
+        return render(request, 'login/find_id_email.html')
+
+
+    # if request.method == "POST":
+    #     pass
+    # content = {'user' : request.user}
+    # msg_html = render_to_string('navbar/navbar.html', content)
+    # a= email_auth_num()
+    # msg = EmailMessage(subject=a,
+    #                    body=msg_html,
+    #                    to=[request.user.email],
+    #                    )
+    # msg.content_subtype = 'html'  # html 코드로 나타내기 위함.
+    # msg.send()
+    # # messages.info(request, '이메일을 발송하였습니다..')
+    # return redirect('/')

@@ -33,19 +33,22 @@
             </tr>
 
             <tr>
-                <td id="td-email" colspan="3">
-                    <input id="input-email-01"name="email1" type="text" > @
-                    <input id="input-email-02" name="email2" type="text" placeholder="직접 입력">
-                    <select name="select_email" onChange="selectEmail(this)">
-                        <option value="1" selected> 직접 입력 </option>
-                        <option value="naver.com"> naver.com </option>
-                        <option value="gmail.com"> gmail.com</option>
-                        <option value="daum.net"> daum.net </option>
-                    </select>
-                </td>
-                <td>
-                    <button id="btn-certification" type="button" onclick="location.href='#'"> 인증 </button>
-                </td>
+                <form method="post" class="post-form" action="{% url 'common:find_id_email' %}">
+                    {% csrf_token %}
+                    <td id="td-email" name="input-email" colspan="3">
+                        <input id="input-email-01"name="email1" type="text" > @
+                        <input id="input-email-02" name="email2" type="text" placeholder="직접 입력">
+                        <select name="select_email" onChange="selectEmail(this)">
+                            <option value="1" selected> 직접 입력 </option>
+                            <option value="naver.com"> naver.com </option>
+                            <option value="gmail.com"> gmail.com</option>
+                            <option value="daum.net"> daum.net </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="btn-certification" type="submit" onclick="location.href='#'"> 인증 </button>
+                    </td>
+                </form>
             </tr>
 
             <tr><td colspan="4"> 　 </td></tr>
