@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Portfolio
+from django.core.paginator import Paginator
 import json
 
 def index(request):
@@ -13,8 +14,15 @@ def portfolio(request):
 
 def portfolioDesign(request):
     """ 포트폴리오 - 제품 디자인 페이지 """
+
     portfolio_list = Portfolio.objects.filter(category_index=1).order_by('board_index')
-    context = {'portfolio_list': portfolio_list}
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
     return render(request, 'navBar/portfolio/design.html', context)
 
 
