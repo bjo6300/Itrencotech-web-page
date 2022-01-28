@@ -5,18 +5,6 @@
 #div-title-container {
     text-align: center;
     box-shadow: 3px 3px 5px lightgray;
-    -webkit-transform: rotate(0.15deg);
-    padding: 30px;
-    margin: 40px 0 40px 0;
-    position: relative;
-    z-index: -1;
-}
-
-/* 제목 컨테이너 */
-#div-title-container {
-    text-align: center;
-    box-shadow: 3px 3px 5px lightgray;
-    -webkit-transform: rotate(0.15deg);
     padding: 35px;
     margin: 40px 0 40px 0;
     position: relative;
@@ -77,4 +65,11 @@ a:link, a:visited, a:active {
     margin: 8px;
     height: 170px;
     width: 170px;
+}
+
+/* 포트폴리오 없을 경우 안내 문구 */
+#div-alert {
+    text-align: center;
+    font-size: 1.8em;
+    color: #75B9DA;
 }

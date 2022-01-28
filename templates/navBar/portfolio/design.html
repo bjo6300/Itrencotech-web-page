@@ -12,15 +12,31 @@
     <div id="div-logo"></div>
 </div>
 
-<!--
+<div id="div-container">
+	<div id="div-subtitle"> 제품 디자인 </div>
+
 {% if portfolio_list %}
-<div> {{ portfolio_list }} </div>
+	<table id="table-container">
+		<tr>
+	{% for portfolio in portfolio_list %}
+			<td> 
+				<div class="div-images"> 
+					<img src={{ "https://drive.google.com/uc?export=view&id=" | add:portfolio.portfolio_img }}
+					width="170px" height="170px">
+				</div>
+			</td>
+		{% if not forloop.last and forloop.counter|divisibleby:4 %}
+			</tr>
+			<tr>
+		{% endif %}
+	{% endfor %}
+		</tr>
+	</table>
+	{% else %}
+	<div id="div-alert"> 포트폴리오를 준비 중입니다. </div>
 {% endif %}
--->
 
-    <div id="div-container">
-        <div id="div-subtitle"> 제품 디자인 </div>
-
+<!--
         <table id="table-container">
 			<tr>
 				<td> <div class="div-images"> </div> </td>
@@ -35,7 +51,8 @@
 				<td> <div class="div-images"> </div> </td>
 			</tr>
 		</table>
-
     </div>
+-->
+
 </body>
 {% endblock %}
