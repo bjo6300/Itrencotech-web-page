@@ -71,5 +71,49 @@ a:link, a:visited, a:active {
 #div-alert {
     text-align: center;
     font-size: 1.8em;
+    font-weight: bold;
     color: #75B9DA;
+}
+
+/* 페이징 */
+/* 페이지 컨테이너 */
+#div-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#ul-container {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+} 
+
+#ul-container li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#ul-container a {
+    display: inline-block;
+    color: #131E3E;
+    padding: 10px;
+    transition: .3s;
+}
+
+/* 현재 선택된 버튼 */
+#ul-container .page-link-active {
+    color: #75B9DA;
+    cursor: default;
+    font-weight: bold;
+}
+
+/* 마우스 오버 */
+#ul-container .page-link:hover {
+    color: #75B9DA;
+}
+
+/* 사용 불가능 버튼 */
+#ul-container .page-link-disabled {
+    color: #CCCCCC;
+    cursor: default;
 }
