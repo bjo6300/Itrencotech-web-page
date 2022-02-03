@@ -8,16 +8,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
 <!-- 타이틀 -->
 <title>마이페이지</title>
-<!-- middle(header에서 닫지 못한 태그 등) -->
-{% include 'body/middle.html' %}
-
-<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
-{% block content %}
-{% endblock %}
-<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
-
-<!-- footer -->
-{% include 'body/footer.html' %}
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
@@ -88,4 +78,16 @@
         fr.target = "winName";
         fr.submit();
     });
+
 </script>
+
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+{% block content %}
+{% endblock %}
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+
+<!-- footer -->
+{% include 'body/footer.html' %}

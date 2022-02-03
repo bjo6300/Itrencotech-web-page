@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from . import views
-from .views import Activate, SignUpView
+from .views import SignUpView
 
 app_name = 'common'
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('find_id/', views.findId, name='find_id'),  # 아이디 찾기
     path('find_id/phone', views.findIdPhone, name='find_id_phone'),  # 아이디 찾기 - 휴대폰 번호로 찾기
     path('find_id/email', views.verification, name='find_id_email'),  # 아이디 찾기 - 이메일로 찾기
+    path('find_id/email2', views.verification2, name='find_id_email2'),  # 아이디 찾기 - 이메일로 찾기2
     path('find_id/phone/id_list', views.findIdListbyPhone, name='find_id_list_by_phone'),  # 아이디 찾기 - 전화번호로 찾은 아이디 목록
     path('find_id/email/id_list', views.findIdListbyEmail, name='find_id_list_by_email'),  # 아이디 찾기 - 이메일로 찾은 아이디 목록
 
@@ -34,6 +35,6 @@ urlpatterns = [
     path('find_passwd/completed', views.findPasswdCompleted, name='find_passwd_completed'),  # 비밀번호 찾기 - 재설정
 
     # 이메일 인증
-    path('activate/<str:uidb64>/<str:token>/', Activate.as_view())
+    # path('activate/<str:uidb64>/<str:token>/', Activate.as_view())
 
 ]

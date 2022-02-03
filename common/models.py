@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
 
     # username_field에 'userid'(사용자 아이디)를 사용할 것임
     def create_user(self, userid, username, company_name,
-                    company_address, company_tel, phone_num, email, password=None):
+                    company_address, company_tel, phone_num, email, auth_num=None, password=None):
         if not userid:
             raise ValueError('Users must have an user id')
         if not username:
@@ -36,7 +36,8 @@ class UserManager(BaseUserManager):
             company_address=company_address,
             company_tel=company_tel,
             phone_num=phone_num,
-            email=self.normalize_email(email)
+            email=self.normalize_email(email),
+            auth_num=auth_num
         )
 
         user.set_password(password)
@@ -44,7 +45,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, userid, username, company_name,
-                         company_address, company_tel, phone_num, email, password):
+                         company_address, company_tel, phone_num, email, password, auth_num=None):
         user = self.create_user(
             userid,
             password=password,
@@ -53,7 +54,8 @@ class UserManager(BaseUserManager):
             company_address=company_address,
             company_tel=company_tel,
             phone_num=phone_num,
-            email=self.normalize_email(email)
+            email=self.normalize_email(email),
+            auth_num=auth_num
         )
 
         user.is_admin = True
@@ -70,6 +72,7 @@ class User(AbstractBaseUser):
     company_address = models.CharField(max_length=100, null=False, blank=False, verbose_name='회사 주소')
     company_tel = models.CharField(max_length=13, null=False, blank=False, verbose_name='회사 전화')
     email = models.EmailField(verbose_name='이메일', max_length=255, unique=True, null=False, blank=False)
+    auth_num = models.CharField(verbose_name='인증번호', max_length=8, null=True)
     # 아래 두 개의 필드는 Django의 User Model을 구성할 때 필수로 요구되는 항목
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -95,13 +98,6 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.is_admin
 
-
-# 휴대폰 인증 모델
-# class UserCertification(models.Model):
-#     # 필요한 것 3가지: 휴대폰번호, 인증번호(4자리), 인증유무
-#     phone_num = models.ForeignKey(User.phone_num, on_delete=models.CASCADE, verbose_name='전화번호')
-#     auth_num = models.IntegerField(max_length=4, verbose_name='인증번호')
-#     is_certify = models.BooleanField(default=False, verbose_name='인증유무')
 
 
 

@@ -7,6 +7,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from tabulate import tabulate
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
@@ -37,22 +38,56 @@ def main():
     try:
         service = build('drive', 'v3', credentials=creds)
 
+
         # Call the Drive v3 API
-        results = service.files().list(
-            pageSize=10, fields="nextPageToken, files(id, name)").execute()
+        # results = service.files().list(
+        #     pageSize=1000, fields="nextPageToken, files(id, name)").execute()
+        # items = results.get('files', [])
+
+         # 폴더 찾기
+        folder_name = 'machine_system_design'
+        # folder_name = input("\n찾으실 디렉토리명을 입력해 주세요: ")
+
+        folder_result = service.files().list(q="mimeType='application/vnd.google-apps.folder' and name='" + folder_name + "'",
+                                            spaces='drive', pageSize=1000,
+                                            fields='nextPageToken, files(id, name)').execute()
+        folder = folder_result.get('files', [])
+        if not folder:
+            print('해당 디렉토리가 존재하지 않습니다.')
+            return
+
+        folder_id = folder[0]['id']
+        print("\n" + folder_name + "의 ID는 " + folder_id + "입니다.\n")
+        
+        print("─────── " + folder_name + " 디렉토리 내 파일 목록 ───────\n")
+        
+        # 특정 폴더 내 파일 찾기
+        results = service.files().list(q="parents='" + folder_id + "'",
+                                        spaces='drive', pageSize=1000,
+                                        fields='nextPageToken, files(id, name)').execute()      
+        
         items = results.get('files', [])
 
         if not items:
             print('No files found.')
             return
-        print('Files:')
+
+        rows = []
         for item in items:
-            print(u'{0} ({1})'.format(item['name'], item['id']))
+            link = "https://drive.google.com/uc?export=view&id=" + item['id']
+            rows.append((item['name'], item['id'], link))
+
+        table = tabulate(rows, headers=["파일명", "아이디", "이미지 링크"])
+
+        print(table)
             
     except HttpError as error:
         # TODO(developer) - Handle errors from drive API.
         print(f'An error occurred: {error}')
 
+    print("\n")
+
+    return rows
 
 if __name__ == '__main__':
     main()
