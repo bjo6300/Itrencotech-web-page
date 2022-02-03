@@ -89,8 +89,9 @@ a:link, a:visited, a:active {
 } 
 
 #ul-container li {
+    font-size: 0.85em;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 8px;
 }
 
 #ul-container a {
