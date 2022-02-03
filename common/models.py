@@ -71,7 +71,7 @@ class User(AbstractBaseUser):
     company_name = models.CharField(max_length=30, null=False, blank=False, verbose_name='회사명')
     company_address = models.CharField(max_length=100, null=False, blank=False, verbose_name='회사 주소')
     company_tel = models.CharField(max_length=13, null=False, blank=False, verbose_name='회사 전화')
-    email = models.EmailField(verbose_name='이메일', max_length=255, unique=True, null=False, blank=False)
+    email = models.EmailField(verbose_name='이메일', max_length=100, unique=True, null=False, blank=False)
     auth_num = models.CharField(verbose_name='인증번호', max_length=8, null=True)
     # 아래 두 개의 필드는 Django의 User Model을 구성할 때 필수로 요구되는 항목
     is_active = models.BooleanField(default=True)
