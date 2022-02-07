@@ -12,6 +12,8 @@
     <div id="div-logo"></div>
 </div>
 
+<div id="div-subtitle"> 부품 (CNC 가공) </div>
+
 {% if portfolio_list %}
 <table id="table-container">
 	<tr>
@@ -29,9 +31,49 @@
 {% endfor %}
 	</tr>
 </table>
+		
+<!-- 페이징처리 시작 -->
+<div id="div-container">
+	<ul id="ul-container">
+		<!-- 이전페이지 -->
+		{% if portfolio_list.has_previous %}
+		<li class="page-item">
+			<a class="page-link" href="?page={{ portfolio_list.previous_page_number }}"> < </a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<a class="page-link-disabled" tabindex="-1" aria-disabled="true"> < </a>
+		</li>
+		{% endif %}
+		<!-- 페이지리스트 -->
+		{% for page_number in portfolio_list.paginator.page_range %}
+			{% if page_number >= portfolio_list.number|add:-5 and page_number <= portfolio_list.number|add:5 %}
+				{% if page_number == portfolio_list.number %}
+				<li class="page-item active" aria-current="page">
+					<a class="page-link-active">{{ page_number }}</a>
+				</li>
+				{% else %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+				</li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		<!-- 다음페이지 -->
+		{% if portfolio_list.has_next %}
+		<li class="page-item">
+			<a class="page-link" href="?page={{ portfolio_list.next_page_number }}"> > </a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<a class="page-link-disabled" tabindex="-1" aria-disabled="true"> > </a>
+		</li>
+		{% endif %}
+	</ul>
+</div>
+<!-- 페이징처리 끝 -->
 {% else %}
 <div id="div-alert"> 포트폴리오를 준비 중입니다. </div>
 {% endif %}
-
 </body>
 {% endblock %}
