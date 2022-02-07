@@ -31,7 +31,7 @@ class Portfolio(models.Model):
     content = models.CharField(max_length=500, verbose_name='내용')
 
     def __str__(self):
-        return str(self.board_index)
+        return str(self.category_index)
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'portfolio'
