@@ -7,6 +7,7 @@ from common.models import User
 # 이메일 인증 -------------------------------------------
 import jwt
 import json
+import ctypes
 
 from .mail import email_auth_num
 from .token import common_activation_token
@@ -22,8 +23,9 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
 from django.utils.encoding import force_bytes, force_text
 
-# ------------------------------------------------------
+from django.contrib import messages
 
+# ------------------------------------------------------
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
@@ -165,35 +167,28 @@ def verification(request):
         email2 = request.POST['email2']
         input_email = email1+'@'+email2
 
-        # 이메일 인증번호 발송
-        user = User.objects.get(email=input_email)
+        # 이메일이 있으면
+        if User.objects.filter(email=input_email).exists():
+            # ctypes.windll.user32.MessageBoxW(0, '인증번호가 전송되었습니다.', '이메일 인증 창            ')
+            # messages.add_message(request, messages.INFO, '테스트')
 
-        auth_num = email_auth_num()
-        EmailMessage(subject='이메일 인증 코드입니다.',
-                     body=f'다음의 코드를 입력하세요\n{auth_num}',
-                     to=[input_email]).send()
+            user = User.objects.get(email=input_email)
 
-        user.auth_num = auth_num
-        user.save()
+            auth_num = email_auth_num()
+            EmailMessage(subject='이메일 인증 코드입니다.',
+                         body=f'다음의 코드를 입력하세요\n{auth_num}',
+                         to=[input_email]).send()
+
+            user.auth_num = auth_num
+            user.save()
+        # 이메일이 없으면
+        else:
+            # 없다고 알림창을 띄워야 함
+            ctypes.windll.user32.MessageBoxW(0, '이메일 없음', '이메일 인증 창            ')
 
         return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
     elif request.method == 'GET':
         return render(request, 'login/find_id_email.html')
-
-
-    # if request.method == "POST":
-    #     pass
-    # content = {'user' : request.user}
-    # msg_html = render_to_string('navbar/navbar.html', content)
-    # a= email_auth_num()
-    # msg = EmailMessage(subject=a,
-    #                    body=msg_html,
-    #                    to=[request.user.email],
-    #                    )
-    # msg.content_subtype = 'html'  # html 코드로 나타내기 위함.
-    # msg.send()
-    # # messages.info(request, '이메일을 발송하였습니다..')
-    # return redirect('/')
 
 
 def verification2(request):
@@ -201,20 +196,21 @@ def verification2(request):
         email1 = request.POST.get('email1', None)
         email2 = request.POST.get('email2', None)
         auth_num = request.POST.get('auth_num', None)
+        input_email = email1 + '@' + email2
 
-        email = email1 + '@' + email2
-
-        user = User.objects.get(email=email)
-        if user.exists():
+        if User.objects.filter(email=input_email).exists():
+            user = User.objects.get(email=input_email)
             if user.auth_num == auth_num:
                 user.auth_num = None
                 user.save()
-                return render(request, 'common/find_id_list.html')
+                return render(request, 'login/find_id_list.html')
             else:
-                print('다시 입력해 주세요')
-                return render(request, 'login/find_id_email.html')
+                ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
+                return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
         else:
             print('가입된 이메일이 없습니다.')
             return render(request, 'login/find_id_email.html')
     elif request.method == 'GET':
-            return render(request, 'login/find_id_email.html')
+        return render(request, 'login/find_id_email.html')
+
+

@@ -60,6 +60,7 @@ input:focus {
     padding: 25px 50px;
     box-shadow: 3px 3px 5px lightgray;
     border-radius: 20px;
+    position: relative;
 }
 
 /* 부제목 텍스트 밑 언더라인*/

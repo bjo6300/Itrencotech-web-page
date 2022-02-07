@@ -7,6 +7,7 @@
 <script src="{% static 'js/selectDate.js' %}"></script>
 <script src="{% static 'js/directInput.js' %}"></script>
 
+
 <div id="div-title-container" >
     <h1 id="h1-title"> 아이디 찾기 </h1>
 </div>
@@ -48,7 +49,7 @@
                         </select>
                     </td>
                     <td>
-                        <button id="btn-certification" type="submit" onclick="location.href='#'">인증</button>
+                        <button id="btn-certification" type="submit">인증</button>
                     </td>
                 </form>
             </tr>
@@ -56,28 +57,44 @@
             <tr><td colspan="4"> 　 </td></tr>
 
             <form method="post" class="post-form" action="{% url 'common:find_id_email2' %}">
+                {% csrf_token %}
                 <tr>
                     <td>
                         <p class="p-small-txt"> 인증번호 </p>
                     </td>
                     <td class="td-input" colspan="3">
+                        <input id="input-email-tmp1" name="email1" type="text"
+                               value="{{ email1|default_if_none:'' }}" hidden>
+                        <input id="input-email-tmp2" name="email2" type="text" placeholder="직접 입력"
+                               value="{{ email2|default_if_none:'' }}" hidden>
                         <input id="input-email-03" name="auth_num">
                     </td>
                 </tr>
-                <tr>
-                    <button type="button" id="btn-confirm-01"
-                            onclick="location.href='{% url 'common:find_id_list_by_email' %}'"> 확 인 </button>
-                </tr>
+                    <button type="submit" id="btn-confirm-01" style="position: absolute; left: 37%; bottom: 0%;"> 확 인 </button>
             </form>
         </table>
 <!--        <button type="button" id="btn-confirm-01" onclick="location.href='{% url 'common:find_id_list_by_email' %}'"> 확 인 </button>-->
     </div>
 </div>
 
+<!--{% if messages %}-->
+<!--<section id="messages">-->
+<!--    <ul>-->
+<!--        {% for message in messages %}-->
+<!--        <li class="{{ message.tags }}">-->
+<!--            <p>{{ message }}</p>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--</section>-->
+<!--{% endif %}-->
+
 <script>
+/*
     $('#btn-certification').click(function() {
-        alert('인증번호를 메일로 발송하였습니다.');
+        document.getElementById("btn-certification").disabled = false;
     });
+*/
 </script>
 
 {% endblock %}
