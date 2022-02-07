@@ -76,10 +76,6 @@
 </div>
 <!-- 페이징처리 끝 -->
 
-{% else %}
-	<div id="div-alert"> 포트폴리오를 준비 중입니다. </div>
-{% endif %}
-
 <div id="modal" class="modal">
 	<div class="modal-content">
 		<!-- 닫기 버튼 -->
@@ -110,6 +106,12 @@
 		</div>
 	</div>
 </div>
+
+{% else %}
+	<div id="div-alert"> 포트폴리오를 준비 중입니다. </div>
+{% endif %}
+
+
 
 <script type="text/javascript">
 	var modal = document.getElementById("modal");
