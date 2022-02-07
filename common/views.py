@@ -172,15 +172,16 @@ def verification(request):
             # ctypes.windll.user32.MessageBoxW(0, '인증번호가 전송되었습니다.', '이메일 인증 창            ')
             # messages.add_message(request, messages.INFO, '테스트')
 
-            user = User.objects.get(email=input_email)
+            users = User.objects.filter(email=input_email)
 
             auth_num = email_auth_num()
             EmailMessage(subject='이메일 인증 코드입니다.',
                          body=f'다음의 코드를 입력하세요\n{auth_num}',
                          to=[input_email]).send()
 
-            user.auth_num = auth_num
-            user.save()
+            for user in users:
+                user.auth_num = auth_num
+                user.save()
         # 이메일이 없으면
         else:
             # 없다고 알림창을 띄워야 함
@@ -199,11 +200,13 @@ def verification2(request):
         input_email = email1 + '@' + email2
 
         if User.objects.filter(email=input_email).exists():
-            user = User.objects.get(email=input_email)
-            if user.auth_num == auth_num:
-                user.auth_num = None
-                user.save()
-                return render(request, 'login/find_id_list.html')
+            users = User.objects.filter(email=input_email)
+
+            if users[0].auth_num == auth_num:
+                for user in users:
+                    user.auth_num = None
+                    user.save()
+                return render(request, 'login/find_id_list.html', {'users': users})
             else:
                 ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
                 return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
