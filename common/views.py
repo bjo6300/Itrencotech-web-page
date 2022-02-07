@@ -132,12 +132,44 @@ def findIdListbyEmail(request):
 
 def findPasswd(request):
     """ 비밀번호 찾기 페이지 """
-    return render(request, 'login/find_passwd.html')
+    if request.method == 'POST':
+        userid = request.POST['input-id']
+        # 만약 입력 란이 비워져 있다면
+        if userid == '':
+            ctypes.windll.user32.MessageBoxW(0, '아이디를 입력해 주세요', '아이디 입력 오류            ')
+            return render(request, 'login/find_passwd.html')
+        # 아이디가 DB 안에 있다면
+        if User.objects.filter(userid=userid).exists():
+            user = User.objects.get(userid=userid)
+            # 전처리
+            email = '***' + user.email[3:]
+            phone_num = user.phone_num[:5] + '***' + user.phone_num[8:10] + '***'
+            return render(request, 'login/find_passwd_id_list.html', {'email': email, 'phone_num': phone_num,
+                                                                      'userid': user.userid})
+        # 아이디가 DB 안에 없다면
+        else:
+            ctypes.windll.user32.MessageBoxW(0, '존재하지 않는 아이디입니다.', '아이디 입력 오류            ')
+            return render(request, 'login/find_passwd.html')
+    elif request.method == 'GET':
+        return render(request, 'login/find_passwd.html')
 
 
 def findPasswdIdList(request):
     """ 비밀번호 찾기 - 아이디 목록 페이지 """
-    return render(request, 'login/find_passwd_id_list.html')
+    if request.method == 'POST':
+        userid = request.POST['userid']
+        user = User.objects.get(userid=userid)
+
+        auth_num = email_auth_num()
+        EmailMessage(subject='이메일 인증 코드입니다.',
+                     body=f'다음의 코드를 입력하세요\n{auth_num}',
+                     to=[user.email]).send()
+        user.auth_num = auth_num
+        user.save()
+        return render(request, 'login/find_passwd_email.html', {'userid': userid})
+
+    elif request.method == 'GET':
+        return render(request, 'login/find_passwd_email.html')
 
 
 def findPasswdPhone(request):
@@ -147,7 +179,26 @@ def findPasswdPhone(request):
 
 def findPasswdEmail(request):
     """ 비밀번호 찾기 - 이메일로 찾기 """
-    return render(request, 'login/find_passwd_email.html')
+    if request.method == 'POST':
+        userid = request.POST['userid']
+        auth_num = request.POST['auth_num']
+
+        if User.objects.filter(userid=userid).exists():
+            user = User.objects.get(userid=userid)
+            # 인증 번호가 같으면 ok
+            if auth_num == user.auth_num:
+                user.auth_num = None
+                user.save()
+                return render(request, 'login/find_passwd_reset.html', {'userid': userid})
+            else:
+                ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
+                return render(request, 'login/find_passwd_email.html')
+        else:
+            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '이메일 인증 창            ')
+            return redirect('/common/find_id_passwd')
+
+    elif request.method == 'GET':
+        return render(request, 'login/find_passwd_email.html')
 
 
 def findPasswdReset(request):
@@ -169,11 +220,7 @@ def verification(request):
 
         # 이메일이 있으면
         if User.objects.filter(email=input_email).exists():
-            # ctypes.windll.user32.MessageBoxW(0, '인증번호가 전송되었습니다.', '이메일 인증 창            ')
-            # messages.add_message(request, messages.INFO, '테스트')
-
             users = User.objects.filter(email=input_email)
-
             auth_num = email_auth_num()
             EmailMessage(subject='이메일 인증 코드입니다.',
                          body=f'다음의 코드를 입력하세요\n{auth_num}',
