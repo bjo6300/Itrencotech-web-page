@@ -16,8 +16,7 @@
 			{% for portfolio in portfolio_list %}
 			<td>
 				<div class="div-images">
-					<img class="trigger" src={{ "https://drive.google.com/thumbnail?id=" | add:portfolio.portfolio_img
-						}} width="170px" height="170px" style="cursor: pointer;">
+					<img class="trigger" src={{ "https://drive.google.com/thumbnail?id=" | add:portfolio.portfolio_img}} width="170px" height="170px" style="cursor: pointer;">
 				</div>
 			</td>
 			{% if not forloop.last and forloop.counter|divisibleby:4 %}
@@ -41,7 +40,7 @@
 				<img src="/static/images/3DPrinting.png" width="250px" height="250px" style="margin: 10px;">
 			</div>
 			<!-- 오른쪽 div -->
-			<div style="display:inline-block; width: 300px; text-align: left;">
+			<div style="display:inline-block; width: 300px; text-align: left; margin-left: 20px;">
 				<!-- 글자 + 밑줄 -->
 				<h2 style="text-decoration:none; border-bottom:1px solid #0B1637; padding-bottom:3px; color : #0B1637">IMPELLER</h2>
 				<br>
