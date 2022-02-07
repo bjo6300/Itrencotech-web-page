@@ -47,7 +47,7 @@
                         {% csrf_token %}
                         <input id="input-id" name="userid" type="text" placeholder="직접 입력"
                                value="{{ userid|default_if_none:'' }}" hidden>
-                        <button type="submit" class="btn-id-list-btns"> 확인 </button>
+                        <button type="submit" class="btn-id-list-btns"> 이메일 인증 </button>
                     </form>
                 </td>
             </tr>
