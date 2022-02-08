@@ -8,10 +8,8 @@ from common.models import User
 import ctypes
 
 from .mail import email_auth_num
-
 from django.views import View
 from django.core.mail import EmailMessage
-
 from django.contrib import messages
 
 # ------------------------------------------------------
