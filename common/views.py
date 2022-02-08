@@ -10,24 +10,11 @@ from common.models import User
 
 
 # 이메일 인증 -------------------------------------------
-import jwt
-import json
 import ctypes
 
 from .mail import email_auth_num
-from .token import common_activation_token
-from .text import message
-from config.my_settings import SECRET_KEY, EMAIL
-
 from django.views import View
-from django.http import HttpResponse, JsonResponse
-from django.core.exceptions import ValidationError
-from django.core.validators import validate_email
-from django.contrib.sites.shortcuts import get_current_site
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
-from django.utils.encoding import force_bytes, force_text
-
 from django.contrib import messages
 
 # ------------------------------------------------------
