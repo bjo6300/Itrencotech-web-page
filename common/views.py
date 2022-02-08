@@ -10,8 +10,6 @@ import json
 import ctypes
 
 from .mail import email_auth_num
-from .token import common_activation_token
-from .text import message
 from config.my_settings import SECRET_KEY, EMAIL
 
 from django.views import View
