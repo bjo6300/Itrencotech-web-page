@@ -23,12 +23,13 @@
         </div>
 
         <table id="table-id-list-01">
+            {% if phone_num and email and userid %}
             <tr>
                 <td>
                     <img id="img-ico-01" src="{% static 'images/login/phone.png' %}" width="25px" height="29px">
                 </td>
                 <td>
-                    <p class="p-id-list-txt"> 010-5***-8*** </p>
+                    <p class="p-id-list-txt"> {{ phone_num }} </p>
                 </td>
                 <td>
                     <button type="button" class="btn-id-list-btns" onclick="location.href='{% url 'common:find_passwd_phone' %}'"> 휴대폰 인증 </button>
@@ -39,12 +40,18 @@
                     <img id="img-ico-02" src="{% static 'images/login/email.png' %}" width="25px" height="18px">
                 </td>
                 <td>
-                    <p class="p-id-list-txt"> i***@itrencotech.com </p>
+                    <p class="p-id-list-txt"> {{ email }} </p>
                 </td>
                 <td>
-                    <button type="button" class="btn-id-list-btns" onclick="location.href='{% url 'common:find_passwd_email' %}'"> 확인 </button>
+                    <form method="post" class="post-form" action="{% url 'common:find_passwd_id_list' %}">
+                        {% csrf_token %}
+                        <input id="input-id" name="userid" type="text" placeholder="직접 입력"
+                               value="{{ userid|default_if_none:'' }}" hidden>
+                        <button type="submit" class="btn-id-list-btns"> 이메일 인증 </button>
+                    </form>
                 </td>
             </tr>
+            {% endif %}
         </table>
 
     </div>

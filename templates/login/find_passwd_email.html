@@ -19,17 +19,22 @@
 
     <div id="div-wrapper">
         <p class="p-txt"> 등록된 메일로 인증번호가 발송되었습니다. </p>
-        <table id="table-certf-num">
-            <tr>
-                <td>
-                    <p class="p-small-txt"> 인증번호 </p>
-                </td>
-                <td>
-                    <input id="input-certf-num">
-                </td>
-            </tr>   
-        </table>
-        <button type="button" id="btn-confirm-01" onclick="location.href='{% url 'common:find_passwd_reset' %}'"> 확 인 </button>
+        <form method="post" class="post-form" action="{% url 'common:find_passwd_email' %}">
+            {% csrf_token %}
+            <table id="table-certf-num">
+                <tr>
+                    <td>
+                        <p class="p-small-txt"> 인증번호 </p>
+                    </td>
+                    <td>
+                        <input id="input-certf-num" name="auth_num">
+                        <input id="input-id" name="userid" type="text" placeholder="직접 입력"
+                               value="{{ userid|default_if_none:'' }}" hidden>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" id="btn-confirm-01"> 확 인 </button>
+        </form>
     </div>
 </div>
 
