@@ -1,6 +1,10 @@
+import ctypes
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Portfolio
+
+from common.models import User
+from .models import Portfolio, Order, Category
 from django.core.paginator import Paginator
 import json
 
@@ -254,6 +258,55 @@ def order_form_production(request):
         return render(request, 'order/order_form_production.html', {'contextDict': contextDict})
 
     return render(request, 'order/order_form_production.html')
+
+
+# 주문서 내용을 DB로 저장하는 함수
+def make_order_form(request):
+    if request.method == 'POST':
+        company_name = request.POST['company_name']  # 회사명
+        business_num = request.POST['business_num']  # 사업자 등록번호
+        name = request.POST['name']  # 담당자
+        email = request.POST['email']  # 이메일
+        phone_num = request.POST['phone_num']  # 연락처
+        title = request.POST['title']  # 제품 제목
+        description = request.POST['description']  # 제품 설명
+        material = request.POST['material']  # 소재
+        quantity = request.POST['quantity']  # 제품 수량
+        size = request.POST['size']  # 크기(가로/세로/높이)
+        path = request.POST['input_file']  # 파일(경로?)
+        etc = request.POST['etc']  # 기타
+        userid = request.POST['userid']  # 사용자 아이디
+
+        print(userid)
+
+        # userid DB 있다면
+        if User.objects.filter(userid=userid).exists():
+            # 받아온 정보로 Order 객체 생성
+            order = Order.objects.create(
+                company_name=company_name,
+                business_num=business_num,
+                name=name,
+                email=email,
+                phone_num=phone_num,
+                title=title,
+                description=description,
+                material=material,
+                quantity=quantity,
+                size=size,
+                path=path,
+                etc=etc,
+                category_index=Category.objects.get(category_index=1),
+                userid=User.objects.get(userid=userid)
+            )
+            order.save()
+            return render(request, 'order/order_confirmation.html', {'order': order})
+        else:
+            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '주문서 창            ')
+            return redirect('/')
+    else:
+        ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '에러 창            ')
+        return redirect('/')
+
 
 # ##### 마이페이지 #####
 def mypage_home(request):

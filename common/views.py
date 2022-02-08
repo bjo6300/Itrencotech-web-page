@@ -1,37 +1,20 @@
 
 # 로그인/회원가입 ---------------------------------------
 from django.contrib import auth, messages
-
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
-
 from django.shortcuts import render, redirect
 from common.models import User
 
-
 # 이메일 인증 -------------------------------------------
-import jwt
-import json
 import ctypes
 
 from .mail import email_auth_num
-from .token import common_activation_token
-from .text import message
-from config.my_settings import SECRET_KEY, EMAIL
 
 from django.views import View
-from django.http import HttpResponse, JsonResponse
-from django.core.exceptions import ValidationError
-from django.core.validators import validate_email
-from django.contrib.sites.shortcuts import get_current_site
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
-from django.utils.encoding import force_bytes, force_text
 
 from django.contrib import messages
 
 # ------------------------------------------------------
-
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
@@ -283,6 +266,7 @@ def verification2(request):
         else:
             print('가입된 이메일이 없습니다.')
             return render(request, 'login/find_id_email.html')
-
     elif request.method == 'GET':
         return render(request, 'login/find_id_email.html')
+
+

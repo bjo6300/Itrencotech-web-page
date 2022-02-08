@@ -1,3 +1,7 @@
+
+            <form method="post" class="post-form" action="{% url 'itrencotech:make_order_form' %}">
+            {% csrf_token %}
+
             <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
             <div align="center" style="width:100%; height:300px;">
                 <!-- 주문서: 회사명, 사업자등록번호 -->
@@ -6,12 +10,12 @@
                         <!-- 회사명 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">회사명</font>
                         <div class="input_batch">
-                            <input type="text" name="company_name" placeholder="회사명">
+                            <input type="text" name="company_name" id="company_name" placeholder="회사명" onkeyup="check();" >
                         </div>
                         <!-- 사업자등록번호 -->
                         <font size="4" style="letter-spacing: 5px; font-weight: bold;">사업자 등록번호</font>
                         <div class="input_batch">
-                            <input type="text" name="business_reg_num" placeholder="사업자 등록번호">
+                            <input type="text" name="business_num" id="business_num" placeholder="사업자 등록번호" onkeyup="check();" >
                         </div>
                     </div>
                 </div>
@@ -21,17 +25,17 @@
                         <!-- 담당자 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">담당자</font>
                         <div class="input_batch">
-                            <input type="text" name="person" placeholder="담당자">
+                            <input type="text" name="name" id="name" placeholder="담당자" onkeyup="check();" >
                         </div>
                         <!-- 이메일 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">이메일</font>
                         <div class="input_batch">
-                            <input type="email" name="email" placeholder="이메일">
+                            <input type="email" name="email" id="email" placeholder="이메일" onkeyup="check();" >
                         </div>
                         <!-- 연락처 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">연락처</font>
                         <div class="input_batch">
-                            <input type="tel" name="tel" placeholder="연락처">
+                            <input type="tel" name="phone_num" id="phone_num" placeholder="연락처" onkeyup="check();" >
                         </div>
                     </div>
                 </div>
@@ -42,12 +46,12 @@
                     <!-- 제품 제목 -->
                     <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 제목</font>
                         <div style="width:113%; margin: 15px 0 15px 0;">
-                            <input type="text" name="product_title" placeholder="제품 제목">
+                            <input type="text" name="title" id="title" placeholder="제품 제목" onkeyup="check();" >
                         </div>
                     <!-- 제품 설명 -->
                     <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 설명</font>
                         <div style="width:113%; margin: 15px 0 15px 0;">
-                            <textarea name="product_description" placeholder="제품 설명" rows="4" style="resize: none;"></textarea>
+                            <textarea name="description" id="description" placeholder="제품 설명" rows="4" style="resize: none;" onkeyup="check();"></textarea>
                         </div>
                 </div>
             </div>
@@ -59,17 +63,17 @@
                         <!-- 소재 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">소재</font>
                         <div class="input_batch">
-                            <input type="text" name="material" placeholder="소재">
+                            <input type="text" name="material" id="material" placeholder="소재" onkeyup="check();" >
                         </div>
                         <!-- 제품 -->
                         <font size="4" style="letter-spacing: 5px; font-weight: bold;">제품 수량</font>
                         <div class="input_batch">
-                            <input type="number" name="product" placeholder="제품 수량">
+                            <input type="number" name="quantity" id="quantity" placeholder="제품 수량" onkeyup="check();" >
                         </div>
                         <!-- 크기 -->
                         <font size="4" style="letter-spacing: 5px; font-weight: bold;">크기(가로/세로/높이)</font>
                         <div class="input_batch">
-                            <input type="text" name="size" placeholder="크기 (가로/세로/높이)">
+                            <input type="text" name="size" id="size" placeholder="크기 (가로/세로/높이)" onkeyup="check();" >
                         </div>
                     </div>
                 </div>
@@ -79,15 +83,16 @@
                         <!-- 파일 -->
                         <font size="4" style="float:left; letter-spacing: 10px; font-weight: bold;">파일</font>
                         <div class="upload-btn-wrapper">
-                            <input type="file" name="file" id="input_file" multiple
+                            <input type="file" name="input_file" id="input_file" multiple
                                    accept="image/*,
                                            application/vnd.ms-excel,
                                            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
                                            text/plain,
-                                           .pdf"/>    <!-- 설계 파일의 확장자를 등록해 주면 업로드 가능함 -->
+                                           .pdf"
+                                   onkeyup="check();" />    <!-- 설계 파일의 확장자를 등록해 주면 업로드 가능함 -->
                             <label for="input_file" class="upload-btn">파일 업로드</label>
                         </div>
-                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">
+<!--                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">-->
                             <div id="dropZone" class="drag-file">
                                 <div id="fileDragDesc">
                                     <img style="pointer-events: none;" src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
@@ -100,21 +105,26 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </form>
+<!--                            </form>-->
                         <!-- 기타 -->
                         <font size="4" style="letter-spacing: 10px; font-weight: bold;">기타</font>
                         <div class="input_batch">
-                            <input type="text" name="etc" placeholder="기타">
+                            <input type="text" name="etc" id="etc" placeholder="기타" onkeyup="check();" >
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- 알림 문구 -->
+            <span id="span-confirm-message"></span> <br/>
             <!-- 주문하기 버튼 영역 -->
             <div align="center" style="left:20%; width: 60%; height: 150px; ">
 <!--                <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>-->
-                <button type="button" onclick="location.href='{% url 'itrencotech:order_confirmation' %}'"
-                        style="margin-top:20px;">주문하기</button>
+                <button type="submit" id='order-btn' style="margin-top:20px;" disabled>주문하기</button>
             </div>
+            {% if user.is_authenticated %}
+            <input id="input-userid" name="userid" type="text" value="{{ user.userid|default_if_none:'' }}" hidden>
+            </form>
+            {% endif %}
         </div>
     </div>
 </div>
