@@ -203,7 +203,24 @@ def findPasswdEmail(request):
 
 def findPasswdReset(request):
     """ 비밀번호 찾기 - 비밀번호 재설정 """
-    return render(request, 'login/find_passwd_reset.html')
+    if request.method == 'POST':
+        userid = request.POST['userid']
+        password = request.POST['password']
+
+        # 만약 userid가 DB에 있으면
+        if User.objects.filter(userid=userid).exists():
+            user = User.objects.get(userid=userid)
+            # 사용자의 password를 변경하는 작업 수행
+            user.set_password(raw_password=password)
+            user.save()
+            return render(request, 'login/find_passwd_completed.html')
+        # 그렇지 않고 userid가 DB에 없으면
+        else:
+            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '비밀번호 재설정 창            ')
+            return redirect('/common/find_id_passwd')
+
+    elif request.method == 'GET':
+        return render(request, 'login/find_passwd_completed.html')
 
 
 def findPasswdCompleted(request):
