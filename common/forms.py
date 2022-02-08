@@ -10,8 +10,8 @@ from .models import User
 
 # 사용자 생성 Form
 class UserCreationForm(forms.ModelForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='Password', max_length=200, widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Password confirmation', max_length=200, widget=forms.PasswordInput)
 
     class Meta:
         model = User
