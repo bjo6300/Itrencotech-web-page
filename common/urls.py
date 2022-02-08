@@ -39,3 +39,4 @@ urlpatterns = [
 
     # 이메일 인증
     # path('activate/<str:uidb64>/<str:token>/', Activate.as_view())
+]

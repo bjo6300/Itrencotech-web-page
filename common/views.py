@@ -1,6 +1,6 @@
 
 # 로그인/회원가입 ---------------------------------------
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.shortcuts import render, redirect
 from common.models import User
 

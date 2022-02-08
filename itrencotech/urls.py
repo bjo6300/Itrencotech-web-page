@@ -59,6 +59,7 @@ urlpatterns = [
     path('order/order_form_onlyIdea/', views.order_form_onlyIdea, name='order_form_onlyIdea'),
     path('order/order_form_prototyping/', views.order_form_prototyping, name='order_form_prototyping'),
     path('order/order_form_production/', views.order_form_production, name='order_form_production'),
+    path('order/make_order_form/', views.make_order_form, name='make_order_form'),
 
     # 마이페이지
 
