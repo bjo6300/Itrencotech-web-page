@@ -244,8 +244,34 @@ input[type=number]:hover, textarea:hover {
 }
 
 </style>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    const check = function() {
+        const company_name = document.getElementById('company_name').value;
+        const business_num = document.getElementById('business_num').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone_num = document.getElementById('phone_num').value;
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+        const material = document.getElementById('material').value;
+        const quantity = document.getElementById('quantity').value;
+        const size = document.getElementById('size').value;
+        const path = document.getElementById('input_file').value;
+        const etc = document.getElementById('etc').value;
 
+        if (company_name === '' || business_num === '' || name == '' || email === '' || phone_num === '' ||
+                title == '' || description === '' || material === '' || quantity == ''|| size === '') {
+            document.getElementById('span-confirm-message').style.color = 'blue';
+            document.getElementById('span-confirm-message').innerHTML = '※ 입력하지 않은 칸이 있습니다.';
+            document.getElementById('order-btn').disabled = true;
+        } else {
+            document.getElementById('span-confirm-message').style.color = 'green';
+            document.getElementById('span-confirm-message').innerHTML = '✔ OK.';
+            document.getElementById('order-btn').disabled = false;
+        }
+    };
+</script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $("#input_file").bind('change', function() {

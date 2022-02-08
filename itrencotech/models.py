@@ -68,6 +68,7 @@ class Order(models.Model):
     userid = models.ForeignKey(User, related_name="%(class)s_userid", on_delete=models.SET_DEFAULT,
                                default=DELETED_USER,
                                db_column='userid', verbose_name='주문자 아이디')
+    company_name = models.CharField(max_length=30, verbose_name='회사명')
     business_num = models.CharField(max_length=255, verbose_name='사업자 등록 번호')
     name = models.CharField(max_length=50, verbose_name='담당자')
     email = models.CharField(max_length=100, verbose_name='이메일')
@@ -80,7 +81,7 @@ class Order(models.Model):
     path = models.CharField(max_length=255, verbose_name='파일 경로')
     etc = models.CharField(max_length=255, null=True, verbose_name='기타')
     date = models.DateField(default=datetime.date.today, verbose_name='주문일')
-    state = models.CharField(max_length=20, default='접수 완료', verbose_name='주문 상태')
+    state = models.CharField(max_length=20, default='Got it', verbose_name='주문 상태')
 
     def __str__(self):
         return str(self.order_num)
