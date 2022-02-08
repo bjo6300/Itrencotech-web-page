@@ -69,4 +69,23 @@
         }
 
     };
+
+    const btnUpdatePhoneNum = document.getElementById("btn-update-phone-num");
+    const btnUpdateCompanyName = document.getElementById("btn-update-company-name");
+
+    btnUpdatePhoneNum.addEventListener("click", e => {
+        var gsWin = window.open("about:blank", "winName", "width=400, height=400, top=100, left=300");
+        var fr = document.getElementById("server");
+        fr.action = "update/pn/";
+        fr.target = "winName";
+        fr.submit();
+    });
+
+    btnUpdateCompanyName.addEventListener("click", e => {
+        var gsWin = window.open("about:blank", "winName", "width=400, height=400, top=100, left=300");
+        var fr = document.getElementById("server");
+        fr.action = "update/cn/";
+        fr.target = "winName";
+        fr.submit();
+    });
 </script>

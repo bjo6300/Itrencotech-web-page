@@ -21,7 +21,7 @@
     <br>
 
     <div id="div-wrapper-email">
-            {% csrf_token %}
+
             <div>
                 <p class="p-txt" id="p-txt-email-large"> 이메일 인증 </p>
             </div>
@@ -35,6 +35,7 @@
 
                 <tr>
                     <form method="post" class="post-form" action="{% url 'common:find_id_email' %}">
+                        {% csrf_token %}
                         <td id="td-email" name="input_email" colspan="3">
                             <input id="input-email-01"name="email1" type="text" > @
                             <input id="input-email-02" name="email2" type="text" placeholder="직접 입력">
@@ -61,9 +62,15 @@
                         <input id="input-email-03">
                     </td>
                 </tr>
+                <tr  style="margin-top:50px">
+                    <td>
+                        <button type="button" id="btn-confirm-01" onclick="location.href='{% url 'common:find_id_list_by_email' %}'"> 확 인 </button>
+                    </td>
+                </tr>
+
             </table>
 
-            <button type="button" id="btn-confirm-01" onclick="location.href='{% url 'common:find_id_list_by_email' %}'"> 확 인 </button>
+<!--            <button type="button" id="btn-confirm-01" onclick="location.href='{% url 'common:find_id_list_by_email' %}'"> 확 인 </button>-->
 
     </div>
 </div>

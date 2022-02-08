@@ -53,7 +53,11 @@
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; width: 700px;">
-                            민경찬
+                            {% if user.is_authenticated %}
+                                {{ user.username }}
+                            {% else %}
+                                홍길동
+                            {% endif %}
                         </td>
                     </tr>
 
@@ -69,11 +73,15 @@
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; ">
                             <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            010-1234-5678
+                            {% if user.is_authenticated %}
+                                {{ user.phone_num }}
+                            {% else %}
+                                010-00000000
+                            {% endif %}
                         </div>
                             <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                            <img src="/static/images/change_phoneNum.png" style=" width: auto; margin-left: 5%;" />
-                        </div>
+                                <img src="/static/images/change_phoneNum.png" style=" width: auto; margin-left: 5%;"/>
+                            </div>
                         <div style="clear: both;"></div>
                         </td>
 
@@ -90,8 +98,13 @@
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%; ">
-                <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            mkc@itrencotech.com</div>
+                            <div style=" width: auto;  display: inline-block; vertical-align: middle;">
+                                {% if user.is_authenticated %}
+                                    {{ user.email }}
+                                {% else %}
+                                    test@test.com
+                                {% endif %}
+                            </div>
                             <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
                             <img src="/static/images/change_email.png" style=" width: auto; margin-left: 5%; " /></div>
                         </td>
@@ -108,8 +121,13 @@
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
-                <div style=" width: auto;  display: inline-block; vertical-align: middle;">
-                            mkc0000</div>
+                            <div style=" width: auto;  display: inline-block; vertical-align: middle;">
+                                {% if user.is_authenticated %}
+                                    {{ user.userid }}
+                                {% else %}
+                                    test1234
+                                {% endif %}
+                            </div>
                             <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
                                 <img src="/static/images/change_id.png" style=" width: auto; margin-left: 5%;" />
                             </div>
@@ -127,10 +145,18 @@
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
-                            (주)make it</div>
+                            <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
+                                {% if user.is_authenticated %}
+                                    {{ user.company_name }}
+                                {% else %}
+                                    테스트회사명
+                                {% endif %}
+                            </div>
                             <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;">
-                            <img src="/static/images/change_companyName.png" style=" width: auto; margin-left: 5%;" /></div>
+                                <button id="btn-update-company-name" type="button" style="border: 0px; background-color: #fff;">
+                                    <img src="/static/images/change_companyName.png" style=" width: auto; margin-left: 5%;" />
+                                </button>
+                            </div>
                         </td>
                     </tr>
 
@@ -145,9 +171,14 @@
                         <td style="border-bottom: 1px solid rgb(236, 236, 236);
                 border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;  vertical-align: middle;">
-                            경기도 시흥시 산기대학로 237 한국산업기술대학교 창업보육센터 207</div>
-                            <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;"><img src="/static/images/change_companyAddress.png" style=" width: auto; margin-left: 5%;" /></div>
+                            <div style=" width: auto; display: inline-block; width: auto;  vertical-align: middle;">
+                                {% if user.is_authenticated %}
+                                    {{ user.company_address }}
+                                {% else %}
+                                    테스트시 테스트구 테스트동
+                                {% endif %}
+                            </div>
+                                <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;"><img src="/static/images/change_companyAddress.png" style=" width: auto; margin-left: 5%;" /></div>
                         </td>
                     </tr>
 
@@ -160,8 +191,13 @@
                         </td>
                         <td style="border-left: 2px solid rgb(180, 179, 179);
                 background-color: white; padding-left: 3%;">
-                <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
-                            031)431-0635</div>
+                        <div style=" width: auto; display: inline-block; width: auto;   vertical-align: middle;">
+                            {% if user.is_authenticated %}
+                                {{ user.company_tel }}
+                            {% else %}
+                                031)000-0000
+                            {% endif %}
+                        </div>
                             <div style=" width: auto; display: inline-block; width: auto; margin-left: 10%;  vertical-align: middle;"><img src="/static/images/change_companyNum.png" style=" width: auto; margin-left: 5%;" /></div>
                         </td>
                     </tr>
