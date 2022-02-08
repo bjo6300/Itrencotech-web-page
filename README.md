@@ -1,5 +1,6 @@
 ![Python: Version](https://img.shields.io/badge/python-3.8.5-blue)
 ![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)
+![MySQL: Version](https://img.shields.io/badge/Mysql-8.0.27-blue)
 
 # Itrencotech-web-page
 Itrencotech web page using django
