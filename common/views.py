@@ -12,7 +12,6 @@ from config.my_settings import SECRET_KEY, EMAIL
 
 from django.views import View
 from django.core.mail import EmailMessage
-
 from django.contrib import messages
 
 # ------------------------------------------------------
