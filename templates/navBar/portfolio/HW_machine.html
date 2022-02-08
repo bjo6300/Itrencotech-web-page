@@ -2,30 +2,143 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/portfolio_detail.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
 
 <body>
-	<div id="div-title-container">
-		<h1 id="h1-title"> 포트폴리오 </h1>
+<div id="div-title-container">
+	<h1 id="h1-title"> 포트폴리오 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div id="div-subtitle"> H/W 기구설계 </div>
+
+{% if portfolio_list %}
+<table id="table-container">
+	<tr>
+		{% for portfolio in portfolio_list %}
+		<td>
+			<div class="div-images">
+				<img class="trigger" src={{ "https://drive.google.com/thumbnail?id=" | add:portfolio.portfolio_img }} 
+				width="170px" height="170px" style="cursor: pointer;"
+				data-img={{ "https://drive.google.com/thumbnail?id=" | add:portfolio.portfolio_img }}>
+			</div>
+		</td>
+		{% if not forloop.last and forloop.counter|divisibleby:4 %}
+	</tr>
+	<tr>
+		{% endif %}
+		{% endfor %}
+	</tr>
+</table>
+		
+<!-- 페이징처리 시작 -->
+<div id="div-container">
+	<ul id="ul-container">
+		<!-- 이전페이지 -->
+		{% if portfolio_list.has_previous %}
+		<li class="page-item">
+			<a class="page-link" href="?page={{ portfolio_list.previous_page_number }}"> < </a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<a class="page-link-disabled" tabindex="-1" aria-disabled="true"> < </a>
+		</li>
+		{% endif %}
+		<!-- 페이지리스트 -->
+		{% for page_number in portfolio_list.paginator.page_range %}
+			{% if page_number >= portfolio_list.number|add:-5 and page_number <= portfolio_list.number|add:5 %}
+				{% if page_number == portfolio_list.number %}
+				<li class="page-item active" aria-current="page">
+					<a class="page-link-active">{{ page_number }}</a>
+				</li>
+				{% else %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+				</li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		<!-- 다음페이지 -->
+		{% if portfolio_list.has_next %}
+		<li class="page-item">
+			<a class="page-link" href="?page={{ portfolio_list.next_page_number }}"> > </a>
+		</li>
+		{% else %}
+		<li class="page-item disabled">
+			<a class="page-link-disabled" tabindex="-1" aria-disabled="true"> > </a>
+		</li>
+		{% endif %}
+	</ul>
+</div>
+<!-- 페이징처리 끝 -->
+
+<div id="modal" class="modal">
+	<div class="modal-content">
+		<!-- 닫기 버튼 -->
+		<span id="close-button" class="close-button">&times;</span>
+			<!-- 이미지 왼쪽 div -->
+			<div style="float: left;">
+				<img id="modal-image" class="modal-image" src="/static/images/3DPrinting.png" width="250px" height="250px" style="margin: 10px;">
+			</div>
+			<!-- 오른쪽 div -->
+			<div style="display:inline-block; width: 300px; text-align: left; margin-left: 20px;">
+				<!-- 글자 + 밑줄 -->
+				<h2 style="text-decoration:none; border-bottom:1px solid #0B1637; padding-bottom:3px; color : #0B1637">IMPELLER</h2>
+				<br>
+				<!-- 설명 div -->
+				<div style="line-height: 10px;">
+					<div>
+						<h4 style="color: #0B1637; float: left; margin-right: 30px;">방식</h4><h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">   3D PRINTING (PAM)</h4>
+					</div>
+					
+					<div>
+						<h4 style="color: #0B1637; float: left; margin-right: 30px;">소재</h4> <h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">PEEK (슈퍼엔지니어링 플라스틱)</h4>
+					</div>
+					<div>
+					<h4 style="color: #0B1637; float: left; margin-right: 30px;">사이즈</h4><h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">240 x 100 (h) (mm)</h4>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
 
-    <div id="div-container">
-        <div id="div-subtitle"> H/W 기구설계 </div>
+{% else %}
+	<div id="div-alert"> 포트폴리오를 준비 중입니다. </div>
+{% endif %}
 
-        <table id="table-container">
-			<tr>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-			</tr>
-			<tr>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-				<td> <div class="div-images"> </div> </td>
-			</tr>
-		</table>
 
-    </div>
+
+<script type="text/javascript">
+	var modal = document.getElementById("modal");
+	var trigger = document.getElementsByClassName("trigger");
+	var closeButton = document.getElementById("close-button");
+	var cancelButton = document.getElementById("cancel");
+
+	function toggleModal() {
+		var imgId = $(this).data("img");
+		document.getElementById("modal-image").src = imgId;
+		console.log(imgId);
+		modal.classList.toggle("show-modal");
+	}
+
+	function windowOnClick(event) {
+		if (event.target === modal) {
+			toggleModal();
+		}
+	}
+
+	for(var i = 0; i < trigger.length; i++){
+		trigger[i].addEventListener("click", toggleModal);
+	}
+
+	closeButton.addEventListener("click", toggleModal);
+	cancel.addEventListener("click", toggleModal);
+	window.addEventListener("click", windowOnClick); 
+</script>
+
 </body>
 {% endblock %}

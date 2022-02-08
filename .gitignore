@@ -159,6 +159,7 @@ ENV/
 /site
 
 # privacy infomation
+*
 settings.py
 .idea/
 *.iml

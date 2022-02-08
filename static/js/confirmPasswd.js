@@ -28,4 +28,4 @@ var check = function() {
         document.getElementById('span-confirm-message').innerHTML = '';
         document.getElementById('btn-confirm-02').disabled = true;
     }
-}
+};

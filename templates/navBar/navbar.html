@@ -45,9 +45,9 @@
                 <li class="left" id="order">
                     <!-- 주문하기 페이지는 로그인 이후에 접속되도록-->
                     {% if user.is_authenticated %}
-                    <a href="{% url 'itrencotech:order_home' %}">주문하기</a>
+                    <a href="{% url 'itrencotech:order_home' %}">견적요청</a>
                     {% else %}
-                    <a href="{% url 'common:login_main' %}">주문하기</a>
+                    <a href="{% url 'common:login_main' %}">견적요청</a>
                     {% endif %}
                 <!-- <a href="{% url 'itrencotech:order_home' %}">주문하기</a>-->
                 </li>

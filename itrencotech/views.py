@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from .models import Portfolio
+from django.core.paginator import Paginator
 import json
-
 
 def index(request):
     return render(request, 'body/main.html')
@@ -13,52 +14,132 @@ def portfolio(request):
 
 def portfolioDesign(request):
     """ 포트폴리오 - 제품 디자인 페이지 """
-    return render(request, 'navBar/portfolio/design.html')
+    portfolio_list = Portfolio.objects.filter(category_index=1).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/design.html', context)
 
 
 def portfolioMachineDesign(request):
     """ 포트폴리오 - 기계시스템 설계 페이지 """
-    return render(request, 'navBar/portfolio/machine_design.html')
+    portfolio_list = Portfolio.objects.filter(category_index=2).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/machine_design.html', context)
 
 
 def portfolioHWmachine(request):
     """ 포트폴리오 - H/W 기구설계 페이지 """
-    return render(request, 'navBar/portfolio/HW_machine.html')
+    portfolio_list = Portfolio.objects.filter(category_index=3).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/HW_machine.html', context)
 
 
 def portfolio3d(request):
     """ 포트폴리오 - 3D 프린팅 페이지 """
-    return render(request, 'navBar/portfolio/3d.html')
+    portfolio_list = Portfolio.objects.filter(category_index=4).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/3d.html', context)
 
 
 def portfolioMockup(request):
     """ 포트폴리오 - 목업 CNC 가공 페이지 """
-    return render(request, 'navBar/portfolio/mockup.html')
+    portfolio_list = Portfolio.objects.filter(category_index=5).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/mockup.html', context)
 
 
 def portfolioCnc(request):
     """ 포트폴리오 - 부품 CNC 가공 페이지 """
-    return render(request, 'navBar/portfolio/cnc.html')
+    portfolio_list = Portfolio.objects.filter(category_index=6).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/cnc.html', context)
 
 
 def portfolioSdm(request):
     """ 포트폴리오 - Smart Digital Mold 페이지 """
-    return render(request, 'navBar/portfolio/sdm.html')
+    portfolio_list = Portfolio.objects.filter(category_index=7).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/sdm.html', context)
 
 
 def portfolioMold(request):
     """ 포트폴리오 - 금형 제작 페이지 """
-    return render(request, 'navBar/portfolio/mold.html')
+    portfolio_list = Portfolio.objects.filter(category_index=8).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/mold.html', context)
 
 
 def portfolioInjectionMolding(request):
     """ 포트폴리오 - 사출 성형 페이지 """
-    return render(request, 'navBar/portfolio/injection_molding.html')
+    portfolio_list = Portfolio.objects.filter(category_index=9).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/injection_molding.html', context)
 
 
 def portfolioEquipmentDesign(request):
     """ 포트폴리오 - 판금 절곡 페이지 """
-    return render(request, 'navBar/portfolio/equipment_design.html')
+    portfolio_list = Portfolio.objects.filter(category_index=10).order_by('board_index')
+    
+    # 페이징
+    page = request.GET.get('page', '1')
+    paginator = Paginator(portfolio_list, 8)
+    page_obj = paginator.get_page(page)
+
+    context = {'portfolio_list': page_obj}
+    return render(request, 'navBar/portfolio/equipment_design.html', context)
 
 def reviewBest(request):
     """ 후기 - 베스트후기 페이지 """
