@@ -2,11 +2,8 @@
             {% load static %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/order/order_form_footer.css' %}">
 
-            <form method="post" class="post-form" action="{% url 'itrencotech:make_order_form' %}">
+            <form name="form1" method="post" class="post-form" action="{% url 'itrencotech:make_order_form' %}">
             {% csrf_token %}
-
-
-
             <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
             <div id="div-container-01">
                 <!-- 주문서: 회사명, 사업자등록번호 -->

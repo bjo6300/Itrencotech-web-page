@@ -50,6 +50,12 @@ class SignUpView(View):
         if not (username and userid and password1 and password2 and phone_num
                 and company_name and company_address and company_tel and email):
             res_data['error'] = "입력하지 않은 칸이 있습니다."
+
+        # 아이디가 5자 미만이면
+        if len(userid) < 5:
+            ctypes.windll.user32.MessageBoxW(0, '5자 이상의 아이디를 입력해 주세요.', '이메일 인증 창            ')
+            return render(request, 'login/signup.html')
+
         # 아이디 중복 확인
         if User.objects.filter(userid=userid).exists():  # 아이디 중복 체크
             print('이미 존재하는 아이디입니다!')
