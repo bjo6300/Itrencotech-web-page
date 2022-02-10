@@ -519,6 +519,19 @@ input[type=number]:hover, textarea:hover {
             });
         }
     }
+
+    // 카테고리 값 가져오기
+    function getCategoryIndex(){
+        for(var i = 1; i < 4; i++) {
+            var inputId = 'input[id=button' + String(i) + ']' 
+            var listVar = $(inputId).is(":checked");
+
+            if(listVar) {
+                // console.log('현재 선택된 카테고리 인덱스는 ' + i + '번');
+                alert(i);
+            }
+        }
+    }
 </script>
 
 <!-- 주문서 main -->

@@ -1,3 +1,6 @@
+// 가려진 비밀번호 표시 기능
+
+
 function showPasswd() {
     var x = document.getElementById("input-showed");
     if (x.type === "password") {
