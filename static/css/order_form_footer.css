@@ -82,5 +82,6 @@ font {
 
 /* 주문하기 버튼 */
 #order-btn {
-    margin-top: 20px; 
+    margin-top: 40px;
+    border: none;
 }
