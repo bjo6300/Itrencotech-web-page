@@ -1,3 +1,6 @@
+// 비밀번호 확인 기능
+
+
 var check = function() {
     var pw1 = document.getElementById('input-showed-01').value;
     var pw2 = document.getElementById('input-showed-02').value

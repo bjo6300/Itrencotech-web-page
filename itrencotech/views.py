@@ -231,8 +231,8 @@ def order_confirmation(request):
 
 
 def order_form_onlyIdea(request):
-    if request.method == "GET":
-        method = request.GET.get('method', False)
+    if request.method == "POST":
+        method = request.POST.get('method', False)
         context = {'method': method}
         contextDict = json.dumps(context)
         return render(request, 'order/order_form_onlyIdea.html', {'contextDict': contextDict})
@@ -241,8 +241,8 @@ def order_form_onlyIdea(request):
 
 
 def order_form_prototyping(request):
-    if request.method == "GET":
-        method = request.GET.get('method', False)
+    if request.method == "POST":
+        method = request.POST.get('method', False)
         context = {'method': method}
         contextDict = json.dumps(context)
         return render(request, 'order/order_form_prototyping.html', {'contextDict': contextDict})
@@ -251,8 +251,8 @@ def order_form_prototyping(request):
 
 
 def order_form_production(request):
-    if request.method == "GET":
-        method = request.GET.get('method', False)
+    if request.method == "POST":
+        method = request.POST.get('method', False)
         context = {'method': method}
         contextDict = json.dumps(context)
         return render(request, 'order/order_form_production.html', {'contextDict': contextDict})
