@@ -275,6 +275,7 @@ def make_order_form(request):
         size = request.POST['size']  # 크기(가로/세로/높이)
         path = request.POST['input_file']  # 파일(경로?)
         etc = request.POST['etc']  # 기타
+        category_index = request.POST['category_index'] # 카테고리 인덱스
         userid = request.POST['userid']  # 사용자 아이디
 
         print(userid)
@@ -295,7 +296,8 @@ def make_order_form(request):
                 size=size,
                 path=path,
                 etc=etc,
-                category_index=Category.objects.get(category_index=1),
+                # category_index=Category.objects.get(category_index=1),
+                category_index=Category.objects.get(category_index=category_index),
                 userid=User.objects.get(userid=userid)
             )
             order.save()
