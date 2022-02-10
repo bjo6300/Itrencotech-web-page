@@ -1,249 +1,7 @@
-<style>
-@font-face {
-    font-family: 'KoPubDotumMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+<!-- CSS -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/order/order_form_header.css' %}">
 
-.button-wrap {
-  position: relative;
-  text-align: center;
-  top: 50%;
-  margin-top: -2.5em;
-}
-
-button {
-  width: 30%;
-  height: 30%;
-  display: inline-block;
-  margin: 50px;
-  cursor: pointer;
-  color: white;
-  border-radius: 0.25em;
-  background: #131D3D;
-  transition: 0.3s;
-  font-size: 15pt;
-  letter-spacing: 2px;
-  border-radius:17px;
-}
-
-.button-label {
-  display: inline-block;
-  padding: 7px 15px;
-  margin: 0 10px;
-  cursor: pointer;
-  color: black;
-  background: white;
-  transition: 0.3s;
-  letter-spacing: 2px;
-  border-radius:17px;
-}
-
-.button-label:hover {
-    background: #e9e9e9;
-}
-
-.button-label:hover:active {
-    transform: translateY(3px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
-}
-
-#button1:checked + .button-label {
-  background: #131D3D;
-  color: white;
-}
-
-#button2:checked + .button-label {
-  background: #131D3D;
-  color: white;
-}
-
-#button3:checked + .button-label {
-  background: #131D3D;
-  color: white;
-}
-
-#button4:checked + .button-label {
-  background: #131D3D;
-  color: white;
-}
-
-.hidden {
-  display: none;
-}
-
-.input_batch {
-  width: 100%;
-  margin: 15px 0 15px 0;
-}
-
-textarea {
-  width: 80%;
-  border: 2px solid #d9d9d9;
-  border-radius: 17px;
-  margin-left: -7px;
-  padding: 10px 0 10px 10px;
-  font-size: 105%;
-  letter-spacing: 1px;
-  resize: vertical;
-  font-size:16.5px;
-  font-family:맑은고딕;
-}
-
-input[type=text], input[type=email], input[type=tel], input[type=number] {
-  width: 80%;
-  border: 2px solid #d9d9d9;
-  border-radius: 17px;
-  margin-left: -7px;
-  padding: 10px 0 10px 10px;
-  font-size: 105%;
-  letter-spacing: 1px;
-}
-
-input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover,
-input[type=number]:hover, textarea:hover {
-  background: #fafafa;
-}
-
-#input-file {
-  display: none;
-}
-
-.input-file-button {
-  padding: 6px 25px;
-  background-color:#FF6600;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-}
-
-.filebox label {
-    display: inline-block;
-    padding: 10px;
-    color: #fff;
-    vertical-align: middle;
-    background-color: #999999;
-    cursor: pointer;
-    margin-left: 10px;
-    margin-top:-10px;
-}
-
-.filebox input[type="file"] {
-    position: absolute;
-    width: 0;
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-}
-
-.filebox .upload-name {
-    display: inline-block;
-    height: 130px;
-    padding: 0 10px;
-    vertical-align: middle;
-    border: 2px solid #d9d9d9;
-    color: #757575;
-    font-size: 105%;
-    letter-spacing: 1px;
-    border-radius: 17px;
-    width: 77%;
-    margin: 10px 0 15px -7px;
-}
-
-.upload-box {
-  width: 80%;
-  box-sizing: border-box;
-  margin-right: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.drag-file {
-  width: 82%;
-  height: 130px;
-  flex-direction: column;
-  margin-left: -7px;
-  margin-top:10px;
-  margin-bottom:15px;
-  border: 3px dashed #d9d9d9;
-  border-radius: 17px;
-}
-.drag-file.highlight {
-  border: 3px dashed red;
-}
-.image {
-  width: 40px;
-  margin-top: 20px;
-}
-.drag-file .message {
-  margin-bottom: 0;
-}
-
-.upload-btn-wrapper {
-    position: relative;
-}
-
-.upload-btn {
-    width: 100px;
-    margin-top:-6px;
-    margin-bottom: 3px;
-    color: gray;
-    background-color: white;
-    border-radius:17px;
-    font-size: 15px;
-    padding:4px 0;
-}
-
-#fileDragDesc {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    text-align: center;
-}
-
-#input_file {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-#input_file + label {
-    margin-left: 10px;
-    font-size:14px;
-    font-family:맑은고딕;
-    text-align:center;
-    background-color: white;
-    display: inline-block;
-    border: 1px solid #e9e9e9;
-}
-
-#input_file:focus + label, #input_file + label:hover {
-    background: #e9e9e9;
-    color: black;
-}
-
-#input_file + label:hover:active {
-    background-color: #131D3D;
-    color: white;
-    transform: translateY(2px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
-}
-
-#input_file + label {
-	cursor: pointer;
-}
-
-#dropZone .left {
-    margin-left: 0;
-}
-
-</style>
 <script>
     const check = function() {
         const company_name = document.getElementById('company_name').value;
@@ -522,16 +280,19 @@ input[type=number]:hover, textarea:hover {
 
     // 카테고리 값 가져오기
     function getCategoryIndex(){
-        for(var i = 1; i < 4; i++) {
-            var inputId = 'input[id=button' + String(i) + ']' 
-            var listVar = $(inputId).is(":checked");
+        for(var i = 1; i < 5; i++) {
+            var inputId = 'button' + String(i);   
+            var input = 'input[id=' + inputId + ']';
+            var listVar = $(input).is(":checked");
 
             if(listVar) {
-                // console.log('현재 선택된 카테고리 인덱스는 ' + i + '번');
-                alert(i);
+                var inputVal = document.getElementById(inputId).value;
+
             }
         }
-    }
+
+        document.getElementById("input-category-index").value = inputVal;
+    }  
 </script>
 
 <!-- 주문서 main -->
