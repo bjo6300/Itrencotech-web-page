@@ -7,143 +7,146 @@
 
 
 
-            <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
-            <div id="div-container-01">
-                <!-- 주문서: 회사명, 사업자등록번호 -->
-                <div class="div-left-01">
-                    <div class="div-left-02">
-                        <!-- 회사명 -->
-                        <font size="4">회사명</font>
-                        <div class="input_batch">
-                            <input type="text" name="company_name" id="company_name" placeholder="회사명" onkeyup="check();" >
-                        </div>
-                        <!-- 사업자등록번호 -->
-                        <font size="4">사업자 등록번호</font>
-                        <div class="input_batch">
-                            <input type="text" name="business_num" id="business_num" placeholder="사업자 등록번호" onkeyup="check();" >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 주문서: 담당자, 이메일, 연락처 -->
-                <div class="div-right-01">
-                    <div class="div-left-02">
-                        <!-- 담당자 -->
-                        <font size="4">담당자</font>
-                        <div class="input_batch">
-                            <input type="text" name="name" id="name" placeholder="담당자" onkeyup="check();" >
-                        </div>
-                        <!-- 이메일 -->
-                        <font size="4">이메일</font>
-                        <div class="input_batch">
-                            <input type="email" name="email" id="email" placeholder="이메일" onkeyup="check();" >
-                        </div>
-                        <!-- 연락처 -->
-                        <font size="4">연락처</font>
-                        <div class="input_batch">
-                            <input type="tel" name="phone_num" id="phone_num" placeholder="연락처" onkeyup="check();" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- 주문서 작성 내용: 제품 제목, 제품 설명 -->
-            <div id="div-container-02">
-                <div class="div-left-02">
-                    <!-- 제품 제목 -->
-                    <font size="4">제품 제목</font>
-                        <div class="div-one">
-                            <input type="text" name="title" id="title" placeholder="제품 제목" onkeyup="check();" >
-                        </div>
-                    <!-- 제품 설명 -->
-                    <font size="4">제품 설명</font>
-                        <div class="div-one">
-                            <textarea name="description" id="description" placeholder="제품 설명" rows="4" onkeyup="check();"></textarea>
-                        </div>
-                </div>
-            </div>
-
-
-
-            <!-- 주문서 작성 내용: 소재, 제품 수량, 크기, 파일, 기타 -->
-            <div id="div-container-03">
-                <!-- 주문서: 소재, 제품 수량, 크기 -->
-                <div class="div-left-01">
-                    <div class="div-left-02">
-                        <!-- 소재 -->
-                        <font size="4">소재</font>
-                        <div class="input_batch">
-                            <input type="text" name="material" id="material" placeholder="소재" onkeyup="check();" >
-                        </div>
-                        <!-- 제품 -->
-                        <font size="4">제품 수량</font>
-                        <div class="input_batch">
-                            <input type="number" name="quantity" id="quantity" placeholder="제품 수량" onkeyup="check();" >
-                        </div>
-                        <!-- 크기 -->
-                        <font size="4">크기(가로/세로/높이)</font>
-                        <div class="input_batch">
-                            <input type="text" name="size" id="size" placeholder="크기 (가로/세로/높이)" onkeyup="check();" >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 주문서: 파일, 기타 -->
-                <div class="div-right-01">
-                    <div class="div-left-02">
-                        <!-- 파일 -->
-                        <font id="font-file" size="4">파일</font>
-                        <div class="upload-btn-wrapper">
-                            <input type="file" name="input_file" id="input_file" multiple
-                                   accept="image/*,
-                                           application/vnd.ms-excel,
-                                           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
-                                           text/plain,
-                                           .pdf"
-                                   onkeyup="check();" />    <!-- 설계 파일의 확장자를 등록해 주면 업로드 가능함 -->
-                            <label for="input_file" class="upload-btn">파일 업로드</label>
-                        </div>
-<!--                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">-->
-                            <div id="dropZone" class="drag-file">
-                                <div id="fileDragDesc">
-                                    <img id="img-file" src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-                                    <p class="message">드래그하여 파일 업로드</p>
-                                </div>
-
-                                <table id="fileListTable" width="100%" border="0px">
-                                    <tbody id="fileTableTbody">
-
-                                    </tbody>
-                                </table>
+                <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
+                <div id="div-container-01">
+                    <!-- 주문서: 회사명, 사업자등록번호 -->
+                    <div class="div-left-01">
+                        <div class="div-left-02">
+                            <!-- 회사명 -->
+                            <font size="4">회사명</font>
+                            <div class="input_batch">
+                                <input type="text" name="company_name" id="company_name" placeholder="회사명" onkeyup="check();" >
                             </div>
-<!--                            </form>-->
-                        <!-- 기타 -->
-                        <font size="4">기타</font>
-                        <div class="input_batch">
-                            <input type="text" name="etc" id="etc" placeholder="기타" onkeyup="check();" >
+                            <!-- 사업자등록번호 -->
+                            <font size="4">사업자 등록번호</font>
+                            <div class="input_batch">
+                                <input type="text" name="business_num" id="business_num" placeholder="사업자 등록번호" onkeyup="check();" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 주문서: 담당자, 이메일, 연락처 -->
+                    <div class="div-right-01">
+                        <div class="div-left-02">
+                            <!-- 담당자 -->
+                            <font size="4">담당자</font>
+                            <div class="input_batch">
+                                <input type="text" name="name" id="name" placeholder="담당자" onkeyup="check();" >
+                            </div>
+                            <!-- 이메일 -->
+                            <font size="4">이메일</font>
+                            <div class="input_batch">
+                                <input type="email" name="email" id="email" placeholder="이메일" onkeyup="check();" >
+                            </div>
+                            <!-- 연락처 -->
+                            <font size="4">연락처</font>
+                            <div class="input_batch">
+                                <input type="tel" name="phone_num" id="phone_num" placeholder="연락처" onkeyup="check();" >
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- 알림 문구 -->
-            <span id="span-confirm-message"></span> <br/>
-            <!-- 주문하기 버튼 영역 -->
-            <div id="div-btn-container">
-<!--                
-                <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>
--->
-                <!-- 카테고리 정보 -->
-                <script>
-                    getCategoryIndex();
-                </script>
-                <button type="submit" id='order-btn' disabled>주문하기</button>
-            </div>
-            {% if user.is_authenticated %}
-                <input id="input-userid" name="userid" type="text" value="{{ user.userid|default_if_none:'' }}" hidden>
+
+
+
+                <!-- 주문서 작성 내용: 제품 제목, 제품 설명 -->
+                <div id="div-container-02">
+                    <div class="div-left-02">
+                        <!-- 제품 제목 -->
+                        <font size="4">제품 제목</font>
+                            <div class="div-one">
+                                <input type="text" name="title" id="title" placeholder="제품 제목" onkeyup="check();" >
+                            </div>
+                        <!-- 제품 설명 -->
+                        <font size="4">제품 설명</font>
+                            <div class="div-one">
+                                <textarea name="description" id="description" placeholder="제품 설명" rows="4" onkeyup="check();"></textarea>
+                            </div>
+                    </div>
+                </div>
+
+
+
+                <!-- 주문서 작성 내용: 소재, 제품 수량, 크기, 파일, 기타 -->
+                <div id="div-container-03">
+                    <!-- 주문서: 소재, 제품 수량, 크기 -->
+                    <div class="div-left-01">
+                        <div class="div-left-02">
+                            <!-- 소재 -->
+                            <font size="4">소재</font>
+                            <div class="input_batch">
+                                <input type="text" name="material" id="material" placeholder="소재" onkeyup="check();" >
+                            </div>
+                            <!-- 제품 -->
+                            <font size="4">제품 수량</font>
+                            <div class="input_batch">
+                                <input type="number" name="quantity" id="quantity" placeholder="제품 수량" onkeyup="check();" >
+                            </div>
+                            <!-- 크기 -->
+                            <font size="4">크기(가로/세로/높이)</font>
+                            <div class="input_batch">
+                                <input type="text" name="size" id="size" placeholder="크기 (가로/세로/높이)" onkeyup="check();" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 주문서: 파일, 기타 -->
+                    <div class="div-right-01">
+                        <div class="div-left-02">
+
+                            <!-- 파일 -->
+                            <font id="font-file" size="4">파일</font>
+                            <div class="upload-btn-wrapper">
+
+                                <input type="file" name="input_file" id="input_file" multiple
+                                       accept="image/*,
+                                               application/vnd.ms-excel,
+                                               application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                               text/plain,
+                                               .pdf"
+                                       onkeyup="check();" />    <!-- 설계 파일의 확장자를 등록해 주면 업로드 가능함 -->
+
+                                <label for="input_file" class="upload-btn">파일 업로드</label>
+                            </div>
+    <!--                        <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" method="post">-->
+                                <div id="dropZone" class="drag-file">
+                                    <div id="fileDragDesc">
+                                        <img id="img-file" src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+                                        <p class="message">드래그하여 파일 업로드</p>
+                                    </div>
+
+                                    <table id="fileListTable" width="100%" border="0px">
+                                        <tbody id="fileTableTbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+    <!--                            </form>-->
+
+                            <!-- 기타 -->
+                            <font size="4">기타</font>
+                            <div class="input_batch">
+                                <input type="text" name="etc" id="etc" placeholder="기타" onkeyup="check();" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 알림 문구 -->
+                <span id="span-confirm-message"></span> <br/>
+                <!-- 주문하기 버튼 영역 -->
+                <div id="div-btn-container">
+<!--                <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>-->
+                    <!-- 카테고리 정보 -->
+<!--                    <script>-->
+<!--                        getCategoryIndex();-->
+<!--                    </script>-->
+                    <button type="submit" id='order-btn' style="margin-top:20px;" disabled>주문하기</button>
+                </div>
+                {% if user.is_authenticated %}
+                    <input id="input-userid" name="userid" type="text" value="{{ user.userid|default_if_none:'' }}" hidden>
+                {% else %}
+                    <input id="input-none" name="userid" type="text" value="" hidden>
+                {% endif %}
             </form>
-            {% endif %}
         </div>
     </div>
 </div>

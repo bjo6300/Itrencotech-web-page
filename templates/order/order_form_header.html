@@ -256,7 +256,7 @@ input[type=number]:hover, textarea:hover {
         const material = document.getElementById('material').value;
         const quantity = document.getElementById('quantity').value;
         const size = document.getElementById('size').value;
-        const path = document.getElementById('input_file').value;
+        // const path = document.getElementById('input_file').value;
         const etc = document.getElementById('etc').value;
 
         if (company_name === '' || business_num === '' || name == '' || email === '' || phone_num === '' ||
@@ -266,7 +266,7 @@ input[type=number]:hover, textarea:hover {
             document.getElementById('order-btn').disabled = true;
         } else {
             document.getElementById('span-confirm-message').style.color = 'green';
-            document.getElementById('span-confirm-message').innerHTML = '✔ OK.';
+            document.getElementById('span-confirm-message').innerHTML = '✔ OK';
             document.getElementById('order-btn').disabled = false;
         }
     };
@@ -522,7 +522,7 @@ input[type=number]:hover, textarea:hover {
 
     // 카테고리 값 가져오기
     function getCategoryIndex(){
-        for(var i = 1; i < 4; i++) {
+        for(var i = 1; i <= 4; i++) {
             var inputId = 'input[id=button' + String(i) + ']' 
             var listVar = $(inputId).is(":checked");
 
