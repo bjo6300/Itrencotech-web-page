@@ -15,13 +15,13 @@
     <!-- 주문서 메뉴 버튼 -->
     <div class="container" style="width:90%;">
         <div class="button-wrap">
-            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
+            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" value="4" onclick="getCategoryIndex();" checked/>
             <label class="button-label" for="button1">3D 프린팅 출력</label>
-            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
+            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers" value="5" onclick="getCategoryIndex();"/>
             <label class="button-label" for="button2">목업 (CNC 가공)</label>
-            <input class="hidden radio-label" id="button3" type="radio" name="accept-offers"/>
+            <input class="hidden radio-label" id="button3" type="radio" name="accept-offers" value="6" onclick="getCategoryIndex();"/>
             <label class="button-label" for="button3">부품 (CNC 가공)</label>
-            <input class="hidden radio-label" id="button4" type="radio" name="accept-offers"/>
+            <input class="hidden radio-label" id="button4" type="radio" name="accept-offers" value="7" onclick="getCategoryIndex();"/>
             <label class="button-label" for="button4">Smart Digital Mold</label>
         </div>
     </div>
