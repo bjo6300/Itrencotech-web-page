@@ -9,20 +9,27 @@
          < 양산 주문서 >
      </font>
 </div>
+
 <!-- 주문서 별 교체 내용 -->
 <div style="padding:70px 0 50px 0;">
     <!-- 주문서 메뉴 버튼 -->
     <div class="container" style="width:80%;">
         <div class="button-wrap">
-            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
+            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" value="8" onclick="getCategoryIndex();" checked/>
             <label class="button-label" for="button1">사출 금형 제작</label>
-            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
+            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers" value="9" onclick="getCategoryIndex();"/>
             <label class="button-label" for="button2">사출 성형</label>
-            <input class="hidden radio-label" id="button3" type="radio" name="accept-offers"/>
+            <input class="hidden radio-label" id="button3" type="radio" name="accept-offers" value="10" onclick="getCategoryIndex();"/>
             <label class="button-label" for="button3">판금 절곡</label>
         </div>
     </div>
 </div>
+
+<script>
+    var checkBox = JSON.parse("{{ contextDict|escapejs }}")['method'];
+    document.getElementById(checkBox).checked = true;
+</script>
+
 {% include 'order/order_form_footer.html' %}
 
 {% endblock %}

@@ -1,3 +1,6 @@
+// 생년월일 드롭다운 기능
+
+
 $(document).ready(function(){            
     var now = new Date();
     var year = now.getFullYear();

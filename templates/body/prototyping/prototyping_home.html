@@ -33,7 +33,7 @@
                                 <!-- 상단 동그라미 부분 -->
                                 <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                                <h2>3D 프린트 출력</h2>
+                                <h2 style="font-size: 15px;">3D 프린트 출력</h2>
 
                             </figcaption>
 
@@ -42,7 +42,11 @@
                                 주문하기
                             </h3>
 
+                            {% if user.is_authenticated %}
                             <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
                         </figure>
 
                     </div>
@@ -78,7 +82,7 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2>목업 (CNC)</h2>
+                            <h2 style="font-size: 15px;">목업 (CNC)</h2>
 
                         </figcaption>
 
@@ -86,9 +90,16 @@
                         <h3 style="top: 55%; text-align: center;">
                             주문하기
                         </h3>
-                        
 
-                        <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                        <form id="form-button2" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button2">
+                            {% if user.is_authenticated %}
+                            <a id="a-button2" href="javascript:{}" onclick="document.getElementById('form-button2').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
                     </figure>
                 </div>
                 <!--글자-->
@@ -123,7 +134,7 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2>부품 (CNC)</h2>
+                            <h2 style="font-size: 15px;">부품 (CNC)</h2>
 
                         </figcaption>
 
@@ -133,7 +144,15 @@
                             주문하기
                         </h3>
 
-                        <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                        <form id="form-button3" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button3">
+                            {% if user.is_authenticated %}
+                            <a id="a-button3" href="javascript:{}" onclick="document.getElementById('form-button3').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
                     </figure>
                 </div>
                 <!--글자-->
@@ -168,7 +187,7 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2>SDM</h2>
+                            <h2 style="font-size: 15px;">SDM</h2>
 
                         </figcaption>
 
@@ -177,9 +196,16 @@
                         <h3 style="top: 55%; text-align: center;">
                             주문하기
                         </h3>
-                        
 
-                        <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                        <form id="form-button4" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button4">
+                            {% if user.is_authenticated %}
+                            <a id="a-button4" href="javascript:{}" onclick="document.getElementById('form-button4').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
                     </figure>
                 </div>
                 <!--글자-->

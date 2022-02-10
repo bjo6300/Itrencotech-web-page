@@ -8,16 +8,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
 <!-- 타이틀 -->
 <title>마이페이지</title>
-<!-- middle(header에서 닫지 못한 태그 등) -->
-{% include 'body/middle.html' %}
-
-<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
-{% block content %}
-{% endblock %}
-<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
-
-<!-- footer -->
-{% include 'body/footer.html' %}
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
@@ -69,4 +59,37 @@
         }
 
     };
+
+    const btnUpdatePhoneNum = document.getElementById("btn-update-phone-num");
+    const btnUpdateCompanyName = document.getElementById("btn-update-company-name");
+
+    btnUpdatePhoneNum.addEventListener("click", e => {
+        var gsWin = window.open("about:blank", "winName", "width=400, height=400, top=100, left=300");
+        var fr = document.getElementById("server");
+        fr.action = "update/pn/";
+        fr.target = "winName";
+        fr.submit();
+    });
+
+    btnUpdateCompanyName.addEventListener("click", e => {
+        var gsWin = window.open("about:blank", "winName", "width=400, height=400, top=100, left=300");
+        var fr = document.getElementById("server");
+        fr.action = "update/cn/";
+        fr.target = "winName";
+        fr.submit();
+    });
+
+
 </script>
+
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+{% block content %}
+{% endblock %}
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+
+<!-- footer -->
+{% include 'body/footer.html' %}
+

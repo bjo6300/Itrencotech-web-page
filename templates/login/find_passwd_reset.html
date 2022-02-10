@@ -6,6 +6,31 @@
 <script src="{% static 'js/showPasswd.js' %}"></script>
 <script src="{% static 'js/confirmPasswd.js' %}"></script>
 
+<script>
+    const check = function () {
+        const pw1 = document.getElementById('input-showed-01').value;
+        const pw2 = document.getElementById('input-showed-02').value;
+        if (pw1 === '' && pw2 === '') {
+            document.getElementById('span-confirm-message').innerHTML = ' ';
+            document.getElementById('btn-confirm-02').disabled = true;
+        }
+        else if (pw1 === '' || pw2 === '') {
+            document.getElementById('span-confirm-message').style.color = 'blue';
+            document.getElementById('span-confirm-message').innerHTML = '※ 입력하지 않은 칸이 있습니다.';
+            document.getElementById('btn-confirm-02').disabled = true;
+        }
+        else if (pw1 === pw2) {
+            document.getElementById('span-confirm-message').style.color = 'green';
+            document.getElementById('span-confirm-message').innerHTML = '✔ 비밀번호가 일치합니다.';
+            document.getElementById('btn-confirm-02').disabled = false;
+        } else {
+            document.getElementById('span-confirm-message').style.color = 'red';
+            document.getElementById('span-confirm-message').innerHTML = '✘ 비밀번호가 일치하지 않습니다.';
+            document.getElementById('btn-confirm-02').disabled = true;
+        }
+    };
+</script>
+
 <div id="div-title-container" >
     <h1 id="h1-title"> 비밀번호 찾기 </h1>
 </div>
@@ -31,18 +56,23 @@
             </div>
         </div>
 
-        <div class="div-passwd-container">
-            <input class="input-passwd" id="input-showed-02" type="password" placeholder="비밀번호 확인" onkeyup="check();">
-            <div id="div-show-container">
-                <div id="div-show-passwd">
-                    <input id="input-show-passwd-02" type="checkbox" onclick="showPasswd02();">
-                    <label for="input-show-passwd-02"></label>
+        <form method="post" class="post-form" action="{% url 'common:find_passwd_reset' %}">
+            {% csrf_token %}
+            <div class="div-passwd-container">
+                <input class="input-passwd" id="input-showed-02"
+                            name="password" type="password" placeholder="비밀번호 확인" onkeyup="check();">
+                <input id="input-userid" name="userid" type="text"
+                            value="{{ userid|default_if_none:'' }}" hidden>
+                <div id="div-show-container-02">
+                    <div id="div-show-passwd-02">
+                        <input id="input-show-passwd-02" type="checkbox" onclick="showPasswd02();">
+                        <label for="input-show-passwd-02"></label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <span id="span-confirm-message"></span> <br/>
-      
-        <button type="button" id="btn-confirm-02" onclick="location.href='{% url 'common:find_passwd_completed' %}'"> 확 인 </button>
+            <span id="span-confirm-message"></span> <br/>
+            <button type="submit" id="btn-confirm-02" disabled> 확 인 </button>
+        </form>
     </div>
 </div>
 

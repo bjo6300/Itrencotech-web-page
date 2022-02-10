@@ -46,30 +46,39 @@
 
     <div class="image" style="text-align: center;">
         <!--주문확인 배경-->
-        <img src="/static/images/order_confirmation_background.png" width="50%" height="50%">
-
+<!--        <img src="/static/images/order_confirmation_background.png" width="50%" height="50%">-->
+        <!-- 내용 영역 -->
+        <div align="center">
+            <div style="width: 850px; height: 950px; position: relative;">
+                <!-- 주문서 양식 -->
+                <div style="width:100%; height: 900px;
+                            box-shadow: 3px 3px 20px lightgray;
+                            border-bottom-left-radius: 5% 5%;
+                            border-bottom-right-radius: 5% 5%;
+                            border-top-left-radius: 5% 5%;
+                            border-top-right-radius: 5% 5%;">
         <!--주문서 제목-->
-        <div class="title"  >
+        <div class="title" >
             <h2>
-                < 양산 주문서 >
+                < 주문서 >
             </h2>
         </div>
 
         <!--첫번째 : question, 두번째 : text data 넣어야함-->
         <!--{$ } -> 데이터 들어갈 곳 -->
         <div class="text">
-            <table>
-                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 40%; top: 0%;" height="30%">
+            <table style="position: relative; left: -40%;">
+                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 20px; top: 0%;" height="30%">
                 <tr>
                     <td align="right"> <div>회사명</div> </td>
-                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 이트렌코텍} </div> </td>
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.company_name }} </div> </td>
                 </tr>
 
-                
 
-                <tr> 
+
+                <tr>
                     <td align="right"> <div>사업자 등록번호</div> </td>
-                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 123456789} </div> </td>
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.business_num }} </div> </td>
                 </tr>
 
                 <tr>
@@ -80,19 +89,19 @@
                     <td> <div>&nbsp; </div> </td>
                     <td> <div>&nbsp; </div> </td>
                 </tr>
-                
-                
+
+
                 <tr>
                     <td align="right"> <div> 담당자  </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 홍길동} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.name }} </div> </td>
                 </tr>
-                <tr> 
+                <tr>
                     <td align="right"> <div> 이메일  </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ mkc@itrencotech.com} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.email }} </div> </td>
                 </tr>
                 <tr>
                     <td align="right"> <div> 연락처  </div> </td>
-                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 010-0000-0000} </div> </td>
+                    <td align="left"> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.phone_num }} </div> </td>
                 </tr>
 
                 <tr>
@@ -104,11 +113,11 @@
                     <td> <div>&nbsp; </div> </td>
                 </tr>
 
-                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 40%; top: 39%;";  height="48%">
+                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 20px; top: 39%;";  height="48%">
 
-                <tr> 
+                <tr>
                     <td align="right"> <div> 유 형  </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 금형} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.category_index }} </div> </td>
                 </tr>
 
                 <tr>
@@ -120,13 +129,13 @@
                     <td> <div>&nbsp; </div> </td>
                 </tr>
 
-                <tr> 
+                <tr>
                     <td align="right"> <div> 제품 제목  </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 텀블러} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.title }} </div> </td>
                 </tr>
-                <tr> 
+                <tr>
                     <td align="right"> <div> 제품 설명   </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 친환경 텀블러입니다.} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.description }} </div> </td>
                 </tr>
 
                 <tr>
@@ -137,22 +146,22 @@
                     <td> <div>&nbsp; </div> </td>
                     <td> <div>&nbsp; </div> </td>
                 </tr>
-                
-                <tr> 
+
+                <tr>
                     <td align="right"> <div> 소 재   </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 친환경 플라스틱} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.material }} </div> </td>
                 </tr>
-                <tr> 
-                    <td align="right"> <div> 제품수량   </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 400} </div> </td>
+                <tr>
+                    <td align="right"> <div> 제품 수량   </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.quantity }} </div> </td>
                 </tr>
-                <tr> 
+                <tr>
                     <td align="right"> <div> 크 기   </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 100*100*600} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.size }} </div> </td>
                 </tr>
-                <tr> 
-                    <td align="right"> <div> {$ 판금/절곡} 파일    </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ tumbler.stp} </div> </td>
+                <tr>
+                    <td align="right"> <div> 파 일    </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.path }} </div> </td>
                 </tr>
 
                 <tr>
@@ -163,17 +172,15 @@
                     <td> <div>&nbsp; </div> </td>
                     <td> <div>&nbsp; </div> </td>
                 </tr>
-                
-                <tr> 
+
+                <tr>
                     <td align="right"> <div> 기 타   </div> </td>
-                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$ 가볍다.} </div> </td>
+                    <td align="left"> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.etc }} </div> </td>
                 </tr>
-                
-            </table> 
+            </table>
 
         </div>
-
-        
+        </div>
     </div>
 
     <div style="text-align: center; margin-top: 20px; margin-bottom: 20px; " >
@@ -185,8 +192,10 @@
             <img src="/static/images/order_complete.png" width="201px" height="38px" style="margin-right: 10px; margin-left: 10%;">
         </a>
     </div>
+    </div>
+    </div>
 
-<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+<!— ########## 기본 템플릿 안에 삽입될 내용 end ########## —>
 
-<!-- footer -->
+<!— footer —>
 {% include 'body/footer.html' %}

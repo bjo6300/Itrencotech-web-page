@@ -17,14 +17,18 @@
     height="31px" width="500px" alt="현재 과정: 아이디 입력"/>
     <br>
 
-    <div id="div-wrapper">
-        <div>
-            <p class="p-txt"> 비밀번호를 찾고자 하는 아이디를 입력해 주세요. </p>
-            <input id="input-id">
-        </div>
+    <form method="post" class="post-form" action="{% url 'common:find_passwd' %}">
+        {% csrf_token %}
+        <div id="div-wrapper">
+            <div>
+                <p class="p-txt"> 비밀번호를 찾고자 하는 아이디를 입력해 주세요. </p>
+                <input id="input-id" name="input-id">
+            </div>
 
-        <button type="button" id="btn-next" onclick="location.href='{% url 'common:find_passwd_id_list' %}'"> 다 음 </button>
-    </div>
+            <button type="submit" id="btn-next"> 다 음 </button>
+        </div>
+    </form>
+
 </div>
 
 {% endblock %}

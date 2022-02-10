@@ -51,15 +51,16 @@
                             onclick="location.href='{% url 'itrencotech:portfolio_mold' %}'">포트폴리오</button>
                     <!-- 주문하기 버튼 -->
                     <!-- 주문하기 버튼 클릭은 로그인 이후에 가능하도록 -->
-<!--                    {% if user.is_authenticated %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
-<!--                    {% else %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
-<!--                    {% endif %}-->
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'itrencotech:order_form_production' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="method" value="button1">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
+                    {% else %}
                     <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_production' %}'">주문하기</button>
+                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>
+                    {% endif %}
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
@@ -96,15 +97,16 @@
                             onclick="location.href='{% url 'itrencotech:portfolio_injection_molding' %}'">포트폴리오</button>
                     <!-- 주문하기 버튼 -->
                     <!-- 주문하기 버튼 클릭은 로그인 이후에 가능하도록 -->
-<!--                    {% if user.is_authenticated %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
-<!--                    {% else %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
-<!--                    {% endif %}-->
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'itrencotech:order_form_production' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="method" value="button2">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
+                    {% else %}
                     <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_production' %}'">주문하기</button>
+                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>
+                    {% endif %}
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">
@@ -141,15 +143,16 @@
                             onclick="location.href='{% url 'itrencotech:portfolio_equipment_design' %}'">포트폴리오</button>
                     <!-- 주문하기 버튼 -->
                     <!-- 주문하기 버튼 클릭은 로그인 이후에 가능하도록 -->
-<!--                    {% if user.is_authenticated %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'itrencotech:order_form_onlyIdea' %}'">주문하기</button>-->
-<!--                    {% else %}-->
-<!--                    <button class="detail-order-btn" type="button"-->
-<!--                            onclick="location.href='{% url 'common:login' %}'">주문하기</button>-->
-<!--                    {% endif %}-->
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'itrencotech:order_form_production' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="method" value="button3">
+                        <button class="detail-order-btn" type="submit" >주문하기</button>
+                    </form>
+                    {% else %}
                     <button class="detail-order-btn" type="button"
-                            onclick="location.href='{% url 'itrencotech:order_form_production' %}'">주문하기</button>
+                            onclick="location.href='{% url 'common:login_main' %}'">주문하기</button>
+                    {% endif %}
                 </div>
                 <!-- 텍스트 설명 -->
                 <div class="detail-description">

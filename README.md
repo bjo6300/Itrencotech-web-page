@@ -1,5 +1,6 @@
 ![Python: Version](https://img.shields.io/badge/python-3.8.5-blue)
 ![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)
+![MySQL: Version](https://img.shields.io/badge/Mysql-8.0.27-blue)
 
 # Itrencotech-web-page
 Itrencotech web page using django
@@ -23,8 +24,7 @@ Itrencotech web page using django
 ![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
 
 ## DB table
-![image](https://user-images.githubusercontent.com/70627982/149728303-3b3df2ed-368c-44a2-befb-d88716161e89.png)
-
+![image](https://user-images.githubusercontent.com/70627982/150283659-c2cbe08f-619c-4656-a3f3-042d7d953805.png)
 
 
 ## License

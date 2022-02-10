@@ -33,7 +33,7 @@
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                    <h2>사출 금형 제작</h2>
+                    <h2 style="font-size: 15px;">사출 금형 제작</h2>
 
                 </figcaption>
 
@@ -43,7 +43,11 @@
                     주문하기
                 </h3>
 
+                {% if user.is_authenticated %}
                 <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                {% else %}
+                <a href="{% url 'common:login_main' %}"></a>
+                {% endif %}
             </figure>
 
                     </div>
@@ -77,7 +81,7 @@
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                    <h2>사출 성형</h2>
+                    <h2 style="font-size: 15px;">사출 성형</h2>
 
                 </figcaption>
 
@@ -86,7 +90,15 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                <form id="form-button2" action="{% url 'itrencotech:order_form_production' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="method" value="button2">
+                    {% if user.is_authenticated %}
+                    <a id="a-button2" href="javascript:{}" onclick="document.getElementById('form-button2').submit();"></a>
+                    {% else %}
+                    <a href="{% url 'common:login_main' %}"></a>
+                    {% endif %}
+                </form>
             </figure>
                     </div>
                     <!--글자-->
@@ -119,7 +131,7 @@
                     <!-- 상단 동그라미 부분 -->
                     <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                    <h2>판금 절곡</h2>
+                    <h2 style="font-size: 15px;">판금 절곡</h2>
 
                 </figcaption>
 
@@ -128,7 +140,15 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                <form id="form-button3" action="{% url 'itrencotech:order_form_production' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="method" value="button3">
+                    {% if user.is_authenticated %}
+                    <a id="a-button3" href="javascript:{}" onclick="document.getElementById('form-button3').submit();"></a>
+                    {% else %}
+                    <a href="{% url 'common:login_main' %}"></a>
+                    {% endif %}
+                </form>
             </figure>
                     </div>
                     <!--글자-->

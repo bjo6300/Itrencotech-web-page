@@ -3,26 +3,35 @@
 {% block content %}
 
 {% include 'order/order_form_header.html' %}
-            <!-- 주문서 제목 -->
-            <div style="padding-top:70px;">
-                 <font size="8" color="#0b57a5" style="letter-spacing: 5px; font-weight: bold;">
-                     < ONLY IDEA 주문서 >
-                 </font>
-            </div>
-            <!-- 주문서 별 교체 내용 -->
-            <div style="padding:70px 0 50px 0;">
-                <!-- 주문서 메뉴 버튼 -->
-                <div class="container" style="width:80%;">
-                    <div class="button-wrap">
-                        <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" checked/>
-                        <label class="button-label" for="button1">제품 디자인</label>
-                        <input class="hidden radio-label" id="button2" type="radio" name="accept-offers"/>
-                        <label class="button-label" for="button2">기계시스템 설계</label>
-                        <input class="hidden radio-label" id="button3" type="radio" name="accept-offers"/>
-                        <label class="button-label" for="button3">H/W 기구 설계</label>
-                    </div>
-                </div>
-            </div>
+
+<!-- 주문서 제목 -->
+<div style="padding-top:70px;">
+    <font size="8" color="#0b57a5" style="letter-spacing: 5px; font-weight: bold;">
+        < ONLY IDEA 주문서 >
+    </font>
+</div>
+
+<!-- 주문서 별 교체 내용 -->
+<div style="padding:70px 0 50px 0;">
+    <!-- 주문서 메뉴 버튼 -->
+    <div class="container" style="width:80%;">
+        <div class="button-wrap">
+            <input class="hidden radio-label" id="button1" type="radio" name="accept-offers" value="1" onclick="getCategoryIndex();" checked/>
+            <label class="button-label" for="button1">제품 디자인</label>
+            <input class="hidden radio-label" id="button2" type="radio" name="accept-offers" value="2" onclick="getCategoryIndex();"/>
+            <label class="button-label" for="button2">기계시스템 설계</label>
+            <input class="hidden radio-label" id="button3" type="radio" name="accept-offers" value="3" onclick="getCategoryIndex();"/>
+            <label class="button-label" for="button3">H/W 기구 설계</label>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 이전 페이지에서 보낸 버튼대로 체크하기
+    var checkBox = JSON.parse("{{ contextDict|escapejs }}")['method'];
+    document.getElementById(checkBox).checked = true;
+</script>
+            
 {% include 'order/order_form_footer.html' %}
 
 {% endblock %}
