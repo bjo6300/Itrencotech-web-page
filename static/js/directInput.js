@@ -1,3 +1,6 @@
+// 아이디, 비밀번호 찾기 - 이메일 입력받는 기능
+
+
 function selectEmail(ele) {
     var $ele = $(ele);
     var $email2 = $('input[name=email2]');

@@ -27,8 +27,31 @@
 </div>
 
 <script>
+    // 이전 페이지에서 보낸 버튼대로 체크하기
     var checkBox = JSON.parse("{{ contextDict|escapejs }}")['method'];
     document.getElementById(checkBox).checked = true;
+
+    // // 카테고리 값 가져오기
+    // for(var i = 1; i < 4; i++) {
+    //     var inputId = 'input[id=button' + String(i) + ']' 
+    //     var listVar = $(inputId).is(":checked");
+
+    //     if(listVar) {
+    //         console.log('현재 선택된 카테고리 인덱스는 ' + i + '번');
+    //     }
+    // }
+
+    // var inputValue = $("input[name='accept-offers']:checked").val(); 
+    // console.log(inputValue);
+    // if(inputValue == "button1") {
+    //     console.log("제품 디자인");
+    // }   
+    // else if(checkBox == "button2") {
+    //     console.log("기계 시스템 설계");
+    // }
+    // else if(checkBox == "button3") {
+    //     console.log("H/W 기구 설계");
+    // }
 </script>
             
 {% include 'order/order_form_footer.html' %}

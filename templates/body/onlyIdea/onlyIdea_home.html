@@ -76,8 +76,7 @@
                             <!-- 상단 동그라미 부분 -->
                             <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
 
-                            <h2 style="font-size: 15px
-                            ;">기계시스템 설계</h2>
+                            <h2 style="font-size: 15px;">기계시스템 설계</h2>
 
                         </figcaption>
 
@@ -86,7 +85,11 @@
                             주문하기
                         </h3>
 
-                        <a href="{% url 'itrencotech:order_form_onlyIdea' %}"></a>
+                        <form id="form-button2" action="{% url 'itrencotech:order_form_onlyIdea' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button2">
+                            <a id="a-button2" href="javascript:{}" onclick="document.getElementById('form-button2').submit();"></a>
+                        </form>
                     </figure>
                     </div>
                     <!--글자-->
@@ -129,7 +132,11 @@
                             주문하기
                         </h3>
 
-                        <a href="{% url 'itrencotech:order_form_onlyIdea' %}"></a>
+                        <form id="form-button3" action="{% url 'itrencotech:order_form_onlyIdea' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button3">
+                            <a id="a-button3" href="javascript:{}" onclick="document.getElementById('form-button3').submit();"></a>
+                        </form>
                     </figure>
                     </div>
                     <!--글자-->
