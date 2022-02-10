@@ -86,7 +86,11 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                <form id="form-button2" action="{% url 'itrencotech:order_form_production' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="method" value="button2">
+                    <a id="a-button2" href="javascript:{}" onclick="document.getElementById('form-button2').submit();"></a>
+                </form>
             </figure>
                     </div>
                     <!--글자-->
@@ -128,7 +132,11 @@
                     주문하기
                 </h3>
 
-                <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                <form id="form-button3" action="{% url 'itrencotech:order_form_production' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="method" value="button3">
+                    <a id="a-button3" href="javascript:{}" onclick="document.getElementById('form-button3').submit();"></a>
+                </form>
             </figure>
                     </div>
                     <!--글자-->
