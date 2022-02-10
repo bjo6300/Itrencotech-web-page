@@ -134,6 +134,10 @@
 <!--                
                 <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>
 -->
+                <!-- 카테고리 정보 -->
+                <script>
+                    getCategoryIndex();
+                </script>
                 <button type="submit" id='order-btn' disabled>주문하기</button>
             </div>
             {% if user.is_authenticated %}
