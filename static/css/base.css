@@ -194,7 +194,6 @@ a:link, a:visited, a:active {
 #wrapper {
     min-height: 100%;
     padding-bottom: 150px;
-    position: relative;
 }
 
 /* 리뷰 별점 */
