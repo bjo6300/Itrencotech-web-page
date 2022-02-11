@@ -279,6 +279,9 @@ def make_order_form(request):
         category_index = request.POST['category_index']  # 카테고리 인덱스
         userid = request.POST['userid']  # 사용자 아이디
 
+        # category_index와 매칭되는 한글 이름 출력
+        category = Category.objects.get(category_index=category_index)
+
         # userid DB 있다면
         if User.objects.filter(userid=userid).exists():
             # 받아온 정보로 Order 객체 생성
@@ -296,7 +299,7 @@ def make_order_form(request):
                 path=path,
                 etc=etc,
                 # category_index=Category.objects.get(category_index=1),
-                category_index=Category.objects.get(category_index=category_index),
+                category_index=category,
                 userid=User.objects.get(userid=userid)
             )
             order.save()
@@ -310,6 +313,7 @@ def make_order_form(request):
                                      f'연락처: {phone_num}\n\n'
                                      f'회사명: {company_name}\n'
                                      f'사업자 등록번호: {business_num}\n\n'
+                                     f'유형: {category.category_sub}\n\n'
                                      f'제품 제목: {title}\n'
                                      f'제품 설명: {description}\n'
                                      f'소재: {material}\n'
@@ -318,10 +322,11 @@ def make_order_form(request):
                                      f'기타: {etc}',
                                 to=[my_settings.EMAIL['EMAIL_HOST_USER']]
                                 )
-            mail.attach_file(path)
+            mail.attach_file('D:/0123_sugang.txt')
             mail.send()
 
-            return render(request, 'order/order_confirmation.html', {'order': order})
+            return render(request, 'order/order_confirmation.html', {'order': order,
+                                                                     'category_sub': category.category_sub})
         else:
             ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '주문서 창            ')
             return redirect('/')
