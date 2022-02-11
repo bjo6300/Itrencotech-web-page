@@ -278,6 +278,8 @@ def make_order_form(request):
         etc = request.POST['etc']  # 기타
         category_index = request.POST['category_index']  # 카테고리 인덱스
         userid = request.POST['userid']  # 사용자 아이디
+        print(path)
+        
 
         # userid DB 있다면
         if User.objects.filter(userid=userid).exists():
@@ -318,7 +320,7 @@ def make_order_form(request):
                                      f'기타: {etc}',
                                 to=[my_settings.EMAIL['EMAIL_HOST_USER']]
                                 )
-            mail.attach_file(path)
+            mail.attach_file('/Users/baejun-il/Documents/GitHub/Itrencotech-web-page/static/images/HW_mechanical_design.png') #경로 집어넣기
             mail.send()
 
             return render(request, 'order/order_confirmation.html', {'order': order})
