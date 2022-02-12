@@ -5,6 +5,7 @@ import datetime
 
 DELETED_USER = "deleted_user"
 DELETED_CATEGORY = "deleted_category"
+DELETED_FILE = "deleted_file"
 
 
 # 카테고리 모델  ----------------------------------------------
@@ -88,3 +89,20 @@ class Order(models.Model):
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
         db_table = 'order'
+
+
+# # upload file
+# class OrderFileModel(models.Model):
+#     userid = models.ForeignKey(User, related_name="%(class)s_userid", on_delete=models.SET_DEFAULT,
+#                                default=DELETED_USER, db_column='userid', verbose_name='주문자 아이디')
+#     order_num = models.ForeignKey(Order, related_name="%(class)s_userid", on_delete=models.SET_DEFAULT,
+#                                   default=DELETED_FILE, verbose_name='주문 번호')
+#     filename = models.TextField(default='', verbose_name='파일 이름')
+#     file = models.FileField(null=True, verbose_name='파일')
+#
+#     def __str__(self):
+#         return str(self.filename)
+#
+#     class Meta:
+#         db_table = 'order-file'
+

@@ -311,9 +311,12 @@ def make_order_form(request):
                                      f'담당자: {name}\n'
                                      f'이메일: {email}\n'
                                      f'연락처: {phone_num}\n\n'
+                                     
                                      f'회사명: {company_name}\n'
                                      f'사업자 등록번호: {business_num}\n\n'
+                                     
                                      f'유형: {category.category_sub}\n\n'
+                                     
                                      f'제품 제목: {title}\n'
                                      f'제품 설명: {description}\n'
                                      f'소재: {material}\n'

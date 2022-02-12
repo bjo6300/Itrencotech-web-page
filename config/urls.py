@@ -13,10 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 # from common.views import index, RegisterView, LoginView
 from django.views.generic import RedirectView
+
+from config import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +27,4 @@ urlpatterns = [
     path('home/', include('itrencotech.urls')),                     # main page
     path('common/', include('common.urls')),  # common(login) page
     # path('register/', RegisterView.as_view()),  # Register(login error)
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # 서버에서 uploaded file을 serve할 수 있도록 설정
