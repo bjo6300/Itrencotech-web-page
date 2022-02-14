@@ -24,7 +24,7 @@ Itrencotech web page using django
 ![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
 
 ## DB table
-![itrencotech](https://user-images.githubusercontent.com/70627982/153886959-ab26025c-54d3-415e-9040-aa31d331f36e.png)
+![itrencotech](https://user-images.githubusercontent.com/66625672/153887161-d5575629-29ac-40d3-b082-95a91610a06e.png)
 
 
 
@@ -37,3 +37,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [nhk1657](https://github.com/nhk1657) <br>
 * [yeseong31](https://github.com/yeseong31) <br>
 * [eneleh758](https://github.com/eneleh758) <br>
+
