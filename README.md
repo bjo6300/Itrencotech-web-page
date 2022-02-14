@@ -24,7 +24,8 @@ Itrencotech web page using django
 ![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
 
 ## DB table
-![image](https://user-images.githubusercontent.com/70627982/150283659-c2cbe08f-619c-4656-a3f3-042d7d953805.png)
+![itrencotech](https://user-images.githubusercontent.com/70627982/153886959-ab26025c-54d3-415e-9040-aa31d331f36e.png)
+
 
 
 ## License
