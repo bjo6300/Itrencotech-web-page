@@ -213,7 +213,7 @@ def findPasswdReset(request):
             return redirect('/common/find_id_passwd')
 
     elif request.method == 'GET':
-        return render(request, 'login/find_passwd_completed.html')
+        return render(request, 'login/find_passwd_reset.html')
 
 
 def findPasswdCompleted(request):
