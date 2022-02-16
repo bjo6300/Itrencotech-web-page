@@ -4,6 +4,7 @@ import os
 from django.core.mail import EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from pathlib2 import PureWindowsPath
 
 from common.models import User
 from config import my_settings
@@ -324,8 +325,7 @@ def make_order_form(request):
                                 to=[my_settings.EMAIL['EMAIL_HOST_USER']]
                                 )
 
-            mail.attach_file('/Users/baejun-il/Documents/GitHub/Itrencotech-web-page/static/images/HW_mechanical_design.png') #경로 집어넣기
-
+            mail.attach_file(path)
             mail.send()
 
             return render(request, 'order/order_confirmation.html', {'order': order,
