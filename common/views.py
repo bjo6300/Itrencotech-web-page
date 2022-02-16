@@ -2,20 +2,20 @@
 # 로그인/회원가입 ---------------------------------------
 from django.contrib import auth, messages
 from django.shortcuts import render, redirect
-from common.models import User
+from .models import User
 
 # 이메일 인증 -------------------------------------------
-import ctypes
+import ctypes, string, random
 
-from .mail import email_auth_num
 from django.views import View
 from django.core.mail import EmailMessage
-from django.contrib import messages
+
 
 # ------------------------------------------------------
 
 """ ───────────────────────── 로그인/회원가입 ───────────────────────── """
 
+# 로그인 함수
 def login_main(request):
     if request.method == 'POST':
         userid = request.POST['userid']
@@ -31,7 +31,7 @@ def login_main(request):
         return render(request, 'login/login.html')
 
 
-# 이메일 인증 적용 중인 회원가입 클래스
+# 회원가입 클래스
 class SignUpView(View):
     # POST 요청 시
     def post(self, request):
@@ -58,13 +58,14 @@ class SignUpView(View):
 
         # 아이디 중복 확인
         if User.objects.filter(userid=userid).exists():  # 아이디 중복 체크
-            print('이미 존재하는 아이디입니다!')
             messages.warning(request, '이미 존재하는 아이디입니다!')
             return render(request, 'login/signup.html')
+
         # 비밀번호 일치 여부 확인
         if password1 != password2:
-            print('비밀번호가 일치하지 않습니다.')
             res_data['error'] = '비밀번호가 일치하지 않습니다.'
+
+        # DB에 사용자 계정 생성
         user = User.objects.create_user(userid=userid, username=username,
                                         phone_num=phone_num, company_name=company_name,
                                         company_address=company_address, company_tel=company_tel,
@@ -134,7 +135,8 @@ def findPasswd(request):
         # 아이디가 DB 안에 있다면
         if User.objects.filter(userid=userid).exists():
             user = User.objects.get(userid=userid)
-            # 전처리
+
+            # 전처리 (수정 필요)
             email = '***' + user.email[3:]
             phone_num = user.phone_num[:5] + '***' + user.phone_num[8:10] + '***'
             return render(request, 'login/find_passwd_id_list.html', {'email': email, 'phone_num': phone_num,
@@ -153,10 +155,12 @@ def findPasswdIdList(request):
         userid = request.POST['userid']
         user = User.objects.get(userid=userid)
 
+        # 인증 번호 생성 후 메일 전송
         auth_num = email_auth_num()
         EmailMessage(subject='이메일 인증 코드입니다.',
                      body=f'다음의 코드를 입력하세요\n{auth_num}',
                      to=[user.email]).send()
+        # 인증 번호를 DB에 저장
         user.auth_num = auth_num
         user.save()
         return render(request, 'login/find_passwd_email.html', {'userid': userid})
@@ -176,16 +180,21 @@ def findPasswdEmail(request):
         userid = request.POST['userid']
         auth_num = request.POST['auth_num']
 
+        # 해당 아이디를 가진 유저가 DB에 있으면 -> 인증 번호 비교
         if User.objects.filter(userid=userid).exists():
             user = User.objects.get(userid=userid)
-            # 인증 번호가 같으면 ok
+            # 인증 번호가 같으면 DB에 저장된 인증 번호를 NULL로 변경
             if auth_num == user.auth_num:
                 user.auth_num = None
                 user.save()
                 return render(request, 'login/find_passwd_reset.html', {'userid': userid})
+
+            # 인증 번호가 다르면 알림창 띄움
             else:
                 ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
                 return render(request, 'login/find_passwd_email.html')
+
+        # 해당 아이디를 가진 유저가 DB에 없으면
         else:
             ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '이메일 인증 창            ')
             return redirect('/common/find_id_passwd')
@@ -228,20 +237,23 @@ def verification(request):
         email2 = request.POST['email2']
         input_email = email1+'@'+email2
 
-        # 이메일이 있으면
+        # 해당 이메일을 가진 유저가 DB에 있으면
         if User.objects.filter(email=input_email).exists():
             users = User.objects.filter(email=input_email)
-            auth_num = email_auth_num()
+            auth_num = email_auth_num()  # 함수를 통해 인증번호 생성
+
+            # 이메일로 인증번호 전송
             EmailMessage(subject='이메일 인증 코드입니다.',
                          body=f'다음의 코드를 입력하세요\n{auth_num}',
                          to=[input_email]).send()
 
+            # 해당 이메일을 가진 계정에 인증번호를 모두 저장(DB)
             for user in users:
                 user.auth_num = auth_num
                 user.save()
-        # 이메일이 없으면
+        # 해당 이메일을 가진 유저가 DB에 없으면
         else:
-            # 없다고 알림창을 띄워야 함
+            # 알림창을 띄움
             ctypes.windll.user32.MessageBoxW(0, '이메일 없음', '이메일 인증 창            ')
 
         return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
@@ -256,21 +268,37 @@ def verification2(request):
         auth_num = request.POST.get('auth_num', None)
         input_email = email1 + '@' + email2
 
+        # 해당 이메일을 가진 유저가 DB에 있으면
         if User.objects.filter(email=input_email).exists():
             users = User.objects.filter(email=input_email)
 
+            # 유저가 입력한 인증번호와 DB에 저장된 인증번호 비교
+            # 인증번호가 일치하면
             if users[0].auth_num == auth_num:
+                # 해당 이메일을 가진 계정에 저장된 인증번호를 모두 NULL로 변경
                 for user in users:
                     user.auth_num = None
                     user.save()
-                return render(request, 'login/find_id_list.html', {'users': users})
+                return render(request, 'login/find_id_list.html', {'users': users, 'by': "이메일"})
+
+            # 인증번호가 일치하지 않으면 알림창 띄움
             else:
                 ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
                 return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
+
+        # 해당 이메일을 가진 유저가 DB에 없으면
         else:
-            print('가입된 이메일이 없습니다.')
+            ctypes.windll.user32.MessageBoxW(0, '이메일을 다시 확인해주세요.', '이메일 인증 창            ')
             return render(request, 'login/find_id_email.html')
     elif request.method == 'GET':
         return render(request, 'login/find_id_email.html')
 
 
+# 8자리의 랜덤한 인증번호를 생성하는 함수(알파벳 대문자,소문자,숫자 혼합)
+def email_auth_num():
+    LENGTH = 8
+    string_pool = string.ascii_letters + string.digits
+    auth_num = ""
+    for i in range(LENGTH):
+        auth_num += random.choice(string_pool)
+    return auth_num
