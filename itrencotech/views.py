@@ -4,7 +4,7 @@ import os
 from django.core.mail import EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from pathlib2 import PureWindowsPath
+
 
 from common.models import User
 from config import my_settings
@@ -279,6 +279,8 @@ def make_order_form(request):
         etc = request.POST['etc']  # 기타
         category_index = request.POST['category_index']  # 카테고리 인덱스
         userid = request.POST['userid']  # 사용자 아이디
+        print(path)
+        
 
         # category_index와 매칭되는 한글 이름 출력
         category = Category.objects.get(category_index=category_index)
