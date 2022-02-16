@@ -6,13 +6,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 <style>
     .image {
-        position:relative;
+        position: relative;
+        text-align: center;
     }
 
     .image .title {
-        position:absolute;
-        top:40px;
-        left: 44%;
+        position: absolute;
+        top: 40px;
+        left: 42.5%;
         font-size: 20px;
     }
 
@@ -45,7 +46,7 @@
     <h1>주 문 확 인</h1>
 </div>
 
-<div class="image" style="text-align: center;">
+<div class="image">
     <!--주문확인 배경-->
     <!--        <img src="/static/images/order_confirmation_background.png" width="50%" height="50%">-->
     <!-- 내용 영역 -->
@@ -60,14 +61,12 @@
                             border-top-right-radius: 5% 5%;">
                 <!--주문서 제목-->
                 <div class="title">
-                    <h2>
-                        < 주문서 >
-                    </h2>
+                    <h2>< 주문서 ></h2>
                 </div>
 
                 <!--첫번째 : question, 두번째 : text data 넣어야함-->
                 <!--{$ } -> 데이터 들어갈 곳 -->
-                <div class="text" style="position: absolute; left: -20%;">
+                <div class="text" style="position: absolute; left: 100px;">
                     <table>
                         <!--                <img src="/static/images/order_confirmation_line.png" style="position: absolute; left: 20px; top: 0%;" height="30%">-->
                         <tr>
@@ -161,7 +160,7 @@
                                 <div> 유 형</div>
                             </td>
                             <td align="left">
-                                <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ order.category_index }}
+                                <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ category_sub }}
                                 </div>
                             </td>
                         </tr>
