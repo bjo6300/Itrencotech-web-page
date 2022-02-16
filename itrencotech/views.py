@@ -4,6 +4,7 @@ import os
 from django.core.mail import EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from pathlib2 import PureWindowsPath
 
 from common.models import User
 from config import my_settings
@@ -321,7 +322,8 @@ def make_order_form(request):
                                      f'기타: {etc}',
                                 to=[my_settings.EMAIL['EMAIL_HOST_USER']]
                                 )
-            mail.attach_file('D:/0123_sugang.txt')
+
+            mail.attach_file(path)
             mail.send()
 
             return render(request, 'order/order_confirmation.html', {'order': order,
