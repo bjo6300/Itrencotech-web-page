@@ -122,6 +122,7 @@
 	var closeButton = document.getElementById("close-button");
 	var cancelButton = document.getElementById("cancel");
 
+	// 이전 페이지에 있던 이미지 가져오기
 	function toggleModal() {
 		var imgId = $(this).data("img");
 		document.getElementById("modal-image").src = imgId;
@@ -135,6 +136,7 @@
 		}
 	}
 
+	// 이미지 클릭시 팝업창에 이미지 가져오는 이벤트 모든 이미지에 적용
 	for(var i = 0; i < trigger.length; i++){
 		trigger[i].addEventListener("click", toggleModal);
 	}
