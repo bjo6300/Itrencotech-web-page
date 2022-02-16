@@ -91,14 +91,18 @@
 				<!-- 설명 div -->
 				<div style="line-height: 10px;">
 					<div>
-						<h4 style="color: #0B1637; float: left; margin-right: 30px;">방식</h4><h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">   3D PRINTING (PAM)</h4>
+						<h4 style="color: #0B1637; float: left; margin-right: 30px;">방식</h4>
+						<h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">   3D PRINTING (PAM)</h4>
 					</div>
 					
 					<div>
-						<h4 style="color: #0B1637; float: left; margin-right: 30px;">소재</h4> <h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">PEEK (슈퍼엔지니어링 플라스틱)</h4>
+						<h4 style="color: #0B1637; float: left; margin-right: 30px;">소재</h4>
+						<h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">PEEK (슈퍼엔지니어링 플라스틱)</h4>
 					</div>
+					
 					<div>
-					<h4 style="color: #0B1637; float: left; margin-right: 30px;">사이즈</h4><h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">240 x 100 (h) (mm)</h4>
+						<h4 style="color: #0B1637; float: left; margin-right: 30px;">사이즈</h4>
+						<h4 style="display:inline-block; color: rgb(105, 104, 104); font-weight: 100;">240 x 100 (h) (mm)</h4>
 					</div>
 				</div>
 			</div>
@@ -118,6 +122,7 @@
 	var closeButton = document.getElementById("close-button");
 	var cancelButton = document.getElementById("cancel");
 
+	// 이전 페이지에 있던 이미지 가져오기
 	function toggleModal() {
 		var imgId = $(this).data("img");
 		document.getElementById("modal-image").src = imgId;
@@ -131,6 +136,7 @@
 		}
 	}
 
+	// 이미지 클릭시 팝업창에 이미지 가져오는 이벤트 모든 이미지에 적용
 	for(var i = 0; i < trigger.length; i++){
 		trigger[i].addEventListener("click", toggleModal);
 	}

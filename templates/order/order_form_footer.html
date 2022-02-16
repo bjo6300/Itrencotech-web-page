@@ -2,11 +2,8 @@
             {% load static %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/order/order_form_footer.css' %}">
 
-            <form method="post" class="post-form" action="{% url 'itrencotech:make_order_form' %}">
+            <form name="form1" method="post" class="post-form" action="{% url 'itrencotech:make_order_form' %}">
             {% csrf_token %}
-
-
-
             <!-- 주문서 작성 내용: 회사명, 사업자등록번호, 담당자, 이메일, 연락처 -->
             <div id="div-container-01">
                 <!-- 주문서: 회사명, 사업자등록번호 -->
@@ -124,20 +121,28 @@
                         <div class="input_batch">
                             <input type="text" name="etc" id="etc" placeholder="기타" onkeyup="check();" >
                         </div>
+
                     </div>
+
                 </div>
+                <span id="span-confirm-message"></span> <br>
             </div>
             <!-- 카테고리 인덱스 -->
             <input id='input-category-index' type='hidden' name='category_index' value=''>
             <script> getCategoryIndex(); </script>
 
             <!-- 알림 문구 -->
-            <span id="span-confirm-message"></span> <br/>
+
             <!-- 주문하기 버튼 영역 -->
             <div id="div-btn-container">
 <!--                
                 <button type="button" onclick="alert('주문하시겠습니까?')">주문하기</button>
 -->
+                <!-- 카테고리 정보 -->
+                <script>
+                    getCategoryIndex();
+                </script>
+
                 <button type="submit" id='order-btn' disabled>주문하기</button>
             </div>
             {% if user.is_authenticated %}
