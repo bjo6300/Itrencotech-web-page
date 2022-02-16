@@ -4,7 +4,7 @@ import os
 from django.core.mail import EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from pathlib2 import PureWindowsPath
+
 
 from common.models import User
 from config import my_settings
