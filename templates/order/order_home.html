@@ -1,0 +1,115 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+<div align="center">
+    <div id="div-title-container"  style="margin-bottom:100px;">
+        <div>
+            <h1 id="h1-title"> 주문하기 </h1>
+        </div>
+
+    </div>
+
+    <div id="div-logo-container">
+        <div id="div-logo"></div>
+    </div>
+
+    <table style="position: relative; z-index: 1; text-align: center; border-spacing: 0px;">
+        <tr>
+            <td>
+                <!-- 마우스오버 효과 -->
+                <figure class="snip1141"> <img style="position: relative; "
+                        src="/static/images/onlyIdeaIcon_main.png" width="200px" height="200px"  />
+                    <figcaption>
+                        <!-- 상단 동그라미 부분 -->
+                        <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                        <h2 style="font-size: 20px;">Only Idea</h2>
+                    </figcaption>
+
+                    <!-- body 부분 -->
+                    <h3 style="top: 40%; font-size: 15px;">
+                        - 제품 디자인 <br>
+                    </h3>
+                    <h3 style="top: 50%; font-size: 15px;">
+                        - 기계시스템 설계 <br>
+                    </h3>
+                    <h3 style="top: 60%; font-size: 15px;">
+                        - H/W 기구설계 <br>
+                    </h3>
+
+                    <a href="{% url 'itrencotech:order_form_onlyIdea' %}"></a>
+                </figure>
+            </td>
+            <td>
+                <!-- 마우스오버 효과 -->
+                <figure class="snip1141" style="margin: 0px 150px;"> <img style="position: relative; border-radius: 50px;"
+                        src="/static/images/prototypingIcon_main.png" width="170px" height="170px"  />
+                    <figcaption>
+                        <!-- 상단 동그라미 부분 -->
+                        <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                        <h2 style="font-size: 20px;">시제품 제작</h2>
+                    </figcaption>
+
+                    <!-- body 부분 -->
+                    <h3 style="top: 40%; font-size: 15px;">
+                        - 3D 프린팅 <br>
+                    </h3>
+                    <h3 style="top: 50%; font-size: 15px;">
+                        - 목업 (CNC 가공) <br>
+                    </h3>
+                    <h3 style="top: 60%; font-size: 15px;">
+                        - 부품 (CNC 가공) <br>
+                    </h3>
+                    <h3 style="top: 70%; font-size: 15px;">
+                        - <span style="font-size: 13px;">Smart Digital Mold<br></span>
+                    </h3>
+
+                    <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                </figure>
+            </td>
+            <td>
+                <!-- 마우스오버 효과 -->
+                <figure class="snip1141"> <img style="position: relative; "
+                        src="{% static 'images/productionIcon_main.png' %}" width="170px" height="170px" />
+                    <figcaption>
+                        <!-- 상단 동그라미 부분 -->
+                        <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                        <h2 style="font-size: 20px;">양 산</h2>
+                    </figcaption>
+
+                    <!-- body 부분 -->
+                    <h3 style="top: 40%; font-size: 15px;">
+                        - 사출 금형 제작 <br>
+                    </h3>
+                    <h3 style="top: 50%; font-size: 15px;">
+                        - 사출 성형 <br>
+                    </h3>
+                    <h3 style="top: 60%; font-size: 15px;">
+                        - 판금 절곡 <br>
+                    </h3>
+
+                    <a href="{% url 'itrencotech:order_form_production' %}"></a>
+                </figure>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">ONLY IDEA</p>
+            </td>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">시제품 제작</p>
+            </td>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 22px; color: #0B173B;">양 산</p>
+            </td>
+        </tr>
+    </table>
+    <!-- 마우스오버 js 적용 -->
+    <script type="text/javascript" src="/static/js/mouseover.js"></script>
+</div>
+
+{% endblock %}
+

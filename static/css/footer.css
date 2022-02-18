@@ -1,0 +1,24 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#wrapper{
+    min-height: 100%;
+    padding-bottom: 250px;
+    position: relative;
+}
+
+.footer {
+    /* background-image: url("/static/images/footer.png"); */
+    position: relative;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: rgb(237,239,244);
+}

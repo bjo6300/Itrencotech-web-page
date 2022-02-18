@@ -1,0 +1,659 @@
+input {
+    font-size: 0.8em;
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* ───────────────────────── find_id_passwd ───────────────────────── */
+/* 버튼 컨테이너 */
+#table-btns-container {
+    text-align: center;
+    margin: auto;
+}
+
+/* 버튼 */
+.a-btns img {
+    margin: 25px 33px 30px 33px;
+    transition: .3s;
+}
+
+.a-btns:hover img {
+    transform:scale(1.2);
+}
+
+
+/* ───────────────────────── find_id ───────────────────────── */
+/* 과정, 이미지 버튼 컨테이너 */
+#div-container {
+    margin: 60px auto auto auto;
+    text-align: center;
+}
+
+/* 과정 이미지 */
+#img-route {
+    margin-bottom: 30px;
+}
+
+/* 휴대폰 번호로 찾기 버튼 */
+#img-phone {
+    margin-bottom: -5px;
+}
+
+.img-btns {
+    transition: .3s;
+}
+
+.img-btns:hover {
+    transform:scale(1.1);
+}
+
+
+/* ───────────────────────── find_id_email ───────────────────────── */
+/* 그림자 가진 컨테이너 - 리사이징 목적으로 재작성 */
+#div-wrapper-email {
+    text-align: center;
+    width: 35%;
+    margin: auto;
+    padding: 25px 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* 부제목 텍스트 밑 언더라인*/
+#p-txt-email-large:after {
+    text-align: center;
+    content: "";
+    display: block;
+    width: 100px;
+    border-bottom: 1.7px solid #AAAAAA;
+    margin: 5px auto;
+}
+
+/* 휴대폰 인증 테이블 */
+#table-email {
+    text-align: left;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+#table-email tr, #table-email td:not(#td-email) {
+    padding: 0;
+}
+
+#table-email td {
+    width: 25%;
+}
+
+#table-email td[colspan="3"] {
+    width: 80%;
+}
+
+/* 이메일 셀 */
+#td-email {
+    border: 1px solid gray;
+    border-radius: 13px;
+    padding: 5px;
+}
+
+/* 이메일 입력창 아이디 */
+#input-email-01 {
+    text-align: left;
+    padding-left: 7px;
+    border: none;
+    height: 27px;
+    width: 80px;
+}
+
+/* 이메일 입력창 도메인 */
+#input-email-02 {
+    text-align: left;
+    padding-left: 7px;
+    border: none;
+    height: 27px;
+    width: 100px;
+}
+
+/* 이메일 입력창 도메인 - 읽기 전용 */
+#input-email-02:read-only {
+    color: gray;
+}
+
+/* 인증번호 입력창 */
+#input-email-03 {
+    text-align: left;
+    padding-left: 15px;
+    border: 1px solid gray;
+    border-radius: 13px;
+    height: 35px;
+    width: 92%;
+}
+
+
+/* ───────────────────────── find_id_list ───────────────────────── */
+/* 아이디 목록 테이블 */
+#table-id-list-02 {
+    text-align: left;
+    margin: auto; 
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+tr, td {
+    padding: 10px;
+}
+
+/* 번호 텍스트 */
+.p-id-list-txt-01 {
+    letter-spacing: 0.3em;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #4B84BC;
+    margin: 0 5px;
+}
+
+/* 아이디 텍스트 */
+.p-id-list-txt-02 {
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    margin: 0 5px;
+}
+
+/* 가입일 텍스트 */
+.p-id-list-txt-03 {
+    letter-spacing: 0.1em;
+    font-size: 0.5em;
+    color: gray;
+    margin: 0 5px;
+}
+
+/* 비밀번호 찾기 버튼 */
+#a-find-btn {
+    text-align: center;
+    font-size: 0.7em;
+    margin-bottom: 100px;
+    transition: .2s;
+}
+
+#a-find-btn:hover {
+    color: #74BAD8;
+}
+
+
+/* ───────────────────────── find_passwd ───────────────────────── */
+/* 배경 그림자 */
+#div-wrapper {
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    padding: 25px 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 20px;
+}
+
+/* 안내 텍스트 */
+.p-txt {
+    text-align: center;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #474F68;
+    letter-spacing: 0.15em;
+    margin-bottom: 40px;
+}
+
+/* 아이디 입력창 */
+#input-id {
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 13px;
+    height: 27px;
+    width: 190px;
+}
+
+/* 다음 버튼 */
+#btn-next {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.3em;
+    border: none;
+    background: #131E3E;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    height: 30px;
+    width: 205px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-next:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}
+
+
+/* ───────────────────────── find_passwd_id_list ───────────────────────── */
+/* 아이디 목록 테이블 */
+#table-id-list-01 {
+    text-align: center;
+    margin: auto; 
+    margin-top: -10px;
+}
+
+/* 전화번호, 이메일 텍스트 */
+.p-id-list-txt {
+    text-align: left;
+    letter-spacing: 0.1em;
+    font-size: 0.5em;
+    margin: 0 5px;
+}
+
+/* 휴대폰 인증, 확인 버튼 */
+.btn-id-list-btns {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.15em;
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 3px 10px;
+    width: 100px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn-id-list-btns:hover {
+    color: white;
+    background: #131E3E;
+}
+
+
+/* ───────────────────────── find_passwd_phone, find_id_phone ───────────────────────── */
+/* 그림자 가진 컨테이너 - 리사이징 목적으로 재작성 */
+#div-wrapper-phone {
+    text-align: center;
+    width: 26%;
+    margin: auto;
+    padding: 25px 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 20px;
+}
+
+/* 부제목 텍스트 밑 언더라인*/
+#p-txt-phone-large:after {
+    text-align: center;
+    content: "";
+    display: block;
+    width: 100px;
+    border-bottom: 1.7px solid #AAAAAA;
+    margin: 5px auto;
+}
+
+/* 휴대폰 인증 테이블 */
+#table-phone {
+    text-align: center;
+    margin: auto;
+}
+
+#table-phone tr, #table-phone td {
+    padding: 4px;
+}
+
+/* 텍스트 */
+.p-txt-phone {
+    font-size: 0.85em;
+}
+
+/* 입력창 셀 */
+.td-input {
+    text-align: left;
+}
+
+/* 입력창 */
+.input-phone {
+    text-align: left;
+    padding-left: 15px;
+    margin-left: 10px;
+    border: 1px solid gray;
+    border-radius: 13px;
+    height: 27px;
+    width: 90%;
+}
+
+/* 전화번호 입력 창 크기 조절 */
+#input-phone-number {
+    width: 87%;
+}
+
+/* 선택 스피너 */
+select {
+    font-size: 0.77em;
+    border: none;
+}
+
+/* 성별 선택 라디오 버튼 */
+.button-label {
+    font-size: 0.85em;
+    padding: 0.4em 1.2em;
+    margin: 0 0.4em;
+    cursor: pointer;
+    color: #131E3E;
+    background: white;
+    border: 1px solid #131E3E;
+    border-radius: 10px;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+.button-label:hover {
+    background: #e9e9e9;
+}
+
+.button-label:hover:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22);
+}
+
+/* 체크된 라디오버튼 디자인 */
+#button1:checked + .button-label,
+#button2:checked + .button-label {
+    background: #131D3D;
+    color: white;
+}
+
+/* 라디오 버튼 체크박스 숨기기 */
+.hidden {
+    display:none;
+}
+
+/* 인증 버튼 */
+#btn-certification {
+    font-size: 0.85em;
+    padding: 0.4em 1.2em;
+    margin: 0 0.4em;
+    cursor: pointer;
+    color: #131E3E;
+    background: white;
+    border: 1px solid #131E3E;
+    border-radius: 10px;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+#btn-certification:hover {
+    color: white;
+    background: #131E3E;
+}
+
+/* 이용 약관 체크 박스 */
+#input-check-box {
+    font-size: 0.85em;
+    margin: 20px 0;
+}
+
+#input-check-box input[type="checkbox"]{ 
+    display: none;
+} 
+
+#input-check-box input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block; 
+    padding-left: 26px; 
+    cursor: pointer; 
+} 
+
+#input-check-box input[type="checkbox"] + label:before{ 
+    content: '';
+    position: absolute; 
+    text-align: center; 
+    top: 2px;
+    left: 3px; 
+    width: 13px; 
+    height: 13px; 
+    border:1px solid gray; 
+    border-radius: 100%;
+    box-sizing: border-box; 
+} 
+ 
+#input-check-box input[type="checkbox"] + label:after{ 
+    content: '✔';
+    position: absolute; 
+    color: #131E3E;
+    top: -3px; 
+    left: 3px; 
+    width: 13px; 
+    height: 13px;
+    transition: .2s;
+}
+
+#input-check-box [type="checkbox"] + label:after { 
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+#input-check-box [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 일치 확인 텍스트 */  
+#span-confirm-message {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+/* 확인 버튼 */
+#btn-confirm-01 {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.3em;
+    border: none;
+    background: #131E3E;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    height: 30px;
+    width: 205px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-confirm-01:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}
+
+/* ───────────────────────── find_passwd_email ───────────────────────── */
+/* 인증번호 컨테이너 */
+#table-certf-num {
+    text-align: center;
+    margin: auto;
+}
+
+/* 인증번호 입력창 */
+#input-certf-num {
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 24px;
+    width: 230px;
+}
+
+/* 인증번호 텍스트 - find_id_email과 공유함 */
+.p-small-txt {
+    font-size: 0.85em;
+    -webkit-text-stroke: 0.06em;
+}
+
+
+/* ───────────────────────── find_passwd_reset ───────────────────────── */
+/* 새 비밀번호 입력창 */
+.input-passwd {
+    text-align: left;
+    margin-bottom: 13px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 24px;
+    width: 230px;
+}
+
+/* 확인 버튼 */
+#btn-confirm-02 {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.3em;
+    border: none;
+    background: #131E3E;
+    color: white;
+    margin: 15px 0;
+    border-radius: 15px;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-confirm-02:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}
+
+/* 비밀번호 컨테이너 */
+.div-passwd-container {
+    display: table;
+    margin: auto;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
+
+[type="checkbox"] + label:after { 
+    opacity: 0;
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container-02 {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd-02 {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd-02 input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd-02 input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd-02 input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd-02 input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
+
+/* ───────────────────────── find_passwd_completed ───────────────────────── */
+/* 로그인 창으로 이동 버튼 */
+#btn-login {
+    text-align: center;
+    font-size: 0.77em;
+    letter-spacing: 0.3em;
+    border: none;
+    background: #131E3E;
+    color: white;
+    margin: 5px 0 15px 0;
+    border-radius: 15px;
+    height: 30px;
+    width: 205px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-login:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}

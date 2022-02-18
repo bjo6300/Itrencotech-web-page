@@ -1,0 +1,161 @@
+/* 로그인 */
+
+
+/* 제목 오른쪽 위 귀여운 동그라미 */
+/* 로그인 탭에서만 찌그러져 따로 작성 */
+#h1-title:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -3.5px;
+    transform: translate(50%,-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #75B9DA;
+}
+
+/* 로그인 요소 컨테이너 */
+#div-wrapper {
+    margin-top: -40px;
+}
+
+/* 로그인 요소 */
+#div-login {
+    text-align: center;
+    width: 25%;
+    height: 300px;
+    margin: auto;
+    padding-top: 50px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-bottom-left-radius: 150%;
+    border-bottom-right-radius: 150%;
+}
+
+/* 비밀번호 컨테이너 */
+#div-passwd-container {
+    display: table;
+    margin: auto;
+}
+
+/* 아이디, 비밀번호 텍스트 */
+.p-login-txt {
+    text-align: left;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin: 0 0 5px 90px;
+}
+
+/* 아이디, 비밀번호 입력창 */
+input {
+    text-align: left;
+    font-size: 0.8em;
+    color: black;
+    margin-bottom: 20px;
+    padding-left: 7px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 25px;
+    width: 200px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 비밀번호 보기 체크 박스 컨테이너 */
+#div-show-container {
+    display: table-cell;
+}
+
+/* 비밀번호 보기 체크 박스 */
+#div-show-passwd {
+    display: inline-block;
+    font-size: 0.85em;
+}
+
+#div-show-passwd input[type="checkbox"]{ 
+    display: none;
+} 
+
+#div-show-passwd input[type="checkbox"] + label{ 
+    position: relative; 
+    display: inline-block;
+    cursor: pointer; 
+} 
+
+#div-show-passwd input[type="checkbox"] + label:before{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd01.png");
+    background-size: 20px;
+    position: absolute; 
+    text-align: center;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+} 
+ 
+#div-show-passwd input[type="checkbox"] + label:after{ 
+    content: '';
+    background-image: url("/static/images/login/showPasswd02.png");
+    background-size: 20px;
+    position: absolute; 
+    color: #131E3E;
+    top: -13px;
+    left: -27px;
+    width: 20px; 
+    height: 20px;
+    transition: .2s;
+}
+
+[type="checkbox"] + label:after { 
+    opacity: 0;
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* 로그인 버튼 */
+#btn-login {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.77em;
+    letter-spacing: 0.05em;
+    background: #131E3E;
+    color: white;
+    margin: 5px;
+    padding: 0.5em 1em 0.5em 1em;
+    border: 1.4px solid #131E3E;
+    border-radius: 15px;
+    height: 33px;
+    width: 170px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-login:hover {
+    color: #131E3E;
+    border: 1px solid #131E3E;
+    background: none;
+}
+
+/* 아이디, 비밀번호 찾기 & 회원가입 버튼 */
+#a-find-btn {
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0 28px 100px 0;
+    transition: .2s;
+}
+
+#a-register-btn {
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0 0 100px 28px;
+    transition: .2s;
+}
+
+#a-find-btn:hover, #a-register-btn:hover {
+    color: #74BAD8;
+} 

@@ -1,7 +1,81 @@
-{% extends 'base.html' %}
-
+{% extends 'base2.html' %}
+{% load static %}
 {% block content %}
-    <div class="container my-3">
-        <h1>회사 연혁</h1>
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+
+<div id="div-title-container">
+    <h1 id="h1-title"> 회사 소개 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div style="margin-top:-40px; width:100%; height:1000px;">
+    <div style="width:80%; position:absolute; left:10%;">
+        <div style="float:left; width: 200px; height:100%; text-align:right; line-height: 60px;">
+            <!-- 사이드바 -->
+            {% include 'navBar/about/sidebar.html' %}
+            <!-- body -->
+            <div style="left: 250px; width: 1000px; height: 100%; position: absolute;">
+                <!-- 타이틀 -->
+                <div style="margin-top:50px; text-align:left;">
+                    <h2>회사 연혁</h2>
+                </div>
+                <hr>
+                <!-- 2021년 -->
+                <div style="height:240px;">
+                    <!-- 연도 -->
+                    <div style="float:left; width:200px; height:100%; font-size:2em; color:#b9b9b9; text-align:left;">
+                        <h2>2021</h2>
+                    </div>
+                    <!-- 월/설명 -->
+                    <div style="text-align:left; line-height: 40px; left:200px; top:175px; position:absolute;">
+                        <p><span style="font-weight:bold;">2021.10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                온라인 제조 서비스 "make it" 개발 착수</p>
+                        <p><span style="font-weight:bold;">2021.08</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                기술평가 우수기업인증</p>
+                        <p><span style="font-weight:bold;">2021.06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                자체 산업용 3D 프린터 개발 완료 (PAM-300)</p>
+                    </div>
+                </div>
+                <!-- 2020년 -->
+                <div style="height:240px;">
+                    <!-- 연도 -->
+                    <div style="float:left; width:200px; height:100%;font-size:2em; color:#b9b9b9; text-align:left;">
+                        <h2>2020</h2>
+                    </div>
+                    <!-- 월/설명 -->
+                    <div style="text-align:left; line-height: 40px; left:200px; top:415px; position:absolute;">
+                        <p><span style="font-weight:bold;">2020.09</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                (주) 이트렌코텍 법인 전환</p>
+                        <p><span style="font-weight:bold;">2020.07</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                GRRC (경기도지역협력연구센터) 정부지원사업 선정 "자동차용 고강도, 고내열, 고방열 3D 프린터 개발"</p>
+                        <p><span style="font-weight:bold;">2020.02</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                ONE DAY 금형 제작 및 사출성형 서비스 오픈</p>
+                    </div>
+                </div>
+                <!-- 2019년 -->
+                <div style="height:240px;">
+                    <!-- 연도 -->
+                    <div style="float:left; width:200px; height:100%; font-size:2em; color:#b9b9b9; text-align:left;">
+                        <h2>2019</h2>
+                    </div>
+                    <!-- 월/설명 -->
+                    <div style="text-align:left; line-height: 40px; left:200px; top:655px; position:absolute;">
+                        <p><span style="font-weight:bold;">2019.12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                사업장 이전 (현 주소)</p>
+                        <p><span style="font-weight:bold;">2019.06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                초기창업패키지 정부지원사업 선정 "3D 프린팅을 이용한 금형 제작 및 사출성형"</p>
+                        <p><span style="font-weight:bold;">2019.05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                이트렌코텍 사업자등록</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
 {% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+
+<div id="div-title-container" >
+    <h1 id="h1-title"> 아이디 찾기 </h1>
+</div>
+
+<div id="div-logo-container">
+    <div id="div-logo"></div>
+</div>
+
+<div id="div-container">
+    <img id="img-route" src="{% static 'images/login/findingId01.png' %}"
+    height="31px" width="298px" alt="현재 과정: 본인 확인"/>
+    <br>
+
+    <a href="{% url 'common:find_id_phone' %}" >
+        <img id="img-phone" class="img-btns" src="{% static 'images/login/usePhone.png' %}" 
+        height="111px" width="400px" alt="휴대폰 번호로 찾기"/>
+    </a>
+    <br>
+
+    <a href="{% url 'common:find_id_email' %}" >
+        <img id="img-email" class="img-btns" src="{% static 'images/login/useEmail.png' %}" 
+        height="111px" width="400px" alt="이메일로 찾기"/>
+    </a>
+    <br>
+</div>
+
+{% endblock %}

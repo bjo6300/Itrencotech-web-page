@@ -1,0 +1,147 @@
+.detail-box {
+    margin-top: 40px;
+}
+
+.detail-box-in-box {
+    width:1150px;
+    height:300px;    /* 이미지 크기를 반영한 수치 */
+    position:relative;
+}
+
+.detail-img {
+    float:left;
+    width: 300px;    /* 이미지 크기를 반영한 수치 */
+    height: 100%;
+}
+
+.detail-img img {
+    width: 300px;    /* 이미지 크기 */
+    height: 300px;
+}
+
+.detail-other {
+    float: right;
+    width: 850px;     /* 이미지 크기를 반영한 수치 */
+    height: 200px;
+}
+
+.detail-other-top {
+    height: 50%;
+}
+
+.detail-title {
+    float:left;
+    margin-left: 40px;
+}
+
+.detail-title font {
+    letter-spacing: 4px;
+    color: #0b57a5;
+    font-weight: 700;
+}
+
+.detail-portfolio-btn {
+    float: right;
+    padding: 3px 20px;
+    margin-top: 6px;
+    font-size: 15px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    background: #75BAD9;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    border-radius: 17px;
+    border: none;
+}
+
+.detail-order-btn {
+    float: right;
+    padding: 3px 20px;
+    margin-top: 6px;
+    font-size: 15px;
+    margin-right: 25px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    background: #131D3D;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    border-radius: 17px;
+    border: none;
+}
+
+.detail-description {
+    margin-left:40px;
+}
+
+.detail-description p {
+    font-size:1.2em;
+    text-align:left
+}
+
+.detail-boundary {
+    margin: 50px 0;
+}
+
+/* 버튼 */
+.btn-menu {
+    -webkit-text-stroke: 0.35px;
+    text-align: center;
+    font-size: 0.7em;
+    letter-spacing: 0.4em;
+    background: white;
+    color: gray;
+    margin: 10px;
+    padding: 0.5em 1em 0.5em 1em;
+    border: none;
+    height: 30px;
+    width: 115px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-menu::before {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: gray;
+    border-radius: 30px;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+}
+
+.btn-menu:hover::before {
+    width: 70%;
+    background-color: #74BAD8;
+}
+
+#btn-now {
+    width:100%
+    -webkit-text-stroke: 0.35px;
+    text-align: center;
+    font-size: 0.7em;
+    letter-spacing: 0.4em;
+    color: #131E3E;
+    margin: 10px;
+    padding: 0.5em 1em 0.5em 1em;
+    border: none;
+    height: 30px;
+    width: 115px;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+#btn-now::before {
+    content: "";
+    height: 2px;
+    width: 70%;
+    background-color: #131E3E;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+}

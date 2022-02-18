@@ -1,0 +1,87 @@
+/* 주문 폼 공통 양식  */
+
+
+/* 컨테이너 */
+#div-container-01 {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+
+#div-container-02 {
+    text-align: center;
+    width: 100%;
+    height: 280px; 
+}
+
+#div-container-03 {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+
+/* 두 단으로 구성된 인풋 영역 */
+.div-left-01 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.div-right-01 {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+/* 한 단으로 구성된 인풋 영역 - 제품 제목, 제품 설명 */
+.div-one {
+    width:113%; 
+    margin: 15px 0 15px 0;
+}
+
+
+/* 설명 텍스트 영역 */
+.div-left-02 {
+    text-align: left;
+    padding-left: 60px;
+}
+
+/* 설명 텍스트 */
+font {
+    letter-spacing: 10px; 
+    font-weight: bold;
+}
+
+/* 제품 설명 입력창 */
+#description {
+    resize: none;
+}
+
+/* 파일 설명 텍스트 */
+#font-file {
+    float: left;
+}
+
+/* 파일 첨부 영역 아이콘 */
+#img-file {
+    pointer-events: none;
+}
+
+/* 파일 목록 */
+#fileListTable {
+    text-align: center;
+}
+
+/* 주문하기 버튼 영역 */
+#div-btn-container {
+    text-align: center;
+    left: 20%; 
+    width: 60%; 
+    height: 150px; 
+}
+
+/* 주문하기 버튼 */
+#order-btn {
+    margin-top: 40px;
+    border: none;
+}

@@ -1,0 +1,30 @@
+<!-- ##################################################### -->
+<!-- CSS의 자리 배치를 <head> 태그로 옮기기 위한 샘플 양식 -->
+<!-- ##################################################### -->
+
+{% load static %}
+<!-- header -->
+{% include 'body/header.html' %}
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/mouseover_main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/myPage.css' %}">
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<!-- 타이틀 -->
+<title>make it</title>
+
+<!-- middle(header에서 닫지 못한 태그 등) -->
+{% include 'body/middle.html' %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+{% block content %}
+{% endblock %}
+<!-- ########## 기본 템플릿 안에 삽입될 내용  end  ########## -->
+
+<!-- footer -->
+{% include 'body/footer.html' %}

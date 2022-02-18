@@ -1,5 +1,9 @@
 .idea/
 
+# google drive
+*.json
+
+
 # Created by https://www.gitignore.io/api/macos,linux,django,python,pycharm
 
 ### Django ###
@@ -155,6 +159,10 @@ ENV/
 /site
 
 # privacy infomation
-settings.py
+*
+my_settings.py
+.idea/
+*.iml
+*.xml
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq

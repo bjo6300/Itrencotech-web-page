@@ -1,0 +1,229 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 start ########## -->
+
+<div>
+    <div id="wrapper">
+        <h1 style="position: relative; TEXT-ALIGN: center; margin:5% auto -5%; font-weight: 400;
+            width: 300px;font-size:30px; color: black;"> 시제품 제작 </h1>
+    </div>
+
+        <table id="table_menu4" align="center" style="margin-top:0px;">
+        <tr>
+            <!-- ##### 3D 프린트 출력 ##### -->
+            <td>
+                <div style="border: 1px solid white; float: left; text-align: center">
+                    <!-- 상세설명 문구 및 돋보기 -->
+                    <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
+                    <!--이미지-->
+                    <div style="margin-top: 40px;">
+
+                        <!-- 마우스오버 효과 -->
+                        <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                                src="/static/images/3DPrinting.png" width="251px" height="251px" />
+                            <figcaption>
+                                <!-- 상단 동그라미 부분 -->
+                                <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                                <h2 style="font-size: 15px;">3D 프린트 출력</h2>
+
+                            </figcaption>
+
+                            <!-- body 부분 -->
+                            <h3 style="top: 55%; text-align: center;">
+                                주문하기
+                            </h3>
+
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'itrencotech:order_form_prototyping' %}"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </figure>
+
+                    </div>
+                    <!--글자-->
+                    <h3 style="TEXT-ALIGN: center ">3D 프린트 출력</h3>
+                    <!--포트폴리오-->
+                    <div style="margin-top: 10px;">
+                        <a href="{% url 'itrencotech:portfolio_3d' %}" style="position: relative; margin-bottom: 10px;">
+                            <img style="text-align: center;" src="/static/images/portfolio_move.png" width="144px"
+                                height="71px" />
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <!-- ##### 목업 CNC 가공 ##### -->
+            <td>
+                <div style="border: 1px solid white; float: left;TEXT-ALIGN: center">
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+
+                    <!-- 마우스오버 효과 -->
+                    <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/mockUp.png" width="251px" height="251px" />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2 style="font-size: 15px;">목업 (CNC)</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+                        </h3>
+
+                        <form id="form-button2" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button2">
+                            {% if user.is_authenticated %}
+                            <a id="a-button2" href="javascript:{}" onclick="document.getElementById('form-button2').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
+                    </figure>
+                </div>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center">목업 (CNC 가공)</h3>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio_mockup' %}" style="position: relative; margin-bottom: 10px;">
+                        <img style="text-align: center;" src="/static/images/portfolio_move.png" width="144px"
+                            height="71px" />
+                    </a>
+                </div>
+                </div>
+            </td>
+            <!-- ##### 부품 CNC 가공 ##### -->
+            <td>
+                <div style="border: 1px solid white; TEXT-ALIGN: center; position: relative;">
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+
+                    <!-- 마우스오버 효과 -->
+                    <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/cnc.png" width="251px" height="251px" />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2 style="font-size: 15px;">부품 (CNC)</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+                        </h3>
+
+                        <form id="form-button3" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button3">
+                            {% if user.is_authenticated %}
+                            <a id="a-button3" href="javascript:{}" onclick="document.getElementById('form-button3').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
+                    </figure>
+                </div>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center">부품 (CNC 가공)</h3>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio_cnc' %}" style="position: relative; margin-bottom: 10px;">
+                        <img style="text-align: center;" src="/static/images/portfolio_move.png" width="144px"
+                            height="71px" />
+                    </a>
+                </div>
+                </div>
+            </td>
+            <!-- ##### Smart Digital Mold ##### -->
+            <td>
+                <div style="border: 1px solid white; TEXT-ALIGN: center; position: relative;">
+                <!-- 상세설명 문구 및 돋보기 -->
+                <div style="width: 100%; background-color:#ff0000;">
+                        <div style="float:left; width: 88%; height:100%;" align="right">
+                            <font size="2" color="#444444" style="letter-spacing: 1px; right: 20px; margin-right:5px;">상세설명</font>
+                            <a href="{% url 'itrencotech:prototyping_detail' %}" style="position: absolute; margin-bottom:10px;">
+                                <img src="/static/images/question_mark.png" width="20px" height="20px"/></a>
+                        </div>
+                    </div>
+                <!--이미지-->
+                <div style="margin-top: 40px;">
+
+                    <!-- 마우스오버 효과 -->
+                    <figure class="snip1141"> <img style="position: relative;border-radius: 50px;"
+                            src="/static/images/sdm.png" width="251px" height="251px" />
+                        <figcaption>
+                            <!-- 상단 동그라미 부분 -->
+                            <div class="circle"><i class="ion-ios-plus-empty"> </i></div>
+
+                            <h2 style="font-size: 15px;">SDM</h2>
+
+                        </figcaption>
+
+                        <!-- body 부분 -->
+
+                        <h3 style="top: 55%; text-align: center;">
+                            주문하기
+                        </h3>
+
+                        <form id="form-button4" action="{% url 'itrencotech:order_form_prototyping' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="method" value="button4">
+                            {% if user.is_authenticated %}
+                            <a id="a-button4" href="javascript:{}" onclick="document.getElementById('form-button4').submit();"></a>
+                            {% else %}
+                            <a href="{% url 'common:login_main' %}"></a>
+                            {% endif %}
+                        </form>
+                    </figure>
+                </div>
+                <!--글자-->
+                <h3 style="TEXT-ALIGN: center">Smart Digital Mold</h3>
+                <!--포트폴리오-->
+                <div style="margin-top: 10px;">
+                    <a href="{% url 'itrencotech:portfolio_sdm' %}" style="position: relative; margin-bottom: 10px;">
+                        <img style="text-align: center;" src="/static/images/portfolio_move.png" width="144px"
+                            height="71px" />
+                    </a>
+                </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- 마우스오버 js 적용 -->
+<script type="text/javascript" src="/static/js/mouseover.js"></script>
+
+<!-- ########## 기본 템플릿 안에 삽입될 내용 end ########## -->
+{% endblock %}
