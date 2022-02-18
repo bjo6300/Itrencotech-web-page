@@ -159,12 +159,11 @@ ENV/
 /site
 
 # privacy infomation
-*
-my_settings.py
-.idea/
 *.iml
 *.xml
+my_settings.py
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq
 !/Procfile
 !/runtime.txt
+!/config/settings.py
