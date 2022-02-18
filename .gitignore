@@ -166,3 +166,4 @@ my_settings.py
 *.xml
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq
+!/Procfile
