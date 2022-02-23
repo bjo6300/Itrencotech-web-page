@@ -2,16 +2,13 @@
 ![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)
 ![MySQL: Version](https://img.shields.io/badge/Mysql-8.0.27-blue)
 
-# Home Page
+
+# Make-it Home Page
 https://itrencotech-makeit.herokuapp.com/home/
-
-
-# Itrencotech-web-page
-Itrencotech web page using django
 
 ## Built With
 <details> <summary> <b> Develop Stack   </b></summary>
-</br>
+<br/>
 
 * ![Python](https://img.shields.io/badge/-Python-000000?style=flat&logo=python)
 * ![Django](https://img.shields.io/badge/-Django-000000?style=flat&logo=django)
@@ -21,7 +18,7 @@ Itrencotech web page using django
 * ![Jira](https://img.shields.io/badge/-Jira-000000?style=flat&logo=jira)  
 
 </details>
-</br>
+<br/>
 
 
 ## Basic Layout
@@ -37,8 +34,8 @@ Itrencotech web page using django
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contributor
-* [bjo6300](https://github.com/bjo6300) <br>
-* [nhk1657](https://github.com/nhk1657) <br>
-* [yeseong31](https://github.com/yeseong31) <br>
-* [eneleh758](https://github.com/eneleh758) <br>
+* [bjo6300](https://github.com/bjo6300) <br/>
+* [nhk1657](https://github.com/nhk1657) <br/>
+* [yeseong31](https://github.com/yeseong31) <br/>
+* [eneleh758](https://github.com/eneleh758) <br/>
 
