@@ -2,6 +2,10 @@
 ![Django: Version](https://img.shields.io/badge/Django-3.1.3-blue)
 ![MySQL: Version](https://img.shields.io/badge/Mysql-8.0.27-blue)
 
+# Home Page
+https://itrencotech-makeit.herokuapp.com/home/
+
+
 # Itrencotech-web-page
 Itrencotech web page using django
 
