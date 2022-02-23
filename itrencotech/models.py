@@ -87,4 +87,4 @@ class Order(models.Model):
         return str(self.order_num)
 
     class Meta:  # 메타 클래스를 이용하여 테이블명 지정
-        db_table = 'order'
+        db_table = 'orders'
