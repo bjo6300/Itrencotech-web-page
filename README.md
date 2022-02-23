@@ -18,7 +18,7 @@ Itrencotech web page using django
 * ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat&logo=mysql)    
 * ![Google Drive](https://img.shields.io/badge/-GoogleDrive-000000?style=flat&logo=google-drive)  
 * ![AWS EC2](https://img.shields.io/badge/-EC2-000000?style=flat&logo=amazon-aws)  
-* ![Jira](https://img.shields.io/badge/-Jira-000000?style=flat&logo=jira)  
+
 
 </details>
 </br>
