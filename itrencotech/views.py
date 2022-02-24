@@ -325,7 +325,7 @@ def make_order_form(request):
                                 to=[my_settings.EMAIL['EMAIL_HOST_USER']]
                                 )
 
-            mail.attach_file(path)
+            # mail.attach_file(path)
             mail.send()
 
             return render(request, 'order/order_confirmation.html', {'order': order,
