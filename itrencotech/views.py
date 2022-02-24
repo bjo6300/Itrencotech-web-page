@@ -331,10 +331,12 @@ def make_order_form(request):
             return render(request, 'order/order_confirmation.html', {'order': order,
                                                                      'category_sub': category.category_sub})
         else:
-            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '주문서 창            ')
+            print('잘못된 접근입니다.')
+            # ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '주문서 창            ')
             return redirect('/')
     else:
-        ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '에러 창            ')
+        print('잘못된 접근입니다.')
+        # ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '에러 창            ')
         return redirect('/')
 
 

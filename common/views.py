@@ -53,7 +53,8 @@ class SignUpView(View):
 
         # 아이디가 5자 미만이면
         if len(userid) < 5:
-            ctypes.windll.user32.MessageBoxW(0, '5자 이상의 아이디를 입력해 주세요.', '이메일 인증 창            ')
+            print('5자 이상의 아이디를 입력해 주세요.')
+            # ctypes.windll.user32.MessageBoxW(0, '5자 이상의 아이디를 입력해 주세요.', '이메일 인증 창            ')
             return render(request, 'login/signup.html')
 
         # 아이디 중복 확인
@@ -130,7 +131,8 @@ def findPasswd(request):
         userid = request.POST['input-id']
         # 만약 입력 란이 비워져 있다면
         if userid == '':
-            ctypes.windll.user32.MessageBoxW(0, '아이디를 입력해 주세요', '아이디 입력 오류            ')
+            print('아이디를 입력해 주세요.')
+            # ctypes.windll.user32.MessageBoxW(0, '아이디를 입력해 주세요', '아이디 입력 오류            ')
             return render(request, 'login/find_passwd.html')
         # 아이디가 DB 안에 있다면
         if User.objects.filter(userid=userid).exists():
@@ -143,7 +145,8 @@ def findPasswd(request):
                                                                       'userid': user.userid})
         # 아이디가 DB 안에 없다면
         else:
-            ctypes.windll.user32.MessageBoxW(0, '존재하지 않는 아이디입니다.', '아이디 입력 오류            ')
+            print('존재하지 않는 아이디입니다.')
+            # ctypes.windll.user32.MessageBoxW(0, '존재하지 않는 아이디입니다.', '아이디 입력 오류            ')
             return render(request, 'login/find_passwd.html')
     elif request.method == 'GET':
         return render(request, 'login/find_passwd.html')
@@ -191,12 +194,14 @@ def findPasswdEmail(request):
 
             # 인증 번호가 다르면 알림창 띄움
             else:
-                ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
+                print('인증번호가 틀렸습니다.')
+                # ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
                 return render(request, 'login/find_passwd_email.html')
 
         # 해당 아이디를 가진 유저가 DB에 없으면
         else:
-            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '이메일 인증 창            ')
+            print('잘못된 접근입니다.')
+            # ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '이메일 인증 창            ')
             return redirect('/common/find_id_passwd')
 
     elif request.method == 'GET':
@@ -218,7 +223,8 @@ def findPasswdReset(request):
             return render(request, 'login/find_passwd_completed.html')
         # 그렇지 않고 userid가 DB에 없으면
         else:
-            ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '비밀번호 재설정 창            ')
+            print('잘못된 접근입니다.')
+            # ctypes.windll.user32.MessageBoxW(0, '잘못된 접근입니다.', '비밀번호 재설정 창            ')
             return redirect('/common/find_id_passwd')
 
     elif request.method == 'GET':
@@ -254,7 +260,8 @@ def verification(request):
         # 해당 이메일을 가진 유저가 DB에 없으면
         else:
             # 알림창을 띄움
-            ctypes.windll.user32.MessageBoxW(0, '이메일 없음', '이메일 인증 창            ')
+            print('이메일 없음')
+            # ctypes.windll.user32.MessageBoxW(0, '이메일 없음', '이메일 인증 창            ')
 
         return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
     elif request.method == 'GET':
@@ -283,12 +290,14 @@ def verification2(request):
 
             # 인증번호가 일치하지 않으면 알림창 띄움
             else:
-                ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
+                print('인증번호가 틀렸습니다.')
+                # ctypes.windll.user32.MessageBoxW(0, '인증번호가 틀렸습니다.', '이메일 인증 창            ')
                 return render(request, 'login/find_id_email.html', {'email1': email1, 'email2': email2})
 
         # 해당 이메일을 가진 유저가 DB에 없으면
         else:
-            ctypes.windll.user32.MessageBoxW(0, '이메일을 다시 확인해주세요.', '이메일 인증 창            ')
+            print('이메일을 다시 확인해 주세요.')
+            # ctypes.windll.user32.MessageBoxW(0, '이메일을 다시 확인해주세요.', '이메일 인증 창            ')
             return render(request, 'login/find_id_email.html')
     elif request.method == 'GET':
         return render(request, 'login/find_id_email.html')
