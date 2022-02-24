@@ -1,5 +1,6 @@
 {% load static %}
 <script src="{% static 'js/showPasswd.js' %}"></script>
+<script src="{% static 'js/alert.js' %}"></script>
 
 <div id="div-wrapper">
     <div id="div-signup">
@@ -78,7 +79,8 @@
                     </td>
                 </tr>
             </table>
-            <button type="submit" value="signup" id="btn-signup" name="signup-submit"> 가입하기 </button>
+            <button type="submit" value="signup" id="btn-signup"
+                    name="signup-submit" onclick="signup_alert();"> 가입하기 </button>
         </form>
     </div>
 </div>

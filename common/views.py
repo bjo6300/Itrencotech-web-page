@@ -47,13 +47,13 @@ class SignUpView(View):
         res_data = {}
 
         # 빈 칸 확인
-        if not (username and userid and password1 and password2 and phone_num
-                and company_name and company_address and company_tel and email):
-            res_data['error'] = "입력하지 않은 칸이 있습니다."
+        # if not (username and userid and password1 and password2 and phone_num
+        #         and company_name and company_address and company_tel and email):
+        #     res_data['error'] = "입력하지 않은 칸이 있습니다."
 
         # 아이디가 5자 미만이면
         if len(userid) < 5:
-            print('5자 이상의 아이디를 입력해 주세요.')
+            # print('5자 이상의 아이디를 입력해 주세요.')
             # ctypes.windll.user32.MessageBoxW(0, '5자 이상의 아이디를 입력해 주세요.', '이메일 인증 창            ')
             return render(request, 'login/signup.html')
 
@@ -63,8 +63,8 @@ class SignUpView(View):
             return render(request, 'login/signup.html')
 
         # 비밀번호 일치 여부 확인
-        if password1 != password2:
-            res_data['error'] = '비밀번호가 일치하지 않습니다.'
+        # if password1 != password2:
+        #     res_data['error'] = '비밀번호가 일치하지 않습니다.'
 
         # DB에 사용자 계정 생성
         user = User.objects.create_user(userid=userid, username=username,
@@ -131,7 +131,7 @@ def findPasswd(request):
         userid = request.POST['input-id']
         # 만약 입력 란이 비워져 있다면
         if userid == '':
-            print('아이디를 입력해 주세요.')
+            # print('아이디를 입력해 주세요.')
             # ctypes.windll.user32.MessageBoxW(0, '아이디를 입력해 주세요', '아이디 입력 오류            ')
             return render(request, 'login/find_passwd.html')
         # 아이디가 DB 안에 있다면
@@ -147,7 +147,7 @@ def findPasswd(request):
         else:
             print('존재하지 않는 아이디입니다.')
             # ctypes.windll.user32.MessageBoxW(0, '존재하지 않는 아이디입니다.', '아이디 입력 오류            ')
-            return render(request, 'login/find_passwd.html')
+            return render(request, 'login/find_passwd.html', {'id-check': 'false'})
     elif request.method == 'GET':
         return render(request, 'login/find_passwd.html')
 

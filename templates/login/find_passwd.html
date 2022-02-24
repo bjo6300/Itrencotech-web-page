@@ -24,7 +24,8 @@
                 <p class="p-txt"> 비밀번호를 찾고자 하는 아이디를 입력해 주세요. </p>
                 <input id="input-id" name="input-id">
             </div>
-
+            <input id="id-check" name="input-id"
+                   value="{{ form.id-check.value|default_if_none:'' }}" hidden>
             <button type="submit" id="btn-next"> 다 음 </button>
         </div>
     </form>
