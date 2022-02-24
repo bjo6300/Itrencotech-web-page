@@ -71,7 +71,7 @@ class SignUpView(View):
                                         company_address=company_address, company_tel=company_tel,
                                         email=email, password=password1)
         user.save()
-        return render(request, 'login/signUp_completed.html', res_data)
+        return render(request, 'login/signup_completed.html', res_data)
 
     # GET 요청 시(회원가입 버튼 클릭 등)
     def get(self, request):
@@ -83,7 +83,7 @@ class SignUpView(View):
 
 def signUpCompleted(request):
     """ 회원가입 완료 페이지 """
-    return render(request, 'login/signUp_completed.html')
+    return render(request, 'login/signup_completed.html')
 
 
 def findIdPasswd(request):
