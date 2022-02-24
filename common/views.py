@@ -52,10 +52,10 @@ class SignUpView(View):
         #     res_data['error'] = "입력하지 않은 칸이 있습니다."
 
         # 아이디가 5자 미만이면
-        # if len(userid) < 5:
+        if len(userid) < 5:
             # print('5자 이상의 아이디를 입력해 주세요.')
             # ctypes.windll.user32.MessageBoxW(0, '5자 이상의 아이디를 입력해 주세요.', '이메일 인증 창            ')
-            # return render(request, 'login/signup.html')
+            return render(request, 'login/signup.html')
 
         # 아이디 중복 확인
         if User.objects.filter(userid=userid).exists():  # 아이디 중복 체크
@@ -145,9 +145,9 @@ def findPasswd(request):
                                                                       'userid': user.userid})
         # 아이디가 DB 안에 없다면
         else:
-            print('존재하지 않는 아이디입니다.')
+            # print('존재하지 않는 아이디입니다.')
             # ctypes.windll.user32.MessageBoxW(0, '존재하지 않는 아이디입니다.', '아이디 입력 오류            ')
-            return render(request, 'login/find_passwd.html', {'id-check': 'false'})
+            return render(request, 'login/find_passwd.html', {'input_tmp': 'false'})
     elif request.method == 'GET':
         return render(request, 'login/find_passwd.html')
 
