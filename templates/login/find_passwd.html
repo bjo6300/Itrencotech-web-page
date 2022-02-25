@@ -4,6 +4,14 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
 <script src="{% static 'js/alert.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var x = $('#id_check').val();
+        if (x == "false") {
+            alert("존재하지 않는 아이디입니다.");
+        }
+    });
+</script>
 
 <div id="div-title-container" >
     <h1 id="h1-title"> 비밀번호 찾기 </h1>

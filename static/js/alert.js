@@ -30,13 +30,11 @@ function findpasswd_alert() {
     // 아이디 입력 란이 비워져 있다면
     if (userid.length == 0) {
         alert('아이디를 입력해 주세요.');
+        return;
     } else if (userid.length < 5) {
         alert('아이디가 5자 미만입니다.');
+        return;
     }
-
-    // 아이디가 DB 안에 없다면
-    if (id_check == "false") {
-        alert('존재하지 않는 아이디입니다.');
-    }
-
 }
+
+

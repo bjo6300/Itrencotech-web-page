@@ -1,10 +1,17 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # mysqlclient 라이브러리 설치
-        'NAME': 'heroku_2c03059b0a4530f',        # 생성한 database의 이름
-        'USER': 'b2c6dff0779745',
-        'PASSWORD': 'd18964d1',  # mysql 설치 시 입력한 root 비밀번호 입력
-        'HOST': 'us-cdbr-east-05.cleardb.net',
+        # ----- heroku -----
+        # 'NAME': 'heroku_2c03059b0a4530f',        # 생성한 database의 이름
+        # 'USER': 'b2c6dff0779745',
+        # 'PASSWORD': 'd18964d1',  # mysql 설치 시 입력한 root 비밀번호 입력
+        # 'HOST': 'us-cdbr-east-05.cleardb.net',
+        # ----- local -----
+        'NAME': 'itrencotech_database',  # 생성한 database의 이름
+        'USER': 'root',
+        'PASSWORD': '!Roffjrtl6973?',  # mysql 설치 시 입력한 root 비밀번호 입력
+        'HOST': '127.0.0.1',
+
         'PORT': '3306',  # Port 번호
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
