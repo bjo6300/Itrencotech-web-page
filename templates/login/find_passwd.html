@@ -3,6 +3,15 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+<script src="{% static 'js/alert.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var x = $('#id_check').val();
+        if (x == "false") {
+            alert("존재하지 않는 아이디입니다.");
+        }
+    });
+</script>
 
 <div id="div-title-container" >
     <h1 id="h1-title"> 비밀번호 찾기 </h1>
@@ -24,8 +33,9 @@
                 <p class="p-txt"> 비밀번호를 찾고자 하는 아이디를 입력해 주세요. </p>
                 <input id="input-id" name="input-id">
             </div>
-
-            <button type="submit" id="btn-next"> 다 음 </button>
+            <input id="id_check" name="input_tmp"
+                   value="{{ input_tmp|default_if_none:'' }}" hidden>
+            <button type="submit" id="btn-next" onclick="findpasswd_alert();"> 다 음 </button>
         </div>
     </form>
 

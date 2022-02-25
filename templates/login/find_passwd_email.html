@@ -3,6 +3,14 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}">
+<script type="text/javascript">
+    $(document).ready(function() {
+        var x = $('#auth_check').val();
+        if (x == "false") {
+            alert("잘못된 인증번호입니다.");
+        }
+    });
+</script>
 
 <div id="div-title-container" >
     <h1 id="h1-title"> 비밀번호 찾기 </h1>
@@ -29,7 +37,9 @@
                     <td>
                         <input id="input-certf-num" name="auth_num">
                         <input id="input-id" name="userid" type="text" placeholder="직접 입력"
-                               value="{{ userid|default_if_none:'' }}" hidden>
+                               value="{{ userid|default_if_none:'' }}">
+                        <input id="auth_check" name="input_tmp" type="text" placeholder="직접 입력"
+                               value="{{ input_tmp|default_if_none:'' }}" >
                     </td>
                 </tr>
             </table>
