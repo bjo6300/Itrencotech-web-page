@@ -13,7 +13,7 @@ https://itrencotech-makeit.herokuapp.com/home/
 * ![Django](https://img.shields.io/badge/-Django-000000?style=flat&logo=django)
 * ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat&logo=mysql)    
 * ![Google Drive](https://img.shields.io/badge/-GoogleDrive-000000?style=flat&logo=google-drive)  
-* ![AWS EC2](https://img.shields.io/badge/-EC2-000000?style=flat&logo=amazon-aws)  
+* ![Heroku](https://img.shields.io/badge/-Heroku-000000?style=flat&logo=Heroku)  
 
 
 </details>
@@ -21,11 +21,12 @@ https://itrencotech-makeit.herokuapp.com/home/
 
 
 ## Basic Layout
-![image](https://user-images.githubusercontent.com/70627982/148470242-313bb656-1c60-463f-8963-4d39c295136a.png)
+![image](https://user-images.githubusercontent.com/70627982/155848540-d0bf39a2-366f-4a31-99e2-83630d1bd228.png)
+
+
 
 ## DB table
-![itrencotech](https://user-images.githubusercontent.com/66625672/153887161-d5575629-29ac-40d3-b082-95a91610a06e.png)
-
+![itrencotech](https://user-images.githubusercontent.com/70627982/155848695-cb6f3996-f3bb-4335-b2ae-d6e474e848ce.png)
 
 
 ## License
