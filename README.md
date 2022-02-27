@@ -33,7 +33,8 @@ https://itrencotech-makeit.herokuapp.com/home/
 
 
 ## DB table
-![itrencotech](https://user-images.githubusercontent.com/70627982/155848695-cb6f3996-f3bb-4335-b2ae-d6e474e848ce.png)
+<img width="913" alt="image" src="https://user-images.githubusercontent.com/66625672/155885793-de46402c-3009-4087-ab82-d50415e2d4ed.png">
+
 
 
 ## License
