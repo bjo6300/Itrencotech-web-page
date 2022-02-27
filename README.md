@@ -3,6 +3,13 @@
 ![MySQL: Version](https://img.shields.io/badge/Mysql-8.0.27-blue)
 
 # Itrencotech-web-page
+<b>Idea to real with coexist technology</b> <br>
+'아이디어를 공존의 기술력으로 현실화 시키는 기업'의 프로젝트인 <b>Make it</b>의 홈페이지입니다. <br>
+|기간|version|
+|:------:|:---:|
+|2022.02.16|v1|
+
+
 https://itrencotech-makeit.herokuapp.com/home/
 
 ## Built With
