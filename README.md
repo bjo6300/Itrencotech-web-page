@@ -33,7 +33,7 @@ https://itrencotech-makeit.herokuapp.com/home/
 
 
 ## DB table
-<img width="1280" alt="image" src="https://user-images.githubusercontent.com/66625672/155885810-18358a2b-3fb3-4d1d-b68a-f852e1a3e845.png">
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/66625672/155885833-6b8f49af-252c-4cae-9bf7-c9fca5875fd0.png">
 
 
 
