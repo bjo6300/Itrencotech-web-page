@@ -344,16 +344,16 @@ def make_order_form(request):
 
 # ##### 마이페이지 #####
 def mypage_home(request):
-    return render(request, 'navbar/myPage/myPage_home.html')
+    return render(request, 'navbar/mypage/mypage_home.html')
 
 
 def mypage_order_history(request):
-    return render(request, 'navBar/myPage/myPage_order_history.html')
+    return render(request, 'navBar/mypage/mypage_order_history.html')
 
 
-def myPage_update_info(request):
-    return render(request, 'navBar/myPage/myPage_update_info.html')
+def mypage_update_info(request):
+    return render(request, 'navBar/mypage/mypage_update_info.html')
 
 
 def mypage_info(request):
-    return render(request, 'navBar/myPage/myPage_info.html')
+    return render(request, 'navBar/mypage/mypage_info.html')
