@@ -165,5 +165,6 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # 응답 메일 관련 설정
 # Activate Django-Heroku
 django_heroku.settings(locals())
 
+# Heroku Database settings
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
