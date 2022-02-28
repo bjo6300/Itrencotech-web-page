@@ -161,7 +161,9 @@ ENV/
 # privacy infomation
 *.iml
 *.xml
-#my_settings.py
+my_settings.py
+
+*.DS_Store
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq
 !/Procfile
