@@ -1,3 +1,5 @@
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # mysqlclient 라이브러리 설치
@@ -22,9 +24,10 @@ DATABASES = {
 }
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = {
-    'secret': 'c=%dig$7ojo8cksb_p+q!)^98te@$e$-jzna&l#6*+)36t369c',
-}
+# SECRET_KEY = {
+#     'secret': 'c=%dig$7ojo8cksb_p+q!)^98te@$e$-jzna&l#6*+)36t369c',
+# }
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'c=%dig$7ojo8cksb_p+q!)^98te@$e$-jzna&l#6*+)36t369c')
 
 EMAIL = {
     'EMAIL_BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
