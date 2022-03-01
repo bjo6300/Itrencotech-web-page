@@ -162,8 +162,6 @@ ENV/
 *.iml
 *.xml
 
-*.DS_Store
-
 my_settings.py
 
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharmq
