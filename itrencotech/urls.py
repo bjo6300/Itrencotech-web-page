@@ -63,9 +63,9 @@ urlpatterns = [
 
     # 마이페이지
 
-    path('navBar/mypage/mypage_home/', views.mypage_home, name='mypage_home'),
-    path('navBar/mypage/mypage_order_history/', views.mypage_order_history, name='mypage_order_history'),
-    path('navBar/mypage/mypage_info/', views.mypage_info, name='mypage_info'),
-    path('myPage/myPage_update_info/', views.myPage_update_info, name='myPage_update_info'),
+    path('navbar/mypage/mypage_home/', views.mypage_home, name='mypage_home'),
+    path('navbar/mypage/mypage_order_history/', views.mypage_order_history, name='mypage_order_history'),
+    path('navbar/mypage/mypage_info/', views.mypage_info, name='mypage_info'),
+    path('mypage/mypage_update_info/', views.mypage_update_info, name='mypage_update_info'),
 
 ]

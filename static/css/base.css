@@ -205,7 +205,6 @@ a:link, a:visited, a:active {
 
 /* footer */
 .footer {
-    /* background-image: url("/static/images/footer.png"); */
     position: relative;
     bottom: 0;
     width: 100%;
